@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class AttackJoyStick : JoyStick
+    public class JoyStick_ClickActive : JoyStick
     {
         private Image _attackButtonImage = null;
         

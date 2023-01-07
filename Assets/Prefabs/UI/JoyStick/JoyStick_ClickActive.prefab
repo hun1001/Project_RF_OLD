@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 780726098979125933}
   - component: {fileID: 780726098979125923}
   m_Layer: 5
-  m_Name: AttackJoyStick
+  m_Name: JoyStick_ClickActive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
