@@ -39,6 +39,7 @@ namespace UI
         public virtual void OnEndDrag(PointerEventData eventData)
         {
             _rectTransformChild.localPosition = Vector2.zero;
+            _direction = Vector2.zero;
         }
 
         public Vector2 Direction => _direction;
