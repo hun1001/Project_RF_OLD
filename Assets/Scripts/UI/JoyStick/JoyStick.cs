@@ -8,21 +8,21 @@ namespace UI
 {
     public class JoyStick : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerDownHandler
     {
-        private RectTransform _rectTransform = null;
-        private RectTransform _rectTransformChild = null;
+        protected RectTransform _rectTransform = null;
+        protected RectTransform _rectTransformChild = null;
         
         private Vector2 _direction = Vector2.zero;
         
         private float _radius = 0.0f;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _rectTransform = GetComponent<RectTransform>();
             _rectTransformChild = transform.GetChild(0).GetComponent<RectTransform>();
             _radius = _rectTransform.rect.width * 0.5f;
         }
 
-        public void OnPointerDown(PointerEventData eventData)
+        public virtual void OnPointerDown(PointerEventData eventData)
         {
             _rectTransformChild.position = eventData.position;
         }
@@ -34,13 +34,12 @@ namespace UI
             _rectTransformChild.localPosition = pos;
             
             _direction = pos.normalized;
-            
-            Debug.Log(_direction);
         }
 
-        public void OnEndDrag(PointerEventData eventData)
+        public virtual void OnEndDrag(PointerEventData eventData)
         {
             _rectTransformChild.localPosition = Vector2.zero;
+            _direction = Vector2.zero;
         }
 
         public Vector2 Direction => _direction;
