@@ -10,9 +10,11 @@ namespace UI
     {
         protected RectTransform _rectTransform = null;
         protected RectTransform _rectTransformChild = null;
-        
+
+        private Action _onEndDrag = null;
+
         private Vector2 _direction = Vector2.zero;
-        
+
         private float _radius = 0.0f;
 
         protected virtual void Awake()
@@ -26,13 +28,13 @@ namespace UI
         {
             _rectTransformChild.position = eventData.position;
         }
-        
+
         public void OnDrag(PointerEventData eventData)
         {
             Vector2 pos = eventData.position - (Vector2)_rectTransform.position;
             pos = Vector2.ClampMagnitude(pos, _radius);
             _rectTransformChild.localPosition = pos;
-            
+
             _direction = pos.normalized;
         }
 
@@ -40,10 +42,16 @@ namespace UI
         {
             _rectTransformChild.localPosition = Vector2.zero;
             _direction = Vector2.zero;
+            _onEndDrag?.Invoke();
         }
 
         public Vector2 Direction => _direction;
-        public  float Vertical => _direction.y;
+        public float Vertical => _direction.y;
         public float Horizontal => _direction.x;
+
+        public void AddOnEndDragListener(Action action)
+        {
+            _onEndDrag += action;
+        }
     }
 }
