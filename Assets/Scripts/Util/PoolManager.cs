@@ -9,38 +9,45 @@ namespace Pool
     {
         private Dictionary<string, Queue<GameObject>> _poolingDictionaryQueue = null;
 
-        /// <summary>
-        /// 오브젝트 가져오기
-        /// </summary>
-        /// <param name="address"></param>
-        public GameObject Get(string address)
+        public GameObject Get(string name)
         {
             GameObject temp = null;
 
-            if (_poolingDictionaryQueue.ContainsKey(address))
+            if (_poolingDictionaryQueue.ContainsKey(name))
             {
-                if (_poolingDictionaryQueue[address].Count > 0)
+                if (_poolingDictionaryQueue[name].Count > 0)
                 {
-                    temp = _poolingDictionaryQueue[address].Dequeue();
-                    temp.SetActive(true);
+                    temp = _poolingDictionaryQueue[name].Dequeue();
                 }
                 else
                 {
-
+                    temp = AddressablesManager.Instance.GetResource<GameObject>(name);
                 }
             }
             else
             {
-
+                _poolingDictionaryQueue.Add(name, new Queue<GameObject>());
+                temp = AddressablesManager.Instance.GetResource<GameObject>(name);
             }
 
+            temp.SetActive(true);
 
             return temp;
         }
 
-        public void PoolObject(string address)
+        public void PoolObject(string name, GameObject obj)
         {
+            obj.SetActive(false);
 
+            if (_poolingDictionaryQueue.ContainsKey(name))
+            {
+                _poolingDictionaryQueue[name].Enqueue(obj);
+            }
+            else
+            {
+                _poolingDictionaryQueue.Add(name, new Queue<GameObject>());
+                _poolingDictionaryQueue[name].Enqueue(obj);
+            }
         }
     }
 }

@@ -12,8 +12,14 @@ namespace UI
 
         private Image _barImage = null;
 
-        private void SetValue()
+        private void Awake()
         {
+            _barImage = GetComponentInChildren<Image>();
+        }
+
+        private void SetValue(float value)
+        {
+            _value = value;
             _barImage.fillAmount = _value / _maxValue;
         }
 
