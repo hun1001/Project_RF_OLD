@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UI;
 using UnityEngine.UI;
+using Tank;
 
 namespace Turret
 {
@@ -41,7 +42,7 @@ namespace Turret
 
             if (Physics.Raycast(_firePoint.position, _firePoint.forward, out hit, 100f))
             {
-                Debug.Log(hit.transform.name);
+                hit.transform.GetComponent<Tank_Damage>()?.TakeDamage(1);
             }
         }
 
