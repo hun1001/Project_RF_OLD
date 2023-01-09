@@ -13,7 +13,7 @@ namespace Turret
         private float _rotateSpeed = 1f;
         private Transform _parent = null;
         private Vector3 _direction = Vector3.zero;
-        
+
         private Turret_Shot _shot = null;
         private WaitForSeconds _comebackSecond = new WaitForSeconds(0f);
         private bool _isShot = false;
@@ -30,7 +30,7 @@ namespace Turret
             {
                 TurretRotation();
             }
-            else if(_isShot)
+            else if (_isShot)
             {
                 _isShot = false;
                 _shot.TurretShotting();
@@ -48,7 +48,7 @@ namespace Turret
 
         public IEnumerator TurretComeback()
         {
-            while(transform.rotation != _parent.rotation)
+            while (transform.rotation != _parent.rotation)
             {
                 if (_isShot == true) yield break;
                 transform.rotation = Quaternion.Slerp(transform.rotation, _parent.rotation, _rotateSpeed * Time.deltaTime);
