@@ -42,7 +42,9 @@ namespace Turret
 
             if (Physics.Raycast(_firePoint.position, _firePoint.forward, out hit, 100f))
             {
-                hit.transform.GetComponent<Tank_Damage>()?.TakeDamage(1);
+                Debug.Log(hit.transform.name);
+                Debug.Log(hit.point);
+                Debug.Log(hit.normal);
             }
         }
 

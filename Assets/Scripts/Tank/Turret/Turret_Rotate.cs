@@ -15,6 +15,9 @@ namespace Turret
         private Transform _turret = null;
 
         [SerializeField]
+        private Transform _body = null;
+
+        [SerializeField]
         private float _degree2RotateSecond = 1f;
 
         private bool _isAim = false;
@@ -38,6 +41,7 @@ namespace Turret
             dir.z = _joyStick.Vertical;
 
             _isAim = true;
+            StopCoroutine(nameof(Release));
 
             _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(dir.normalized), 180 * Time.deltaTime / _degree2RotateSecond);
         }
@@ -65,7 +69,7 @@ namespace Turret
                     break;
                 }
 
-                _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(Vector3.zero), 180 * Time.deltaTime / _degree2RotateSecond / 2);
+                _turret.localRotation = Quaternion.RotateTowards(_turret.localRotation, Quaternion.LookRotation(Vector3.zero), 180 * Time.deltaTime / _degree2RotateSecond / 2);
                 yield return null;
             }
         }
