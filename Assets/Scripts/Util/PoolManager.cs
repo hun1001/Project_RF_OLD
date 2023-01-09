@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
-using UnityEngine.AddressableAssets;
 
 namespace Pool
 {
@@ -23,15 +22,18 @@ namespace Pool
                 if (_poolingDictionaryQueue[address].Count > 0)
                 {
                     temp = _poolingDictionaryQueue[address].Dequeue();
+                    temp.SetActive(true);
                 }
                 else
                 {
+
                 }
             }
             else
             {
 
             }
+
 
             return temp;
         }
