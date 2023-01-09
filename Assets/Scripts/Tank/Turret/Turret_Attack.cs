@@ -50,7 +50,7 @@ namespace Turret
 
             if (Physics.Raycast(_firePoint.position, _firePoint.forward, out hit, 100f))
             {
-
+                Destroy(hit.collider.gameObject, 0.1f);
             }
         }
 
