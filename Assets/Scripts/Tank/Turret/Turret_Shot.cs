@@ -15,6 +15,7 @@ namespace Turret
         private Transform _firePos = null;
         private float _shotCooldown = 3f;
         private float _shotCurrentCooldown = 0f;
+        private int _damage = 100;
 
         private void Awake()
         {
@@ -40,7 +41,8 @@ namespace Turret
             }
             _shotCurrentCooldown = _shotCooldown;
 
-            Instantiate(_shellPrefab, _firePos.position, transform.rotation);
+            GameObject newShell = Instantiate(_shellPrefab, _firePos.position, transform.rotation);
+            newShell.GetComponent<Shell.ShellMove>().SetDamage(_damage);
 
             Invoke("TurretComebackStart", 1f);
         }
