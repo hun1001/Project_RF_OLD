@@ -22,11 +22,19 @@ namespace Turret
         [SerializeField]
         private float _fireRate = 1f;
 
+        [SerializeField]
+        private LineRenderer _lineRenderer = null;
+
         private float _nextFire = 0f;
 
         void Awake()
         {
+            _joyStick.AddOnStartDragListener(DrawStartAimLine);
             _joyStick.AddOnEndDragListener(Fire);
+            _joyStick.AddOnEndDragListener(DrawEndAimLine);
+
+            _lineRenderer.positionCount = 2;
+            _lineRenderer.enabled = false;
         }
 
         private void Fire()
@@ -42,10 +50,18 @@ namespace Turret
 
             if (Physics.Raycast(_firePoint.position, _firePoint.forward, out hit, 100f))
             {
-                Debug.Log(hit.transform.name);
-                Debug.Log(hit.point);
-                Debug.Log(hit.normal);
+
             }
+        }
+
+        private void DrawStartAimLine()
+        {
+            _lineRenderer.enabled = true;
+        }
+
+        private void DrawEndAimLine()
+        {
+            _lineRenderer.enabled = false;
         }
 
         private void Update()
@@ -54,6 +70,9 @@ namespace Turret
             {
                 _nextFire -= Time.deltaTime;
             }
+
+            _lineRenderer.SetPosition(0, _firePoint.position);
+            _lineRenderer.SetPosition(1, _firePoint.position + _firePoint.forward * 100f);
 
             _fireImage.fillAmount = 1f - _nextFire / _fireRate;
         }

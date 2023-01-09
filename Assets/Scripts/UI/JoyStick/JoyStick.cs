@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,6 +9,7 @@ namespace UI
         protected RectTransform _rectTransform = null;
         protected RectTransform _rectTransformChild = null;
 
+        private Action _onStartDrag = null;
         private Action _onEndDrag = null;
 
         private Vector2 _direction = Vector2.zero;
@@ -27,6 +26,7 @@ namespace UI
         public virtual void OnPointerDown(PointerEventData eventData)
         {
             _rectTransformChild.position = eventData.position;
+            _onStartDrag?.Invoke();
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -48,6 +48,11 @@ namespace UI
         public Vector2 Direction => _direction;
         public float Vertical => _direction.y;
         public float Horizontal => _direction.x;
+
+        public void AddOnStartDragListener(Action action)
+        {
+            _onStartDrag += action;
+        }
 
         public void AddOnEndDragListener(Action action)
         {
