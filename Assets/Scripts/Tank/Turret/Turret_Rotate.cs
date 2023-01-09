@@ -14,6 +14,9 @@ namespace Turret
         [SerializeField]
         private Transform _turret = null;
 
+        [SerializeField]
+        private float _degree2RotateSecond = 1f;
+
         private bool _isAim = false;
 
         private void Update()
@@ -36,7 +39,7 @@ namespace Turret
 
             _isAim = true;
 
-            _turret.rotation = Quaternion.Slerp(_turret.rotation, Quaternion.LookRotation(dir.normalized), 10f * Time.deltaTime);
+            _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(dir.normalized), 180 * Time.deltaTime / _degree2RotateSecond);
         }
 
         private IEnumerator Release()
@@ -62,7 +65,7 @@ namespace Turret
                     break;
                 }
 
-                _turret.eulerAngles = Vector3.Lerp(_turret.eulerAngles, Vector3.zero, 10f * Time.deltaTime);
+                _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(Vector3.zero), 180 * Time.deltaTime / _degree2RotateSecond / 2);
                 yield return null;
             }
         }
