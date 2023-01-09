@@ -2,60 +2,69 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UI;
 
 namespace Turret
 {
     public class Turret_Rotate : MonoBehaviour
     {
         [SerializeField]
-        private UI.JoyStick _joyStick;
+        private JoyStick _joyStick;
 
-        private float _rotateSpeed = 1f;
-        private Transform _parent = null;
-        private Vector3 _direction = Vector3.zero;
+        [SerializeField]
+        private Transform _turret = null;
 
-        private Turret_Shot _shot = null;
-        private WaitForSeconds _comebackSecond = new WaitForSeconds(0f);
-        private bool _isShot = false;
-
-        private void Awake()
-        {
-            _parent = transform.parent;
-            _shot = GetComponent<Turret_Shot>();
-        }
+        private bool _isAim = false;
 
         private void Update()
         {
             if (_joyStick.Direction != Vector2.zero)
             {
-                TurretRotation();
+                Rotate();
             }
-            else if (_isShot)
+            else
             {
-                _isShot = false;
-                _shot.TurretShotting();
+                StartCoroutine(nameof(Release));
             }
         }
 
-        private void TurretRotation()
+        private void Rotate()
         {
-            _direction.x = _joyStick.Horizontal;
-            _direction.z = _joyStick.Vertical;
+            Vector3 dir = Vector3.zero;
+            dir.x = _joyStick.Horizontal;
+            dir.z = _joyStick.Vertical;
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(_direction.normalized), _rotateSpeed * Time.deltaTime);
-            _isShot = true;
+            _isAim = true;
+
+            _turret.rotation = Quaternion.Slerp(_turret.rotation, Quaternion.LookRotation(dir.normalized), 10f * Time.deltaTime);
         }
 
-        public IEnumerator TurretComeback()
+        private IEnumerator Release()
         {
-            while (transform.rotation != _parent.rotation)
+            if (_isAim == false)
             {
-                if (_isShot == true) yield break;
-                transform.rotation = Quaternion.Slerp(transform.rotation, _parent.rotation, _rotateSpeed * Time.deltaTime);
-                yield return _comebackSecond;
+                yield break;
+            }
+            _isAim = false;
+
+            yield return new WaitForSeconds(3f);
+
+            while (true)
+            {
+                if (Mathf.Abs(_turret.eulerAngles.y) < 0.1f)
+                {
+                    _turret.eulerAngles = Vector3.zero;
+                    break;
+                }
+
+                if (_isAim == true)
+                {
+                    break;
+                }
+
+                _turret.eulerAngles = Vector3.Lerp(_turret.eulerAngles, Vector3.zero, 10f * Time.deltaTime);
+                yield return null;
             }
         }
-
-        public Vector3 Direction => _direction;
     }
 }

@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UI;
+
 namespace Tank
 {
     public class Tank_Move : MonoBehaviour
     {
         [SerializeField]
-        private UI.JoyStick _joyStick = null;
+        private JoyStick _joyStick = null;
 
-        private float _moveSpeed = 5f;
+        [SerializeField]
+        private Transform _body = null;
+
+        [SerializeField]
+        private float _moveSpeed = 10f;
 
         private void Update()
         {
@@ -25,7 +31,7 @@ namespace Tank
             dir.z = _joyStick.Vertical;
 
             transform.Translate(dir * _moveSpeed * Time.deltaTime, Space.World);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir.normalized), _moveSpeed * Time.deltaTime);
+            _body.rotation = Quaternion.Slerp(_body.rotation, Quaternion.LookRotation(dir.normalized), _moveSpeed * Time.deltaTime);
         }
     }
 }
