@@ -10,7 +10,13 @@ namespace Turret
         [SerializeField]
         private UI.JoyStick _joyStick;
 
-        private float _rotateSpeed = 5f;
+        private float _rotateSpeed = 1f;
+        private Transform _parent;
+
+        private void Awake()
+        {
+            _parent = transform.parent;
+        }
 
         private void Update()
         {
@@ -18,7 +24,7 @@ namespace Turret
             {
                 TurretRotation();
             }
-            else if (transform.rotation != Quaternion.identity)
+            else if (transform.rotation != _parent.rotation)
             {
                 TurretComeback();
             }
@@ -35,7 +41,7 @@ namespace Turret
 
         private void TurretComeback()
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.identity, _rotateSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, _parent.rotation, _rotateSpeed * Time.deltaTime);
         }
     }
 }
