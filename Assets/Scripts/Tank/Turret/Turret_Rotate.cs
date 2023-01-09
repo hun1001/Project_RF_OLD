@@ -11,11 +11,17 @@ namespace Turret
         private UI.JoyStick _joyStick;
 
         private float _rotateSpeed = 1f;
-        private Transform _parent;
+        private Transform _parent = null;
+        private Vector3 _direction = Vector3.zero;
+        
+        private Turret_Shot _shot = null;
+        private WaitForSeconds _comebackSecond = new WaitForSeconds(0f);
+        private bool _isShot = false;
 
         private void Awake()
         {
             _parent = transform.parent;
+            _shot = GetComponent<Turret_Shot>();
         }
 
         private void Update()
@@ -24,24 +30,32 @@ namespace Turret
             {
                 TurretRotation();
             }
-            else if (transform.rotation != _parent.rotation)
+            else if(_isShot)
             {
-                TurretComeback();
+                _isShot = false;
+                _shot.TurretShotting();
             }
         }
 
         private void TurretRotation()
         {
-            Vector3 dir = Vector3.zero;
-            dir.x = _joyStick.Horizontal;
-            dir.z = _joyStick.Vertical;
+            _direction.x = _joyStick.Horizontal;
+            _direction.z = _joyStick.Vertical;
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir.normalized), _rotateSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(_direction.normalized), _rotateSpeed * Time.deltaTime);
+            _isShot = true;
         }
 
-        private void TurretComeback()
+        public IEnumerator TurretComeback()
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, _parent.rotation, _rotateSpeed * Time.deltaTime);
+            while(transform.rotation != _parent.rotation)
+            {
+                if (_isShot == true) yield break;
+                transform.rotation = Quaternion.Slerp(transform.rotation, _parent.rotation, _rotateSpeed * Time.deltaTime);
+                yield return _comebackSecond;
+            }
         }
+
+        public Vector3 Direction => _direction;
     }
 }
