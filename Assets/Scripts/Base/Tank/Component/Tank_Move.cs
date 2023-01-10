@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UI;
+using System;
 
 namespace Tank
 {
@@ -36,8 +37,8 @@ namespace Tank
             dir.x = _joyStick.Horizontal;
             dir.z = _joyStick.Vertical;
 
-            transform.Translate(dir * _moveSpeed * Time.deltaTime, Space.World);
-            _body.rotation = Quaternion.Slerp(_body.rotation, Quaternion.LookRotation(dir.normalized), _moveSpeed * Time.deltaTime);
+            transform.Translate(_body.forward * dir.magnitude * _moveSpeed * Time.deltaTime, Space.World);
+            _body.rotation = Quaternion.Slerp(_body.rotation, Quaternion.LookRotation(dir.normalized), _rotateSpeed * Time.deltaTime);
         }
     }
 }

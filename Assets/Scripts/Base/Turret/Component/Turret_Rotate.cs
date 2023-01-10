@@ -11,7 +11,7 @@ namespace Turret
         private JoyStick _joyStick;
         private Transform _turret = null;
 
-        private float _degree2RotateSecond = 1f;
+        private float _rotationSpeed = 1f;
 
         private bool _isAim = false;
 
@@ -42,9 +42,7 @@ namespace Turret
             _isAim = true;
             StopCoroutine(nameof(Release));
 
-            //_turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(dir.normalized), 180 * Time.deltaTime / _degree2RotateSecond);
-
-            _turret.rotation = Quaternion.LookRotation(dir.normalized);
+            _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(dir.normalized), 180 * Time.deltaTime / _rotationSpeed);
         }
 
         private IEnumerator Release()
@@ -70,7 +68,7 @@ namespace Turret
                     break;
                 }
 
-                _turret.localRotation = Quaternion.RotateTowards(_turret.localRotation, Quaternion.LookRotation(Vector3.zero), 180 * Time.deltaTime / _degree2RotateSecond / 2);
+                _turret.localRotation = Quaternion.RotateTowards(_turret.localRotation, Quaternion.LookRotation(Vector3.zero), 180 * Time.deltaTime / _rotationSpeed / 2);
                 yield return null;
             }
         }
