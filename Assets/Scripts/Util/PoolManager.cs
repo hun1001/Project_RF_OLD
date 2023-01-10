@@ -1,41 +1,29 @@
+using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
 
-namespace Pool
+namespace Util
 {
     public class PoolManager : Singleton<PoolManager>
     {
-        private Dictionary<string, Queue<GameObject>> _poolingDictionaryQueue = null;
+        private Dictionary<string, Queue<GameObject>> _poolingDictionaryQueue = new();
 
         public GameObject Get(string name)
         {
-            GameObject temp = null;
+            return GetObject(name);
+        }
 
-            if (_poolingDictionaryQueue.ContainsKey(name))
-            {
-                if (_poolingDictionaryQueue[name].Count > 0)
-                {
-                    temp = _poolingDictionaryQueue[name].Dequeue();
-                }
-                else
-                {
-                    temp = AddressablesManager.Instance.GetResource<GameObject>(name);
-                }
-            }
-            else
-            {
-                _poolingDictionaryQueue.Add(name, new Queue<GameObject>());
-                temp = AddressablesManager.Instance.GetResource<GameObject>(name);
-            }
-
-            temp.SetActive(true);
+        public GameObject Get(string name, Vector3 position)
+        {
+            var temp = GetObject(name);
+            temp.transform.position = position;
 
             return temp;
         }
 
-        public void PoolObject(string name, GameObject obj)
+        public void Pool(string name, GameObject obj)
         {
             obj.SetActive(false);
 
@@ -48,6 +36,32 @@ namespace Pool
                 _poolingDictionaryQueue.Add(name, new Queue<GameObject>());
                 _poolingDictionaryQueue[name].Enqueue(obj);
             }
+        }
+
+        private GameObject GetObject(string name)
+        {
+            GameObject temp = null;
+
+            if (_poolingDictionaryQueue.ContainsKey(name))
+            {
+                if (_poolingDictionaryQueue[name].Count > 0)
+                {
+                    temp = _poolingDictionaryQueue[name].Dequeue();
+                }
+                else
+                {
+                    temp = GameObject.Instantiate(AddressablesManager.Instance.GetResource<GameObject>(name), null);
+                }
+            }
+            else
+            {
+                _poolingDictionaryQueue.Add(name, new Queue<GameObject>());
+                temp = GameObject.Instantiate(AddressablesManager.Instance.GetResource<GameObject>(name), null);
+            }
+
+            temp.SetActive(true);
+
+            return temp;
         }
     }
 }

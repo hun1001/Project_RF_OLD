@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UI;
 using UnityEngine.UI;
-using Tank;
+using Util;
 
 namespace Turret
 {
@@ -50,7 +50,7 @@ namespace Turret
 
             if (Physics.Raycast(_firePoint.position, _firePoint.forward, out hit, 100f))
             {
-                Destroy(hit.collider.gameObject, 0.1f);
+                PoolManager.Instance.Get("Assets/Resource/Effect/WFX_ExplosiveSmoke.prefab", hit.point);
             }
         }
 

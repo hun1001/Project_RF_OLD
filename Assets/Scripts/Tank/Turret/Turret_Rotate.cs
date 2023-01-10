@@ -15,9 +15,6 @@ namespace Turret
         private Transform _turret = null;
 
         [SerializeField]
-        private Transform _body = null;
-
-        [SerializeField]
         private float _degree2RotateSecond = 1f;
 
         private bool _isAim = false;
