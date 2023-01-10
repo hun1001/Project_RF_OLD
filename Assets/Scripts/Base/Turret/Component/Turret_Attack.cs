@@ -25,6 +25,8 @@ namespace Turret
             _joyStick = Instance.JoyStick;
             _fireImage = Instance.Image;
             _lineRenderer = Instance.LineRenderer;
+
+            _fireRate = Instance.TurretSO.reloadSpeed;
         }
 
         private void Start()

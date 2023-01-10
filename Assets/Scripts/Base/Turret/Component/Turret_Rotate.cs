@@ -19,6 +19,8 @@ namespace Turret
         {
             _joyStick = Instance.JoyStick;
             _turret = Instance.Body;
+
+            _rotationSpeed = Instance.TurretSO.rotationSpeed;
         }
 
         private void Update()
@@ -42,7 +44,7 @@ namespace Turret
             _isAim = true;
             StopCoroutine(nameof(Release));
 
-            _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(dir.normalized), 180 * Time.deltaTime / _rotationSpeed);
+            _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(dir.normalized), 180 * Time.deltaTime * _rotationSpeed);
         }
 
         private IEnumerator Release()

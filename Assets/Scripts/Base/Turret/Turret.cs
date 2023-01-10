@@ -11,6 +11,7 @@ namespace Turret
         [Header("Data")]
         [SerializeField]
         private SO.TurretSO _turretSO = null;
+        public SO.TurretSO TurretSO => _turretSO;
 
         [Header("Controller")]
 
