@@ -9,6 +9,7 @@ namespace Turret
     public class Turret : MonoBehaviour
     {
         [Header("Data")]
+        [SerializeField]
         private SO.TurretSO _turretSO = null;
 
         [Header("Controller")]

@@ -585,6 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7de88a4cce53345b2dc79ad5669f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tankSO: {fileID: 11400000, guid: 50422fc01df23dc47bcf5a6f64384c2e, type: 2}
   _joyStick: {fileID: 0}
   _body: {fileID: 3981147935048310106}
 --- !u!114 &8227962702631750305
@@ -611,6 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c432b69e25fe84c83fb8c5a25557e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _turretSO: {fileID: 11400000, guid: 1ff8682371a765e44bfea6eb7e4d73bc, type: 2}
   _image: {fileID: 0}
   _joyStick: {fileID: 0}
   _body: {fileID: 6810844012845979086}
