@@ -33,13 +33,13 @@ namespace Turret
         {
             _lineRenderer.SetPosition(0, Instance.FirePoint.position);
 
-            if (Physics.Raycast(Instance.FirePoint.position, Instance.FirePoint.forward, out RaycastHit hit, 100f))
+            if (Physics.Raycast(Instance.FirePoint.position, Instance.FirePoint.forward, out RaycastHit hit, _range))
             {
                 _lineRenderer.SetPosition(1, hit.point);
             }
             else
             {
-                _lineRenderer.SetPosition(1, Instance.FirePoint.position + Instance.FirePoint.forward * 100f);
+                _lineRenderer.SetPosition(1, Instance.FirePoint.position + Instance.FirePoint.forward * _range);
             }
         }
 
