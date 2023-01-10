@@ -4,13 +4,13 @@ using UnityEngine.EventSystems;
 
 namespace UI
 {
-    public class JoyStick : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerDownHandler
+    public class JoyStick : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
     {
         protected RectTransform _rectTransform = null;
         protected RectTransform _rectTransformChild = null;
 
-        private Action _onStartDrag = null;
-        private Action _onEndDrag = null;
+        private Action _onPointerDown = null;
+        private Action _onPointerUp = null;
 
         private Vector2 _direction = Vector2.zero;
 
@@ -26,7 +26,7 @@ namespace UI
         public virtual void OnPointerDown(PointerEventData eventData)
         {
             _rectTransformChild.position = eventData.position;
-            _onStartDrag?.Invoke();
+            _onPointerDown?.Invoke();
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -38,25 +38,25 @@ namespace UI
             _direction = pos.normalized;
         }
 
-        public virtual void OnEndDrag(PointerEventData eventData)
+        public virtual void OnPointerUp(PointerEventData eventData)
         {
             _rectTransformChild.localPosition = Vector2.zero;
             _direction = Vector2.zero;
-            _onEndDrag?.Invoke();
+            _onPointerUp?.Invoke();
         }
 
         public Vector2 Direction => _direction;
         public float Vertical => _direction.y;
         public float Horizontal => _direction.x;
 
-        public void AddOnStartDragListener(Action action)
+        public void AddOnPointerDownListener(Action action)
         {
-            _onStartDrag += action;
+            _onPointerDown += action;
         }
 
-        public void AddOnEndDragListener(Action action)
+        public void AddOnPointerUpListener(Action action)
         {
-            _onEndDrag += action;
+            _onPointerUp += action;
         }
     }
 }

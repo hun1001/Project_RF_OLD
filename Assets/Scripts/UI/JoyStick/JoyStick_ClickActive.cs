@@ -10,7 +10,7 @@ namespace UI
     public class JoyStick_ClickActive : JoyStick
     {
         private Image _attackButtonImage = null;
-        
+
         private GameObject _attackJoyStick = null;
 
         protected override void Awake()
@@ -31,16 +31,16 @@ namespace UI
         {
             _attackJoyStick.SetActive(true);
             _attackButtonImage.enabled = false;
-            
+
             base.OnPointerDown(eventData);
         }
 
-        public override void OnEndDrag(PointerEventData eventData)
+        public override void OnPointerUp(PointerEventData eventData)
         {
             _attackJoyStick.SetActive(false);
             _attackButtonImage.enabled = true;
-            
-            base.OnEndDrag(eventData);
+
+            base.OnPointerUp(eventData);
         }
     }
 }

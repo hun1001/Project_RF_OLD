@@ -31,9 +31,9 @@ namespace Turret
 
         private void Start()
         {
-            _joyStick.AddOnStartDragListener(DrawStartAimLine);
-            _joyStick.AddOnEndDragListener(Fire);
-            _joyStick.AddOnEndDragListener(DrawEndAimLine);
+            _joyStick.AddOnPointerDownListener(DrawStartAimLine);
+            _joyStick.AddOnPointerUpListener(Fire);
+            _joyStick.AddOnPointerUpListener(DrawEndAimLine);
 
             _lineRenderer.positionCount = 2;
             _lineRenderer.enabled = false;
