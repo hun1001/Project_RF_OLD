@@ -520,6 +520,7 @@ GameObject:
   - component: {fileID: 6316762985748217792}
   - component: {fileID: 8227962702631750304}
   - component: {fileID: 8227962702631750307}
+  - component: {fileID: 2787651772665990127}
   - component: {fileID: 479435561}
   m_Layer: 0
   m_Name: Tank_Tiger
@@ -640,6 +641,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 467f5271dd8a8a441a7f891b5518ccc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2787651772665990127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227962702631750333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef86af9218ee86b46981c4e1898ed252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!120 &479435561

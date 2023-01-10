@@ -29,15 +29,9 @@ namespace Turret
         [SerializeField]
         private Transform _firePoint = null;
 
-        [Header("Other")]
-
-        [SerializeField]
-        private LineRenderer _lineRenderer = null;
-
         public Image Image => _image;
         public JoyStick JoyStick => _joyStick;
         public Transform Body => _body;
         public Transform FirePoint => _firePoint;
-        public LineRenderer LineRenderer => _lineRenderer;
     }
 }

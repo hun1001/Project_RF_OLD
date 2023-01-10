@@ -13,7 +13,6 @@ namespace Turret
         private Transform _firePoint = null;
         private JoyStick _joyStick = null;
         private Image _fireImage = null;
-        private LineRenderer _lineRenderer = null;
 
         private float _fireRate = 1f;
 
@@ -24,19 +23,13 @@ namespace Turret
             _firePoint = Instance.FirePoint;
             _joyStick = Instance.JoyStick;
             _fireImage = Instance.Image;
-            _lineRenderer = Instance.LineRenderer;
 
             _fireRate = Instance.TurretSO.reloadSpeed;
         }
 
         private void Start()
         {
-            _joyStick.AddOnPointerDownListener(DrawStartAimLine);
             _joyStick.AddOnPointerUpListener(Fire);
-            _joyStick.AddOnPointerUpListener(DrawEndAimLine);
-
-            _lineRenderer.positionCount = 2;
-            _lineRenderer.enabled = false;
         }
 
         private void Fire()
@@ -56,25 +49,12 @@ namespace Turret
             }
         }
 
-        private void DrawStartAimLine()
-        {
-            _lineRenderer.enabled = true;
-        }
-
-        private void DrawEndAimLine()
-        {
-            _lineRenderer.enabled = false;
-        }
-
         private void Update()
         {
             if (_nextFire > 0)
             {
                 _nextFire -= Time.deltaTime;
             }
-
-            _lineRenderer.SetPosition(0, _firePoint.position);
-            _lineRenderer.SetPosition(1, _firePoint.position + _firePoint.forward * 100f);
 
             _fireImage.fillAmount = 1f - _nextFire / _fireRate;
         }
