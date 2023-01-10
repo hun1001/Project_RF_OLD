@@ -12,5 +12,8 @@ namespace SO
 
         [Header("Reload Speed")]
         public float reloadSpeed;
+
+        [Header("Attack Range")]
+        public float attackRange;
     }
 }
