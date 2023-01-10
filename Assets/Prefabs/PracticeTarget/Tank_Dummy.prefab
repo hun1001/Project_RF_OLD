@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 1630311858194569995}
   - component: {fileID: 1630311858194569993}
   - component: {fileID: 1630311858194569992}
+  - component: {fileID: 1376319911866854849}
+  - component: {fileID: 5806425226912052580}
   m_Layer: 0
   m_Name: Tank_Dummy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,6 +65,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.48, y: 3.1, z: 6.8}
   m_Center: {x: 0, y: 1.5283501, z: 0.16}
+--- !u!114 &1376319911866854849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630311858194569994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7de88a4cce53345b2dc79ad5669f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tankSO: {fileID: 11400000, guid: c995ed9b30b31604fb030c66bfe8a75f, type: 2}
+  _joyStick: {fileID: 0}
+  _body: {fileID: 5532004578435907341}
+--- !u!114 &5806425226912052580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630311858194569994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d33b75170bf75d4887f3154b288ffc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5156182276218938807
 GameObject:
   m_ObjectHideFlags: 0

@@ -135,11 +135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_Dummy (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 1630311858194569994, guid: 037c28d0d05a88d4e996d92e953c7518,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 1630311858194569995, guid: 037c28d0d05a88d4e996d92e953c7518,
         type: 3}
       propertyPath: m_RootOrder
@@ -208,11 +203,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tank_Dummy (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1630311858194569994, guid: 037c28d0d05a88d4e996d92e953c7518,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1630311858194569995, guid: 037c28d0d05a88d4e996d92e953c7518,
         type: 3}
@@ -909,11 +899,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_Dummy (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 1630311858194569994, guid: 037c28d0d05a88d4e996d92e953c7518,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 1630311858194569995, guid: 037c28d0d05a88d4e996d92e953c7518,
         type: 3}
       propertyPath: m_RootOrder
@@ -1053,11 +1038,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tank_Dummy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1630311858194569994, guid: 037c28d0d05a88d4e996d92e953c7518,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1630311858194569995, guid: 037c28d0d05a88d4e996d92e953c7518,
         type: 3}
@@ -1307,11 +1287,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tank_Dummy (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1630311858194569994, guid: 037c28d0d05a88d4e996d92e953c7518,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1630311858194569995, guid: 037c28d0d05a88d4e996d92e953c7518,
         type: 3}
@@ -1635,6 +1610,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6572181528846694810}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6572181528846694812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1007740326875023709, guid: 178cf82d58dd4744b92c4e56cacc421a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6572181528846694810}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372f971255d0f634aaad4b059e5e6197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8227962704486864113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1647,6 +1634,11 @@ PrefabInstance:
       propertyPath: _joyStick
       value: 
       objectReference: {fileID: 2034437873}
+    - target: {fileID: 3424633289465488314, guid: c41aa8bda019bfb4ab13d1b4caf280b7,
+        type: 3}
+      propertyPath: _healthBar
+      value: 
+      objectReference: {fileID: 6572181528846694812}
     - target: {fileID: 6316762985748217792, guid: c41aa8bda019bfb4ab13d1b4caf280b7,
         type: 3}
       propertyPath: _image

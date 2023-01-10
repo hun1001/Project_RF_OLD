@@ -8,7 +8,23 @@ namespace UI
     public class Bar : MonoBehaviour
     {
         private float _maxValue;
+        public float MaxValue
+        {
+            set
+            {
+                _maxValue = value;
+            }
+        }
+
         private float _value;
+        public float Value
+        {
+            set
+            {
+                _value = value;
+                _barImage.fillAmount = _value / _maxValue;
+            }
+        }
 
         private Image _barImage = null;
 
@@ -16,12 +32,5 @@ namespace UI
         {
             _barImage = GetComponentInChildren<Image>();
         }
-
-        private void SetValue(float value)
-        {
-            _value = value;
-            _barImage.fillAmount = _value / _maxValue;
-        }
-
     }
 }

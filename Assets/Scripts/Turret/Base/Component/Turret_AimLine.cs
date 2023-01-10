@@ -11,10 +11,13 @@ namespace Turret
         private LineRenderer _lineRenderer = null;
         private JoyStick _joyStick = null;
 
+        private float _range = 10f;
+
         private void Awake()
         {
             _lineRenderer = GetComponent<LineRenderer>();
             _joyStick = Instance.JoyStick;
+            _range = Instance.TurretSO.attackRange;
         }
 
         private void Start()

@@ -23,6 +23,15 @@ namespace Turret
             _rotationSpeed = Instance.TurretSO.rotationSpeed;
         }
 
+        private void Start()
+        {
+            _joyStick.AddOnPointerDownListener(() =>
+            {
+                _isAim = true;
+                StopCoroutine(nameof(Release));
+            });
+        }
+
         private void Update()
         {
             if (_joyStick.Direction != Vector2.zero)

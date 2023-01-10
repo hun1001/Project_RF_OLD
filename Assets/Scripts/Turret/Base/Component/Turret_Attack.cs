@@ -14,6 +14,8 @@ namespace Turret
         private JoyStick _joyStick = null;
         private Image _fireImage = null;
 
+        private float _range = 10f;
+
         private float _fireRate = 1f;
 
         private float _nextFire = 0f;
@@ -23,6 +25,8 @@ namespace Turret
             _firePoint = Instance.FirePoint;
             _joyStick = Instance.JoyStick;
             _fireImage = Instance.Image;
+
+            _range = Instance.TurretSO.attackRange;
 
             _fireRate = Instance.TurretSO.reloadSpeed;
         }
@@ -43,9 +47,10 @@ namespace Turret
 
             RaycastHit hit = default;
 
-            if (Physics.Raycast(_firePoint.position, _firePoint.forward, out hit, 100f))
+            if (Physics.Raycast(_firePoint.position, _firePoint.forward, out hit, _range))
             {
                 PoolManager.Instance.Get("Assets/Resource/Effect/WFX_ExplosiveSmoke.prefab", hit.point);
+                hit.collider.SendMessage("OnHit", 10, SendMessageOptions.RequireReceiver);
             }
         }
 
