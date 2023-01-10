@@ -8,26 +8,26 @@ using Util;
 
 namespace Turret
 {
-    public class Turret_Attack : MonoBehaviour
+    public class Turret_Attack : TurretComponent
     {
-        [SerializeField]
         private Transform _firePoint = null;
-
-        [SerializeField]
         private JoyStick _joyStick = null;
-
-        [SerializeField]
         private Image _fireImage = null;
-
-        [SerializeField]
-        private float _fireRate = 1f;
-
-        [SerializeField]
         private LineRenderer _lineRenderer = null;
+
+        private float _fireRate = 1f;
 
         private float _nextFire = 0f;
 
-        void Awake()
+        private void Awake()
+        {
+            _firePoint = Instance.FirePoint;
+            _joyStick = Instance.JoyStick;
+            _fireImage = Instance.Image;
+            _lineRenderer = Instance.LineRenderer;
+        }
+
+        private void Start()
         {
             _joyStick.AddOnStartDragListener(DrawStartAimLine);
             _joyStick.AddOnEndDragListener(Fire);

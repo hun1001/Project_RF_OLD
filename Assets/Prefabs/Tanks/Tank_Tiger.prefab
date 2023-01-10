@@ -517,8 +517,10 @@ GameObject:
   - component: {fileID: 8227962702631750335}
   - component: {fileID: 3424633289465488314}
   - component: {fileID: 8227962702631750305}
+  - component: {fileID: 6316762985748217792}
   - component: {fileID: 8227962702631750304}
   - component: {fileID: 8227962702631750307}
+  - component: {fileID: 479435561}
   m_Layer: 0
   m_Name: Tank_Tiger
   m_TagString: Player
@@ -583,8 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7de88a4cce53345b2dc79ad5669f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveJoyStick: {fileID: 0}
-  _attackJoyStick: {fileID: 0}
+  _joyStick: {fileID: 0}
   _body: {fileID: 3981147935048310106}
 --- !u!114 &8227962702631750305
 MonoBehaviour:
@@ -598,6 +599,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d680cb5bc39c9f459f5b82f1a480659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6316762985748217792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227962702631750333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c432b69e25fe84c83fb8c5a25557e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _joyStick: {fileID: 0}
+  _body: {fileID: 6810844012845979086}
+  _firePoint: {fileID: 5447091331282197947}
+  _lineRenderer: {fileID: 479435561}
 --- !u!114 &8227962702631750304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,9 +628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08ad015e21ad134ead6b1491c40e0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _joyStick: {fileID: 0}
-  _turret: {fileID: 6810844012845979086}
-  _degree2RotateSecond: 1
 --- !u!114 &8227962702631750307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,8 +640,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467f5271dd8a8a441a7f891b5518ccc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firePoint: {fileID: 5447091331282197947}
-  _joyStick: {fileID: 0}
-  _fireImage: {fileID: 0}
-  _fireRate: 0.5
-  _lineRenderer: {fileID: 0}
+--- !u!120 &479435561
+LineRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227962702631750333}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 0.1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0

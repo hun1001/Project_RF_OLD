@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Base
 {
-    public class CustomComponent<T> : MonoBehaviour where T : MonoBehaviour
+    public abstract class CustomComponent<T> : MonoBehaviour where T : MonoBehaviour
     {
         private T _instance = null;
 

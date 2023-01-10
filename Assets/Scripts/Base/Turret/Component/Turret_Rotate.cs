@@ -6,18 +6,20 @@ using UI;
 
 namespace Turret
 {
-    public class Turret_Rotate : MonoBehaviour
+    public class Turret_Rotate : TurretComponent
     {
-        [SerializeField]
         private JoyStick _joyStick;
-
-        [SerializeField]
         private Transform _turret = null;
 
-        [SerializeField]
         private float _degree2RotateSecond = 1f;
 
         private bool _isAim = false;
+
+        private void Awake()
+        {
+            _joyStick = Instance.JoyStick;
+            _turret = Instance.Body;
+        }
 
         private void Update()
         {

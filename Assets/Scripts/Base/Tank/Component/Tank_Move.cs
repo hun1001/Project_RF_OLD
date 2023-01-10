@@ -14,7 +14,7 @@ namespace Tank
 
         private void Awake()
         {
-            _joyStick = Instance.MoveJoyStick;
+            _joyStick = Instance.JoyStick;
             _body = Instance.Body;
         }
 

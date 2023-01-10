@@ -9,17 +9,13 @@ namespace Tank
     {
         [Header("Controller")]
         [SerializeField]
-        private JoyStick _moveJoyStick = null;
-
-        [SerializeField]
-        private JoyStick _attackJoyStick = null;
+        private JoyStick _joyStick = null;
 
         [Header("Transform")]
         [SerializeField]
         private Transform _body = null;
 
-        public JoyStick MoveJoyStick => _moveJoyStick;
-        public JoyStick AttackJoyStick => _attackJoyStick;
+        public JoyStick JoyStick => _joyStick;
         public Transform Body => _body;
     }
 }
