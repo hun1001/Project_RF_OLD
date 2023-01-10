@@ -43,7 +43,9 @@ namespace Turret
             _isAim = true;
             StopCoroutine(nameof(Release));
 
-            _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(dir.normalized), 180 * Time.deltaTime / _degree2RotateSecond);
+            //_turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(dir.normalized), 180 * Time.deltaTime / _degree2RotateSecond);
+
+            _turret.rotation = Quaternion.LookRotation(dir.normalized);
         }
 
         private IEnumerator Release()
