@@ -1189,6 +1189,8 @@ GameObject:
   - component: {fileID: 1832061691}
   - component: {fileID: 1832061694}
   - component: {fileID: 1832061696}
+  - component: {fileID: 1832061698}
+  - component: {fileID: 1832061697}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1329,6 +1331,31 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1832061697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832061690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6081f06b233035f4397ca30820a30638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1832061698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832061690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba16e03075931d40992268d33a59199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _joyStick: {fileID: 2089569043}
 --- !u!1001 &1903570812
 PrefabInstance:
   m_ObjectHideFlags: 0
