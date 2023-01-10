@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 8227962702631750332}
   - component: {fileID: 8227962702631750334}
   - component: {fileID: 8227962702631750335}
+  - component: {fileID: 3424633289465488314}
   - component: {fileID: 8227962702631750305}
   - component: {fileID: 8227962702631750304}
   - component: {fileID: 8227962702631750307}
@@ -570,6 +571,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.38, y: 3.5, z: 6.4}
   m_Center: {x: 0, y: 1.675, z: 0.315}
+--- !u!114 &3424633289465488314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227962702631750333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7de88a4cce53345b2dc79ad5669f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveJoyStick: {fileID: 0}
+  _attackJoyStick: {fileID: 0}
+  _body: {fileID: 3981147935048310106}
 --- !u!114 &8227962702631750305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,9 +598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d680cb5bc39c9f459f5b82f1a480659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _joyStick: {fileID: 0}
-  _body: {fileID: 3981147935048310106}
-  _moveSpeed: 5
 --- !u!114 &8227962702631750304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,6 +612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _joyStick: {fileID: 0}
   _turret: {fileID: 6810844012845979086}
+  _degree2RotateSecond: 1
 --- !u!114 &8227962702631750307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,3 +629,4 @@ MonoBehaviour:
   _joyStick: {fileID: 0}
   _fireImage: {fileID: 0}
   _fireRate: 0.5
+  _lineRenderer: {fileID: 0}

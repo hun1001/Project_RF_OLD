@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Tank
 {
-    public class Tank_Damage : MonoBehaviour
+    public class Tank_Damage : TankComponent
     {
         public void TakeDamage(int damage)
         {

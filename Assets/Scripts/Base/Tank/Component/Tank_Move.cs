@@ -5,16 +5,18 @@ using UI;
 
 namespace Tank
 {
-    public class Tank_Move : MonoBehaviour
+    public class Tank_Move : TankComponent
     {
-        [SerializeField]
         private JoyStick _joyStick = null;
-
-        [SerializeField]
         private Transform _body = null;
 
-        [SerializeField]
         private float _moveSpeed = 10f;
+
+        private void Awake()
+        {
+            _joyStick = Instance.MoveJoyStick;
+            _body = Instance.Body;
+        }
 
         private void Update()
         {

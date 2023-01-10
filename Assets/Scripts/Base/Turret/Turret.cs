@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Tank
+namespace Turret
 {
-    public abstract class TankComponent : Base.CustomComponent<Tank>
+    public class Turret : MonoBehaviour
     {
 
     }
