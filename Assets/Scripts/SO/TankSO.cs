@@ -14,4 +14,7 @@ public class TankSO : ScriptableObject
     [Header("Reload Speed")]
     [Range(0f, 20f)]
     public float reloadSpeed;
+    [Header("Rotation Speed")]
+    [Range(0f, 20f)]
+    public float rotationSpeed;
 }
