@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using Util;
 
-public class ParticlePool : MonoBehaviour
+namespace Effect
 {
-    void OnEnable()
+    public class ParticlePool : MonoBehaviour
     {
-        StartCoroutine("CheckIfAlive");
-    }
-
-    IEnumerator CheckIfAlive()
-    {
-        while (true)
+        void OnEnable()
         {
-            yield return new WaitForSeconds(0.5f);
-            if (!GetComponent<ParticleSystem>().IsAlive(true))
+            StartCoroutine("CheckIfAlive");
+        }
+
+        IEnumerator CheckIfAlive()
+        {
+            while (true)
             {
-                PoolManager.Instance.Pool("Assets/Resource/Effect/WFX_ExplosiveSmoke.prefab", this.gameObject);
+                yield return new WaitForSeconds(0.5f);
+                if (!GetComponent<ParticleSystem>().IsAlive(true))
+                {
+                    PoolManager.Instance.Pool("Assets/Resource/Effect/WFX_ExplosiveSmoke.prefab", this.gameObject);
+                }
             }
         }
     }
