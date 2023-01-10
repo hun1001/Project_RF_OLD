@@ -10,7 +10,10 @@ namespace CameraManage
     {
         private JoyStick _joyStick = null;
 
+        private void Awake()
+        {
 
+        }
 
         private void Update()
         {
