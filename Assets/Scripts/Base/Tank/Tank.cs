@@ -10,6 +10,7 @@ namespace Tank
         [Header("Data")]
         [SerializeField]
         private SO.TankSO _tankSO = null;
+        public SO.TankSO TankSO => _tankSO;
 
         [Header("Controller")]
         [SerializeField]
