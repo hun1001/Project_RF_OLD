@@ -8,15 +8,12 @@ namespace SO
     public class TankSO : ScriptableObject
     {
         [Header("Hp")]
-        [Range(0f, 10000f)]
         public float hp;
 
         [Header("Speed")]
-        [Range(0f, 10f)]
         public float speed;
 
         [Header("Rotation Speed")]
-        [Range(0f, 20f)]
         public float rotationSpeed;
     }
 }

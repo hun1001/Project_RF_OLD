@@ -8,11 +8,9 @@ namespace SO
     public class TurretSO : ScriptableObject
     {
         [Header("Rotation Speed")]
-        [Range(0f, 40f)]
         public float rotationSpeed;
 
         [Header("Reload Speed")]
-        [Range(0f, 20f)]
         public float reloadSpeed;
     }
 }
