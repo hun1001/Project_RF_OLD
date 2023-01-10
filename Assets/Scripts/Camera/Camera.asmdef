@@ -1,8 +1,8 @@
 {
-    "name": "Effect",
-    "rootNamespace": "Effect",
+    "name": "Camera",
+    "rootNamespace": "CameraManage",
     "references": [
-        "GUID:76bd969a4853c724093fc37d7c7b7576"
+        "GUID:32c0273cd4bd3244abb048d9f1df30b3"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
