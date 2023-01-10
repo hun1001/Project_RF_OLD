@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 8227962702631750335}
   - component: {fileID: 3424633289465488314}
   - component: {fileID: 8227962702631750305}
+  - component: {fileID: 3846265029738338640}
   - component: {fileID: 6316762985748217792}
   - component: {fileID: 8227962702631750304}
   - component: {fileID: 8227962702631750307}
@@ -588,6 +589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tankSO: {fileID: 11400000, guid: 50422fc01df23dc47bcf5a6f64384c2e, type: 2}
   _joyStick: {fileID: 0}
+  _healthBar: {fileID: 0}
   _body: {fileID: 3981147935048310106}
 --- !u!114 &8227962702631750305
 MonoBehaviour:
@@ -599,6 +601,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d680cb5bc39c9f459f5b82f1a480659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3846265029738338640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227962702631750333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f86df285644d2a41b79a467d9268697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6316762985748217792
@@ -618,7 +632,6 @@ MonoBehaviour:
   _joyStick: {fileID: 0}
   _body: {fileID: 6810844012845979086}
   _firePoint: {fileID: 5447091331282197947}
-  _lineRenderer: {fileID: 479435561}
 --- !u!114 &8227962702631750304
 MonoBehaviour:
   m_ObjectHideFlags: 0
