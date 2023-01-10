@@ -1,11 +1,7 @@
 {
-    "name": "Tank",
-    "rootNamespace": "Tank",
-    "references": [
-        "GUID:32c0273cd4bd3244abb048d9f1df30b3",
-        "GUID:7b9214f18f3027a47a88a67bd2e5ec76",
-        "GUID:6252ce3a8f55c9d4195a651098dc8c27"
-    ],
+    "name": "SO",
+    "rootNamespace": "SO",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

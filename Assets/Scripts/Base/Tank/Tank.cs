@@ -7,6 +7,10 @@ namespace Tank
 {
     public class Tank : MonoBehaviour
     {
+        [Header("Data")]
+        [SerializeField]
+        private SO.TankSO _tankSO = null;
+
         [Header("Controller")]
         [SerializeField]
         private JoyStick _joyStick = null;
