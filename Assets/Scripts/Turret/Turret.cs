@@ -22,6 +22,10 @@ namespace Turret
         private JoyStick _joyStick = null;
         public JoyStick JoyStick => _joyStick;
 
+        [SerializeField]
+        private AttackCancel _attackCancel = null;
+        public AttackCancel AttackCancel => _attackCancel;
+
         [Header("Transform")]
         [SerializeField]
         private Transform _body = null;
