@@ -2163,18 +2163,6 @@ MonoBehaviour:
   _joyStick: {fileID: 2034437873}
   _healthBar: {fileID: 6572181528846694812}
   _body: {fileID: 3981147934931474227}
---- !u!114 &3846265029855073081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8227962703017935060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f86df285644d2a41b79a467d9268697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &3912251909012658668
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2593,8 +2581,8 @@ GameObject:
   - component: {fileID: 8227962703017935063}
   - component: {fileID: 8227962703017935062}
   - component: {fileID: 3424633289348622803}
+  - component: {fileID: 8227962703017935067}
   - component: {fileID: 8227962703017935066}
-  - component: {fileID: 3846265029855073081}
   - component: {fileID: 6316762986133386665}
   - component: {fileID: 8227962703017935065}
   - component: {fileID: 8227962703017935064}
@@ -2688,6 +2676,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _turretSO: {fileID: 11400000, guid: 1ff8682371a765e44bfea6eb7e4d73bc, type: 2}
+--- !u!114 &8227962703017935067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227962703017935060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d33b75170bf75d4887f3154b288ffc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8227962704486864113
 PrefabInstance:
   m_ObjectHideFlags: 0
