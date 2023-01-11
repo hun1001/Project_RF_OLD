@@ -9,12 +9,12 @@ namespace Tank
     public class Tank_Move : TankComponent
     {
         private JoyStick _joyStick = null;
-        private Transform _body = null;
+        protected Transform _body = null;
 
-        private float _moveSpeed = 1f;
-        private float _rotateSpeed = 1f;
+        protected float _moveSpeed = 1f;
+        protected float _rotateSpeed = 1f;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _joyStick = Instance.JoyStick;
             _body = Instance.Body;
@@ -23,7 +23,7 @@ namespace Tank
             _rotateSpeed = Instance.TankSO.rotationSpeed;
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             if (_joyStick.Direction != Vector2.zero)
             {
@@ -31,7 +31,7 @@ namespace Tank
             }
         }
 
-        private void TankMoving()
+        protected virtual void TankMoving()
         {
             Vector3 dir = Vector3.zero;
             dir.x = _joyStick.Horizontal;
