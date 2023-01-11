@@ -45,7 +45,7 @@ namespace Turret
 
             _nextFire = _fireRate;
 
-            PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position);
+            PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
         }
 
         private void Update()
