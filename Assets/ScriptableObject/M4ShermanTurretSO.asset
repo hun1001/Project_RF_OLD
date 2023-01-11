@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e3036c05085c947967155ee4245f71, type: 3}
   m_Name: M4ShermanTurretSO
   m_EditorClassIdentifier: 
-  rotationSpeed: 0
+  rotationSpeed: 5
+  reloadSpeed: 2
+  attackRange: 20

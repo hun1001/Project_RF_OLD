@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Util;
 
 namespace Turret
 {
@@ -17,6 +18,18 @@ namespace Turret
             {
                 _nextFire -= Time.deltaTime;
             }
+        }
+
+        public override void Fire()
+        {
+            if (_nextFire > 0)
+            {
+                return;
+            }
+
+            _nextFire = _fireRate;
+
+            PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
         }
 
         public float NextFire => _nextFire;

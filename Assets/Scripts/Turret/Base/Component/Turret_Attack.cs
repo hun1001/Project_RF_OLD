@@ -10,7 +10,7 @@ namespace Turret
 {
     public class Turret_Attack : TurretComponent
     {
-        private Transform _firePoint = null;
+        protected Transform _firePoint = null;
         private JoyStick _joyStick = null;
         private Image _fireImage = null;
         private AttackCancel _attackCancel = null;
@@ -48,7 +48,7 @@ namespace Turret
             _fireImage.fillAmount = 1f - _nextFire / _fireRate;
         }
 
-        public void Fire()
+        public virtual void Fire()
         {
             if (_attackCancel.IsCancelAttack == true)
             {
