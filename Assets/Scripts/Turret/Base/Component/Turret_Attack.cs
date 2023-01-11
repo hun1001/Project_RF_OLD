@@ -13,6 +13,7 @@ namespace Turret
         private Transform _firePoint = null;
         private JoyStick _joyStick = null;
         private Image _fireImage = null;
+        private AttackCancel _attackCancel = null;
 
         private float _range = 10f;
 
@@ -25,6 +26,7 @@ namespace Turret
             _firePoint = Instance.FirePoint;
             _joyStick = Instance.JoyStick;
             _fireImage = Instance.Image;
+            _attackCancel = Instance.AttackCancel;
 
             _range = Instance.TurretSO.attackRange;
 
@@ -38,6 +40,12 @@ namespace Turret
 
         private void Fire()
         {
+            if (_attackCancel.IsCancelAttack == true)
+            {
+                _attackCancel.CancelAttackReset();
+                return;
+            }
+
             if (_nextFire > 0)
             {
                 return;

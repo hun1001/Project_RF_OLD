@@ -12,6 +12,10 @@ namespace UI
         private Image _attackButtonImage = null;
 
         private GameObject _attackJoyStick = null;
+        private GameObject _attackCancelObject = null;
+        private RectTransform _attackCancelRectTransform = null;
+
+        private float _cancelRadius = 0.0f;
 
         protected override void Awake()
         {
@@ -20,16 +24,19 @@ namespace UI
             _rectTransform = _rectTransform.GetChild(0).GetComponent<RectTransform>();
             _rectTransformChild = _rectTransform.GetChild(0).GetComponent<RectTransform>();
             _attackJoyStick = _rectTransform.gameObject;
+            _attackCancelObject = transform.GetChild(1).gameObject;
         }
 
         private void Start()
         {
             _attackJoyStick.SetActive(false);
+            _attackCancelObject.SetActive(false);
         }
 
         public override void OnPointerDown(PointerEventData eventData)
         {
             _attackJoyStick.SetActive(true);
+            _attackCancelObject.SetActive(true);
             _attackButtonImage.enabled = false;
 
             base.OnPointerDown(eventData);
@@ -38,6 +45,7 @@ namespace UI
         public override void OnPointerUp(PointerEventData eventData)
         {
             _attackJoyStick.SetActive(false);
+            _attackCancelObject.SetActive(false);
             _attackButtonImage.enabled = true;
 
             base.OnPointerUp(eventData);
