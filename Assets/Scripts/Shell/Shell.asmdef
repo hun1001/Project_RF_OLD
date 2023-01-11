@@ -3,7 +3,8 @@
     "rootNamespace": "Shell",
     "references": [
         "GUID:7b9214f18f3027a47a88a67bd2e5ec76",
-        "GUID:76bd969a4853c724093fc37d7c7b7576"
+        "GUID:76bd969a4853c724093fc37d7c7b7576",
+        "GUID:92bae55d4262ced43b8f46f552a9e6d5"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

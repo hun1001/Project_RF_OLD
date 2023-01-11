@@ -9,8 +9,16 @@ namespace Shell
     {
         private void OnCollisionEnter(Collision other)
         {
-            Debug.Log(Vector3Calculator.GetIncomingAngle(Instance.transform.forward.normalized, other.contacts[0].normal));
-            transform.rotation = Quaternion.LookRotation(Vector3Calculator.GetReflectionVector(Instance.transform.forward.normalized, other.contacts[0].normal));
+            switch (TypeReader.GetHitType(Instance.transform.forward.normalized, other.contacts[0].normal))
+            {
+                case HitType.PENETRATION:
+                    PoolManager.Instance.Get("Assets/Resource/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position);
+                    PoolManager.Instance.Pool("Assets/Prefabs/Shell/Shell.prefab", gameObject);
+                    break;
+                case HitType.RICOCHET:
+                    transform.rotation = Quaternion.LookRotation(Vector3Calculator.GetReflectionVector(Instance.transform.forward.normalized, other.contacts[0].normal));
+                    break;
+            }
         }
     }
 }
