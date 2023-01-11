@@ -12,11 +12,13 @@ namespace Shell
             switch (TypeReader.GetHitType(Instance.transform.forward.normalized, other.contacts[0].normal))
             {
                 case HitType.PENETRATION:
+                    Debug.Log("Penetration");
                     PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position);
                     PoolManager.Instance.Pool("Assets/Prefabs/Shell/Shell.prefab", gameObject);
-                    other.gameObject.SendMessage("OnHit", 250);
+                    other.gameObject.SendMessage("OnHit", 250, SendMessageOptions.DontRequireReceiver);
                     break;
                 case HitType.RICOCHET:
+                    Debug.Log("Ricochet");
                     transform.rotation = Quaternion.LookRotation(Vector3Calculator.GetReflectionVector(Instance.transform.forward.normalized, other.contacts[0].normal));
                     break;
             }
