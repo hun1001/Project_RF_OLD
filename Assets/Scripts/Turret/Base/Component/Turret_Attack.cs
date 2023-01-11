@@ -45,13 +45,7 @@ namespace Turret
 
             _nextFire = _fireRate;
 
-            RaycastHit hit = default;
-
-            if (Physics.Raycast(_firePoint.position, _firePoint.forward, out hit, _range))
-            {
-                PoolManager.Instance.Get("Assets/Resource/Effect/WFX_ExplosiveSmoke.prefab", hit.point);
-                hit.collider.SendMessage("OnHit", 10, SendMessageOptions.RequireReceiver);
-            }
+            PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position);
         }
 
         private void Update()

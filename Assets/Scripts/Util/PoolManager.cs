@@ -23,6 +23,15 @@ namespace Util
             return temp;
         }
 
+        public GameObject Get(string name, Vector3 position, Quaternion rotation)
+        {
+            var temp = GetObject(name);
+            temp.transform.position = position;
+            temp.transform.rotation = rotation;
+
+            return temp;
+        }
+
         public void Pool(string name, GameObject obj)
         {
             obj.SetActive(false);
