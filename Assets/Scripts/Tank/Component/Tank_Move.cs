@@ -19,7 +19,7 @@ namespace Tank
             _joyStick = Instance.JoyStick;
             _body = Instance.Body;
 
-            _moveSpeed = Instance.TankSO.speed;
+            _moveSpeed = Instance.TankSO.moveSpeed;
             _rotateSpeed = Instance.TankSO.rotationSpeed;
         }
 
