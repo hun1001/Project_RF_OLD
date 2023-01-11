@@ -15,18 +15,16 @@ namespace Tank
         [Header("UI")]
         [SerializeField]
         private JoyStick _joyStick = null;
+        public JoyStick JoyStick => _joyStick;
 
         [Header("UX")]
         [SerializeField]
         private Bar _healthBar = null;
+        public Bar HealthBar => _healthBar;
 
         [Header("Transform")]
         [SerializeField]
         private Transform _body = null;
-
-
-        public JoyStick JoyStick => _joyStick;
-        public Bar HealthBar => _healthBar;
         public Transform Body => _body;
     }
 }

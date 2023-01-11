@@ -14,24 +14,21 @@ namespace Turret
         public SO.TurretSO TurretSO => _turretSO;
 
         [Header("Controller")]
-
         [SerializeField]
         private Image _image = null;
+        public Image Image => _image;
 
         [SerializeField]
         private JoyStick _joyStick = null;
+        public JoyStick JoyStick => _joyStick;
 
         [Header("Transform")]
-
         [SerializeField]
         private Transform _body = null;
+        public Transform Body => _body;
 
         [SerializeField]
         private Transform _firePoint = null;
-
-        public Image Image => _image;
-        public JoyStick JoyStick => _joyStick;
-        public Transform Body => _body;
         public Transform FirePoint => _firePoint;
     }
 }
