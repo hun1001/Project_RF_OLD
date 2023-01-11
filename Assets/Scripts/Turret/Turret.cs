@@ -13,7 +13,7 @@ namespace Turret
         private SO.TurretSO _turretSO = null;
         public SO.TurretSO TurretSO => _turretSO;
 
-        [Header("Controller")]
+        [Header("UI/UX")]
         [SerializeField]
         private Image _image = null;
         public Image Image => _image;

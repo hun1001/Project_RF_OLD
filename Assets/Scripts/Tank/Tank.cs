@@ -12,12 +12,11 @@ namespace Tank
         private SO.TankSO _tankSO = null;
         public SO.TankSO TankSO => _tankSO;
 
-        [Header("UI")]
+        [Header("UI/UX")]
         [SerializeField]
         private JoyStick _joyStick = null;
         public JoyStick JoyStick => _joyStick;
 
-        [Header("UX")]
         [SerializeField]
         private Bar _healthBar = null;
         public Bar HealthBar => _healthBar;

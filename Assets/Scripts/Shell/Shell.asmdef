@@ -1,0 +1,16 @@
+{
+    "name": "Shell",
+    "rootNamespace": "Shell",
+    "references": [
+        "GUID:7b9214f18f3027a47a88a67bd2e5ec76"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
