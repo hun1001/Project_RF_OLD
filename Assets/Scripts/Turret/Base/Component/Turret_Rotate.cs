@@ -9,13 +9,13 @@ namespace Turret
     public class Turret_Rotate : TurretComponent
     {
         private JoyStick _joyStick;
-        private Transform _turret = null;
+        protected Transform _turret = null;
 
-        private float _rotationSpeed = 1f;
+        protected float _rotationSpeed = 1f;
 
-        private bool _isAim = false;
+        protected bool _isAim = false;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _joyStick = Instance.JoyStick;
             _turret = Instance.Body;
@@ -23,7 +23,7 @@ namespace Turret
             _rotationSpeed = Instance.TurretSO.rotationSpeed;
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             _joyStick.AddOnPointerDownListener(() =>
             {
@@ -32,7 +32,7 @@ namespace Turret
             });
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             if (_joyStick.Direction != Vector2.zero)
             {
@@ -44,7 +44,7 @@ namespace Turret
             }
         }
 
-        private void Rotate()
+        protected virtual void Rotate()
         {
             Vector3 dir = Vector3.zero;
             dir.x = _joyStick.Horizontal;
@@ -56,7 +56,7 @@ namespace Turret
             _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(dir.normalized), 180 * Time.deltaTime * _rotationSpeed);
         }
 
-        private IEnumerator Release()
+        protected IEnumerator Release()
         {
             if (_isAim == false)
             {

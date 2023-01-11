@@ -10,16 +10,16 @@ namespace Tank
         [SerializeField]
         private TurretSO _turretSO = null;
 
-        private float _attackRange = 10f;
-
         private Transform _player = null;
+
+        private float _attackRange = 10f;
 
         protected override void Awake()
         {
             base.Awake();
 
-            _attackRange = _turretSO.attackRange;
             _player = GameObject.FindGameObjectWithTag("Player").transform;
+            _attackRange = _turretSO.attackRange;
         }
 
         protected override void Update()
@@ -32,8 +32,9 @@ namespace Tank
 
         protected override void TankMoving()
         {
-            Vector3 dir = _player.position;
+            Vector3 dir = _player.position - transform.position;
             dir.y = 0.0f;
+            dir.Normalize();
 
             transform.Translate(_body.forward * dir.magnitude * _moveSpeed * Time.deltaTime, Space.World);
             _body.rotation = Quaternion.Slerp(_body.rotation, Quaternion.LookRotation(dir.normalized), _rotateSpeed * Time.deltaTime);

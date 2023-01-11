@@ -17,9 +17,9 @@ namespace Turret
 
         private float _range = 10f;
 
-        private float _fireRate = 1f;
+        protected float _fireRate = 1f;
 
-        private float _nextFire = 0f;
+        protected float _nextFire = 0f;
 
         private void Awake()
         {
@@ -33,12 +33,22 @@ namespace Turret
             _fireRate = Instance.TurretSO.reloadSpeed;
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             _joyStick.AddOnPointerUpListener(Fire);
         }
 
-        private void Fire()
+        protected virtual void Update()
+        {
+            if (_nextFire > 0)
+            {
+                _nextFire -= Time.deltaTime;
+            }
+
+            _fireImage.fillAmount = 1f - _nextFire / _fireRate;
+        }
+
+        public void Fire()
         {
             if (_attackCancel.IsCancelAttack == true)
             {
@@ -54,16 +64,6 @@ namespace Turret
             _nextFire = _fireRate;
 
             PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
-        }
-
-        private void Update()
-        {
-            if (_nextFire > 0)
-            {
-                _nextFire -= Time.deltaTime;
-            }
-
-            _fireImage.fillAmount = 1f - _nextFire / _fireRate;
         }
     }
 }
