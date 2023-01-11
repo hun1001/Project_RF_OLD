@@ -13,8 +13,6 @@ namespace Util
 
         public static float GetIncomingAngle(Vector3 incomingVector, Vector3 normalVector)
         {
-            Debug.Log("Incoming Vector: " + incomingVector);
-            Debug.Log("Normal Vector: " + normalVector);
             float angle = Vector3.Angle(incomingVector, normalVector);
 
             angle = angle > 90 ? angle - 90 : angle;

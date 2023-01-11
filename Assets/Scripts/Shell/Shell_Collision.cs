@@ -9,7 +9,9 @@ namespace Shell
     {
         private void OnCollisionEnter(Collision other)
         {
-            switch (TypeReader.GetHitType(Instance.transform.forward.normalized, other.contacts[0].normal))
+            float angle = Vector3Calculator.GetIncomingAngle(Instance.transform.forward.normalized, other.contacts[0].normal);
+
+            switch (TypeReader.GetHitType(angle))
             {
                 case HitType.PENETRATION:
                     Debug.Log("Penetration");
