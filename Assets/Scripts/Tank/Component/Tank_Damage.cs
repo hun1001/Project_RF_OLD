@@ -22,10 +22,5 @@ namespace Tank
                 Debug.Log("Dead");
             }
         }
-
-        private void OnCollisionEnter(Collision other)
-        {
-            Debug.Log("Collision");
-        }
     }
 }

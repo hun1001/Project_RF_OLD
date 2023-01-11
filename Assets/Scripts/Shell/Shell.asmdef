@@ -2,7 +2,8 @@
     "name": "Shell",
     "rootNamespace": "Shell",
     "references": [
-        "GUID:7b9214f18f3027a47a88a67bd2e5ec76"
+        "GUID:7b9214f18f3027a47a88a67bd2e5ec76",
+        "GUID:76bd969a4853c724093fc37d7c7b7576"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
