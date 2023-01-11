@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: fd767e81269febf42a9341a5ebc26c70
   m_SerializeEntries:
   - m_GUID: 621f61311e4a73a489341a286b32dd8d
-    m_Address: Assets/Resource/Effect/WFX_ExplosiveSmoke.prefab
+    m_Address: Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 064d9c18534db0741af0c758b2af902c

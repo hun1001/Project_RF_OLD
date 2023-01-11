@@ -12,7 +12,7 @@ namespace Shell
             switch (TypeReader.GetHitType(Instance.transform.forward.normalized, other.contacts[0].normal))
             {
                 case HitType.PENETRATION:
-                    PoolManager.Instance.Get("Assets/Resource/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position);
+                    PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position);
                     PoolManager.Instance.Pool("Assets/Prefabs/Shell/Shell.prefab", gameObject);
                     break;
                 case HitType.RICOCHET:

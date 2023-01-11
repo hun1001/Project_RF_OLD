@@ -11,9 +11,7 @@ namespace SO
         public float hp;
 
         [Header("Speed")]
-        public float moveSpeed;
-
-        public float shellSpeed;
+        public float speed;
 
         [Header("Rotation Speed")]
         public float rotationSpeed;

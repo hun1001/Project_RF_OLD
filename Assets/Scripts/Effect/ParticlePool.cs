@@ -7,8 +7,12 @@ namespace Effect
 {
     public class ParticlePool : MonoBehaviour
     {
+        private ParticleSystem _particleSystem = null;
+
         void OnEnable()
         {
+            _particleSystem ??= GetComponent<ParticleSystem>();
+            _particleSystem.Play();
             StartCoroutine("CheckIfAlive");
         }
 

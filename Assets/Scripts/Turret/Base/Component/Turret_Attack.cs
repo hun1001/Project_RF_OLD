@@ -15,6 +15,8 @@ namespace Turret
         private Image _fireImage = null;
         private AttackCancel _attackCancel = null;
 
+        private float _shellSpeed = 1f;
+
         private float _range = 10f;
 
         protected float _fireRate = 1f;
@@ -27,6 +29,8 @@ namespace Turret
             _joyStick = Instance.JoyStick;
             _fireImage = Instance.Image;
             _attackCancel = Instance.AttackCancel;
+
+            _shellSpeed = Instance.TurretSO.shellSpeed;
 
             _range = Instance.TurretSO.attackRange;
 
@@ -63,7 +67,7 @@ namespace Turret
 
             _nextFire = _fireRate;
 
-            PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
+            PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation).SendMessage("SetSpeed", _shellSpeed);
         }
     }
 }
