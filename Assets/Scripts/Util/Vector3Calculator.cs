@@ -14,8 +14,9 @@ namespace Util
         public static float GetIncomingAngle(Vector3 incomingVector, Vector3 normalVector)
         {
             float angle = Vector3.Angle(incomingVector, normalVector);
-
-            angle = angle > 90 ? angle - 90 : angle;
+            angle = angle < 0 ? angle * -1 : angle;
+            angle = angle > 90 ? angle % 90 : angle;
+            angle = (int)angle == 0 ? 90 : angle;
 
             return angle;
         }
