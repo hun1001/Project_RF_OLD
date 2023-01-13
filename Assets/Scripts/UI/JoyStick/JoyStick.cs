@@ -15,6 +15,7 @@ namespace UI
         private Vector2 _direction = Vector2.zero;
 
         private float _radius = 0.0f;
+        private bool _isDragging = false;
 
         protected virtual void Awake()
         {
@@ -26,6 +27,7 @@ namespace UI
         public virtual void OnPointerDown(PointerEventData eventData)
         {
             _rectTransformChild.position = eventData.position;
+            _isDragging = true;
             _onPointerDown?.Invoke();
         }
 
@@ -42,12 +44,14 @@ namespace UI
         {
             _rectTransformChild.localPosition = Vector2.zero;
             _direction = Vector2.zero;
+            _isDragging = false;
             _onPointerUp?.Invoke();
         }
 
         public Vector2 Direction => _direction;
         public float Vertical => _direction.y;
         public float Horizontal => _direction.x;
+        public bool IsDragging => _isDragging;
 
         public void AddOnPointerDownListener(Action action)
         {

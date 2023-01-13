@@ -1363,7 +1363,7 @@ Transform:
   - {fileID: 764575201}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -0.09, z: 0}
 --- !u!1001 &1789860005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1520,7 +1520,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 100, z: 0}
 --- !u!114 &1832061694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1612,7 +1612,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba16e03075931d40992268d33a59199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _joyStick: {fileID: 2089569043}
+  _joyStick: {fileID: 2034437873}
+  _attackJoyStick: {fileID: 2089569043}
+  _cmvcam: {fileID: 0}
 --- !u!1001 &1903570812
 PrefabInstance:
   m_ObjectHideFlags: 0
