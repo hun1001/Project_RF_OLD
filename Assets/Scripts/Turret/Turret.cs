@@ -42,5 +42,7 @@ namespace Turret
             _attackCancel = turretUserData.AttackCancel;
             base.Initialize();
         }
+
+
     }
 }

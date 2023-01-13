@@ -21,9 +21,8 @@ namespace Base
             }
         }
 
-        private IEnumerator Start()
+        private void Start()
         {
-            yield return new WaitUntil(() => Instance.IsInitialized);
             Assignment();
         }
 
