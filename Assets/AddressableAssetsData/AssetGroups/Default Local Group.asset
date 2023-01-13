@@ -25,6 +25,14 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Shell/Shell.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: c41aa8bda019bfb4ab13d1b4caf280b7
+    m_Address: Assets/Prefabs/Tanks/Tank_Tiger.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 147e30c121dfbe8409f45f72fe8485b2
+    m_Address: Assets/Prefabs/Tanks/Tank_M4Sherman.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 83677132a06df9140834c0d848060f27, type: 2}
   m_SchemaSet:
