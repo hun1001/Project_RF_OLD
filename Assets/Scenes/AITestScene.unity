@@ -1446,7 +1446,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba16e03075931d40992268d33a59199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _joyStick: {fileID: 2089569043}
+  _joyStick: {fileID: 2034437873}
+  _attackJoyStick: {fileID: 2089569043}
+  _cmvcam: {fileID: 1766580579}
 --- !u!114 &2034437873 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4482040387936246351, guid: 4045b3730c2db66418bf8bc8023601e9,

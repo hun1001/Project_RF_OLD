@@ -9,7 +9,7 @@ namespace Base
         private bool _isInitialized = false;
         public bool IsInitialized => _isInitialized;
 
-        public virtual void Initialize()
+        protected virtual void Initialize()
         {
             _isInitialized = true;
         }

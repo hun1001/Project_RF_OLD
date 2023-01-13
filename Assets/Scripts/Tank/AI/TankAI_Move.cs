@@ -14,9 +14,9 @@ namespace Tank
 
         private float _attackRange = 10f;
 
-        protected override void Awake()
+        protected override void Assignment()
         {
-            base.Awake();
+            base.Assignment();
 
             _player = GameObject.FindGameObjectWithTag("Player").transform;
             _attackRange = _turretSO.attackRange;
@@ -24,7 +24,7 @@ namespace Tank
 
         protected override void Update()
         {
-            if(Vector3.Distance(transform.position, _player.position) > _attackRange)
+            if (Vector3.Distance(transform.position, _player.position) > _attackRange)
             {
                 TankMoving();
             }

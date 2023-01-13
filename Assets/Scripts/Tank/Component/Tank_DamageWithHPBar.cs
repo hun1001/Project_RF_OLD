@@ -9,14 +9,10 @@ namespace Tank
     {
         private Bar _hpBar = null;
 
-        protected override void Awake()
+        protected override void Assignment()
         {
+            base.Assignment();
             _hpBar = Instance.HealthBar;
-            base.Awake();
-        }
-
-        private void Start()
-        {
             _hpBar.MaxValue = Instance.TankSO.hp;
         }
 

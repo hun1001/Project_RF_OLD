@@ -30,6 +30,7 @@ namespace Tank
         {
             _joyStick = tankUserData.MoveJoyStick;
             _healthBar = tankUserData.HpBar;
+            base.Initialize();
         }
     }
 }

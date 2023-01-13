@@ -14,8 +14,9 @@ namespace Tank
         protected float _moveSpeed = 1f;
         protected float _rotateSpeed = 1f;
 
-        protected virtual void Awake()
+        protected override void Assignment()
         {
+            base.Assignment();
             _joyStick = Instance.JoyStick;
             _body = Instance.Body;
 

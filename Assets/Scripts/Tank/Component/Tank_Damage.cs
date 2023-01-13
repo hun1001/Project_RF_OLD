@@ -8,8 +8,9 @@ namespace Tank
     {
         protected float _currentHealth = 0;
 
-        protected virtual void Awake()
+        protected override void Assignment()
         {
+            base.Assignment();
             _currentHealth = Instance.TankSO.hp;
         }
 
