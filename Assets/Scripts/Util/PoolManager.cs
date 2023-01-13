@@ -32,6 +32,12 @@ namespace Util
             return temp;
         }
 
+        public T Get<T>(string name) where T : MonoBehaviour => GetObject(name).GetComponent<T>();
+
+        public T Get<T>(string name, Vector3 position) where T : MonoBehaviour => Get(name, position).GetComponent<T>();
+
+        public T Get<T>(string name, Vector3 position, Quaternion rotation) where T : MonoBehaviour => Get(name, position, rotation).GetComponent<T>();
+
         public void Pool(string name, GameObject obj)
         {
             obj.SetActive(false);

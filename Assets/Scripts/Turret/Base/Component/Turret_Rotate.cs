@@ -15,16 +15,14 @@ namespace Turret
 
         protected bool _isAim = false;
 
-        protected virtual void Awake()
+        protected override void Assignment()
         {
+            base.Assignment();
             _joyStick = Instance.JoyStick;
             _turret = Instance.Body;
 
             _rotationSpeed = Instance.TurretSO.rotationSpeed;
-        }
 
-        protected virtual void Start()
-        {
             _joyStick.AddOnPointerDownListener(() =>
             {
                 _isAim = true;

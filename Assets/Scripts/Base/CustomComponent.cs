@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Base
 {
-    public abstract class CustomComponent<T> : MonoBehaviour where T : MonoBehaviour
+    public abstract class CustomComponent<T> : MonoBehaviour where T : CustomGameObject
     {
         private T _instance = null;
 
@@ -19,6 +19,17 @@ namespace Base
 
                 return _instance;
             }
+        }
+
+        private IEnumerator Start()
+        {
+            yield return new WaitUntil(() => Instance.IsInitialized);
+            Assignment();
+        }
+
+        protected virtual void Assignment()
+        {
+
         }
     }
 }

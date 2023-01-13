@@ -24,8 +24,10 @@ public class PlayerSetting : MonoBehaviour
     [SerializeField]
     private AttackCancel _attackCancel = null;
 
-    private void Start()
+    private void Awake()
     {
-        Tank.Tank tank;
+        GameObject tank = PoolManager.Instance.Get("Assets/Prefabs/Tanks/Tank_Tiger.prefab", Vector3.zero, Quaternion.identity);
+        tank.GetComponent<Tank.Tank>().Assignment(new Tank.TankUserData(_moveJoyStick, _hpBar));
+        tank.GetComponent<Turret.Turret>().Assignment(new Turret.TurretUserData(_attackJoyStick, _attackImage, _attackCancel));
     }
 }

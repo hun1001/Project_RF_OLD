@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Shell
 {
-    public class Shell : MonoBehaviour
+    public class Shell : Base.CustomGameObject
     {
         [SerializeField]
         private SO.ShellSO _shellSO = null;

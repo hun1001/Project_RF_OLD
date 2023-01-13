@@ -7,10 +7,7 @@ namespace Turret
 {
     public class TurretAI_Attack : Turret_Attack
     {
-        protected override void Start()
-        {
-            // Null
-        }
+
 
         protected override void Update()
         {

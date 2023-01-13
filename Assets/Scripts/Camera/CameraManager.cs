@@ -6,7 +6,7 @@ using UI;
 
 namespace CameraManage
 {
-    public class CameraManager : MonoBehaviour
+    public partial class Camera : Base.CustomGameObject
     {
         [SerializeField]
         private JoyStick _joyStick = null;

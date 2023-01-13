@@ -5,7 +5,7 @@ using UI;
 
 namespace Tank
 {
-    public class Tank : MonoBehaviour
+    public class Tank : Base.CustomGameObject
     {
         [Header("Data")]
         [SerializeField]

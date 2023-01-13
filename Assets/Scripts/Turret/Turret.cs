@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Turret
 {
-    public class Turret : MonoBehaviour
+    public class Turret : Base.CustomGameObject
     {
         [Header("Data")]
         [SerializeField]
@@ -34,5 +34,13 @@ namespace Turret
         [SerializeField]
         private Transform _firePoint = null;
         public Transform FirePoint => _firePoint;
+
+        public void Assignment(TurretUserData turretUserData)
+        {
+            _image = turretUserData.AttackImage;
+            _joyStick = turretUserData.AttackJoyStick;
+            _attackCancel = turretUserData.AttackCancel;
+            base.Initialize();
+        }
     }
 }

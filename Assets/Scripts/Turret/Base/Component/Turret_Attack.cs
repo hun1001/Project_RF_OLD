@@ -23,8 +23,10 @@ namespace Turret
 
         protected float _nextFire = 0f;
 
-        private void Awake()
+        protected override void Assignment()
         {
+            base.Assignment();
+
             _firePoint = Instance.FirePoint;
             _joyStick = Instance.JoyStick;
             _fireImage = Instance.Image;
@@ -35,10 +37,7 @@ namespace Turret
             _range = Instance.TurretSO.attackRange;
 
             _fireRate = Instance.TurretSO.reloadSpeed;
-        }
 
-        protected virtual void Start()
-        {
             _joyStick.AddOnPointerUpListener(Fire);
         }
 

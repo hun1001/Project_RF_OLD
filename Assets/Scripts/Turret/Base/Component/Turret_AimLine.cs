@@ -13,15 +13,13 @@ namespace Turret
 
         private float _range = 10f;
 
-        private void Awake()
+        protected override void Assignment()
         {
+            base.Assignment();
             _lineRenderer = GetComponent<LineRenderer>();
             _joyStick = Instance.JoyStick;
             _range = Instance.TurretSO.attackRange;
-        }
 
-        private void Start()
-        {
             _lineRenderer.enabled = false;
             _lineRenderer.positionCount = 2;
 

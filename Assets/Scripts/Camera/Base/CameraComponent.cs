@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CameraManage
 {
-    public abstract class CameraComponent : Base.CustomComponent<CameraManager>
+    public abstract class CameraComponent : Base.CustomComponent<CameraManage.Camera>
     {
 
     }
