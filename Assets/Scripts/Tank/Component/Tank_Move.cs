@@ -9,10 +9,10 @@ namespace Tank
     public class Tank_Move : TankComponent
     {
         private JoyStick _joyStick = null;
-        protected Transform _body = null;
+        private Transform _body = null;
 
-        protected float _moveSpeed = 1f;
-        protected float _rotateSpeed = 1f;
+        private float _moveSpeed = 1f;
+        private float _rotateSpeed = 1f;
 
         protected override void Assignment()
         {
@@ -28,16 +28,12 @@ namespace Tank
         {
             if (_joyStick.Direction != Vector2.zero)
             {
-                TankMoving();
+                TankMoving(_joyStick.Direction, _joyStick.Scalar);
             }
         }
 
-        protected virtual void TankMoving()
+        protected void TankMoving(Vector3 dir, float scalar)
         {
-            Vector3 dir = Vector3.zero;
-            dir.x = _joyStick.Horizontal;
-            dir.z = _joyStick.Vertical;
-
             transform.Translate(_body.forward * dir.magnitude * _moveSpeed * Time.deltaTime, Space.World);
             _body.rotation = Quaternion.Slerp(_body.rotation, Quaternion.LookRotation(dir.normalized), _rotateSpeed * Time.deltaTime);
         }

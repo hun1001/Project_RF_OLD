@@ -48,7 +48,8 @@ namespace UI
             _onPointerUp?.Invoke();
         }
 
-        public Vector2 Direction => _direction;
+        public Vector2 Direction => _direction.normalized;
+        public float Scalar => _direction.magnitude;
         public float Vertical => _direction.y;
         public float Horizontal => _direction.x;
         public bool IsDragging => _isDragging;
