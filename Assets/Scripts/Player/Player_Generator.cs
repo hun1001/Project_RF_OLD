@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UI;
 using Util;
 
-public class PlayerSetting : Base.CustomComponent<Player.Player>
+public class Player_Generator : Base.CustomComponent<Player.Player>
 {
     private void Awake()
     {
