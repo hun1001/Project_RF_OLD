@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 namespace Turret
 {
+    [System.Serializable]
     public class TurretUserData
     {
         private JoyStick _attackJoyStick = null;

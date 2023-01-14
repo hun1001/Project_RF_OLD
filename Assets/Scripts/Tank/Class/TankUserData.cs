@@ -6,6 +6,7 @@ using UI;
 
 namespace Tank
 {
+    [System.Serializable]
     public class TankUserData
     {
         private JoyStick _moveJoyStick = null;

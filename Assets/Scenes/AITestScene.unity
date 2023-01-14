@@ -463,18 +463,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310407706}
   m_CullTransparentMesh: 1
---- !u!114 &482677382 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 482677382, guid: 7530b9d1c55212b4ea1fb5aaa182d330,
-    type: 3}
-  m_PrefabInstance: {fileID: 655439929}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c960b20657493c4186ae91ea7afd9b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &511779553
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 511779555}
+  - component: {fileID: 511779556}
   - component: {fileID: 511779554}
   m_Layer: 0
   m_Name: Player
@@ -504,11 +493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09e5006a1c1bc04aa7d07325f48fd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveJoyStick: {fileID: 2034437873}
-  _hpBar: {fileID: 6572181528846694812}
-  _attackJoyStick: {fileID: 2089569043}
-  _attackImage: {fileID: 2089569044}
-  _attackCancel: {fileID: 482677382}
 --- !u!4 &511779555
 Transform:
   m_ObjectHideFlags: 0
@@ -524,6 +508,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &511779556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511779553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d7847bf6db971458c27a732b5c6d34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveJoyStick: {fileID: 2034437873}
+  _hpBar: {fileID: 6572181528846694812}
+  _attackJoyStick: {fileID: 2089569043}
+  _attackImage: {fileID: 2089569044}
+  _attackCancel: {fileID: 1983470949}
 --- !u!1 &597822019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,6 +1450,18 @@ MonoBehaviour:
   _joyStick: {fileID: 2034437873}
   _attackJoyStick: {fileID: 2089569043}
   _cmvcam: {fileID: 1766580579}
+--- !u!114 &1983470949 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 482677382, guid: 7530b9d1c55212b4ea1fb5aaa182d330,
+    type: 3}
+  m_PrefabInstance: {fileID: 655439929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c960b20657493c4186ae91ea7afd9b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2034437873 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4482040387936246351, guid: 4045b3730c2db66418bf8bc8023601e9,

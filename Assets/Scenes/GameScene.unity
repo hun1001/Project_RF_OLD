@@ -1614,7 +1614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _joyStick: {fileID: 2034437873}
   _attackJoyStick: {fileID: 2089569043}
-  _cmvcam: {fileID: 0}
+  _cmvcam: {fileID: 1766580579}
 --- !u!1001 &1903570812
 PrefabInstance:
   m_ObjectHideFlags: 0
