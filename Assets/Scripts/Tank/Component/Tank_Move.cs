@@ -28,7 +28,7 @@ namespace Tank
         {
             if (_joyStick.Direction != Vector2.zero)
             {
-                TankMoving(_joyStick.Direction, _joyStick.Scalar);
+                TankMoving(new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical).normalized, _joyStick.Scalar);
             }
         }
 
