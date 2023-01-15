@@ -15,4 +15,4 @@ MonoBehaviour:
   rotationSpeed: 5
   reloadSpeed: 2
   shellSpeed: 50
-  attackRange: 20
+  attackRange: 100

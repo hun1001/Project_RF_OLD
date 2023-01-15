@@ -12,8 +12,11 @@ namespace Turret
     {
         protected Transform _firePoint = null;
         private JoyStick _joyStick = null;
-        private Image _fireImage = null;
+        private JoyStick _snipingJoyStick = null;
+        private Image _attackImage = null;
+        private Image _snipingImage = null;
         private AttackCancel _attackCancel = null;
+        private AttackCancel _snipingCancel = null;
 
         private float _shellSpeed = 1f;
 
@@ -28,9 +31,15 @@ namespace Turret
             base.Assignment();
 
             _firePoint = Instance.FirePoint;
+
             _joyStick = Instance.JoyStick;
-            _fireImage = Instance.Image;
+            _snipingJoyStick = Instance.SnipingJoyStick;
+
+            _attackImage = Instance.AttackImage;
+            _snipingImage = Instance.SnipingImage;
+
             _attackCancel = Instance.AttackCancel;
+            _snipingCancel = Instance.SnipingCancel;
 
             _shellSpeed = Instance.TurretSO.shellSpeed;
 
@@ -39,6 +48,7 @@ namespace Turret
             _fireRate = Instance.TurretSO.reloadSpeed;
 
             _joyStick.AddOnPointerUpListener(Fire);
+            _snipingJoyStick.AddOnPointerUpListener(Fire);
         }
 
         protected virtual void Update()
@@ -48,7 +58,8 @@ namespace Turret
                 _nextFire -= Time.deltaTime;
             }
 
-            _fireImage.fillAmount = 1f - _nextFire / _fireRate;
+            _attackImage.fillAmount = 1f - _nextFire / _fireRate;
+            _snipingImage.fillAmount = 1f - _nextFire / _fireRate;
         }
 
         public virtual void Fire()
@@ -56,6 +67,11 @@ namespace Turret
             if (_attackCancel.IsCancelAttack == true)
             {
                 _attackCancel.CancelAttackReset();
+                return;
+            }
+            else if(_snipingCancel.IsCancelAttack == true)
+            {
+                _snipingCancel.CancelAttackReset();
                 return;
             }
 

@@ -15,16 +15,27 @@ namespace Turret
 
         [Header("UI/UX")]
         [SerializeField]
-        private Image _image = null;
-        public Image Image => _image;
+        private Image _attackImage = null;
+        public Image AttackImage => _attackImage;
+
+        [SerializeField]
+        private Image _snipingImage = null;
+        public Image SnipingImage => _snipingImage;
 
         [SerializeField]
         private JoyStick _joyStick = null;
         public JoyStick JoyStick => _joyStick;
 
         [SerializeField]
+        private JoyStick _snipingJoyStick = null;
+        public JoyStick SnipingJoyStick => _snipingJoyStick;
+
+        [SerializeField]
         private AttackCancel _attackCancel = null;
         public AttackCancel AttackCancel => _attackCancel;
+        [SerializeField]
+        private AttackCancel _snipingCancel = null;
+        public AttackCancel SnipingCancel => _snipingCancel;
 
         [Header("Transform")]
         [SerializeField]
@@ -37,7 +48,7 @@ namespace Turret
 
         public void Assignment(TurretUserData turretUserData)
         {
-            _image = turretUserData.AttackImage;
+            _attackImage = turretUserData.AttackImage;
             _joyStick = turretUserData.AttackJoyStick;
             _attackCancel = turretUserData.AttackCancel;
             base.Initialize();

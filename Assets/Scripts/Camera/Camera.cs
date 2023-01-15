@@ -14,10 +14,13 @@ namespace CameraManage
         [SerializeField]
         private JoyStick _attackJoyStick = null;
         [SerializeField]
-        private CinemachineVirtualCamera _cmvcam;
+        private JoyStick _snipingJoyStick = null;
+        [SerializeField]
+        private CinemachineVirtualCamera _cmvcam = null;
 
         public JoyStick JoyStick => _joyStick;
         public JoyStick AttackJoyStick => _attackJoyStick;
+        public JoyStick SnipingJoyStick => _snipingJoyStick;
         public CinemachineVirtualCamera CMvcam => _cmvcam;
     }
 }
