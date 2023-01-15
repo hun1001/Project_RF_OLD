@@ -1099,9 +1099,9 @@ Canvas:
   m_GameObject: {fileID: 958379433}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1832061692}
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1297,8 +1297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPointParent: {fileID: 711535314}
-  _opponentTankName:
-  - Assets/Prefabs/Tanks/Tank_M4Sherman.prefab
+  _opponentSO: {fileID: 0}
 --- !u!114 &1048887982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1625,6 +1624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _joyStick: {fileID: 2034437873}
   _attackJoyStick: {fileID: 2089569043}
+  _snipingJoyStick: {fileID: 0}
   _cmvcam: {fileID: 1766580579}
 --- !u!114 &1983470949 stripped
 MonoBehaviour:
