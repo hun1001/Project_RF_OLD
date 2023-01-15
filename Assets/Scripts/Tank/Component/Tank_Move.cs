@@ -28,14 +28,15 @@ namespace Tank
         {
             if (_joyStick.Direction != Vector2.zero)
             {
-                TankMoving(new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical).normalized, _joyStick.Scalar);
+                TankMoving(_joyStick.Direction, _joyStick.Scalar);
             }
         }
 
-        protected void TankMoving(Vector3 dir, float scalar)
+        protected void TankMoving(Vector2 dir, float scalar)
         {
-            transform.Translate(_body.forward * dir.magnitude * _moveSpeed * Time.deltaTime, Space.World);
-            _body.rotation = Quaternion.Slerp(_body.rotation, Quaternion.LookRotation(dir.normalized), _rotateSpeed * Time.deltaTime);
+            var dir3 = new Vector3(dir.x, 0f, dir.y);
+            transform.Translate(_body.forward * dir3.magnitude * _moveSpeed * Time.deltaTime, Space.World);
+            _body.rotation = Quaternion.Slerp(_body.rotation, Quaternion.LookRotation(dir3.normalized), _rotateSpeed * Time.deltaTime);
         }
     }
 }
