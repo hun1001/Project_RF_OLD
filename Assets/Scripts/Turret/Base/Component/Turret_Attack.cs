@@ -8,7 +8,7 @@ using Util;
 
 namespace Turret
 {
-    public class Turret_Attack : TurretComponent
+    public class Turret_Attack : Base.CustomComponent<Turret>
     {
         protected Transform _firePoint = null;
         private JoyStick _joyStick = null;

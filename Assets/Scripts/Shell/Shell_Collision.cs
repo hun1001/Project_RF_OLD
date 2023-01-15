@@ -5,7 +5,7 @@ using Util;
 
 namespace Shell
 {
-    public class Shell_Collision : ShellComponent
+    public class Shell_Collision : Base.CustomComponent<Shell>
     {
         private void OnCollisionEnter(Collision other)
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Shell
 {
-    public class Shell_Move : ShellComponent
+    public class Shell_Move : Base.CustomComponent<Shell>
     {
         private void Update()
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Tank
 {
-    public class Tank_Damage : TankComponent
+    public class Tank_Damage : Base.CustomComponent<Tank>
     {
         protected float _currentHealth = 0;
 

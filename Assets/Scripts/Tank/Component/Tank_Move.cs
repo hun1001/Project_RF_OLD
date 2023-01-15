@@ -6,7 +6,7 @@ using System;
 
 namespace Tank
 {
-    public class Tank_Move : TankComponent
+    public class Tank_Move : Base.CustomComponent<Tank>
     {
         private JoyStick _joyStick = null;
         private Transform _body = null;

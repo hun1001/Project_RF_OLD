@@ -5,7 +5,7 @@ using Util;
 
 namespace Player
 {
-    public class Player_Generator : PlayerComponent
+    public class Player_Generator : Base.CustomComponent<Player>
     {
         private void Awake()
         {

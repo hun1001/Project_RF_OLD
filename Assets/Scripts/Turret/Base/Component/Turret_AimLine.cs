@@ -6,7 +6,7 @@ using UI;
 namespace Turret
 {
     [RequireComponent(typeof(LineRenderer))]
-    public class Turret_AimLine : TurretComponent
+    public class Turret_AimLine : Base.CustomComponent<Turret>
     {
         private LineRenderer _lineRenderer = null;
         private JoyStick _joyStick = null;

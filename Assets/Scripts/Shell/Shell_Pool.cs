@@ -5,7 +5,7 @@ using Util;
 
 namespace Shell
 {
-    public class Shell_Pool : ShellComponent
+    public class Shell_Pool : Base.CustomComponent<Shell>
     {
         private float _lifeTime = 1f;
 

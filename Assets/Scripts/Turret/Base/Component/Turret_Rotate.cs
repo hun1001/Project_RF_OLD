@@ -6,7 +6,7 @@ using UI;
 
 namespace Turret
 {
-    public class Turret_Rotate : TurretComponent
+    public class Turret_Rotate : Base.CustomComponent<Turret>
     {
         private JoyStick _joyStick;
         protected Transform _turret = null;
