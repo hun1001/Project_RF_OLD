@@ -1261,6 +1261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1048887980}
   - component: {fileID: 1048887981}
+  - component: {fileID: 1048887982}
   m_Layer: 0
   m_Name: Opponent
   m_TagString: Untagged
@@ -1298,6 +1299,18 @@ MonoBehaviour:
   _spawnPointParent: {fileID: 711535314}
   _opponentTankName:
   - Assets/Prefabs/Tanks/Tank_M4Sherman.prefab
+--- !u!114 &1048887982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048887979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0adb78fdd3dac804e886e016256b5816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1158374570
 GameObject:
   m_ObjectHideFlags: 0
