@@ -86,5 +86,7 @@ namespace Turret
             shell.SendMessage("SetSpeed", _shellSpeed);
             shell.SendMessage("SetRange", _range);
         }
+
+        public float Range => _range;
     }
 }

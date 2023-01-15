@@ -13,9 +13,6 @@ namespace UI
 
         private GameObject _attackJoyStick = null;
         private GameObject _attackCancelObject = null;
-        private RectTransform _attackCancelRectTransform = null;
-
-        private float _cancelRadius = 0.0f;
 
         protected override void Awake()
         {

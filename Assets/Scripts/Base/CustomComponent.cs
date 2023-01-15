@@ -21,7 +21,7 @@ namespace Base
             }
         }
 
-        private void Start()
+        private void Awake()
         {
             Assignment();
         }
