@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5254224477792260671}
   - component: {fileID: 5254224477792260670}
   - component: {fileID: 5254224477792260665}
+  - component: {fileID: 1682339675948660422}
   m_Layer: 0
   m_Name: Tank_M4Sherman
   m_TagString: Enemy
@@ -63,6 +64,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.65, y: 3.08715, z: 5.12675}
   m_Center: {x: 0, y: 1.54, z: -0.0018}
+--- !u!114 &1682339675948660422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5254224477792260664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7de88a4cce53345b2dc79ad5669f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tankSO: {fileID: 11400000, guid: 00f8da0e1d2868d43bcad05ce3430c23, type: 2}
+  _joyStick: {fileID: 0}
+  _healthBar: {fileID: 0}
+  _body: {fileID: 6118934760728988913}
 --- !u!1 &6797215840261458268
 GameObject:
   m_ObjectHideFlags: 0

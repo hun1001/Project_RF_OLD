@@ -33,10 +33,6 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Tanks/Tank_M4Sherman.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 0b36585f7ce800a439f1f2064c7f2575
-    m_Address: Assets/Prefabs/Tanks/T-34-85.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 83677132a06df9140834c0d848060f27, type: 2}
   m_SchemaSet:
