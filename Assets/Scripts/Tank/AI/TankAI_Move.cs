@@ -29,6 +29,15 @@ namespace Tank
             {
                 FindMovePoint();
             }
+            else
+            {
+                Fire();
+            }
+        }
+
+        private void Fire()
+        {
+            
         }
 
         private void FindMovePoint()
