@@ -21,6 +21,7 @@ namespace UI
             _rectTransform = _rectTransform.GetChild(0).GetComponent<RectTransform>();
             _rectTransformChild = _rectTransform.GetChild(0).GetComponent<RectTransform>();
             _attackJoyStick = _rectTransform.gameObject;
+            _joyStickOriginPosition = _rectTransform.position;
             _attackCancelObject = transform.GetChild(1).gameObject;
         }
 
