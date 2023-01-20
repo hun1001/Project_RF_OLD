@@ -180,11 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4d7847bf6db971458c27a732b5c6d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveJoyStick: {fileID: 0}
-  _hpBar: {fileID: 0}
-  _attackJoyStick: {fileID: 0}
-  _attackImage: {fileID: 0}
-  _attackCancel: {fileID: 0}
 --- !u!1 &597822019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,7 +2074,7 @@ PrefabInstance:
     - target: {fileID: 3642004798355232414, guid: b58f4b00013d616488e304e3b929a088,
         type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: PlayCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b58f4b00013d616488e304e3b929a088, type: 3}
