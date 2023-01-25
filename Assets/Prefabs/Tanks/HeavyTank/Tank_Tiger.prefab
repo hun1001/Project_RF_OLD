@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 479435561}
   m_Layer: 0
   m_Name: Tank_Tiger
-  m_TagString: Player
+  m_TagString: PlayerTank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -628,8 +628,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _turretSO: {fileID: 11400000, guid: 1ff8682371a765e44bfea6eb7e4d73bc, type: 2}
-  _image: {fileID: 0}
+  _attackImage: {fileID: 0}
+  _snipingImage: {fileID: 0}
   _joyStick: {fileID: 0}
+  _snipingJoyStick: {fileID: 0}
+  _attackCancel: {fileID: 0}
+  _snipingCancel: {fileID: 0}
   _body: {fileID: 6810844012845979086}
   _firePoint: {fileID: 5447091331282197947}
 --- !u!114 &8227962702631750304

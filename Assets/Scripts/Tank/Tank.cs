@@ -28,6 +28,7 @@ namespace Tank
 
         public void Assignment(TankUserData tankUserData)
         {
+            Debug.Log("Assignment");
             _joyStick = tankUserData.MoveJoyStick;
             _healthBar = tankUserData.HpBar;
             base.Initialize();

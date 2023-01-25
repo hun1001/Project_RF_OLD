@@ -36,6 +36,8 @@ namespace Player
         {
             PlayCanvas playCanvas = FindObjectOfType<PlayCanvas>();
             
+            Debug.Log(playCanvas);
+            
             _moveJoyStick = playCanvas.MoveJoyStick;
             _hpBar = playCanvas.HpBar;
             _attackJoyStick = playCanvas.AttackJoyStick;

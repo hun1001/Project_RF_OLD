@@ -29,7 +29,7 @@ namespace CameraManage
             _joyStick = Instance.JoyStick;
             _attackJoyStick = Instance.AttackJoyStick;
             _snipingJoyStick = Instance.SnipingJoyStick;
-            _attackRange = GameObject.FindGameObjectWithTag("Player").GetComponent<Turret_Attack>().Range;
+            _attackRange = GameObject.FindGameObjectWithTag("PlayerTank").GetComponent<Turret_Attack>().Range;
 
             _offsetYDefault = _transposer.m_FollowOffset.y;
         }
