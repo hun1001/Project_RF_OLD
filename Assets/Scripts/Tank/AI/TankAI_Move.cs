@@ -46,7 +46,7 @@ namespace Tank
 
             NavMeshPath path = new NavMeshPath();
 
-            while (!_agent.CalculatePath(movePoint, path))
+            //while (!_agent.CalculatePath(movePoint, path))
             {
                 movePoint = movePoint.normalized * Random.Range(5f, _range);
             }
