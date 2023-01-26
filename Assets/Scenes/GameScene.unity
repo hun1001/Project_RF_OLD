@@ -367,7 +367,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &714300247 stripped
 MonoBehaviour:
@@ -566,7 +566,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1024740106
 MonoBehaviour:
@@ -669,7 +669,7 @@ Transform:
   m_Children:
   - {fileID: 764575201}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: -0.09, z: 0}
 --- !u!1 &1832061690
 GameObject:
@@ -854,6 +854,75 @@ MonoBehaviour:
   _attackJoyStick: {fileID: 2089569043}
   _snipingJoyStick: {fileID: 8779520345968587679}
   _cmvcam: {fileID: 1766580579}
+--- !u!1001 &1898044939
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5254224477792260664, guid: 147e30c121dfbe8409f45f72fe8485b2,
+        type: 3}
+      propertyPath: m_Name
+      value: Tank_M4Sherman
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254224477792260671, guid: 147e30c121dfbe8409f45f72fe8485b2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254224477792260671, guid: 147e30c121dfbe8409f45f72fe8485b2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.333993
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254224477792260671, guid: 147e30c121dfbe8409f45f72fe8485b2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.000002861023
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254224477792260671, guid: 147e30c121dfbe8409f45f72fe8485b2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.736784
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254224477792260671, guid: 147e30c121dfbe8409f45f72fe8485b2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254224477792260671, guid: 147e30c121dfbe8409f45f72fe8485b2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254224477792260671, guid: 147e30c121dfbe8409f45f72fe8485b2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254224477792260671, guid: 147e30c121dfbe8409f45f72fe8485b2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254224477792260671, guid: 147e30c121dfbe8409f45f72fe8485b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254224477792260671, guid: 147e30c121dfbe8409f45f72fe8485b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254224477792260671, guid: 147e30c121dfbe8409f45f72fe8485b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 147e30c121dfbe8409f45f72fe8485b2, type: 3}
 --- !u!114 &2034437873 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 916596792196368889, guid: b58f4b00013d616488e304e3b929a088,
