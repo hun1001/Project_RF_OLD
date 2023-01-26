@@ -35,14 +35,14 @@ namespace Player
         private void Awake()
         {
             PlayCanvas playCanvas = FindObjectOfType<PlayCanvas>();
-            
-            Debug.Log(playCanvas);
-            
+
             _moveJoyStick = playCanvas.MoveJoyStick;
             _hpBar = playCanvas.HpBar;
             _attackJoyStick = playCanvas.AttackJoyStick;
             _attackImage = playCanvas.AttackImage;
             _attackCancel = playCanvas.AttackCancel;
+            
+            Debug.Log(_moveJoyStick);
 
             base.Initialize();
         }

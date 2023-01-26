@@ -14,7 +14,7 @@ namespace Tank
             _currentHealth = Instance.TankSO.hp;
         }
 
-        public virtual void OnHit(float damage)
+        protected virtual void OnHit(float damage)
         {
             _currentHealth -= damage;
 

@@ -26,7 +26,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: c41aa8bda019bfb4ab13d1b4caf280b7
-    m_Address: Assets/Prefabs/Tanks/Tank_Tiger.prefab
+    m_Address: Assets/Prefabs/Tanks/HeavyTank/Tank_Tiger.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 147e30c121dfbe8409f45f72fe8485b2

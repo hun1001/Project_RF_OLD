@@ -16,7 +16,7 @@ namespace Tank
             _hpBar.MaxValue = Instance.TankSO.hp;
         }
 
-        public override void OnHit(float damage)
+        protected override void OnHit(float damage)
         {
             base.OnHit(damage);
             _hpBar.Value = _currentHealth;

@@ -19,8 +19,7 @@ namespace Tank
         {
             base.Assignment();
             _agent = GetComponent<NavMeshAgent>();
-            _target = GameObject.Find("Player").transform;
-            
+            _target = GameObject.FindGameObjectWithTag("PlayerTank").transform;
         }
 
         protected override void Update()
