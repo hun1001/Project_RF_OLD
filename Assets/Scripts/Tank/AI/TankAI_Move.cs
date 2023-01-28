@@ -14,6 +14,14 @@ namespace Tank
         private float _range = 10f;
 
         private bool _isMove = false;
+
+        public enum State
+        {
+            Move,
+            Attack,
+        }
+        
+        private State _state = State.Move;
         
         protected override void Assignment()
         {
@@ -26,11 +34,24 @@ namespace Tank
         {
             if (Vector3.Distance(transform.position, _target.position) > _range)
             {
-                FindMovePoint();
+                _state = State.Move;
             }
             else
             {
-                Fire();
+                _state = State.Attack;
+            }
+        }
+        
+        private void FixedUpdate()
+        {
+            switch (_state)
+            {
+                case State.Move:
+                    _agent.SetDestination(_target.position);
+                    break;
+                case State.Attack:
+                    _agent.SetDestination(Vector3.zero);
+                    break;
             }
         }
 
