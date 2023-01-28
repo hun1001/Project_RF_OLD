@@ -11,6 +11,11 @@ namespace Turret
         private Transform _turret = null;
         
         private Transform _target = null;
+        
+        private void Start()
+        {
+            _target = GameObject.FindGameObjectWithTag("PlayerTank").transform;
+        }
 
         private void Update()
         {

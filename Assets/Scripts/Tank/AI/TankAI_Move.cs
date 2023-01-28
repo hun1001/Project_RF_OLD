@@ -40,9 +40,11 @@ namespace Tank
             {
                 _state = State.Attack;
             }
+            
+            Debug.Log(_state);
         }
         
-        private void FixedUpdate()
+        private void LateUpdate()
         {
             switch (_state)
             {
