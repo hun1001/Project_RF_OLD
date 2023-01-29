@@ -11,15 +11,6 @@ namespace Turret
 
         private float _attackRange = 10f;
 
-        // protected override void Awake()
-        // {
-        //     base.Awake();
-
-        //     _turret_Attack = GetComponent<TurretAI_Attack>();
-        //     _player = GameObject.FindGameObjectWithTag("Player").transform;
-        //     _attackRange = Instance.TurretSO.attackRange;
-        // }
-
         private void Start()
         {
             Debug.Log("TurretAI_Rotate Start");

@@ -11,7 +11,7 @@ namespace Tank
         private NavMeshAgent _agent = null;
         private Transform _target = null;
 
-        private float _range = 10f;
+        private float _range = 15f;
 
         private bool _isMove = false;
 
@@ -32,6 +32,7 @@ namespace Tank
 
         protected override void Update()
         {
+            Debug.Log(Vector3.Distance(transform.position, _target.position));
             if (Vector3.Distance(transform.position, _target.position) > _range)
             {
                 _state = State.Move;
@@ -40,8 +41,6 @@ namespace Tank
             {
                 _state = State.Attack;
             }
-            
-            Debug.Log(_state);
         }
         
         private void LateUpdate()
@@ -49,23 +48,37 @@ namespace Tank
             switch (_state)
             {
                 case State.Move:
+                    _agent.isStopped = false;
                     _agent.SetDestination(_target.position);
                     break;
                 case State.Attack:
-                    _agent.SetDestination(Vector3.zero);
+                    _agent.isStopped = true;
                     break;
             }
         }
 
-        private void Fire()
+        private bool _isFire = false;
+
+        private IEnumerator FireCoroutine()
         {
+            if (_isFire == true)
+            {
+                yield break;
+            }
             
+            _isFire = true;
+
+            while (_state == State.Attack)
+            {
+                
+                yield return null;
+            }
         }
 
         private void FindMovePoint()
         {
             Vector3 movePoint = _target.position - transform.position;
-            movePoint = movePoint.normalized * Random.Range(5f, _range);
+            movePoint = movePoint.normalized * Random.Range(10f, _range);
 
             NavMeshPath path = new NavMeshPath();
 

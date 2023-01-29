@@ -29,10 +29,12 @@ namespace Turret
                 return;
             }
             
-            Vector2 direction = _target.position - _turret.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            _turret.rotation = Quaternion.Slerp(_turret.rotation, rotation, 1);
+            Vector3 direction = _target.position - _turret.position;
+            // float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
+            // Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up);
+            // _turret.rotation = Quaternion.Slerp(_turret.rotation, rotation, 1);
+            _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(direction.normalized), 180 * Time.deltaTime);
+            
         }
     }
 }
