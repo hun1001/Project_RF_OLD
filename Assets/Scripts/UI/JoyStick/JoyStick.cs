@@ -23,13 +23,13 @@ namespace UI
             _rectTransform = GetComponent<RectTransform>();
             _rectTransformChild = transform.GetChild(0).GetComponent<RectTransform>();
             _radius = _rectTransform.rect.width * 0.5f;
-            _joyStickOriginPosition = _rectTransform.position;
+            _joyStickOriginPosition = _rectTransform.localPosition;
         }
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
             //_rectTransformChild.position = eventData.position;
-            _rectTransform.position = eventData.position;
+
             _isDragging = true;
             _onPointerDown?.Invoke();
         }
@@ -46,7 +46,7 @@ namespace UI
         public virtual void OnPointerUp(PointerEventData eventData)
         {
             _rectTransformChild.localPosition = Vector2.zero;
-            _rectTransform.position = _joyStickOriginPosition;
+            _rectTransform.localPosition = _joyStickOriginPosition;
             _direction = Vector2.zero;
             _isDragging = false;
             _onPointerUp?.Invoke();
