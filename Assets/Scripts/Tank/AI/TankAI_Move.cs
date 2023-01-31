@@ -77,8 +77,10 @@ namespace Tank
             while (_state == State.Attack)
             {
                 fireTime += Time.deltaTime;
+                Debug.Log(fireTime);
                 if (fireTime > 5f)
                 {
+                    Debug.Log("Fire");
                     fireTime = 0f;
                     var shell = PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
                     shell.SendMessage("SetSpeed", 20f);
