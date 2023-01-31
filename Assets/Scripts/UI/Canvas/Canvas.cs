@@ -7,16 +7,6 @@ namespace UI
 {
     public class Canvas : MonoBehaviour
     {
-        private UnityEngine.Canvas _canvas = null;
-    
-        private void Awake()
-        {
-            _canvas = GetComponent<UnityEngine.Canvas>();
-        }
-
-        private void Start()
-        {
-            _canvas.worldCamera ??= Camera.main;
-        }
+        
     }
 }

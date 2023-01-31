@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace UI
 {
-    public class JoyStick : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
+    public class JoyStick : MonoBehaviour, IDragHandler,  IBeginDragHandler, IEndDragHandler, IPointerDownHandler, IPointerUpHandler
     {
         protected RectTransform _rectTransform = null;
         protected RectTransform _rectTransformChild = null;
@@ -29,9 +29,12 @@ namespace UI
         public virtual void OnPointerDown(PointerEventData eventData)
         {
             //_rectTransformChild.position = eventData.position;
-
-            _isDragging = true;
             _onPointerDown?.Invoke();
+        }
+
+        public virtual void OnBeginDrag(PointerEventData eventData)
+        {
+            _isDragging = true;
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -39,8 +42,13 @@ namespace UI
             Vector2 pos = eventData.position - (Vector2)_rectTransform.position;
             pos = Vector2.ClampMagnitude(pos, _radius);
             _rectTransformChild.localPosition = pos;
-
+            
             _direction = pos.normalized;
+        }
+        
+        public virtual void OnEndDrag(PointerEventData eventData)
+        {
+            _isDragging = false;
         }
 
         public virtual void OnPointerUp(PointerEventData eventData)
@@ -48,7 +56,6 @@ namespace UI
             _rectTransformChild.localPosition = Vector2.zero;
             _rectTransform.localPosition = _joyStickOriginPosition;
             _direction = Vector2.zero;
-            _isDragging = false;
             _onPointerUp?.Invoke();
         }
 

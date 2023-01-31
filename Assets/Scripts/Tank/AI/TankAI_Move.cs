@@ -32,7 +32,6 @@ namespace Tank
 
         protected override void Update()
         {
-            Debug.Log(Vector3.Distance(transform.position, _target.position));
             if (Vector3.Distance(transform.position, _target.position) > _range)
             {
                 _state = State.Move;
