@@ -22,7 +22,7 @@ namespace Tank
             _hpBar.Value = _currentHealth;
 
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPaused = false;
+            UnityEditor.EditorApplication.isPlaying = false;
 #else
             Application.Quit();
 #endif
