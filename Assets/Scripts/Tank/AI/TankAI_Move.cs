@@ -88,6 +88,8 @@ namespace Tank
                 }
                 yield return null;
             }
+            
+            _isFire = false;
         }
 
         private void FindMovePoint()
