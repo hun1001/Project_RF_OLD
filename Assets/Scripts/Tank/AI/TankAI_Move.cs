@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using SO;
 using UnityEngine.AI;
+using Util;
 
 namespace Tank
 {
     public class TankAI_Move : Tank_Move
     {
+        [SerializeField]
+        private Transform _firePoint = null;
+        
         private NavMeshAgent _agent = null;
         private Transform _target = null;
 
@@ -52,6 +56,7 @@ namespace Tank
                     break;
                 case State.Attack:
                     _agent.isStopped = true;
+                    StartCoroutine(FireCoroutine());
                     break;
             }
         }
@@ -66,10 +71,19 @@ namespace Tank
             }
             
             _isFire = true;
+            
+            float fireTime = 0f;
 
             while (_state == State.Attack)
             {
-                
+                fireTime += Time.deltaTime;
+                if (fireTime > 5f)
+                {
+                    fireTime = 0f;
+                    var shell = PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
+                    shell.SendMessage("SetSpeed", 10f);
+                    shell.SendMessage("SetRange", 20f);
+                }
                 yield return null;
             }
         }

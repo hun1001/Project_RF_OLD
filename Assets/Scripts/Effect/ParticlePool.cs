@@ -23,7 +23,8 @@ namespace Effect
                 yield return new WaitForSeconds(0.5f);
                 if (!GetComponent<ParticleSystem>().IsAlive(true))
                 {
-                    PoolManager.Instance.Pool("Assets/Resource/Effect/WFX_ExplosiveSmoke.prefab", this.gameObject);
+                    PoolManager.Instance.Pool("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", this.gameObject);
+                    yield break;
                 }
             }
         }

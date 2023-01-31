@@ -10,7 +10,7 @@ namespace UI
         protected RectTransform _rectTransformChild = null;
 
         private Action _onPointerDown = null;
-        private Action _onPointerUp = null;
+        protected Action _onPointerUp = null;
 
         private Vector2 _direction = Vector2.zero;
         protected Vector2 _joyStickOriginPosition = Vector2.zero;
@@ -28,7 +28,7 @@ namespace UI
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
-            //_rectTransformChild.position = eventData.position;
+            _rectTransformChild.position = eventData.position;
             _onPointerDown?.Invoke();
         }
 

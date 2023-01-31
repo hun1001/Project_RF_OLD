@@ -23,6 +23,7 @@ namespace UI
             _attackJoyStick = _rectTransform.gameObject;
             _joyStickOriginPosition = _rectTransform.position;
             _attackCancelObject = transform.GetChild(1).gameObject;
+            
         }
 
         private void Start()
@@ -46,7 +47,7 @@ namespace UI
             _attackCancelObject.SetActive(false);
             _attackButtonImage.enabled = true;
 
-            base.OnPointerUp(eventData);
+            _onPointerUp?.Invoke();
         }
     }
 }
