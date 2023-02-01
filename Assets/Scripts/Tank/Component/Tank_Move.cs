@@ -18,7 +18,7 @@ namespace Tank
 
         private float _rotationSpeed = 0f;
 
-        private Vector3 _currentDirection = Vector3.zero;
+        private Vector3 _beforeDirection = Vector3.zero;
 
         protected override void Assignment()
         {
@@ -49,14 +49,33 @@ namespace Tank
                 _currentSpeed -= _acceleration * Time.deltaTime;
                 _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
             }
+            
+            float beforeAngle = Vector3.Angle(_beforeDirection, Instance.transform.forward);
+            float currentAngle = Vector3.Angle(new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical), Instance.transform.forward);
+            
+            Debug.Log(beforeAngle - currentAngle);
 
-            if (NavMesh.SamplePosition(transform.position + Instance.transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
+            if (new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical) + _beforeDirection == Vector3.zero)
             {
-                _rigidbody.velocity = Instance.transform.forward * _currentSpeed;
+                if (NavMesh.SamplePosition(transform.position + Instance.transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
+                {
+                    _rigidbody.velocity = Instance.transform.forward * _currentSpeed;
+                }
+                else
+                {
+                    _rigidbody.velocity = Vector3.zero;
+                }
             }
             else
             {
-                _rigidbody.velocity = Vector3.zero;
+                if (NavMesh.SamplePosition(transform.position + (-Instance.transform.forward * _currentSpeed * Time.deltaTime), out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
+                {
+                    _rigidbody.velocity = -Instance.transform.forward * _currentSpeed;
+                }
+                else
+                {
+                    _rigidbody.velocity = Vector3.zero;
+                }
             }
 
             if (_joyStick.IsTouching)
@@ -64,9 +83,8 @@ namespace Tank
                 Vector3 direction = new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical);
                 direction.y = 0f;
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
-                Instance.transform.rotation = Quaternion.Slerp(Instance.transform.rotation, targetRotation,
-                    _rotationSpeed * Time.deltaTime);
-                _currentDirection = direction;
+                Instance.transform.rotation = Quaternion.Slerp(Instance.transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+                _beforeDirection = direction;
             }
         }
     }
