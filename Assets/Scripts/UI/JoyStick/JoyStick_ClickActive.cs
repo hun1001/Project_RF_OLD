@@ -46,6 +46,7 @@ namespace UI
             _attackJoyStick.SetActive(false);
             _attackCancelObject.SetActive(false);
             _attackButtonImage.enabled = true;
+            _dragTime = 0.0f;
 
             _onPointerUp?.Invoke();
         }
