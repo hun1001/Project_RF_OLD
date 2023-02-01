@@ -16,6 +16,7 @@ namespace UI
         protected Vector2 _joyStickOriginPosition = Vector2.zero;
 
         private float _radius = 0.0f;
+        protected float _dragTime = 0.0f;
         
         private bool _isTouching = false;
         private bool _isDragging = false;
@@ -47,6 +48,7 @@ namespace UI
             _rectTransformChild.localPosition = pos;
             
             _direction = pos.normalized;
+            if (_dragTime < 3f) _dragTime += Time.deltaTime;
         }
         
         public virtual void OnEndDrag(PointerEventData eventData)
@@ -60,6 +62,7 @@ namespace UI
             _rectTransformChild.localPosition = Vector2.zero;
             _rectTransform.localPosition = _joyStickOriginPosition;
             _direction = Vector2.zero;
+            _dragTime = 0.0f;
             _onPointerUp?.Invoke();
         }
 
@@ -69,6 +72,7 @@ namespace UI
         public float Horizontal => _direction.x;
         public bool IsDragging => _isDragging;
         public bool IsTouching => _isTouching;
+        public float DragTime => _dragTime;
 
         public void AddOnPointerDownListener(Action action)
         {

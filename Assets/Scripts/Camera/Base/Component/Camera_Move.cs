@@ -64,21 +64,20 @@ namespace CameraManage
 
         private void SnipingCamera()
         {
-            if(_snipingJoyStick.IsDragging == true)
+            if(_attackJoyStick.IsDragging == true)
             {
-                Vector3 offset = _transposer.m_FollowOffset;
-                float yPos = _offsetYDefault * (_attackRange / 40f);
-                if (yPos < _offsetYDefault) yPos = _offsetYDefault;
-                offset.y = yPos;
+                if(_attackJoyStick.DragTime >= 3f)
+                {
+                    Vector3 offset = _offsetDefalutPosition;
+                    Vector3 direction = new Vector3(_attackJoyStick.Direction.x * _attackRange * 0.3f, 0f, _attackJoyStick.Direction.y * _attackRange * 0.3f);
+                    offset += direction;
 
-                _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, offset, 2f * Time.deltaTime);
+                    _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, offset, 2f * Time.deltaTime);
+                }
             }
-            else if(_transposer.m_FollowOffset.y != _offsetYDefault)
+            else if(_transposer.m_FollowOffset != _offsetDefalutPosition || _isShakingEnd == false)
             {
-                Vector3 offset = _transposer.m_FollowOffset;
-                offset.y = _offsetYDefault;
-
-                _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, offset, 2f * Time.deltaTime);
+                _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, _offsetDefalutPosition, 2f * Time.deltaTime);
             }
         }
 
@@ -86,8 +85,8 @@ namespace CameraManage
         {
             if(_turretAttack.NextFire > 0 && _isShakingPossible == true)
             {
-                float cameraPositionX = _attackJoyStick.Horizontal * -1f;
-                float cameraPositionZ = _attackJoyStick.Vertical * -1f;
+                float cameraPositionX = _attackJoyStick.Horizontal * -1.5f;
+                float cameraPositionZ = _attackJoyStick.Vertical * -1.5f;
                 Vector3 cameraPosition = _offsetDefalutPosition;
                 cameraPosition.x += cameraPositionX;
                 cameraPosition.z += cameraPositionZ;
@@ -106,7 +105,6 @@ namespace CameraManage
 
         private void CameraShakeEnd()
         {
-            _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, _offsetDefalutPosition, 1f);
             _isShakingPossible = false;
             _isShakingEnd = false;
         }
