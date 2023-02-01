@@ -7,6 +7,6 @@ namespace SO
     [CreateAssetMenu(menuName = "SO/Data/Wave")]
     public class WaveDataSO : ScriptableObject
     {
-
+        
     }
 }

@@ -10,8 +10,8 @@ namespace SO
         [Header("Hp")]
         public float hp;
 
-        [Header("Speed")]
-        public float speed;
+        [Header("MaxSpeed")]
+        public float maxSpeed;
 
         [Header("Rotation Speed")]
         public float rotationSpeed;

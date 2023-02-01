@@ -11,7 +11,6 @@ namespace Tank
 
         protected override void Assignment()
         {
-            base.Assignment();
             _currentHealth = Instance.TankSO.hp;
         }
 

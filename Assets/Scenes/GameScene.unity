@@ -230,6 +230,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_Tiger
       objectReference: {fileID: 0}
+    - target: {fileID: 8227962702631750334, guid: c41aa8bda019bfb4ab13d1b4caf280b7,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c41aa8bda019bfb4ab13d1b4caf280b7, type: 3}
 --- !u!1001 &223605671
@@ -1802,6 +1807,12 @@ Transform:
   m_Father: {fileID: 1962149763}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1313762553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8227962702631750333, guid: c41aa8bda019bfb4ab13d1b4caf280b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 146797764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1529546000 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7224374317085512688, guid: b58f4b00013d616488e304e3b929a088,
@@ -1851,6 +1862,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 146797764}
   m_PrefabAsset: {fileID: 0}
+--- !u!195 &1576168907
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313762553}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 2
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 3.15
+  m_BaseOffset: 0.05
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1766580578
 GameObject:
   m_ObjectHideFlags: 0

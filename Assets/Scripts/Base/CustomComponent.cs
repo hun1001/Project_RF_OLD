@@ -8,7 +8,7 @@ namespace Base
     {
         private T _instance = null;
 
-        public T Instance
+        protected T Instance
         {
             get
             {
@@ -28,7 +28,7 @@ namespace Base
 
         protected virtual void Assignment()
         {
-
+            
         }
     }
 }

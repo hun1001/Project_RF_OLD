@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: TigerSO
   m_EditorClassIdentifier: 
   hp: 1000
-  speed: 20
+  maxSpeed: 20
   rotationSpeed: 7.5
+  mass: 10
+  acceleration: 5
+  load: 0
