@@ -88,5 +88,6 @@ namespace Turret
         }
 
         public float Range => _range;
+        public float NextFire => _nextFire;
     }
 }

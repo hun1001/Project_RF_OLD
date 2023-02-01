@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589245, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1527,7 +1527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 1
+  m_BindingMode: 0
   m_FollowOffset: {x: 0, y: 30, z: -25}
   m_XDamping: 0.5
   m_YDamping: 0
@@ -2104,6 +2104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6081f06b233035f4397ca30820a30638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeRange: 0.05
 --- !u!114 &1832061698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2119,6 +2120,8 @@ MonoBehaviour:
   _joyStick: {fileID: 2034437873}
   _attackJoyStick: {fileID: 2089569043}
   _snipingJoyStick: {fileID: 8779520345968587679}
+  _attackCancel: {fileID: 0}
+  _snipingCancel: {fileID: 0}
   _cmvcam: {fileID: 1766580579}
 --- !u!1 &1962149762
 GameObject:
