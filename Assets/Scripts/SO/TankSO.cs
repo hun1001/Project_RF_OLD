@@ -15,5 +15,14 @@ namespace SO
 
         [Header("Rotation Speed")]
         public float rotationSpeed;
+
+        [Header("Mass")]
+        public float mass;
+
+        [Header("Acceleration")]
+        public float acceleration;
+
+        [Header("Load")]
+        public float load;
     }
 }
