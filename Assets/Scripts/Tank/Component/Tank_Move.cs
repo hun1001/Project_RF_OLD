@@ -10,26 +10,28 @@ namespace Tank
     {
         private Rigidbody _rigidbody = null;
         private JoyStick _joyStick = null;
-        
+
         private float _currentSpeed = 0f;
         private float _maxSpeed = 0f;
-        
+
         private float _acceleration = 0f;
-        
+
         private float _rotationSpeed = 0f;
+
+        private Vector3 _currentDirection = Vector3.zero;
 
         protected override void Assignment()
         {
             _rigidbody = Instance.GetComponent<Rigidbody>();
             _joyStick = Instance.JoyStick;
-            
+
             _maxSpeed = Instance.TankSO.maxSpeed;
             _acceleration = Instance.TankSO.acceleration;
             _rotationSpeed = Instance.TankSO.rotationSpeed;
-            
+
             _currentSpeed = 0f;
         }
-        
+
         private void FixedUpdate()
         {
             Move();
@@ -37,7 +39,7 @@ namespace Tank
 
         private void Move()
         {
-            if(_joyStick.IsTouching)
+            if (_joyStick.IsTouching)
             {
                 _currentSpeed += _acceleration * Time.deltaTime;
                 _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
@@ -47,15 +49,24 @@ namespace Tank
                 _currentSpeed -= _acceleration * Time.deltaTime;
                 _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
             }
-            
-            _rigidbody.velocity = Instance.transform.forward * _currentSpeed;
-            
-            if(_joyStick.IsTouching)
+
+            if (NavMesh.SamplePosition(transform.position + Instance.transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
+            {
+                _rigidbody.velocity = Instance.transform.forward * _currentSpeed;
+            }
+            else
+            {
+                _rigidbody.velocity = Vector3.zero;
+            }
+
+            if (_joyStick.IsTouching)
             {
                 Vector3 direction = new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical);
                 direction.y = 0f;
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
-                Instance.transform.rotation = Quaternion.Slerp(Instance.transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+                Instance.transform.rotation = Quaternion.Slerp(Instance.transform.rotation, targetRotation,
+                    _rotationSpeed * Time.deltaTime);
+                _currentDirection = direction;
             }
         }
     }
