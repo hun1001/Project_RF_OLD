@@ -55,7 +55,7 @@ namespace Tank
             
             Debug.Log(beforeAngle - currentAngle);
 
-            if (new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical) + _beforeDirection == Vector3.zero)
+            if (new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical) + _beforeDirection != Vector3.zero)
             {
                 if (NavMesh.SamplePosition(transform.position + Instance.transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
                 {
