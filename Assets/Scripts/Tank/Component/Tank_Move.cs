@@ -20,8 +20,6 @@ namespace Tank
 
         private float _rotationSpeed = 0f;
 
-        private Vector3 _beforeDirection = Vector3.zero;
-
         protected override void Assignment()
         {
             _rigidbody = Instance.GetComponent<Rigidbody>();
@@ -32,8 +30,6 @@ namespace Tank
             _rotationSpeed = Instance.TankSO.rotationSpeed;
 
             _currentSpeed = 0f;
-
-            _beforeDirection = Vector3.forward;
         }
 
         private void FixedUpdate()
@@ -50,43 +46,25 @@ namespace Tank
             }
             else
             {
-                _currentSpeed =0;//-= _acceleration * Time.deltaTime;
+                _currentSpeed -= _acceleration * Time.deltaTime;
                 _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
             }
             
-            float angle = Vector3.Angle(Instance.transform.forward, new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical));
-            bool isBack = Mathf.Abs(angle - 180) < 20f;
-            
-            if (isBack == false)
+            if (NavMesh.SamplePosition(transform.position + Instance.transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
             {
-                if (NavMesh.SamplePosition(transform.position + Instance.transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
-                {
-                    _rigidbody.velocity = Instance.transform.forward * _currentSpeed;
-                }
-                else
-                {
-                    _rigidbody.velocity = Vector3.zero;
-                }
+                _rigidbody.velocity = Instance.transform.forward * _currentSpeed;
             }
             else
             {
-                if (NavMesh.SamplePosition(transform.position + (-Instance.transform.forward * _currentSpeed * Time.deltaTime), out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
-                {
-                    _rigidbody.velocity = -Instance.transform.forward * _currentSpeed;
-                }
-                else
-                {
-                    _rigidbody.velocity = Vector3.zero;
-                }
+                _rigidbody.velocity = Vector3.zero;
             }
 
-            if (_joyStick.IsTouching&&isBack == false)
+            if (_joyStick.IsTouching)
             {
                 Vector3 direction = new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical);
                 direction.y = 0f;
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 Instance.transform.rotation = Quaternion.Slerp(Instance.transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
-                _beforeDirection = direction;
             }
         }
     }
