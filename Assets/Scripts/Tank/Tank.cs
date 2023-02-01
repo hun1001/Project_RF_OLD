@@ -25,6 +25,15 @@ namespace Tank
         [SerializeField]
         private Transform _body = null;
         public Transform Body => _body;
+        
+        //0: left 1: right
+        [SerializeField]
+        private LineRenderer[] _lineRenderer = null;
+        public LineRenderer[] LineRenderer => _lineRenderer;
+        
+        [SerializeField]
+        private Transform[] _skidMark = null;
+        public Transform[] SkidMark => _skidMark;
 
         // public void Assignment(TankUserData tankUserData)
         // {

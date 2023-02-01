@@ -19,6 +19,8 @@ namespace Tank
         private float _acceleration = 0f;
 
         private float _rotationSpeed = 0f;
+        
+        private int _currentSkidMark = 0;
 
         protected override void Assignment()
         {
@@ -53,6 +55,10 @@ namespace Tank
             if (NavMesh.SamplePosition(transform.position + Instance.transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
             {
                 _rigidbody.velocity = Instance.transform.forward * _currentSpeed;
+                Instance.LineRenderer[0].positionCount = _currentSkidMark + 1;
+                Instance.LineRenderer[1].positionCount = _currentSkidMark + 1;
+                Instance.LineRenderer[0].SetPosition(_currentSkidMark, Instance.SkidMark[0].position + new Vector3(0,0.1f,0));
+                Instance.LineRenderer[1].SetPosition(_currentSkidMark++, Instance.SkidMark[1].position + new Vector3(0, 0.1f, 0));
             }
             else
             {

@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6332b1ac1ed9569458b74fd64148c2c3, type: 3}
   m_Name: OpponentSO
   m_EditorClassIdentifier: 
-  Waves: []
+  Waves:
+  - {fileID: 11400000, guid: 4acf937c9f2b418498d242fa2ad66767, type: 2}
+  - {fileID: 11400000, guid: 83148c120064bd54182f0b7338d1e936, type: 2}
+  - {fileID: 11400000, guid: ac71d06d7a1fbdd46be4d865f81ceb76, type: 2}
+  - {fileID: 11400000, guid: 2c1bbd5b7bbc98c4bb3a891563b1747e, type: 2}
+  - {fileID: 11400000, guid: f3bd7f756ba0b9f47b914ef597ca1353, type: 2}
