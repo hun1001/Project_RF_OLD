@@ -16,6 +16,8 @@ namespace UI
         protected Vector2 _joyStickOriginPosition = Vector2.zero;
 
         private float _radius = 0.0f;
+        
+        private bool _isTouching = false;
         private bool _isDragging = false;
 
         protected virtual void Awake()
@@ -29,6 +31,7 @@ namespace UI
         public virtual void OnPointerDown(PointerEventData eventData)
         {
             _rectTransformChild.position = eventData.position;
+            _isTouching = true;
             _onPointerDown?.Invoke();
         }
 
@@ -53,6 +56,7 @@ namespace UI
 
         public virtual void OnPointerUp(PointerEventData eventData)
         {
+            _isTouching = false;
             _rectTransformChild.localPosition = Vector2.zero;
             _rectTransform.localPosition = _joyStickOriginPosition;
             _direction = Vector2.zero;
@@ -64,6 +68,7 @@ namespace UI
         public float Vertical => _direction.y;
         public float Horizontal => _direction.x;
         public bool IsDragging => _isDragging;
+        public bool IsTouching => _isTouching;
 
         public void AddOnPointerDownListener(Action action)
         {

@@ -8,49 +8,54 @@ namespace Tank
 {
     public class Tank_Move : Base.CustomComponent<Tank>
     {
-        private JoyStick _joyStick = null;
-        private Transform _body = null;
         private Rigidbody _rigidbody = null;
-        private NavMeshAgent _navMeshAgent = null;
-
-        private float _maxSpeed = 1f;
-        private float _rotateSpeed = 1f;
-        private float _acceleration = 1f;
+        private JoyStick _joyStick = null;
+        
+        private float _currentSpeed = 0f;
+        private float _maxSpeed = 0f;
+        
+        private float _acceleration = 0f;
+        
+        private float _rotationSpeed = 0f;
 
         protected override void Assignment()
         {
+            _rigidbody = Instance.GetComponent<Rigidbody>();
             _joyStick = Instance.JoyStick;
-            _body = Instance.Body;
-            _rigidbody = GetComponent<Rigidbody>();
-
-            _maxSpeed = Instance.TankSO.maxSpeed;
-            _rotateSpeed = Instance.TankSO.rotationSpeed;
-            _acceleration = Instance.TankSO.acceleration;
             
-            _navMeshAgent = GetComponent<NavMeshAgent>();
-            _navMeshAgent.acceleration = _acceleration;
-            _navMeshAgent.speed = _maxSpeed;
-            _navMeshAgent.angularSpeed = _rotateSpeed;
+            _maxSpeed = Instance.TankSO.maxSpeed;
+            _acceleration = Instance.TankSO.acceleration;
+            _rotationSpeed = Instance.TankSO.rotationSpeed;
+            
+            _currentSpeed = 0f;
+        }
+        
+        private void FixedUpdate()
+        {
+            Move();
         }
 
-        protected virtual void Update()
+        private void Move()
         {
-            if (_joyStick.Direction != Vector2.zero)
+            if(_joyStick.IsTouching)
             {
-                TankMoving(_joyStick.Direction, _joyStick.Scalar);
-            }
-        }
-
-        private void TankMoving(Vector2 dir, float scalar)
-        {
-            if(dir != Vector2.zero)
-            {
-                Vector3 dir3 = new Vector3(dir.x, 0, dir.y);
-                
+                _currentSpeed += _acceleration * Time.deltaTime;
+                _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
             }
             else
             {
-                
+                _currentSpeed -= _acceleration * Time.deltaTime;
+                _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
+            }
+            
+            _rigidbody.velocity = Instance.transform.forward * _currentSpeed;
+            
+            if(_joyStick.IsTouching)
+            {
+                Vector3 direction = new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical);
+                direction.y = 0f;
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                Instance.transform.rotation = Quaternion.Slerp(Instance.transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
             }
         }
     }

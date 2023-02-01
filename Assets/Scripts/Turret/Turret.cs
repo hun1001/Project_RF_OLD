@@ -46,12 +46,12 @@ namespace Turret
         private Transform _firePoint = null;
         public Transform FirePoint => _firePoint;
 
-        public void Assignment(TurretUserData turretUserData)
-        {
-            _attackImage = turretUserData.AttackImage;
-            _joyStick = turretUserData.AttackJoyStick;
-            _attackCancel = turretUserData.AttackCancel;
-            base.Initialize();
-        }
+        // public void Assignment(TurretUserData turretUserData)
+        // {
+        //     _attackImage = turretUserData.AttackImage;
+        //     _joyStick = turretUserData.AttackJoyStick;
+        //     _attackCancel = turretUserData.AttackCancel;
+        //     base.Initialize();
+        // }
     }
 }

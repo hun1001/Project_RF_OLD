@@ -26,11 +26,11 @@ namespace Tank
         private Transform _body = null;
         public Transform Body => _body;
 
-        public void Assignment(TankUserData tankUserData)
-        {
-            _joyStick = tankUserData.MoveJoyStick;
-            _healthBar = tankUserData.HpBar;
-            base.Initialize();
-        }
+        // public void Assignment(TankUserData tankUserData)
+        // {
+        //     _joyStick = tankUserData.MoveJoyStick;
+        //     _healthBar = tankUserData.HpBar;
+        //     base.Initialize();
+        // }
     }
 }
