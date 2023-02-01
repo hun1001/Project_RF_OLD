@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
+using log4net.Util;
 using UnityEngine;
 using UI;
 using UnityEngine.AI;
@@ -30,6 +32,8 @@ namespace Tank
             _rotationSpeed = Instance.TankSO.rotationSpeed;
 
             _currentSpeed = 0f;
+
+            _beforeDirection = Vector3.forward;
         }
 
         private void FixedUpdate()
@@ -46,16 +50,14 @@ namespace Tank
             }
             else
             {
-                _currentSpeed -= _acceleration * Time.deltaTime;
+                _currentSpeed =0;//-= _acceleration * Time.deltaTime;
                 _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
             }
             
-            float beforeAngle = Vector3.Angle(_beforeDirection, Instance.transform.forward);
-            float currentAngle = Vector3.Angle(new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical), Instance.transform.forward);
+            float angle = Vector3.Angle(Instance.transform.forward, new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical));
+            bool isBack = Mathf.Abs(angle - 180) < 20f;
             
-            Debug.Log(beforeAngle - currentAngle);
-
-            if (new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical) + _beforeDirection != Vector3.zero)
+            if (isBack == false)
             {
                 if (NavMesh.SamplePosition(transform.position + Instance.transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
                 {
@@ -78,7 +80,7 @@ namespace Tank
                 }
             }
 
-            if (_joyStick.IsTouching)
+            if (_joyStick.IsTouching&&isBack == false)
             {
                 Vector3 direction = new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical);
                 direction.y = 0f;
