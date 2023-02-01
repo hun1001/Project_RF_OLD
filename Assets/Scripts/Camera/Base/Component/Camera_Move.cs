@@ -16,17 +16,14 @@ namespace CameraManage
         private JoyStick _joyStick = null;
         private JoyStick _attackJoyStick = null;
         private JoyStick _snipingJoyStick = null;
-        private AttackCancel _attackCancel = null;
-        private AttackCancel _snipingCancel = null;
 
         private Turret_Attack _turretAttack = null;
         private float _attackRange = 0.0f;
 
         private Vector3 _offsetDefalutPosition = Vector3.zero;
         private float _offsetYDefault = 0.0f;
-        [SerializeField]
-        [Range(0.01f, 0.1f)]
-        private float shakeRange = 0.05f;
+        private bool _isShakingPossible = false;
+        private bool _isShakingEnd = false;
 
         private void Awake()
         {
@@ -36,8 +33,6 @@ namespace CameraManage
             _joyStick = Instance.JoyStick;
             _attackJoyStick = Instance.AttackJoyStick;
             _snipingJoyStick = Instance.SnipingJoyStick;
-            _attackCancel = Instance.AttackCancel;
-            _snipingCancel = Instance.SnipingCancel;
 
             _turretAttack = GameObject.FindGameObjectWithTag("PlayerTank").GetComponent<Turret_Attack>();
             _attackRange = _turretAttack.Range;
@@ -50,6 +45,7 @@ namespace CameraManage
         {
             //CameraRotation();
             SnipingCamera();
+            CameraShake();
         }
 
         private void CameraRotation()
@@ -88,24 +84,31 @@ namespace CameraManage
 
         public void CameraShake()
         {
-
-            if(_turretAttack.NextFire > 0)
+            if(_turretAttack.NextFire > 0 && _isShakingPossible == true)
             {
-                return;
+                float cameraPositionX = _attackJoyStick.Horizontal * -1f;
+                float cameraPositionZ = _attackJoyStick.Vertical * -1f;
+                Vector3 cameraPosition = _offsetDefalutPosition;
+                cameraPosition.x += cameraPositionX;
+                cameraPosition.z += cameraPositionZ;
+                _transposer.m_FollowOffset = Vector3.Lerp(_transposer.m_FollowOffset, cameraPosition, 1f * Time.deltaTime);
+                if(_isShakingEnd == false)
+                {
+                    _isShakingEnd = true;
+                    Invoke("CameraShakeEnd", 1f);
+                }
             }
-
-            float cameraPositionX = Random.value * shakeRange * 2 - shakeRange;
-            float cameraPositionZ = Random.value * shakeRange * 2 - shakeRange;
-            Vector3 cameraPosition = Vector3.zero;
-            cameraPosition.x += cameraPositionX;
-            cameraPosition.z += cameraPositionZ;
-            _transposer.m_FollowOffset = cameraPosition;
-            Invoke(nameof(CameraShakeEnd), 0.5f);
+            else if(_turretAttack.NextFire <= 0 && _isShakingPossible == false)
+            {
+                _isShakingPossible = true;
+            }
         }
 
         private void CameraShakeEnd()
         {
-            _transposer.m_FollowOffset = _offsetDefalutPosition;
+            _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, _offsetDefalutPosition, 1f);
+            _isShakingPossible = false;
+            _isShakingEnd = false;
         }
     }
 }
