@@ -77,7 +77,6 @@ namespace Tank
             while (_state == State.Attack)
             {
                 fireTime += Time.deltaTime;
-                Debug.Log(fireTime);
                 if (fireTime > 5f)
                 {
                     Debug.Log("Fire");

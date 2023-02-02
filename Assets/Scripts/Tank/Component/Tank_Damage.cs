@@ -17,7 +17,6 @@ namespace Tank
         protected virtual void OnHit(float damage)
         {
             Debug.Log("Hit");
-            PoolManager.Instance.Pool("Assets/Prefabs/Tanks/MediumTank/Tank_M4Sherman.prefab", this.gameObject);
         }
     }
 }
