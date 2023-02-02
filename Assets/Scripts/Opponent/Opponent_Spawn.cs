@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,17 +12,19 @@ namespace Opponent
         private float _delay = 5f;
         
         private int _currentWave = 0;
-        
-        private void Update()
+
+        private IEnumerator Start()
         {
-            if (Time.time % _delay == 0)
+            for(int i = 0;i < Instance.OpponentSO.Waves.Length; i++)
             {
                 Spawn();
+                yield return new WaitForSeconds(_delay);
             }
         }
 
         private void Spawn()
         {
+            Debug.Log("wave " + _currentWave);  
             for (int i = 0; i < Instance.OpponentSO.Waves[_currentWave].enemyPrefabs.Length; i++)
             {
                 PoolManager.Instance.Get("Assets/Prefabs/Tanks/MediumTank/Tank_M4Sherman.prefab", Instance.GetRandomSpawnPoint.position);

@@ -20,19 +20,5 @@ namespace Opponent
         [SerializeField]
         private SO.OpponentSO _opponentSO = null;
         public SO.OpponentSO OpponentSO => _opponentSO;
-
-        private void Start()
-        {
-            StartCoroutine(SpawnEnemyCoroutine());
-        }
-        
-        private IEnumerator SpawnEnemyCoroutine()
-        {
-            while (true)
-            {
-                yield return new WaitForSeconds(10f);
-                var enemy = PoolManager.Instance.Get("Assets/Prefabs/Tanks/MediumTank/Tank_M4Sherman.prefab", GetRandomSpawnPoint.position);
-            }
-        }
     }
 }
