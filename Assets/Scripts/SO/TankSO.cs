@@ -21,6 +21,9 @@ namespace SO
 
         [Header("Acceleration")]
         public float acceleration;
+        
+        [Header("Armour")]
+        public float armour;
 
         [Header("Load")]
         public float load;
