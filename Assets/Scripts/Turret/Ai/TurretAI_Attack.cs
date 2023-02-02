@@ -28,7 +28,5 @@ namespace Turret
 
             PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
         }
-
-        public float NextFire => _nextFire;
     }
 }
