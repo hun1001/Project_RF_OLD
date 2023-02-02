@@ -31,6 +31,7 @@ namespace UI
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
+            _rectTransform.position = eventData.position;
             _rectTransformChild.position = eventData.position;
             _isTouching = true;
             _onPointerDown?.Invoke();

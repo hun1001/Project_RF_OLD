@@ -65,7 +65,7 @@ namespace CameraManage
                 if(_attackJoyStick.DragTime >= 3f)
                 {
                     Vector3 offset = _offsetDefalutPosition;
-                    Vector3 direction = new Vector3(_attackJoyStick.Direction.x * _attackRange * 0.3f, 0f, _attackJoyStick.Direction.y * _attackRange * 0.3f);
+                    Vector3 direction = new Vector3(_attackJoyStick.Direction.x * _attackRange * 0.25f, 0f, _attackJoyStick.Direction.y * _attackRange * 0.25f);
                     offset += direction;
 
                     _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, offset, 2f * Time.deltaTime);
@@ -81,8 +81,8 @@ namespace CameraManage
         {
             if(_turretAttack.NextFire > 0 && _isShakingPossible == true)
             {
-                float cameraPositionX = _attackJoyStick.Horizontal * -1.5f;
-                float cameraPositionZ = _attackJoyStick.Vertical * -1.5f;
+                float cameraPositionX = _attackJoyStick.Horizontal * -2f;
+                float cameraPositionZ = _attackJoyStick.Vertical * -2f;
                 Vector3 cameraPosition = _offsetDefalutPosition;
                 cameraPosition.x += cameraPositionX;
                 cameraPosition.z += cameraPositionZ;
