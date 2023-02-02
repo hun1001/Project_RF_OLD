@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac934195cf535f4a9abc38eb8e27f8e, type: 3}
   m_Name: APShellSO
   m_EditorClassIdentifier: 
-  penetratingPower: 0
+  penetratingPower: 1
   baseDamage: 0

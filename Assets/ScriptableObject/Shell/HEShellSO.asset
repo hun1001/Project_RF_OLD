@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HEShellSO
   m_EditorClassIdentifier: 
   penetratingPower: 0
-  baseDamage: 0
+  baseDamage: 1
