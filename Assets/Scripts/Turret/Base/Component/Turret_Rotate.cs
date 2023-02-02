@@ -9,7 +9,6 @@ namespace Turret
     public class Turret_Rotate : Base.CustomComponent<Turret>
     {
         private JoyStick _joyStick;
-        private JoyStick _snipingJoyStick;
         protected Transform _turret = null;
 
         protected float _rotationSpeed = 1f;
@@ -20,7 +19,6 @@ namespace Turret
         {
             base.Assignment();
             _joyStick = Instance.JoyStick;
-            _snipingJoyStick = Instance.SnipingJoyStick;
             _turret = Instance.Body;
 
             _rotationSpeed = Instance.TurretSO.rotationSpeed;
@@ -34,7 +32,7 @@ namespace Turret
 
         protected virtual void Update()
         {
-            if (_joyStick.Direction != Vector2.zero || _snipingJoyStick.Direction != Vector2.zero)
+            if (_joyStick.Direction != Vector2.zero)
             {
                 Rotate();
             }
@@ -51,11 +49,6 @@ namespace Turret
             {
                 dir.x = _joyStick.Horizontal;
                 dir.z = _joyStick.Vertical;
-            }
-            else
-            {
-                dir.x = _snipingJoyStick.Horizontal;
-                dir.z = _snipingJoyStick.Vertical;
             }
 
             _isAim = true;

@@ -19,23 +19,12 @@ namespace Turret
         public Image AttackImage => _attackImage;
 
         [SerializeField]
-        private Image _snipingImage = null;
-        public Image SnipingImage => _snipingImage;
-
-        [SerializeField]
         private JoyStick _joyStick = null;
         public JoyStick JoyStick => _joyStick;
 
         [SerializeField]
-        private JoyStick _snipingJoyStick = null;
-        public JoyStick SnipingJoyStick => _snipingJoyStick;
-
-        [SerializeField]
         private AttackCancel _attackCancel = null;
         public AttackCancel AttackCancel => _attackCancel;
-        [SerializeField]
-        private AttackCancel _snipingCancel = null;
-        public AttackCancel SnipingCancel => _snipingCancel;
 
         [Header("Transform")]
         [SerializeField]

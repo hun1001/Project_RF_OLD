@@ -15,13 +15,11 @@ namespace CameraManage
 
         private JoyStick _joyStick = null;
         private JoyStick _attackJoyStick = null;
-        private JoyStick _snipingJoyStick = null;
 
         private Turret_Attack _turretAttack = null;
         private float _attackRange = 0.0f;
 
         private Vector3 _offsetDefalutPosition = Vector3.zero;
-        private float _offsetYDefault = 0.0f;
         private bool _isShakingPossible = false;
         private bool _isShakingEnd = false;
 
@@ -32,13 +30,11 @@ namespace CameraManage
 
             _joyStick = Instance.JoyStick;
             _attackJoyStick = Instance.AttackJoyStick;
-            _snipingJoyStick = Instance.SnipingJoyStick;
 
             _turretAttack = GameObject.FindGameObjectWithTag("PlayerTank").GetComponent<Turret_Attack>();
             _attackRange = _turretAttack.Range;
 
             _offsetDefalutPosition = _transposer.m_FollowOffset;
-            _offsetYDefault = _offsetDefalutPosition.y;
         }
 
         private void Update()
@@ -52,7 +48,7 @@ namespace CameraManage
         {
             if (EventSystem.current.IsPointerOverGameObject() == false)
             {
-                if (_joyStick.IsDragging == false && _attackJoyStick.IsDragging == false && _snipingJoyStick.IsDragging == false)
+                if (_joyStick.IsDragging == false && _attackJoyStick.IsDragging == false)
                 {
                     if (Input.GetMouseButton(0))
                     {

@@ -10,7 +10,6 @@ namespace Turret
     {
         private LineRenderer _lineRenderer = null;
         private JoyStick _joyStick = null;
-        private JoyStick _snipingJoyStick = null;
 
         private float _range = 10f;
 
@@ -19,7 +18,6 @@ namespace Turret
             base.Assignment();
             _lineRenderer = GetComponent<LineRenderer>();
             _joyStick = Instance.JoyStick;
-            _snipingJoyStick = Instance.SnipingJoyStick;
             _range = Instance.TurretSO.attackRange;
 
             _lineRenderer.enabled = false;
@@ -27,9 +25,6 @@ namespace Turret
 
             _joyStick.AddOnPointerDownListener(OnAimStart);
             _joyStick.AddOnPointerUpListener(OnAimEnd);
-
-            _snipingJoyStick.AddOnPointerDownListener(OnAimStart);
-            _snipingJoyStick.AddOnPointerUpListener(OnAimEnd);
         }
 
         private void FixedUpdate()
