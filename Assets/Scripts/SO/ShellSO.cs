@@ -9,5 +9,7 @@ namespace SO
     {
         [Header("Penetrating Power")]
         public float penetratingPower;
+        [Header("Base Damage")]
+        public float baseDamage;
     }
 }
