@@ -10,11 +10,19 @@ namespace Sound
     {
         [SerializeField]
         private AudioMixer _audioMixer = null;
+
+        private AudioMixerGroup GetAudioMixerGroup(SoundType soundType) => soundType switch
+        {
+            SoundType.BGM => _audioMixer.FindMatchingGroups("BGM")[0],
+            SoundType.SFX => _audioMixer.FindMatchingGroups("SFX")[0],
+            _ => null
+        };
+        
         
         public void PlaySound(AudioClip audioClip, SoundType soundType)
         {
             var audioSource = PoolManager.Instance.Get<Sound>("Assets/Prefabs/Sound/Sound.prefab");
-            audioSource.Play(audioClip, _audioMixer.FindMatchingGroups("SFX")[0]);
+            audioSource.Play(audioClip, GetAudioMixerGroup(soundType));
         }
     }
 }
