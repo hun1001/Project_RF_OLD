@@ -37,6 +37,10 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Sound/Sound.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 9dd28be114d4ebd43bf406e727b3bf42
+    m_Address: Assets/Prefabs/Tanks/USSR/BT-5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 83677132a06df9140834c0d848060f27, type: 2}
   m_SchemaSet:
