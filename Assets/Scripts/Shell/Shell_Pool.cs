@@ -11,7 +11,7 @@ namespace Shell
 
         private void OnEnable()
         {
-            _lifeTime = Instance.Range / Instance.Speed;
+            _lifeTime = Instance.Range / Instance.Speed * 2;
             StartCoroutine(DisableShell());
         }
 

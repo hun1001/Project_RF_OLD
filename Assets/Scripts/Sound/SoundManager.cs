@@ -18,7 +18,6 @@ namespace Sound
             _ => null
         };
         
-        
         public void PlaySound(AudioClip audioClip, SoundType soundType)
         {
             var audioSource = PoolManager.Instance.Get<Sound>("Assets/Prefabs/Sound/Sound.prefab");
