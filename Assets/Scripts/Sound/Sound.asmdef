@@ -1,0 +1,17 @@
+{
+    "name": "Sound",
+    "rootNamespace": "Sound",
+    "references": [
+        "GUID:76bd969a4853c724093fc37d7c7b7576",
+        "GUID:92bae55d4262ced43b8f46f552a9e6d5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

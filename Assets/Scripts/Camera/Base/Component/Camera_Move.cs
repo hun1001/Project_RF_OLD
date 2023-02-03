@@ -90,7 +90,7 @@ namespace CameraManage
                 if(_isShakingEnd == false)
                 {
                     _isShakingEnd = true;
-                    Invoke("CameraShakeEnd", 1f);
+                    Invoke("CameraShakeEnd", 0.5f);
                 }
             }
             else if(_turretAttack.NextFire <= 0 && _isShakingPossible == false)

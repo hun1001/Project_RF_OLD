@@ -17,4 +17,5 @@ MonoBehaviour:
   rotationSpeed: 20
   mass: 10
   acceleration: 100
+  armour: 100
   load: 0
