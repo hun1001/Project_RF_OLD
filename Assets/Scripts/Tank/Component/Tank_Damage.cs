@@ -16,7 +16,12 @@ namespace Tank
 
         protected virtual void OnHit(float damage)
         {
-            Debug.Log("Hit");
+            _currentHealth -= damage;
+
+            if (_currentHealth <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
