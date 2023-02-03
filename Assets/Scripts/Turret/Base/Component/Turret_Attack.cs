@@ -1,6 +1,7 @@
 using System.Net.Mime;
 using System.Collections;
 using System.Collections.Generic;
+using Sound;
 using UnityEngine;
 using UI;
 using UnityEngine.UI;
@@ -69,6 +70,7 @@ namespace Turret
 
             _nextFire = _fireRate;
 
+            SoundManager.Instance.PlaySound(Instance._fireSound, SoundType.SFX);
             var shell = PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
             shell.SendMessage("SetSpeed", _shellSpeed);
             shell.SendMessage("SetRange", _range);

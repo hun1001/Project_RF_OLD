@@ -18,6 +18,7 @@ namespace Shell
         private IEnumerator DisableShell()
         {
             yield return new WaitForSeconds(_lifeTime);
+            GetComponent<TrailRenderer>().Clear();
             PoolManager.Instance.Pool("Assets/Prefabs/Shell/Shell.prefab", this.gameObject);
         }
     }

@@ -34,6 +34,9 @@ namespace Tank
         [SerializeField]
         private Transform[] _skidMark = null;
         public Transform[] SkidMark => _skidMark;
+        
+        public AudioClip _idleSound = null;
+        public AudioClip _moveSound = null;
 
         // public void Assignment(TankUserData tankUserData)
         // {

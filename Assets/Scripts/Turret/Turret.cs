@@ -34,6 +34,8 @@ namespace Turret
         [SerializeField]
         private Transform _firePoint = null;
         public Transform FirePoint => _firePoint;
+        
+        public AudioClip _fireSound = null;
 
         // public void Assignment(TurretUserData turretUserData)
         // {

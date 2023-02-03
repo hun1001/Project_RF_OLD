@@ -13,8 +13,8 @@ namespace Sound
         
         public void PlaySound(AudioClip audioClip, SoundType soundType)
         {
-            var audioSource = PoolManager.Instance.Get<Sound>("a");
-            audioSource.Play(audioClip, _audioMixer.outputAudioMixerGroup);
+            var audioSource = PoolManager.Instance.Get<Sound>("Assets/Prefabs/Sound/Sound.prefab");
+            audioSource.Play(audioClip, _audioMixer.FindMatchingGroups("SFX")[0]);
         }
     }
 }

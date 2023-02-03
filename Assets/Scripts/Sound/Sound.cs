@@ -19,6 +19,7 @@ namespace Sound
         {
             _audioSource.clip = audioClip;
             _audioSource.outputAudioMixerGroup = mixer;
+            _audioSource.Play();
         }
     }
 }
