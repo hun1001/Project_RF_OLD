@@ -57,7 +57,21 @@ namespace Tank
                 Instance.LineRenderer[0].positionCount = _currentSkidMark + 1;
                 Instance.LineRenderer[1].positionCount = _currentSkidMark + 1;
                 Instance.LineRenderer[0].SetPosition(_currentSkidMark, Instance.SkidMark[0].position + new Vector3(0,0.1f,0));
-                Instance.LineRenderer[1].SetPosition(_currentSkidMark++, Instance.SkidMark[1].position + new Vector3(0, 0.1f, 0));
+                Instance.LineRenderer[1].SetPosition(_currentSkidMark, Instance.SkidMark[1].position + new Vector3(0, 0.1f, 0));
+                if(Instance.LineRenderer[0].positionCount > 100)
+                {
+                    Instance.LineRenderer[0].positionCount = 101;
+                    Instance.LineRenderer[1].positionCount = 101;
+                    for (int i = 0; i < 100; i++)
+                    {
+                        Instance.LineRenderer[0].SetPosition(i, Instance.LineRenderer[0].GetPosition(i + 1));
+                        Instance.LineRenderer[1].SetPosition(i, Instance.LineRenderer[1].GetPosition(i + 1));
+                    }
+                }
+                else
+                {
+                    _currentSkidMark++;
+                }
             }
             else
             {
