@@ -20,7 +20,7 @@ namespace Tank
 
             if (_currentHealth <= 0)
             {
-                Destroy(this.gameObject);
+                PoolManager.Instance.Pool(this.gameObject);
             }
         }
     }

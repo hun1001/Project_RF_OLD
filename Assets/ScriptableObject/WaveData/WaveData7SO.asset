@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: WaveData7SO
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 503060584111259674, guid: 9dd28be114d4ebd43bf406e727b3bf42, type: 3}
-  - {fileID: 503060584111259674, guid: 9dd28be114d4ebd43bf406e727b3bf42, type: 3}
-  - {fileID: 503060584111259674, guid: 9dd28be114d4ebd43bf406e727b3bf42, type: 3}
+  - {fileID: 2378233883578408451, guid: 48f93fdcda2d70b40991743b416be540, type: 3}
+  - {fileID: 2378233883578408451, guid: 48f93fdcda2d70b40991743b416be540, type: 3}
+  - {fileID: 2378233883578408451, guid: 48f93fdcda2d70b40991743b416be540, type: 3}
+  - {fileID: 4217106623144618737, guid: fb166edc98111f34ebb243986020afb3, type: 3}
+  - {fileID: 4217106623144618737, guid: fb166edc98111f34ebb243986020afb3, type: 3}
+  - {fileID: 4217106623144618737, guid: fb166edc98111f34ebb243986020afb3, type: 3}

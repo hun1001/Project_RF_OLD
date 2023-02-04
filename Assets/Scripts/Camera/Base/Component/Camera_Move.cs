@@ -81,12 +81,12 @@ namespace CameraManage
         {
             if(_turretAttack.NextFire > 0 && _isShakingPossible == true)
             {
-                float cameraPositionX = _attackJoyStick.Horizontal * -2f;
-                float cameraPositionZ = _attackJoyStick.Vertical * -2f;
+                float cameraPositionX = _attackJoyStick.Horizontal * -10f;
+                float cameraPositionZ = _attackJoyStick.Vertical * -10f;
                 Vector3 cameraPosition = _offsetDefalutPosition;
                 cameraPosition.x += cameraPositionX;
                 cameraPosition.z += cameraPositionZ;
-                _transposer.m_FollowOffset = Vector3.Lerp(_transposer.m_FollowOffset, cameraPosition, 1f * Time.deltaTime);
+                _transposer.m_FollowOffset = Vector3.Lerp(_transposer.m_FollowOffset, cameraPosition, 5f * Time.deltaTime);
                 if(_isShakingEnd == false)
                 {
                     _isShakingEnd = true;
