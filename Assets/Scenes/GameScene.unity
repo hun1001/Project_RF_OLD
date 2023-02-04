@@ -1981,12 +1981,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6779740082829415040, guid: 4b3802da3af5b9847b775f3b7bffbf56,
         type: 3}
-      propertyPath: _opponentSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 373be4de18067f14b814f4864333215c,
-        type: 2}
-    - target: {fileID: 6779740082829415040, guid: 4b3802da3af5b9847b775f3b7bffbf56,
-        type: 3}
       propertyPath: _spawnPointParent
       value: 
       objectReference: {fileID: 1962149763}
@@ -2049,11 +2043,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Opponent
-      objectReference: {fileID: 0}
-    - target: {fileID: 6779740082829415046, guid: 4b3802da3af5b9847b775f3b7bffbf56,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b3802da3af5b9847b775f3b7bffbf56, type: 3}
