@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: BT-2SO
   m_EditorClassIdentifier: 
   hp: 0
-  maxSpeed: 0
+  maxSpeed: 55
   rotationSpeed: 0
   mass: 0
   acceleration: 0
+  armour: 0
   load: 0
