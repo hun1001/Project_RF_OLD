@@ -9,27 +9,38 @@ namespace Opponent
     public class Opponent_Spawn : Base.CustomComponent<Opponent>
     {
         [SerializeField] 
-        private float _delay = 5f;
+        private float _delay = 120f;
         
         private int _currentWave = 0;
+        
+        private float _gameTime = 0;
 
         private IEnumerator Start()
         {
             for(int i = 0;i < Instance.OpponentSO.Waves.Length; i++)
             {
-                Spawn();
+                float _spawnCount = _delay / Instance.OpponentSO.Delay[i];
+                for (int j = 0; j < _spawnCount; j++)
+                {
+                    Spawn();
+                    yield return new WaitForSeconds(Instance.OpponentSO.Delay[i]);
+                }
                 yield return new WaitForSeconds(_delay);
+                _currentWave++;
             }
+        }
+        
+        private void Update()
+        {
+            _gameTime += Time.deltaTime;
         }
 
         private void Spawn()
         {
-            Debug.Log("wave " + _currentWave);  
-            for (int i = 0; i < Instance.OpponentSO.Waves[_currentWave].enemyPrefabs.Length; i++)
+            for(int i = 0; i < Instance.OpponentSO.Waves[_currentWave].enemyPrefabs.Length; i++)
             {
-                PoolManager.Instance.Get("Assets/Prefabs/Tanks/MediumTank/Tank_M4Sherman.prefab", Instance.GetRandomSpawnPoint.position);
+                var _enemy = PoolManager.Instance.Get(Instance.OpponentSO.Waves[_currentWave].enemyPrefabs[i]);
             }
-            _currentWave++;
         }
     }
 }

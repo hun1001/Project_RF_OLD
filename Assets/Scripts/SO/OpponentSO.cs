@@ -9,6 +9,5 @@ namespace SO
     {
         public WaveDataSO[] Waves;
         public float[] Delay;
-        public float[] DelayBetween;
     }
 }

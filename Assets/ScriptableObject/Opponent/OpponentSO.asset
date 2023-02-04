@@ -18,3 +18,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ac71d06d7a1fbdd46be4d865f81ceb76, type: 2}
   - {fileID: 11400000, guid: 2c1bbd5b7bbc98c4bb3a891563b1747e, type: 2}
   - {fileID: 11400000, guid: f3bd7f756ba0b9f47b914ef597ca1353, type: 2}
+  - {fileID: 11400000, guid: 2dc06fd00a8d268459ad7059ddb1d66e, type: 2}
+  - {fileID: 11400000, guid: 202859fcc26c97f4981eefecee34573a, type: 2}
+  - {fileID: 11400000, guid: 74d3a6b88ce1fa643a8165f9ba860235, type: 2}
+  - {fileID: 11400000, guid: d35e2f190c5a4a249ba18947f8669a63, type: 2}
+  - {fileID: 11400000, guid: 8f8f98680daa7ba4287d145d646634cd, type: 2}
+  - {fileID: 11400000, guid: 7aaba7f6fbecedd41b505b95e6cc60d9, type: 2}
+  Delay:
+  - 10
+  - 10
+  - 9
+  - 8
+  - 10
+  - 10
+  - 9
+  - 8
+  - 9
+  - 7
+  - 10

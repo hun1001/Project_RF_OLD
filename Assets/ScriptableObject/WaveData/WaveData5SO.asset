@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: WaveData5SO
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 5254224477792260664, guid: 147e30c121dfbe8409f45f72fe8485b2, type: 3}
-  - {fileID: 5254224477792260664, guid: 147e30c121dfbe8409f45f72fe8485b2, type: 3}
-  - {fileID: 5254224477792260664, guid: 147e30c121dfbe8409f45f72fe8485b2, type: 3}
+  - Assets/Prefabs/Tanks/USSR/BT-5.prefab
+  - Assets/Prefabs/Tanks/USSR/BT-5.prefab
+  - Assets/Prefabs/Tanks/USSR/BT-5.prefab

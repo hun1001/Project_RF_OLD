@@ -31,6 +31,10 @@ namespace Util
 
             return temp;
         }
+        
+        public GameObject Get(GameObject obj) => Get(obj.name);
+        public GameObject Get(GameObject obj, Vector3 position) => Get(obj.name, position);
+        public GameObject Get(GameObject obj, Vector3 position, Quaternion rotation) => Get(obj.name, position, rotation);
 
         public T Get<T>(string name) where T : MonoBehaviour => GetObject(name).GetComponent<T>();
 
@@ -52,6 +56,8 @@ namespace Util
                 _poolingDictionaryQueue[name].Enqueue(obj);
             }
         }
+        
+        public void Pool(GameObject obj) => Pool(obj.name, obj);
 
         private GameObject GetObject(string name)
         {
