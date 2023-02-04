@@ -4,6 +4,7 @@ using System.Data.Common;
 using UnityEngine;
 using UI;
 using UnityEngine.AI;
+using Sound;
 
 namespace Tank
 {
@@ -44,6 +45,7 @@ namespace Tank
             {
                 _currentSpeed += _acceleration * Time.deltaTime;
                 _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
+                //SoundManager.Instance.PlaySound(Instance._moveSound, SoundType.SFX);
             }
             else
             {
