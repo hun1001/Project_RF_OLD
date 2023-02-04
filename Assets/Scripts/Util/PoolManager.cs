@@ -31,10 +31,30 @@ namespace Util
 
             return temp;
         }
+
+        public GameObject Get(GameObject obj)
+        {
+            return GetObject(obj);
+        }
         
-        public GameObject Get(GameObject obj) => Get(obj.name);
-        public GameObject Get(GameObject obj, Vector3 position) => Get(obj.name, position);
-        public GameObject Get(GameObject obj, Vector3 position, Quaternion rotation) => Get(obj.name, position, rotation);
+        public GameObject Get(GameObject obj, Vector3 position)
+        {
+            GameObject temp = GetObject(obj);
+
+            temp.transform.position = position;
+
+            return temp;
+        }
+        
+        public GameObject Get(GameObject obj, Vector3 position, Quaternion rotation)
+        {
+            GameObject temp = GetObject(obj);
+            
+            temp.transform.position = position;
+            temp.transform.rotation = rotation;
+
+            return temp;
+        }
 
         public T Get<T>(string name) where T : MonoBehaviour => GetObject(name).GetComponent<T>();
 
@@ -82,6 +102,32 @@ namespace Util
 
             temp.SetActive(true);
 
+            return temp;
+        }
+
+        private GameObject GetObject(GameObject obj)
+        {
+            GameObject temp = null;
+
+            if (_poolingDictionaryQueue.ContainsKey(obj.name))
+            {
+                if (_poolingDictionaryQueue[obj.name].Count > 0)
+                {
+                    temp = _poolingDictionaryQueue[obj.name].Dequeue();
+                }
+                else
+                {
+                    temp = GameObject.Instantiate(obj, null);
+                }
+            }
+            else
+            {
+                _poolingDictionaryQueue.Add(obj.name, new Queue<GameObject>());
+                temp = GameObject.Instantiate(obj, null);
+            }
+
+            temp.SetActive(true);
+            
             return temp;
         }
     }

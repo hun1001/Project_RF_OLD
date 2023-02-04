@@ -17,29 +17,29 @@ namespace Opponent
 
         private IEnumerator Start()
         {
-            for(int i = 0;i < Instance.OpponentSO.Waves.Length; i++)
+            while (_currentWave < Instance.OpponentSO.Waves.Length)
             {
-                float _spawnCount = _delay / Instance.OpponentSO.Delay[i];
-                for (int j = 0; j < _spawnCount; j++)
-                {
-                    Spawn();
-                    yield return new WaitForSeconds(Instance.OpponentSO.Delay[i]);
-                }
-                yield return new WaitForSeconds(_delay);
-                _currentWave++;
+                Debug.Log($"wave: {_currentWave}");
+                Spawn();
+                yield return new WaitForSeconds(Instance.OpponentSO.Delay[_currentWave]);
             }
         }
-        
+
         private void Update()
         {
             _gameTime += Time.deltaTime;
+            if (_gameTime >= _delay)
+            {
+                _gameTime = 0;
+                _currentWave++;
+            }
         }
 
         private void Spawn()
         {
             for(int i = 0; i < Instance.OpponentSO.Waves[_currentWave].enemyPrefabs.Length; i++)
             {
-                var _enemy = PoolManager.Instance.Get(Instance.OpponentSO.Waves[_currentWave].enemyPrefabs[i]);
+                var _enemy = PoolManager.Instance.Get(Instance.OpponentSO.Waves[_currentWave].enemyPrefabs[i], Instance.GetRandomSpawnPoint.position, Quaternion.identity);
             }
         }
     }
