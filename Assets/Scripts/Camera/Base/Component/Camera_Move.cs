@@ -81,8 +81,8 @@ namespace CameraManage
         {
             if(_turretAttack.NextFire > 0 && _isShakingPossible == true)
             {
-                float cameraPositionX = _attackJoyStick.Horizontal * -10f;
-                float cameraPositionZ = _attackJoyStick.Vertical * -10f;
+                float cameraPositionX = _attackJoyStick.Horizontal * -5f;
+                float cameraPositionZ = _attackJoyStick.Vertical * -5f;
                 Vector3 cameraPosition = _offsetDefalutPosition;
                 cameraPosition.x += cameraPositionX;
                 cameraPosition.z += cameraPositionZ;
@@ -90,7 +90,7 @@ namespace CameraManage
                 if(_isShakingEnd == false)
                 {
                     _isShakingEnd = true;
-                    Invoke("CameraShakeEnd", 0.5f);
+                    Invoke("CameraShakeEnd", 0.2f);
                 }
             }
             else if(_turretAttack.NextFire <= 0 && _isShakingPossible == false)
