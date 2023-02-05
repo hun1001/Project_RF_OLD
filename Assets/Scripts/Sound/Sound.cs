@@ -24,6 +24,15 @@ namespace Sound
             _audioSource.Play();
             StartCoroutine(PoolSoundCoroutine());
         }
+
+        public void LoopPlay(AudioClip audioClip, AudioMixerGroup mixer, float volume = 1f)
+        {
+            _audioSource.clip = audioClip;
+            _audioSource.outputAudioMixerGroup = mixer;
+            _audioSource.loop = true;
+            _audioSource.volume = volume;
+            _audioSource.Play();
+        }
         
         private IEnumerator PoolSoundCoroutine()
         {

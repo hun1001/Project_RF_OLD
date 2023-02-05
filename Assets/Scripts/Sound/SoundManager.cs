@@ -11,7 +11,7 @@ namespace Sound
         [SerializeField]
         private AudioMixer _audioMixer = null;
 
-        private AudioMixerGroup GetAudioMixerGroup(SoundType soundType) => soundType switch
+        public AudioMixerGroup GetAudioMixerGroup(SoundType soundType) => soundType switch
         {
             SoundType.BGM => _audioMixer.FindMatchingGroups("BGM")[0],
             SoundType.SFX => _audioMixer.FindMatchingGroups("SFX")[0],

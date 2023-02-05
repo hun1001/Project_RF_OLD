@@ -12,6 +12,7 @@ namespace Tank
     {
         private Rigidbody _rigidbody = null;
         private JoyStick _joyStick = null;
+        private Sound.Sound _sound = null;
 
         private float _currentSpeed = 0f;
         private float _maxSpeed = 0f;
@@ -22,16 +23,22 @@ namespace Tank
         
         private int _currentSkidMark = 0;
 
+        private bool _isMove = false;
+
         protected override void Assignment()
         {
             _rigidbody = Instance.GetComponent<Rigidbody>();
             _joyStick = Instance.JoyStick;
+            _sound = GetComponent<Sound.Sound>();
 
             _maxSpeed = Instance.TankSO.maxSpeed;
             _acceleration = Instance.TankSO.acceleration;
             _rotationSpeed = Instance.TankSO.rotationSpeed;
 
             _currentSpeed = 0f;
+
+            _isMove = false;
+            _sound.LoopPlay(Instance._idleSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX));
         }
 
         private void FixedUpdate()
@@ -45,12 +52,21 @@ namespace Tank
             {
                 _currentSpeed += _acceleration * Time.deltaTime;
                 _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
-                //SoundManager.Instance.PlaySound(Instance._moveSound, SoundType.SFX);
+                if(_isMove == false)
+                {
+                    _isMove = true;
+                    _sound.LoopPlay(Instance._moveSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX));
+                }
             }
             else
             {
                 _currentSpeed -= _acceleration * Time.deltaTime * 2f;
                 _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
+                if (_isMove == true)
+                {
+                    _isMove = false;
+                    _sound.LoopPlay(Instance._idleSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX));
+                }
             }
             
             if (NavMesh.SamplePosition(transform.position + Instance.transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
