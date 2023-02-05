@@ -25,7 +25,7 @@ namespace Sound
             StartCoroutine(PoolSoundCoroutine());
         }
 
-        public void LoopPlay(AudioClip audioClip, AudioMixerGroup mixer, float volume = 1f)
+        public void LoopPlay(AudioClip audioClip, AudioMixerGroup mixer, float volume = 0.5f)
         {
             _audioSource.clip = audioClip;
             _audioSource.outputAudioMixerGroup = mixer;
