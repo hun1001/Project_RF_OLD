@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &296315701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 296315702}
+  m_Layer: 0
+  m_Name: Pos (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &296315702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296315701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.686, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8227962702631750332}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1523428034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1523428035}
+  m_Layer: 0
+  m_Name: Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1523428035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523428034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.723, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8227962702631750332}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &900422180019562571
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +607,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3981147935048310106}
+  - {fileID: 1523428035}
+  - {fileID: 296315702}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -556,13 +620,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8227962702631750333}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 57
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &8227962702631750335
 BoxCollider:
@@ -593,10 +657,14 @@ MonoBehaviour:
   _joyStick: {fileID: 0}
   _healthBar: {fileID: 0}
   _body: {fileID: 3981147935048310106}
-  _lineRenderer: []
-  _skidMark: []
-  _idleSound: {fileID: 0}
-  _moveSound: {fileID: 0}
+  _lineRenderer:
+  - {fileID: 0}
+  - {fileID: 0}
+  _skidMark:
+  - {fileID: 1523428035}
+  - {fileID: 296315702}
+  _idleSound: {fileID: 8300000, guid: aa72cca2352003b4ba0d633d3db42344, type: 3}
+  _moveSound: {fileID: 8300000, guid: 20c6b4abcb364584fa613776dd29b44f, type: 3}
 --- !u!114 &8227962702631750305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,7 +707,7 @@ MonoBehaviour:
   _attackCancel: {fileID: 0}
   _body: {fileID: 6810844012845979086}
   _firePoint: {fileID: 5447091331282197947}
-  _fireSound: {fileID: 0}
+  _fireSound: {fileID: 8300000, guid: 2e313c6ac19b1b445b46510e0af5ae91, type: 3}
 --- !u!114 &8227962702631750304
 MonoBehaviour:
   m_ObjectHideFlags: 0
