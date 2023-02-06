@@ -10,6 +10,10 @@ namespace Shell
         private SO.ShellSO _shellSO = null;
         public SO.ShellSO ShellSO => _shellSO;
 
+        [SerializeField]
+        private AudioClip _ricochetSound = null;
+        public AudioClip RicochetSound => _ricochetSound;
+
         private float _speed = 1f;
         public float Speed => _speed;
 

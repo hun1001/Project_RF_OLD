@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shellSO: {fileID: 11400000, guid: fdff30ce67fad7d40883efcf2e2b8f23, type: 2}
+  _ricochetSound: {fileID: 8300000, guid: 146302c14274cb14ca5d70ab74043116, type: 3}
 --- !u!114 &-5331192324114385244
 MonoBehaviour:
   m_ObjectHideFlags: 0

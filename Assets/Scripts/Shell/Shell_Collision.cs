@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
+using Sound;
 
 namespace Shell
 {
@@ -20,6 +21,7 @@ namespace Shell
                     break;
                 case HitType.RICOCHET:
                     transform.rotation = Quaternion.LookRotation(Vector3Calculator.GetReflectionVector(Instance.transform.forward.normalized, other.contacts[0].normal));
+                    SoundManager.Instance.PlaySound(Instance.RicochetSound, SoundType.SFX);
                     break;
             }
         }
