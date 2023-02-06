@@ -57,6 +57,12 @@ namespace Tank
                     _isMove = true;
                     _sound.LoopPlay(Instance._moveSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX));
                 }
+                if(_sound.Volume != 0.7f)
+                {
+                    float volume = (_currentSpeed * 0.7f) / _maxSpeed;
+                    _sound.VolumeSetting(volume);
+                    Debug.Log(volume);
+                }
             }
             else
             {

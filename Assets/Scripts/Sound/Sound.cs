@@ -33,11 +33,18 @@ namespace Sound
             _audioSource.volume = volume;
             _audioSource.Play();
         }
+
+        public void VolumeSetting(float volume)
+        {
+            _audioSource.volume = volume;
+        }
         
         private IEnumerator PoolSoundCoroutine()
         {
             yield return new WaitForSeconds(_audioSource.clip.length);
             PoolManager.Instance.Pool("Assets/Prefabs/Sound/Sound.prefab", this.gameObject);
         }
+
+        public float Volume => _audioSource.volume;
     }
 }
