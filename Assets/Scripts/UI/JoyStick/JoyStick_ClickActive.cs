@@ -17,12 +17,11 @@ namespace UI
         protected override void Awake()
         {
             base.Awake();
-            _attackButtonImage = GetComponent<Image>();
+            _attackButtonImage = transform.GetChild(0).GetComponent<Image>();
+            _attackCancelObject = _rectTransform.GetChild(1).gameObject;
             _rectTransform = _rectTransform.GetChild(0).GetComponent<RectTransform>();
             _rectTransformChild = _rectTransform.GetChild(0).GetComponent<RectTransform>();
             _attackJoyStick = _rectTransform.gameObject;
-            _joyStickOriginPosition = _rectTransform.position;
-            _attackCancelObject = transform.GetChild(1).gameObject;
             
         }
 

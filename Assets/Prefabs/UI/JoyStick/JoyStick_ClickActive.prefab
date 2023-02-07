@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: 780726098979125935}
   - component: {fileID: 780726098979125932}
   - component: {fileID: 780726098979125933}
-  - component: {fileID: 780726098979125923}
   m_Layer: 5
   m_Name: JoyStick_ClickActive
   m_TagString: Untagged
@@ -168,18 +167,6 @@ MonoBehaviour:
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &780726098979125923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780726098979125928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c889d2979e2ff404fa7aaccfea2a2d1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3811969138870686595
 GameObject:
   m_ObjectHideFlags: 0

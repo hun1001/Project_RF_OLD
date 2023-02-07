@@ -13,7 +13,7 @@ namespace UI
         protected Action _onPointerUp = null;
 
         private Vector2 _direction = Vector2.zero;
-        protected Vector2 _joyStickOriginPosition = Vector2.zero;
+        private Vector2 _joyStickOriginPosition = Vector2.zero;
 
         private float _radius = 0.0f;
         protected float _dragTime = 0.0f;
@@ -23,10 +23,10 @@ namespace UI
 
         protected virtual void Awake()
         {
-            _rectTransform = GetComponent<RectTransform>();
-            _rectTransformChild = transform.GetChild(0).GetComponent<RectTransform>();
+            _rectTransform = transform.GetChild(0).GetComponent<RectTransform>();
+            _rectTransformChild = _rectTransform.GetChild(0).GetComponent<RectTransform>();
             _radius = _rectTransform.rect.width * 0.5f;
-            _joyStickOriginPosition = _rectTransform.localPosition;
+            _joyStickOriginPosition = _rectTransform.anchoredPosition;
         }
 
         public virtual void OnPointerDown(PointerEventData eventData)
@@ -61,7 +61,7 @@ namespace UI
         {
             _isTouching = false;
             _rectTransformChild.localPosition = Vector2.zero;
-            _rectTransform.localPosition = _joyStickOriginPosition;
+            _rectTransform.anchoredPosition = _joyStickOriginPosition;
             _direction = Vector2.zero;
             _dragTime = 0.0f;
             _onPointerUp?.Invoke();
