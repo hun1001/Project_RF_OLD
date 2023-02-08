@@ -30,7 +30,7 @@ namespace UI
 
         private void Awake()
         {
-            _barImage = GetComponentInChildren<Image>();
+            _barImage = transform.GetChild(0).GetComponent<Image>();
         }
     }
 }
