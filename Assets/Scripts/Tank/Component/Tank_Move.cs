@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Data.Common;
-using UnityEngine;
 using UI;
 using UnityEngine.AI;
 using Sound;
+using UnityEngine;
 
 namespace Tank
 {
@@ -16,6 +15,8 @@ namespace Tank
 
         private float _currentSpeed = 0f;
         private float _maxSpeed = 0f;
+        
+        private float _currentMaxSpeed = 0f;
 
         private float _acceleration = 0f;
 
@@ -50,8 +51,10 @@ namespace Tank
         {
             if (_joyStick.IsTouching)
             {
+                _currentMaxSpeed = _maxSpeed * _joyStick.Scalar;
+                
                 _currentSpeed += _acceleration * Time.deltaTime;
-                _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
+                _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _currentMaxSpeed);
                 if(_isMove == false)
                 {
                     _isMove = true;

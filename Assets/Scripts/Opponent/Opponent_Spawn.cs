@@ -26,7 +26,6 @@ namespace Opponent
         {
             while (_currentWave < Instance.OpponentSO.Waves.Length)
             {
-                Debug.Log($"wave: {_currentWave}");
                 Spawn();
                 yield return new WaitForSeconds(Instance.OpponentSO.Delay[_currentWave]);
             }

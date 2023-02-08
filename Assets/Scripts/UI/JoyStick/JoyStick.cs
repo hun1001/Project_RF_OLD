@@ -44,11 +44,11 @@ namespace UI
 
         public void OnDrag(PointerEventData eventData)
         {
-            Vector2 pos = eventData.position - (Vector2)_rectTransform.position;
+            Vector2 pos = (eventData.position - (Vector2)_rectTransform.position) / (_radius/10);
             pos = Vector2.ClampMagnitude(pos, _radius);
             _rectTransformChild.localPosition = pos;
             
-            _direction = pos.normalized;
+            _direction = pos;
             if (_dragTime < 3f) _dragTime += Time.deltaTime;
         }
         
@@ -68,7 +68,7 @@ namespace UI
         }
 
         public Vector2 Direction => _direction.normalized;
-        public float Scalar => _direction.magnitude;
+        public float Scalar => _direction.magnitude/_radius;
         public float Vertical => _direction.y;
         public float Horizontal => _direction.x;
         public bool IsDragging => _isDragging;
