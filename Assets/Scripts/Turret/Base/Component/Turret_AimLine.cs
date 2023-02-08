@@ -34,9 +34,13 @@ namespace Turret
             if (Physics.Raycast(Instance.FirePoint.position, Instance.FirePoint.forward, out RaycastHit hit, _range))
             {
                 _lineRenderer.SetPosition(1, hit.point);
+                _lineRenderer.startColor = Color.green;
+                _lineRenderer.endColor = Color.green;
             }
             else
             {
+                _lineRenderer.startColor = Color.red;
+                _lineRenderer.endColor = Color.red;
                 _lineRenderer.SetPosition(1, Instance.FirePoint.position + Instance.FirePoint.forward * _range);
             }
         }

@@ -20,6 +20,14 @@ namespace Tank
         {
             base.OnHit(damage);
             _hpBar.Value = _currentHealth;
+            if(_hpBar.Value <= 0f)
+            {
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#else
+                Application.Quit();
+#endif
+            }
         }
     }
 }
