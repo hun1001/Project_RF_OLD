@@ -69,8 +69,8 @@ namespace UI
 
         public Vector2 Direction => _direction.normalized;
         public float Scalar => _direction.magnitude/_radius;
-        public float Vertical => _direction.y;
-        public float Horizontal => _direction.x;
+        public float Vertical => _direction.normalized.y;
+        public float Horizontal => _direction.normalized.x;
         public bool IsDragging => _isDragging;
         public bool IsTouching => _isTouching;
         public float DragTime => _dragTime;
