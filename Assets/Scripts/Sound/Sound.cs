@@ -16,11 +16,12 @@ namespace Sound
             _audioSource = GetComponent<AudioSource>();
         }
         
-        public void Play(AudioClip audioClip, AudioMixerGroup mixer)
+        public void Play(AudioClip audioClip, AudioMixerGroup mixer, float volume = 1f)
         {
             _audioSource.clip = audioClip;
             _audioSource.outputAudioMixerGroup = mixer;
             _audioSource.loop = false;
+            _audioSource.volume = volume;
             _audioSource.Play();
             StartCoroutine(PoolSoundCoroutine());
         }

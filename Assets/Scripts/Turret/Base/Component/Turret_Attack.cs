@@ -70,7 +70,7 @@ namespace Turret
 
             _nextFire = _fireRate;
 
-            SoundManager.Instance.PlaySound(Instance._fireSound, SoundType.SFX);
+            SoundManager.Instance.PlaySound(Instance._fireSound, SoundType.SFX, 0.7f);
             var shell = PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
             shell.SendMessage("SetSpeed", _shellSpeed);
             shell.SendMessage("SetRange", _range);

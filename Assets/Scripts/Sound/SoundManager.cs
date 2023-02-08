@@ -18,10 +18,10 @@ namespace Sound
             _ => null
         };
         
-        public void PlaySound(AudioClip audioClip, SoundType soundType)
+        public void PlaySound(AudioClip audioClip, SoundType soundType, float volume = 1f)
         {
             var audioSource = PoolManager.Instance.Get<Sound>("Assets/Prefabs/Sound/Sound.prefab");
-            audioSource.Play(audioClip, GetAudioMixerGroup(soundType));
+            audioSource.Play(audioClip, GetAudioMixerGroup(soundType), volume);
         }
     }
 }

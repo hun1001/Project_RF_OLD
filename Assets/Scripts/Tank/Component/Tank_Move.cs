@@ -61,7 +61,6 @@ namespace Tank
                 {
                     float volume = (_currentSpeed * 0.7f) / _maxSpeed;
                     _sound.VolumeSetting(volume);
-                    Debug.Log(volume);
                 }
             }
             else

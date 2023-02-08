@@ -15,6 +15,13 @@ namespace Opponent
         
         private float _gameTime = 0;
 
+        private UI.WaveTimer _waveTimer = null;
+
+        private void Awake()
+        {
+            _waveTimer = Instance.WaveTimer;
+        }
+
         private IEnumerator Start()
         {
             while (_currentWave < Instance.OpponentSO.Waves.Length)
@@ -33,6 +40,7 @@ namespace Opponent
                 _gameTime = 0;
                 _currentWave++;
             }
+            _waveTimer.SetTimer(_delay - _gameTime);
         }
 
         private void Spawn()

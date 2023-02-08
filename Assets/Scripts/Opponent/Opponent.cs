@@ -20,5 +20,9 @@ namespace Opponent
         [SerializeField]
         private SO.OpponentSO _opponentSO = null;
         public SO.OpponentSO OpponentSO => _opponentSO;
+
+        [SerializeField]
+        private UI.WaveTimer _waveTimer = null;
+        public UI.WaveTimer WaveTimer => _waveTimer;
     }
 }
