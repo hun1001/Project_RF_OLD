@@ -5,6 +5,7 @@ using UI;
 using UnityEngine.EventSystems;
 using Cinemachine;
 using Turret;
+using Tank;
 
 namespace CameraManage
 {
@@ -23,6 +24,8 @@ namespace CameraManage
         private bool _isShakingPossible = false;
         private bool _isShakingEnd = false;
 
+        private Tank_DamageWithHPBar _tank_damage = null;
+
         private void Awake()
         {
             _cmvcam = Instance.CMvcam;
@@ -34,6 +37,8 @@ namespace CameraManage
             _turretAttack = GameObject.FindGameObjectWithTag("PlayerTank").GetComponent<Turret_Attack>();
             _attackRange = _turretAttack.Range;
 
+            _tank_damage = GameObject.FindGameObjectWithTag("PlayerTank").GetComponent<Tank_DamageWithHPBar>();
+
             _offsetDefalutPosition = _transposer.m_FollowOffset;
         }
 
@@ -41,7 +46,7 @@ namespace CameraManage
         {
             //CameraRotation();
             SnipingCamera();
-            CameraShake();
+            FireCameraShake();
         }
 
         private void CameraRotation()
@@ -77,7 +82,7 @@ namespace CameraManage
             }
         }
 
-        public void CameraShake()
+        public void FireCameraShake()
         {
             if(_turretAttack.NextFire > 0 && _isShakingPossible == true)
             {
@@ -103,6 +108,27 @@ namespace CameraManage
         {
             _isShakingPossible = false;
             _isShakingEnd = false;
+        }
+
+        public void HitCameraShake()
+        {
+            InvokeRepeating("HitStartShake", 0f, 0.005f);
+            Invoke("HitStopShake", 0.3f);
+        }
+
+        private void HitStartShake()
+        {
+            float cameraPosX = Random.value * 0.05f * 2 - 0.05f;
+            float cameraPosZ = Random.value * 0.05f * 2 - 0.05f;
+            Vector3 cameraPos = _transposer.m_FollowOffset;
+            cameraPos.x += cameraPosX;
+            cameraPos.z += cameraPosZ;
+            _transposer.m_FollowOffset = cameraPos;
+        }
+        private void HitStopShake()
+        {
+            CancelInvoke("HitStartShake");
+            _transposer.m_FollowOffset = _offsetDefalutPosition;
         }
     }
 }
