@@ -45,6 +45,10 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Tanks/USSR/BT-7.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 1a0a80ce97f4ca74ea1d8e65e9531bd7
+    m_Address: Assets/Shader/OutLine/OutLine.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 83677132a06df9140834c0d848060f27, type: 2}
   m_SchemaSet:

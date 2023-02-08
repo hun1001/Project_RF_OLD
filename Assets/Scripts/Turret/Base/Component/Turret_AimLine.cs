@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UI;
+using Util;
 
 namespace Turret
 {
@@ -12,6 +13,9 @@ namespace Turret
         private JoyStick _joyStick = null;
 
         private float _range = 10f;
+        
+        [SerializeField]
+        private Material mat = null;
 
         protected override void Assignment()
         {
@@ -36,6 +40,11 @@ namespace Turret
                 _lineRenderer.SetPosition(1, hit.point);
                 _lineRenderer.startColor = Color.green;
                 _lineRenderer.endColor = Color.green;
+
+                foreach (var a in hit.transform.GetComponentsInChildren<MeshRenderer>())
+                {
+                    a.material = mat;
+                }
             }
             else
             {
@@ -44,7 +53,7 @@ namespace Turret
                 _lineRenderer.SetPosition(1, Instance.FirePoint.position + Instance.FirePoint.forward * _range);
             }
         }
-
+        
         private void OnAimStart()
         {
             _lineRenderer.enabled = true;
