@@ -14,6 +14,10 @@ namespace Shell
         private AudioClip _ricochetSound = null;
         public AudioClip RicochetSound => _ricochetSound;
 
+        [SerializeField]
+        private AudioClip _mapRicochetSound = null;
+        public AudioClip MapRicochetSound => _mapRicochetSound;
+
         private float _speed = 1f;
         public float Speed => _speed;
 
