@@ -8,6 +8,18 @@ namespace Tank
     public class Tank_DamageWithHPBar : Tank_Damage
     {
         private Bar _hpBar = null;
+        private bool _isHit = false;
+        public bool IsHit
+        {
+            get
+            {
+                return _isHit;
+            }
+            set
+            {
+                _isHit = value;
+            }
+        }
 
         protected override void Assignment()
         {
@@ -20,6 +32,7 @@ namespace Tank
         {
             base.OnHit(damage);
             _hpBar.Value = _currentHealth;
+            _isHit = true;
             if(_hpBar.Value <= 0f)
             {
 #if UNITY_EDITOR

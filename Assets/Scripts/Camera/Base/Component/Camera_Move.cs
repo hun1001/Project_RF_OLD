@@ -47,6 +47,7 @@ namespace CameraManage
             //CameraRotation();
             SnipingCamera();
             FireCameraShake();
+            HitCameraShake();
         }
 
         private void CameraRotation()
@@ -112,8 +113,12 @@ namespace CameraManage
 
         public void HitCameraShake()
         {
-            InvokeRepeating("HitStartShake", 0f, 0.005f);
-            Invoke("HitStopShake", 0.3f);
+            if(_tank_damage.IsHit == true)
+            {
+                _tank_damage.IsHit = false;
+                InvokeRepeating("HitStartShake", 0f, 0.005f);
+                Invoke("HitStopShake", 0.3f);
+            }
         }
 
         private void HitStartShake()
