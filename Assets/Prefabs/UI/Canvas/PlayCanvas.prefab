@@ -627,8 +627,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a51f18daa0bcf4da69889155998802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveJoyStick: {fileID: 0}
-  _attackJoyStick: {fileID: 0}
+  _moveJoyStick: {fileID: 9190489406393634311}
+  _attackJoyStick: {fileID: 3685459454919937773}
   _hpBar: {fileID: 7224374317085512688}
   _attackImage: {fileID: 4061879976485659043}
   _attackCancel: {fileID: 3642004798400678280}

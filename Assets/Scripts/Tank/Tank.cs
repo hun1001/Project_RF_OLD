@@ -27,6 +27,7 @@ namespace Tank
         public Transform Body => _body;
         
         //0: left 1: right
+        [Header("Skid")]
         [SerializeField]
         private LineRenderer[] _lineRenderer = null;
         public LineRenderer[] LineRenderer => _lineRenderer;
@@ -35,6 +36,7 @@ namespace Tank
         private Transform[] _skidMark = null;
         public Transform[] SkidMark => _skidMark;
         
+        [Header("Sound")]
         public AudioClip _idleSound = null;
         public AudioClip _moveSound = null;
 

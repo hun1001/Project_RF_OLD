@@ -20,10 +20,18 @@ namespace CameraManage
         private Turret_Attack _turretAttack = null;
         private float _attackRange = 0.0f;
 
+        [Header("Rebound")]
+        [SerializeField]
+        private float _reboundDistance = 5f;
         private Vector3 _offsetDefalutPosition = Vector3.zero;
-        private bool _isShakingPossible = false;
-        private bool _isShakingEnd = false;
+        private bool _isReboundingPossible = false;
+        private bool _isReboundingEnd = false;
 
+        [Header("Hit Shake")]
+        [SerializeField]
+        private float _hitShakeDuration = 0.3f;
+        [SerializeField]
+        private float _hitShakeDistance = 0.05f;
         private Tank_DamageWithHPBar _tank_damage = null;
 
         private void Awake()
@@ -46,7 +54,7 @@ namespace CameraManage
         {
             //CameraRotation();
             SnipingCamera();
-            FireCameraShake();
+            FireCameraRebound();
             HitCameraShake();
         }
 
@@ -77,38 +85,38 @@ namespace CameraManage
                     _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, offset, 2f * Time.deltaTime);
                 }
             }
-            else if(_transposer.m_FollowOffset != _offsetDefalutPosition || _isShakingEnd == false)
+            else if(_transposer.m_FollowOffset != _offsetDefalutPosition || _isReboundingEnd == false)
             {
                 _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, _offsetDefalutPosition, 2f * Time.deltaTime);
             }
         }
 
-        public void FireCameraShake()
+        public void FireCameraRebound()
         {
-            if(_turretAttack.NextFire > 0 && _isShakingPossible == true)
+            if(_turretAttack.NextFire > 0 && _isReboundingPossible == true)
             {
-                float cameraPositionX = _attackJoyStick.Horizontal * -5f;
-                float cameraPositionZ = _attackJoyStick.Vertical * -5f;
+                float cameraPositionX = _attackJoyStick.Horizontal * -1f * _reboundDistance;
+                float cameraPositionZ = _attackJoyStick.Vertical * -1f * _reboundDistance;
                 Vector3 cameraPosition = _offsetDefalutPosition;
                 cameraPosition.x += cameraPositionX;
                 cameraPosition.z += cameraPositionZ;
                 _transposer.m_FollowOffset = Vector3.Lerp(_transposer.m_FollowOffset, cameraPosition, 5f * Time.deltaTime);
-                if(_isShakingEnd == false)
+                if(_isReboundingEnd == false)
                 {
-                    _isShakingEnd = true;
-                    Invoke("CameraShakeEnd", 0.2f);
+                    _isReboundingEnd = true;
+                    Invoke("CameraReboundEnd", 0.2f);
                 }
             }
-            else if(_turretAttack.NextFire <= 0 && _isShakingPossible == false)
+            else if(_turretAttack.NextFire <= 0 && _isReboundingPossible == false)
             {
-                _isShakingPossible = true;
+                _isReboundingPossible = true;
             }
         }
 
-        private void CameraShakeEnd()
+        private void CameraReboundEnd()
         {
-            _isShakingPossible = false;
-            _isShakingEnd = false;
+            _isReboundingPossible = false;
+            _isReboundingEnd = false;
         }
 
         public void HitCameraShake()
@@ -117,14 +125,14 @@ namespace CameraManage
             {
                 _tank_damage.IsHit = false;
                 InvokeRepeating("HitStartShake", 0f, 0.005f);
-                Invoke("HitStopShake", 0.3f);
+                Invoke("HitStopShake", _hitShakeDuration);
             }
         }
 
         private void HitStartShake()
         {
-            float cameraPosX = Random.value * 0.05f * 2 - 0.05f;
-            float cameraPosZ = Random.value * 0.05f * 2 - 0.05f;
+            float cameraPosX = Random.value * _hitShakeDistance * 2 - _hitShakeDistance;
+            float cameraPosZ = Random.value * _hitShakeDistance * 2 - _hitShakeDistance;
             Vector3 cameraPos = _transposer.m_FollowOffset;
             cameraPos.x += cameraPosX;
             cameraPos.z += cameraPosZ;
