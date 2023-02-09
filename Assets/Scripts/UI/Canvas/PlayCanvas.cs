@@ -7,6 +7,7 @@ namespace UI
 {
     public class PlayCanvas : UI.Canvas
     {
+        [Header("JoyStick")]
         [SerializeField]
         private JoyStick _moveJoyStick = null;
         public  JoyStick MoveJoyStick => _moveJoyStick;
@@ -15,10 +16,12 @@ namespace UI
         private JoyStick_ClickActive _attackJoyStick = null;
         public  JoyStick_ClickActive AttackJoyStick => _attackJoyStick;
         
+        [Header("Hp Bar")]
         [SerializeField]
         private Bar _hpBar = null;
         public  Bar HpBar => _hpBar;
         
+        [Header("Attack")]
         [SerializeField]
         private Image _attackImage = null;
         public Image AttackImage => _attackImage;

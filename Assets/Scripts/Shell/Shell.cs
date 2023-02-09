@@ -6,10 +6,12 @@ namespace Shell
 {
     public class Shell : Base.CustomGameObject
     {
+        [Header("Data")]
         [SerializeField]
         private SO.ShellSO _shellSO = null;
         public SO.ShellSO ShellSO => _shellSO;
 
+        [Header("Sound")]
         [SerializeField]
         private AudioClip _ricochetSound = null;
         public AudioClip RicochetSound => _ricochetSound;
