@@ -24,5 +24,13 @@ namespace Util
             return handle.Result;
         }
 
+        public Material GetMaterial(string name)
+        {
+            var handle = Addressables.LoadAssetAsync<Material>(name);
+
+            handle.WaitForCompletion();
+
+            return handle.Result;
+        }
     }
 }

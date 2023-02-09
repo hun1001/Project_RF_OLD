@@ -13,9 +13,6 @@ namespace Turret
         private JoyStick _joyStick = null;
 
         private float _range = 10f;
-        
-        [SerializeField]
-        private Material mat = null;
 
         protected override void Assignment()
         {
@@ -41,10 +38,7 @@ namespace Turret
                 _lineRenderer.startColor = Color.green;
                 _lineRenderer.endColor = Color.green;
 
-                foreach (var a in hit.transform.GetComponentsInChildren<MeshRenderer>())
-                {
-                    a.material = mat;
-                }
+                hit.transform.SendMessage("Aiming", SendMessageOptions.DontRequireReceiver);
             }
             else
             {

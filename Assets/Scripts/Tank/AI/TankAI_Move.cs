@@ -18,6 +18,8 @@ namespace Tank
         private float _range = 15f;
 
         private bool _isMove = false;
+        
+        private Material _aimMaterial = null;
 
         public enum State
         {
@@ -30,6 +32,7 @@ namespace Tank
         protected override void Assignment()
         {
             base.Assignment();
+            _aimMaterial = AddressablesManager.Instance.GetMaterial("Assets/Shader/OutLine/OutLine.mat");
             _agent = GetComponent<NavMeshAgent>();
             _target = GameObject.FindGameObjectWithTag("PlayerTank").transform;
         }
@@ -104,6 +107,13 @@ namespace Tank
             }
             
             _agent.SetDestination(movePoint);
+        }
+        
+        private bool _isAiming = false;
+
+        private void Aiming()
+        {
+            
         }
     }
 }
