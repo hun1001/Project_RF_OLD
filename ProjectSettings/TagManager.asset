@@ -8,6 +8,7 @@ TagManager:
   - PlayerTank
   - Opponent
   - OpponentTank
+  - Map
   layers:
   - Default
   - TransparentFX
