@@ -1,0 +1,16 @@
+{
+    "name": "Item",
+    "rootNamespace": "Item",
+    "references": [
+        "GUID:6252ce3a8f55c9d4195a651098dc8c27"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
