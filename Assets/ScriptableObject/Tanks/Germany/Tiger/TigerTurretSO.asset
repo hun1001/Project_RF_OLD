@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TigerTurretSO
   m_EditorClassIdentifier: 
   rotationSpeed: 4.5
-  reloadSpeed: 1.5
+  reloadSpeed: 2.5
   shellSpeed: 50
   attackRange: 20

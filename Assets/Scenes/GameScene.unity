@@ -3177,6 +3177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6081f06b233035f4397ca30820a30638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _reboundDistance: 5
+  _hitShakeDuration: 0.3
+  _hitShakeDistance: 0.05
 --- !u!114 &1832061698
 MonoBehaviour:
   m_ObjectHideFlags: 0

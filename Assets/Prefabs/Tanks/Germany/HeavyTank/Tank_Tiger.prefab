@@ -708,6 +708,7 @@ MonoBehaviour:
   _body: {fileID: 6810844012845979086}
   _firePoint: {fileID: 5447091331282197947}
   _fireSound: {fileID: 8300000, guid: 2e313c6ac19b1b445b46510e0af5ae91, type: 3}
+  _reloadSound: {fileID: 8300000, guid: 33cd6764869f0b9468e2f89b555a9e33, type: 3}
 --- !u!114 &8227962702631750304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,7 +745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef86af9218ee86b46981c4e1898ed252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: 1a0a80ce97f4ca74ea1d8e65e9531bd7, type: 2}
 --- !u!120 &479435561
 LineRenderer:
   m_ObjectHideFlags: 0

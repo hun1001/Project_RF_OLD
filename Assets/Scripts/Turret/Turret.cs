@@ -37,6 +37,7 @@ namespace Turret
         
         [Header("Sound")]
         public AudioClip _fireSound = null;
+        public AudioClip _reloadSound = null;
 
         // public void Assignment(TurretUserData turretUserData)
         // {
