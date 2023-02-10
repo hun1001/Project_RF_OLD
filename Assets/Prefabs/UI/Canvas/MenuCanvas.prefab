@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1218512945952158282}
   - component: {fileID: 1218512945952158283}
   m_Layer: 0
-  m_Name: VII [4:89]
+  m_Name: VII Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 1218512945984578134}
   - component: {fileID: 1218512945984578135}
   m_Layer: 0
-  m_Name: Tiger (H) [4:58]
+  m_Name: TankNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 1218512946036818449}
   - component: {fileID: 1218512946036818448}
   m_Layer: 0
-  m_Name: "\uD0F1\uD06C3 [4:49]"
+  m_Name: Tank3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,9 +458,9 @@ RectTransform:
   m_Father: {fileID: 1218512947209683646}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 560, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1218512946036818448
@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 1218512946081021242}
   - component: {fileID: 1218512946081021243}
   m_Layer: 0
-  m_Name: image 1 [4:69]
+  m_Name: TankImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -861,7 +861,7 @@ GameObject:
   - component: {fileID: 1218512946128509372}
   - component: {fileID: 1218512946128509373}
   m_Layer: 0
-  m_Name: image 2 [4:84]
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 1218512946150797997}
   - component: {fileID: 1218512946150798002}
   m_Layer: 0
-  m_Name: image 2 [4:60]
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1013,7 +1013,7 @@ GameObject:
   - component: {fileID: 1218512946209373364}
   - component: {fileID: 1218512946209373365}
   m_Layer: 0
-  m_Name: Tiger (H) [4:52]
+  m_Name: TankNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1148,7 +1148,7 @@ GameObject:
   - component: {fileID: 1218512946227449363}
   - component: {fileID: 1218512946227449360}
   m_Layer: 0
-  m_Name: VII [4:77]
+  m_Name: VII Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 1218512946244072472}
   - component: {fileID: 1218512946244072473}
   m_Layer: 0
-  m_Name: Tiger (H) [4:46]
+  m_Name: TankNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1455,7 +1455,7 @@ GameObject:
   - component: {fileID: 1218512946257581861}
   - component: {fileID: 1218512946257581866}
   m_Layer: 0
-  m_Name: BG [1:38]
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1720,7 +1720,7 @@ GameObject:
   - component: {fileID: 1218512946302483559}
   - component: {fileID: 1218512946302483556}
   m_Layer: 0
-  m_Name: VII [4:47]
+  m_Name: VII Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1855,7 +1855,7 @@ GameObject:
   - component: {fileID: 1218512946326553720}
   - component: {fileID: 1218512946326553721}
   m_Layer: 0
-  m_Name: VII [4:23]
+  m_Name: VII Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1990,7 +1990,7 @@ GameObject:
   - component: {fileID: 1218512946342257552}
   - component: {fileID: 1218512946342257553}
   m_Layer: 0
-  m_Name: VII [4:71]
+  m_Name: VII Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2280,7 +2280,7 @@ GameObject:
   - component: {fileID: 1218512946489104918}
   - component: {fileID: 1218512946489104919}
   m_Layer: 0
-  m_Name: BG [4:56]
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2392,7 +2392,7 @@ GameObject:
   - component: {fileID: 1218512946576175117}
   - component: {fileID: 1218512946576175122}
   m_Layer: 0
-  m_Name: image 1 [4:87]
+  m_Name: TankImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2468,7 +2468,7 @@ GameObject:
   - component: {fileID: 1218512946600881070}
   - component: {fileID: 1218512946600881071}
   m_Layer: 0
-  m_Name: VII [4:65]
+  m_Name: VII Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2725,7 +2725,7 @@ GameObject:
   - component: {fileID: 1218512946670465542}
   - component: {fileID: 1218512946670465543}
   m_Layer: 0
-  m_Name: image 1 [3:10]
+  m_Name: TankImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2801,7 +2801,7 @@ GameObject:
   - component: {fileID: 1218512946712900770}
   - component: {fileID: 1218512946712900771}
   m_Layer: 0
-  m_Name: BG [4:62]
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2876,7 +2876,7 @@ GameObject:
   - component: {fileID: 1218512946729174906}
   - component: {fileID: 1218512946729174901}
   m_Layer: 0
-  m_Name: "\uD0F1\uD06C8 [4:79]"
+  m_Name: Tank8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2902,9 +2902,9 @@ RectTransform:
   m_Father: {fileID: 1218512947209683646}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 160, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1218512946729174901
@@ -2932,7 +2932,7 @@ GameObject:
   - component: {fileID: 1218512946764084819}
   - component: {fileID: 1218512946764084818}
   m_Layer: 0
-  m_Name: "\uD0F1\uD06C7 [4:73]"
+  m_Name: Tank7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2958,9 +2958,9 @@ RectTransform:
   m_Father: {fileID: 1218512947209683646}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1218512946764084818
@@ -3043,7 +3043,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC804\uD22C\uC2DC\uC791"
+  m_text: Game Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3124,7 +3124,7 @@ GameObject:
   - component: {fileID: 1218512946788901925}
   - component: {fileID: 1218512946788901930}
   m_Layer: 0
-  m_Name: Tiger (H) [4:88]
+  m_Name: TankNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3457,7 +3457,7 @@ GameObject:
   - component: {fileID: 1218512946846321064}
   - component: {fileID: 1218512946846321065}
   m_Layer: 0
-  m_Name: Tiger (H) [4:64]
+  m_Name: TankNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3592,7 +3592,7 @@ GameObject:
   - component: {fileID: 1218512946846684986}
   - component: {fileID: 1218512946846684987}
   m_Layer: 0
-  m_Name: image 2 [4:24]
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3668,7 +3668,7 @@ GameObject:
   - component: {fileID: 1218512946853074092}
   - component: {fileID: 1218512946853074093}
   m_Layer: 0
-  m_Name: Tiger (H) [4:76]
+  m_Name: TankNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3803,7 +3803,7 @@ GameObject:
   - component: {fileID: 1218512946908216195}
   - component: {fileID: 1218512946908216192}
   m_Layer: 0
-  m_Name: image 2 [4:72]
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4096,7 +4096,7 @@ GameObject:
   - component: {fileID: 1218512947032354519}
   - component: {fileID: 1218512947032354516}
   m_Layer: 0
-  m_Name: image 2 [4:90]
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4339,7 +4339,7 @@ GameObject:
   - component: {fileID: 1218512947074521828}
   - component: {fileID: 1218512947074521829}
   m_Layer: 0
-  m_Name: image 1 [4:57]
+  m_Name: TankImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4490,7 +4490,7 @@ GameObject:
   - component: {fileID: 1218512947136257894}
   - component: {fileID: 1218512947136257889}
   m_Layer: 0
-  m_Name: "\uD0F1\uD06C1 [4:19]"
+  m_Name: Tank1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4516,9 +4516,9 @@ RectTransform:
   m_Father: {fileID: 1218512947209683646}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 720, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1218512947136257889
@@ -4547,7 +4547,7 @@ GameObject:
   - component: {fileID: 1218512947139181396}
   - component: {fileID: 1218512947139181397}
   m_Layer: 0
-  m_Name: VII [4:53]
+  m_Name: VII Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4681,7 +4681,7 @@ GameObject:
   - component: {fileID: 1218512947157134957}
   - component: {fileID: 1218512947157134956}
   m_Layer: 0
-  m_Name: "\uD0F1\uD06C6 [4:67]"
+  m_Name: Tank6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4707,9 +4707,9 @@ RectTransform:
   m_Father: {fileID: 1218512947209683646}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 320, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1218512947157134956
@@ -4860,7 +4860,7 @@ GameObject:
   - component: {fileID: 1218512947177126782}
   - component: {fileID: 1218512947177126783}
   m_Layer: 0
-  m_Name: image 1 [4:75]
+  m_Name: TankImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4936,7 +4936,7 @@ GameObject:
   - component: {fileID: 1218512947177848966}
   - component: {fileID: 1218512947177848967}
   m_Layer: 0
-  m_Name: VII [4:83]
+  m_Name: VII Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5159,7 +5159,7 @@ GameObject:
   - component: {fileID: 1218512947218670546}
   - component: {fileID: 1218512947218670547}
   m_Layer: 0
-  m_Name: image 2 [4:78]
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5234,7 +5234,7 @@ GameObject:
   - component: {fileID: 1218512947227591811}
   - component: {fileID: 1218512947227591810}
   m_Layer: 0
-  m_Name: "\uD0F1\uD06C5 [4:61]"
+  m_Name: Tank5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5260,9 +5260,9 @@ RectTransform:
   m_Father: {fileID: 1218512947209683646}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1218512947227591810
@@ -5291,7 +5291,7 @@ GameObject:
   - component: {fileID: 1218512947261653783}
   - component: {fileID: 1218512947261653780}
   - component: {fileID: 1218512947261653781}
-  - component: {fileID: 263210665990715488}
+  - component: {fileID: -8244278132672819878}
   m_Layer: 5
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -5381,7 +5381,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &263210665990715488
+--- !u!114 &-8244278132672819878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5390,9 +5390,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1218512947261653786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6fc0c2a88bc48c428e47e8e65d21706, type: 3}
+  m_Script: {fileID: 11500000, guid: 25577d23385522e4090e96267cf8eb16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startButton: {fileID: 1218512946822038795}
 --- !u!1 &1218512947268896774
 GameObject:
   m_ObjectHideFlags: 0
@@ -5405,7 +5406,7 @@ GameObject:
   - component: {fileID: 1218512947268896771}
   - component: {fileID: 1218512947268896768}
   m_Layer: 0
-  m_Name: BG [4:86]
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5481,7 +5482,7 @@ GameObject:
   - component: {fileID: 1218512947290642128}
   - component: {fileID: 1218512947290642129}
   m_Layer: 0
-  m_Name: BG [4:80]
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5557,7 +5558,7 @@ GameObject:
   - component: {fileID: 1218512947321039256}
   - component: {fileID: 1218512947321039257}
   m_Layer: 0
-  m_Name: image 2 [4:54]
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5670,7 +5671,7 @@ GameObject:
   - component: {fileID: 1218512947338433714}
   - component: {fileID: 1218512947338433709}
   m_Layer: 0
-  m_Name: "\uD0F1\uD06C4 [4:55]"
+  m_Name: Tank4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5696,9 +5697,9 @@ RectTransform:
   m_Father: {fileID: 1218512947209683646}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 480, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1218512947338433709
@@ -5727,7 +5728,7 @@ GameObject:
   - component: {fileID: 1218512947346120541}
   - component: {fileID: 1218512947346120546}
   m_Layer: 0
-  m_Name: image 1 [4:81]
+  m_Name: TankImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5803,7 +5804,7 @@ GameObject:
   - component: {fileID: 1218512947362514953}
   - component: {fileID: 1218512947362514958}
   m_Layer: 0
-  m_Name: image 1 [4:51]
+  m_Name: TankImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5878,7 +5879,7 @@ GameObject:
   - component: {fileID: 1218512947377553201}
   - component: {fileID: 1218512947377553200}
   m_Layer: 0
-  m_Name: "\uD0F1\uD06C2 [4:43]"
+  m_Name: Tank2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5904,9 +5905,9 @@ RectTransform:
   m_Father: {fileID: 1218512947209683646}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 640, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1218512947377553200
@@ -5935,7 +5936,7 @@ GameObject:
   - component: {fileID: 1218512947388553079}
   - component: {fileID: 1218512947388553076}
   m_Layer: 0
-  m_Name: Tiger (H) [4:70]
+  m_Name: TankNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6272,7 +6273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1218512947209683646}
   m_Horizontal: 1
-  m_Vertical: 1
+  m_Vertical: 0
   m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
@@ -6300,7 +6301,7 @@ GameObject:
   - component: {fileID: 1218512947446106188}
   - component: {fileID: 1218512947446106189}
   m_Layer: 0
-  m_Name: image 1 [4:45]
+  m_Name: TankImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6467,7 +6468,7 @@ GameObject:
   - component: {fileID: 1218512947454296866}
   - component: {fileID: 1218512947454296867}
   m_Layer: 0
-  m_Name: image 1 [4:63]
+  m_Name: TankImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6543,7 +6544,7 @@ GameObject:
   - component: {fileID: 1218512947455237816}
   - component: {fileID: 1218512947455237817}
   m_Layer: 0
-  m_Name: BG [4:74]
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6619,7 +6620,7 @@ GameObject:
   - component: {fileID: 1218512947543703935}
   - component: {fileID: 1218512947543703932}
   m_Layer: 0
-  m_Name: image 2 [4:16]
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6695,7 +6696,7 @@ GameObject:
   - component: {fileID: 1218512947600713672}
   - component: {fileID: 1218512947600713673}
   m_Layer: 0
-  m_Name: image 1 [4:21]
+  m_Name: TankImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6808,7 +6809,7 @@ GameObject:
   - component: {fileID: 1218512947626984778}
   - component: {fileID: 1218512947626984779}
   m_Layer: 0
-  m_Name: Tiger (H) [3:11]
+  m_Name: TankNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7095,7 +7096,7 @@ GameObject:
   - component: {fileID: 1218512947695384762}
   - component: {fileID: 1218512947695384763}
   m_Layer: 0
-  m_Name: BG [4:20]
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7293,7 +7294,7 @@ GameObject:
   - component: {fileID: 1218512947713142801}
   - component: {fileID: 1218512947713142806}
   m_Layer: 0
-  m_Name: BG [4:50]
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7490,7 +7491,7 @@ GameObject:
   - component: {fileID: 1218512947797334897}
   - component: {fileID: 1218512947797334896}
   m_Layer: 0
-  m_Name: "\uD0F1\uD06C10 [3:4]"
+  m_Name: Tank10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7516,8 +7517,8 @@ RectTransform:
   m_Father: {fileID: 1218512947209683646}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0, y: 1}
@@ -7547,7 +7548,7 @@ GameObject:
   - component: {fileID: 1218512947821542340}
   - component: {fileID: 1218512947821542341}
   m_Layer: 0
-  m_Name: Tiger (H) [4:22]
+  m_Name: TankNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7681,7 +7682,7 @@ GameObject:
   - component: {fileID: 1218512947835468889}
   - component: {fileID: 1218512947835468888}
   m_Layer: 0
-  m_Name: "\uD0F1\uD06C9 [4:85]"
+  m_Name: Tank9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7707,9 +7708,9 @@ RectTransform:
   m_Father: {fileID: 1218512947209683646}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1218512947835468888
@@ -7738,7 +7739,7 @@ GameObject:
   - component: {fileID: 1218512947872299422}
   - component: {fileID: 1218512947872299423}
   m_Layer: 0
-  m_Name: VII [4:14]
+  m_Name: VII Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7873,7 +7874,7 @@ GameObject:
   - component: {fileID: 1218512947887698226}
   - component: {fileID: 1218512947887698227}
   m_Layer: 0
-  m_Name: BG [4:68]
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7949,7 +7950,7 @@ GameObject:
   - component: {fileID: 1218512948014733895}
   - component: {fileID: 1218512948014733892}
   m_Layer: 0
-  m_Name: BG [4:44]
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8025,7 +8026,7 @@ GameObject:
   - component: {fileID: 1218512948022231493}
   - component: {fileID: 1218512948022231498}
   m_Layer: 0
-  m_Name: image 2 [4:66]
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8101,7 +8102,7 @@ GameObject:
   - component: {fileID: 1218512948031679876}
   - component: {fileID: 1218512948031679877}
   m_Layer: 0
-  m_Name: VII [4:59]
+  m_Name: VII Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8236,7 +8237,7 @@ GameObject:
   - component: {fileID: 1218512948036501802}
   - component: {fileID: 1218512948036501803}
   m_Layer: 0
-  m_Name: image 2 [4:48]
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8312,7 +8313,7 @@ GameObject:
   - component: {fileID: 1218512948039054631}
   - component: {fileID: 1218512948039054628}
   m_Layer: 0
-  m_Name: Tiger (H) [4:82]
+  m_Name: TankNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
