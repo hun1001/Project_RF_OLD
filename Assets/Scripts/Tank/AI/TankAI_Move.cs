@@ -35,6 +35,8 @@ namespace Tank
             _aimMaterial = AddressablesManager.Instance.GetMaterial("Assets/Shader/OutLine/OutLine.mat");
             _agent = GetComponent<NavMeshAgent>();
             _target = GameObject.FindGameObjectWithTag("PlayerTank").transform;
+
+            StartCoroutine(nameof(Checker));
         }
 
         private void Update()
@@ -82,7 +84,6 @@ namespace Tank
                 fireTime += Time.deltaTime;
                 if (fireTime > 5f)
                 {
-                    Debug.Log("Fire");
                     fireTime = 0f;
                     var shell = PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
                     shell.SendMessage("SetSpeed", 20f);
@@ -111,9 +112,59 @@ namespace Tank
         
         private bool _isAiming = false;
 
+        private float _aimTime = 0f;
+        
         private void Aiming()
         {
+            _isAiming = true;
+            StartCoroutine(nameof(AimingCheck));
+        }
+        
+        private IEnumerator AimingCheck()
+        {
+            _aimTime = 0f;
+            while (_aimTime < 1f)
+            {
+                _aimTime += Time.deltaTime;
+                yield return null;
+            }
+            _isAiming = false;
+        }
+        
+        MeshRenderer[] _meshRenderer = null;
+        
+        private Material[] _defaultMaterials = null;
+        
+        private IEnumerator Checker()
+        {
+            _meshRenderer = GetComponentsInChildren<MeshRenderer>();
+            _defaultMaterials = new Material[_meshRenderer.Length];
+            for (int i = 0; i < _meshRenderer.Length; i++)
+            { 
+                _defaultMaterials[i] = _meshRenderer[i].material;
+            }
             
+            while (true)
+            {
+                Debug.Log(_isAiming);
+                if (_isAiming)
+                {
+                    for (int i = 0; i < _meshRenderer.Length; i++)
+                    {
+                        _meshRenderer[i].material = _aimMaterial;
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < _meshRenderer.Length; i++)
+                    {
+                        _meshRenderer[i].material = _defaultMaterials[i];
+                    }
+                }
+                
+                yield return null;
+            }
+            yield break;
         }
     }
 }
