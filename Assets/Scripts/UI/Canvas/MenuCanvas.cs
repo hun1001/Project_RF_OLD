@@ -13,6 +13,7 @@ namespace UI
 
         private void Awake()
         {
+            PoolManager.Instance.Clear();
             _startButton.onClick.AddListener(() => SceneLoadManager.Instance.LoadScene("GameScene"));
         }
     }

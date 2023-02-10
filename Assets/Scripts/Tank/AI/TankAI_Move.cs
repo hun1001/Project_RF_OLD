@@ -123,7 +123,7 @@ namespace Tank
         private IEnumerator AimingCheck()
         {
             _aimTime = 0f;
-            while (_aimTime < 1f)
+            while (_aimTime < 0.5f)
             {
                 _aimTime += Time.deltaTime;
                 yield return null;

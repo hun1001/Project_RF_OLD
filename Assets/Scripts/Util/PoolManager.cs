@@ -130,5 +130,10 @@ namespace Util
             
             return temp;
         }
+        
+        public void Clear()
+        {
+            _poolingDictionaryQueue.Clear();
+        }
     }
 }
