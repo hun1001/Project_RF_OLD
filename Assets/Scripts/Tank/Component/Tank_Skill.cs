@@ -28,6 +28,11 @@ namespace Tank
                 if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
                 {
                     PoolManager.Instance.Get("Assets/Prefabs/Effect/WFXMR_ExplosiveSmokeGround Big.prefab", hit.point + Vector3.up, Quaternion.identity);
+                    Collider[] colliders = Physics.OverlapSphere(hit.point, 4f);
+                    foreach (var c in colliders)
+                    {
+                        c.SendMessage("OnHit", 600, SendMessageOptions.DontRequireReceiver);
+                    }
                 }
             }
         }
