@@ -15,10 +15,10 @@ namespace Util
             return GetObject(name);
         }
 
-        public GameObject Get(string name, Vector3 position)
+        public GameObject Get(string name, Transform parent)
         {
             var temp = GetObject(name);
-            temp.transform.position = position;
+            temp.transform.SetParent(parent);
 
             return temp;
         }
@@ -58,7 +58,7 @@ namespace Util
 
         public T Get<T>(string name) where T : MonoBehaviour => GetObject(name).GetComponent<T>();
 
-        public T Get<T>(string name, Vector3 position) where T : MonoBehaviour => Get(name, position).GetComponent<T>();
+        public T Get<T>(string name, Transform parent) where T : MonoBehaviour => Get(name, parent).GetComponent<T>();
 
         public T Get<T>(string name, Vector3 position, Quaternion rotation) where T : MonoBehaviour => Get(name, position, rotation).GetComponent<T>();
 

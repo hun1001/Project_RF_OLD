@@ -17,7 +17,7 @@ namespace Shell
                 switch (TypeReader.GetHitType(angle))
                 {
                     case HitType.PENETRATION:
-                        PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position);
+                        PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position, Quaternion.identity);
                         PoolManager.Instance.Pool("Assets/Prefabs/Shell/Shell.prefab", gameObject);
                         break;
                     case HitType.RICOCHET:
@@ -31,7 +31,7 @@ namespace Shell
                 switch (TypeReader.GetHitType(angle))
                 {
                     case HitType.PENETRATION:
-                        PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position);
+                        PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position,  Quaternion.identity);
                         PoolManager.Instance.Pool("Assets/Prefabs/Shell/Shell.prefab", gameObject);
                         other.gameObject.SendMessage("OnHit", 250, SendMessageOptions.DontRequireReceiver);
                         break;
