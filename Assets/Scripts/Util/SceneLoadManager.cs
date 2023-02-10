@@ -9,10 +9,12 @@ namespace Util
     {
         public void LoadScene(string sceneName)
         {
+            PoolManager.Instance.Clear();
             StartCoroutine(LoadMyAsyncScene(sceneName));
         }
         public void LoadScene(int index)
         {
+            PoolManager.Instance.Clear();
             StartCoroutine(LoadMyAsyncScene(index));
         }
 
