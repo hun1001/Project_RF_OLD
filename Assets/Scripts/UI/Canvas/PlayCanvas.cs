@@ -29,5 +29,18 @@ namespace UI
         [SerializeField]
         private AttackCancel _attackCancel = null;
         public AttackCancel AttackCancel => _attackCancel;
+
+        [Header("Result")]
+        [SerializeField]
+        private GameObject _resultPanel = null;
+        public GameObject ResultPanel => _resultPanel;
+
+        [SerializeField]
+        private Button _mainButton = null;
+        public Button MainButton => _mainButton;
+
+        [SerializeField]
+        private Button _restartButton = null;
+        public Button RestartButton => _restartButton;
     }
 }

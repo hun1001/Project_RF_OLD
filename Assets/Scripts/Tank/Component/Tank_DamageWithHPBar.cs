@@ -7,6 +7,7 @@ namespace Tank
 {
     public class Tank_DamageWithHPBar : Tank_Damage
     {
+        private PlayCanvas _playCanvas = null;
         private Bar _hpBar = null;
         private bool _isHit = false;
         public bool IsHit
@@ -24,6 +25,7 @@ namespace Tank
         protected override void Assignment()
         {
             base.Assignment();
+            _playCanvas = FindObjectOfType<PlayCanvas>();
             _hpBar = Instance.HealthBar;
             _hpBar.MaxValue = Instance.TankSO.hp;
         }
@@ -35,11 +37,7 @@ namespace Tank
             _isHit = true;
             if(_hpBar.Value <= 0f)
             {
-#if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-#else
-                Application.Quit();
-#endif
+                _playCanvas.ResultPanel.SetActive(true);
             }
         }
     }
