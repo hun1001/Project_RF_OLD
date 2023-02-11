@@ -32,7 +32,7 @@ namespace Tank
             _rigidbody = Instance.GetComponent<Rigidbody>();
             _joyStick = Instance.JoyStick;
             _moveSound = SoundManager.Instance.LoopPlaySound(Instance._moveSound, SoundType.SFX);
-            _trackSound = SoundManager.Instance.LoopPlaySound(Instance._trackSound, SoundType.SFX);
+            _trackSound = SoundManager.Instance.LoopPlaySound(Instance._trackSound, SoundType.SFX, 0.5f, 0f);
 
             _maxSpeed = Instance.TankSO.maxSpeed;
             _acceleration = Instance.TankSO.acceleration;
@@ -79,7 +79,7 @@ namespace Tank
                 {
                     _isMove = false;
                     _moveSound.PitchSetting(1f);
-                    _trackSound.PitchSetting(1f);
+                    _trackSound.PitchSetting(0f);
                 }
             }
             
