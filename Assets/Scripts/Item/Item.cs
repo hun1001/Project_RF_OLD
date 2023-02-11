@@ -7,5 +7,6 @@ namespace Item
     public abstract class Item : MonoBehaviour
     {
         public SO.ItemSO itemSO;
+        public abstract void AddItem();
     }
 }

@@ -2681,7 +2681,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectObject: {fileID: 3642004798236320568}
-  Items: []
+  Items:
+  - {fileID: 3228784596722432923, guid: 0439d1508f6c44841afcb84fb248a7cf, type: 3}
 --- !u!4 &1226739429
 Transform:
   m_ObjectHideFlags: 0
