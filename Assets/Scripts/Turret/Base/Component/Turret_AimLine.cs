@@ -28,7 +28,7 @@ namespace Turret
             _joyStick.AddOnPointerUpListener(OnAimEnd);
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             _lineRenderer.SetPosition(0, Instance.FirePoint.position);
 
