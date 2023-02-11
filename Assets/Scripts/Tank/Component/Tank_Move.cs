@@ -11,7 +11,8 @@ namespace Tank
     {
         private Rigidbody _rigidbody = null;
         private JoyStick _joyStick = null;
-        private Sound.Sound _sound = null;
+        private Sound.Sound _moveSound = null;
+        private Sound.Sound _trackSound = null;
 
         private float _currentSpeed = 0f;
         private float _maxSpeed = 0f;
@@ -30,7 +31,8 @@ namespace Tank
         {
             _rigidbody = Instance.GetComponent<Rigidbody>();
             _joyStick = Instance.JoyStick;
-            _sound = GetComponent<Sound.Sound>();
+            _moveSound = SoundManager.Instance.LoopPlaySound(Instance._moveSound, SoundType.SFX);
+            _trackSound = SoundManager.Instance.LoopPlaySound(Instance._trackSound, SoundType.SFX);
 
             _maxSpeed = Instance.TankSO.maxSpeed;
             _acceleration = Instance.TankSO.acceleration;
@@ -39,7 +41,6 @@ namespace Tank
             _currentSpeed = 0f;
 
             _isMove = false;
-            _sound.LoopPlay(Instance._idleSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX));
         }
 
         private void FixedUpdate()
@@ -55,15 +56,19 @@ namespace Tank
                 
                 _currentSpeed += _acceleration * Time.deltaTime;
                 _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _currentMaxSpeed);
-                if(_isMove == false)
+
+                if (_isMove == false)
                 {
                     _isMove = true;
-                    _sound.LoopPlay(Instance._moveSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX), 0.7f);
+                    SoundManager.Instance.PlaySound(Instance._loadSound, SoundType.SFX, 0.5f);
                 }
+
                 if(_currentSpeed != _maxSpeed)
                 {
                     float pitch = (_currentSpeed * 1.5f) / _maxSpeed;
-                    _sound.PitchSetting(pitch);
+                    if (pitch < 1f) pitch = 1f;
+                    _moveSound.PitchSetting(pitch);
+                    _trackSound.PitchSetting(pitch);
                 }
             }
             else
@@ -73,7 +78,8 @@ namespace Tank
                 if (_isMove == true)
                 {
                     _isMove = false;
-                    _sound.LoopPlay(Instance._idleSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX));
+                    _moveSound.PitchSetting(1f);
+                    _trackSound.PitchSetting(1f);
                 }
             }
             

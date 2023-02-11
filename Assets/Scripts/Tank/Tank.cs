@@ -37,8 +37,9 @@ namespace Tank
         public Transform[] SkidMark => _skidMark;
         
         [Header("Sound")]
-        public AudioClip _idleSound = null;
         public AudioClip _moveSound = null;
+        public AudioClip _trackSound = null;
+        public AudioClip _loadSound = null;
 
         // public void Assignment(TankUserData tankUserData)
         // {
