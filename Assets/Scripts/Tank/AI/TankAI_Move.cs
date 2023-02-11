@@ -146,7 +146,6 @@ namespace Tank
             
             while (true)
             {
-                Debug.Log(_isAiming);
                 if (_isAiming)
                 {
                     for (int i = 0; i < _meshRenderer.Length; i++)

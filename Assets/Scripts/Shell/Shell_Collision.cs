@@ -33,11 +33,12 @@ namespace Shell
                     case HitType.PENETRATION:
                         PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position,  Quaternion.identity);
                         PoolManager.Instance.Pool("Assets/Prefabs/Shell/Shell.prefab", gameObject);
-                        other.gameObject.SendMessage("OnHit", 250, SendMessageOptions.DontRequireReceiver);
+                        other.gameObject.SendMessage("OnHit", Instance.ShellSO.baseDamage, SendMessageOptions.DontRequireReceiver);
                         break;
                     case HitType.RICOCHET:
                         transform.rotation = Quaternion.LookRotation(Vector3Calculator.GetReflectionVector(Instance.transform.forward.normalized, other.contacts[0].normal));
                         SoundManager.Instance.PlaySound(Instance.RicochetSound, SoundType.SFX);
+                        PoolManager.Instance.Get<UI.TextEffect>("Assets/Prefabs/UI/TextEffect.prefab", transform.position, Quaternion.identity).SetTextEffect("Ricochet", Color.white, 2, 5f);
                         break;
                 }
             }
