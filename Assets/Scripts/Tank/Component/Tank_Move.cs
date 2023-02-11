@@ -39,7 +39,7 @@ namespace Tank
             _currentSpeed = 0f;
 
             _isMove = false;
-            _sound.LoopPlay(Instance._idleSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX));
+            _sound.LoopPlay(Instance._moveSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX));
         }
 
         private void FixedUpdate()
@@ -73,7 +73,7 @@ namespace Tank
                 if (_isMove == true)
                 {
                     _isMove = false;
-                    _sound.LoopPlay(Instance._idleSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX));
+                    _sound.LoopPlay(Instance._moveSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX));
                 }
             }
             
