@@ -117,13 +117,14 @@ namespace Tank
         private void Aiming()
         {
             _isAiming = true;
+            StopCoroutine(nameof(AimingCheck));
             StartCoroutine(nameof(AimingCheck));
         }
         
         private IEnumerator AimingCheck()
         {
             _aimTime = 0f;
-            while (_aimTime < 0.5f)
+            while (_aimTime < 0.1f)
             {
                 _aimTime += Time.deltaTime;
                 yield return null;
