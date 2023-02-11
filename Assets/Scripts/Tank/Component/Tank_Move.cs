@@ -58,12 +58,12 @@ namespace Tank
                 if(_isMove == false)
                 {
                     _isMove = true;
-                    _sound.LoopPlay(Instance._moveSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX));
+                    _sound.LoopPlay(Instance._moveSound, SoundManager.Instance.GetAudioMixerGroup(SoundType.SFX), 0.7f);
                 }
-                if(_sound.Volume != 0.7f)
+                if(_currentSpeed != _maxSpeed)
                 {
-                    float volume = (_currentSpeed * 0.7f) / _maxSpeed;
-                    _sound.VolumeSetting(volume);
+                    float pitch = (_currentSpeed * 1.5f) / _maxSpeed;
+                    _sound.PitchSetting(pitch);
                 }
             }
             else
