@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Item;
 using UnityEngine;
 using Util;
 
@@ -38,6 +39,7 @@ namespace Opponent
             {
                 _gameTime = 0;
                 _currentWave++;
+                FindObjectOfType<ItemManager>()?.ItemShow();
             }
             _waveTimer.SetTimer(_delay - _gameTime);
         }
