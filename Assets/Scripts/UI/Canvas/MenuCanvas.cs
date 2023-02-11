@@ -10,10 +10,20 @@ namespace UI
     {
         [SerializeField]
         private Button _startButton = null;
+        [SerializeField]
+        private Button _exitButton = null;
 
         private void Awake()
         {
             _startButton.onClick.AddListener(() => SceneLoadManager.Instance.LoadScene("GameScene"));
+            _exitButton.onClick.AddListener(() =>
+            {
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#else
+                Application.Quit();
+#endif
+            });
         }
     }
 }
