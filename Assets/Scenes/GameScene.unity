@@ -282,11 +282,6 @@ PrefabInstance:
       objectReference: {fileID: 1529546000}
     - target: {fileID: 3424633289465488314, guid: c41aa8bda019bfb4ab13d1b4caf280b7,
         type: 3}
-      propertyPath: _idleSound
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424633289465488314, guid: c41aa8bda019bfb4ab13d1b4caf280b7,
-        type: 3}
       propertyPath: _lineRenderer.Array.data[0]
       value: 
       objectReference: {fileID: 613254129}
@@ -302,11 +297,6 @@ PrefabInstance:
       objectReference: {fileID: 1824519070}
     - target: {fileID: 6316762985748217792, guid: c41aa8bda019bfb4ab13d1b4caf280b7,
         type: 3}
-      propertyPath: _fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 68d23c5288aa7e94bb0e7e7bfe981274, type: 3}
-    - target: {fileID: 6316762985748217792, guid: c41aa8bda019bfb4ab13d1b4caf280b7,
-        type: 3}
       propertyPath: _attackImage
       value: 
       objectReference: {fileID: 2089569046}
@@ -315,11 +305,6 @@ PrefabInstance:
       propertyPath: _attackCancel
       value: 
       objectReference: {fileID: 995556710}
-    - target: {fileID: 6316762985748217792, guid: c41aa8bda019bfb4ab13d1b4caf280b7,
-        type: 3}
-      propertyPath: _shellDropSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 292cb62458e262d49b6d41270a222838, type: 3}
     - target: {fileID: 8227962702631750332, guid: c41aa8bda019bfb4ab13d1b4caf280b7,
         type: 3}
       propertyPath: m_RootOrder
