@@ -44,6 +44,7 @@ namespace Item
             entry.callback.AddListener((data) =>
             {
                 Debug.Log($"get Item : {item.itemSO.itemName}");
+                item.AddItem();
                 Time.timeScale = 1;
                 selectObject.SetActive(false);
             });
