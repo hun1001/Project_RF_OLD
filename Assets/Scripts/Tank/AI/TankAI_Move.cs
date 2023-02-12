@@ -18,8 +18,6 @@ namespace Tank
         private float _range = 15f;
 
         private bool _isMove = false;
-        
-        private Material _aimMaterial = null;
 
         public enum State
         {
@@ -32,7 +30,6 @@ namespace Tank
         protected override void Assignment()
         {
             base.Assignment();
-            _aimMaterial = AddressablesManager.Instance.GetMaterial("Assets/Shader/OutLine/OutLine.mat");
             _agent = GetComponent<NavMeshAgent>();
             _target = GameObject.FindGameObjectWithTag("PlayerTank").transform;
 
@@ -131,40 +128,33 @@ namespace Tank
             }
             _isAiming = false;
         }
-        
-        MeshRenderer[] _meshRenderer = null;
-        
-        private Material[] _defaultMaterials = null;
-        
+
         private IEnumerator Checker()
         {
-            _meshRenderer = GetComponentsInChildren<MeshRenderer>();
-            _defaultMaterials = new Material[_meshRenderer.Length];
-            for (int i = 0; i < _meshRenderer.Length; i++)
-            { 
-                _defaultMaterials[i] = _meshRenderer[i].material;
-            }
-            
             while (true)
             {
                 if (_isAiming)
                 {
-                    for (int i = 0; i < _meshRenderer.Length; i++)
-                    {
-                        _meshRenderer[i].material = _aimMaterial;
-                    }
+                    ChangeLayer("OutLine", transform);
                 }
                 else
                 {
-                    for (int i = 0; i < _meshRenderer.Length; i++)
-                    {
-                        _meshRenderer[i].material = _defaultMaterials[i];
-                    }
+                    ChangeLayer("Default", transform);
                 }
                 
                 yield return null;
             }
             yield break;
+        }
+        
+        private void ChangeLayer(string layerName, Transform objTransform)
+        {
+            foreach (Transform t in objTransform)
+            {
+                t.gameObject.layer = LayerMask.NameToLayer(layerName);
+                if(t.childCount > 0)
+                    ChangeLayer(layerName, t);
+            }
         }
     }
 }
