@@ -12,14 +12,14 @@ namespace Turret
         private LineRenderer _lineRenderer = null;
         private JoyStick _joyStick = null;
 
-        private float _range = 10f;
+        private float _range = 50f;
 
         protected override void Assignment()
         {
             base.Assignment();
             _lineRenderer = GetComponent<LineRenderer>();
             _joyStick = Instance.JoyStick;
-            _range = Instance.TurretSO.attackRange;
+            //_range = Instance.TurretSO.attackRange;
 
             _lineRenderer.enabled = false;
             _lineRenderer.positionCount = 2;
