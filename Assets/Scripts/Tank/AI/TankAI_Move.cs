@@ -15,7 +15,7 @@ namespace Tank
         private NavMeshAgent _agent = null;
         private Transform _target = null;
 
-        private float _range = 15f;
+        private readonly float _range = 20f;
 
         private bool _isMove = false;
 
