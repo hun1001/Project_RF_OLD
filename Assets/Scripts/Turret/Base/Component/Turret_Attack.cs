@@ -53,7 +53,7 @@ namespace Turret
             {
                 _nextFire -= Time.deltaTime;
             }
-            if(_isReload == true && _nextFire < Instance._reloadSound.length)
+            if(_isReload == true && _nextFire < Instance._reloadSound.length - 0.5f)
             {
                 _isReload = false;
                 SoundManager.Instance.PlaySound(Instance._reloadSound, SoundType.SFX, 0.6f);
@@ -78,10 +78,16 @@ namespace Turret
             _nextFire = _fireRate;
             _isReload = true;
 
-            SoundManager.Instance.PlaySound(Instance._fireSound, SoundType.SFX, 1f);
+            SoundManager.Instance.PlaySound(Instance._fireSound, SoundType.SFX);
             var shell = PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
             shell.SendMessage("SetSpeed", _shellSpeed);
             shell.SendMessage("SetRange", _range);
+            Invoke("ShellDropSoundPlay", 0.3f);
+        }
+
+        private void ShellDropSoundPlay()
+        {
+            SoundManager.Instance.PlaySound(Instance._shellDropSound, SoundType.SFX, 0.5f);
         }
 
         public float Range => _range;
