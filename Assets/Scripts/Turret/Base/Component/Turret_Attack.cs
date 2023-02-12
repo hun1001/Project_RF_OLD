@@ -82,7 +82,7 @@ namespace Turret
             var shell = PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
             shell.SendMessage("SetSpeed", _shellSpeed);
             shell.SendMessage("SetRange", _range);
-            Invoke("ShellDropSoundPlay", 0.3f);
+            Invoke("ShellDropSoundPlay", 0.6f);
         }
 
         private void ShellDropSoundPlay()
