@@ -10,6 +10,13 @@ namespace Sound
     {
         [SerializeField]
         private AudioMixer _audioMixer = null;
+        [SerializeField]
+        private AudioClip _ambientSound = null;
+
+        private void Awake()
+        {
+            LoopPlaySound(_ambientSound, SoundType.BGM);
+        }
 
         public AudioMixerGroup GetAudioMixerGroup(SoundType soundType) => soundType switch
         {
