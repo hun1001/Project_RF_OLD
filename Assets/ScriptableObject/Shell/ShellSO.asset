@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ShellSO
   m_EditorClassIdentifier: 
   penetratingPower: 60
+  baseDamage: 300
