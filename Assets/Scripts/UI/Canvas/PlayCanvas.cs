@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace UI
 {
@@ -42,5 +43,10 @@ namespace UI
         [SerializeField]
         private Button _restartButton = null;
         public Button RestartButton => _restartButton;
+
+        [Header("Gold")]
+        [SerializeField]
+        private TextMeshProUGUI _goldText = null;
+        public TextMeshProUGUI GoldText => _goldText;
     }
 }
