@@ -9,6 +9,7 @@ namespace Util
         private void Awake()
         {
             Application.targetFrameRate = 120;
+            PlayerPrefs.SetInt("Gold", 0);
         }
     }
 }

@@ -32,7 +32,10 @@ namespace Tank
                     
                     foreach (var c in colliders)
                     {
-                        c.SendMessage("OnHit", 600, SendMessageOptions.DontRequireReceiver);
+                        if(c.CompareTag("PlayerTank") == false)
+                        {
+                            c.SendMessage("OnHit", 600, SendMessageOptions.DontRequireReceiver);
+                        }
                     }
                 }
             }
