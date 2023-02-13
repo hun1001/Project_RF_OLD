@@ -25,14 +25,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8f8f98680daa7ba4287d145d646634cd, type: 2}
   - {fileID: 11400000, guid: 7aaba7f6fbecedd41b505b95e6cc60d9, type: 2}
   Delay:
+  - 15
+  - 15
+  - 15
   - 10
   - 10
-  - 9
-  - 8
   - 10
   - 10
-  - 9
-  - 8
-  - 9
-  - 7
+  - 10
+  - 10
+  - 10
   - 10
