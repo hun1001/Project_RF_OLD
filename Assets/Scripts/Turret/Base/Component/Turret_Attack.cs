@@ -56,7 +56,7 @@ namespace Turret
             if(_isReload == true && _nextFire < Instance._reloadSound.length - 0.5f)
             {
                 _isReload = false;
-                SoundManager.Instance.PlaySound(Instance._reloadSound, SoundType.SFX, 0.6f);
+                SoundManager.Instance.PlaySound(Instance._reloadSound, SoundType.SFX, 0.5f);
             }
 
             _attackImage.fillAmount = 1f - _nextFire / _fireRate;
@@ -78,7 +78,7 @@ namespace Turret
             _nextFire = _fireRate;
             _isReload = true;
 
-            SoundManager.Instance.PlaySound(Instance._fireSound, SoundType.SFX);
+            SoundManager.Instance.PlaySound(Instance._fireSound, SoundType.SFX, 0.7f);
             var shell = PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
             shell.SendMessage("SetSpeed", _shellSpeed);
             shell.SendMessage("SetRange", _range);
