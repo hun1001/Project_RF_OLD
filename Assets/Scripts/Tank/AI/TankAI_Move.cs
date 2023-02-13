@@ -79,7 +79,7 @@ namespace Tank
             while (_state == State.Attack)
             {
                 fireTime += Time.deltaTime;
-                if (fireTime > 5f)
+                if (fireTime > 3f)
                 {
                     fireTime = 0f;
                     var shell = PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
