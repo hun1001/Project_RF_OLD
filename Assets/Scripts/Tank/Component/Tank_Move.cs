@@ -83,7 +83,7 @@ namespace Tank
                 }
             }
             
-            if (NavMesh.SamplePosition(transform.position + transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(transform.position + transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 1f, NavMesh.AllAreas))
             {
                 _rigidbody.velocity = Instance.transform.forward * _currentSpeed;
                 Instance.LineRenderer[0].positionCount = _currentSkidMark + 1;
@@ -107,6 +107,7 @@ namespace Tank
             }
             else
             {
+                Debug.DrawLine(transform.position + transform.forward * _currentSpeed * Time.deltaTime, transform.position + transform.forward * _currentSpeed * Time.deltaTime + Vector3.up * 50f, Color.red);
                 _rigidbody.velocity = Vector3.zero;
             }
 
