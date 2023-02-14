@@ -12,5 +12,8 @@ namespace SO
         public int rarity;
         
         public string description;
+
+        //사용할 아이템의 이미지 스프라이트
+        public Sprite itemSprite;
     }
 }

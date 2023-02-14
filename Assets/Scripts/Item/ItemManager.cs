@@ -35,6 +35,7 @@ namespace Item
 
             nameText.text = item.itemSO.itemName;
             descriptionText.text = item.itemSO.description;
+            setItem.GetComponent<Image>().sprite = item.itemSO.itemSprite;
 
             EventTrigger e = setItem.GetComponent<EventTrigger>();
             
