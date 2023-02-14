@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 52
+  controlID: 57
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 59
+  controlID: 107
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 362.40002
     height: 730.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.2717855, y: -0.6316279, z: 0.25178516, w: -0.6811655}
     speed: 2
-    m_Value: {x: 0.27178553, y: 0.6316279, z: -0.25178516, w: 0.6811655}
+    m_Value: {x: -0.27175787, y: -0.6315637, z: 0.25175956, w: -0.68109626}
   m_Size:
     m_Target: 51.82502
     speed: 2
@@ -677,9 +677,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 5488ffff
-      m_LastClickedID: -30636
-      m_ExpandedIDs: 2090ffff
+      m_SelectedIDs: 907c0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 8c8effff0cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -789,7 +789,7 @@ MonoBehaviour:
       width: 2597.6006
       height: 1152
     m_MinimalGUI: 1
-  m_defaultScale: 0.35746527
+  m_defaultScale: 0.3392361
   m_LastWindowPixelSize: {x: 1101.5, y: 514.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -838,22 +838,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ScriptableObject/Tanks/USSR/T-34-57
+    - Assets/ScriptableObject/WaveData
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/ScriptableObject/Tanks/USSR/T-34-57
+  - Assets/ScriptableObject/WaveData
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\USER\Documents\Project_RF
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 511}
-    m_SelectedIDs: 1af10000
-    m_LastClickedID: 61722
-    m_ExpandedIDs: 000000006aed00006ced00006eed000070ed000072ed000074ed000076ed0000cced0000e0ed0000d4f000001cf1000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 591}
+    m_SelectedIDs: 1c820000
+    m_LastClickedID: 33308
+    m_ExpandedIDs: 00000000d8810000da810000dc810000de810000e0810000e2810000e4810000068200001a82000082820000848200009456010000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -881,7 +881,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006aed00006ced00006eed000070ed000072ed000074ed000076ed0000
+    m_ExpandedIDs: 00000000d8810000da810000dc810000de810000e0810000e2810000e4810000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
