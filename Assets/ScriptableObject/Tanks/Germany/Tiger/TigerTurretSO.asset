@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e3036c05085c947967155ee4245f71, type: 3}
   m_Name: TigerTurretSO
   m_EditorClassIdentifier: 
-  rotationSpeed: 4.5
+  rotationSpeed: 0.7
   reloadSpeed: 2.5
   shellSpeed: 50
   attackRange: 20
