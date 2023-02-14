@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42159e6d5730a14cbd0081800ad7117, type: 3}
   m_Name: BT-7SO
   m_EditorClassIdentifier: 
-  hp: 510
+  hp: 625
   maxSpeed: 60
   rotationSpeed: 40
   mass: 0
