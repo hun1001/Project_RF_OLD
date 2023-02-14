@@ -38,14 +38,7 @@ namespace Tank
 
         private void Update()
         {
-            if (Vector3.Distance(transform.position, _target.position) > _range)
-            {
-                _state = State.Move;
-            }
-            else
-            {
-                _state = State.Attack;
-            }
+            _state = Vector3.Distance(transform.position, _target.position) > _range ? State.Move : State.Attack;
         }
         
         private void LateUpdate()
@@ -141,7 +134,6 @@ namespace Tank
                 {
                     ChangeLayer("Default", transform);
                 }
-                
                 yield return null;
             }
             yield break;

@@ -32,7 +32,7 @@ namespace Turret
         {
             _lineRenderer.SetPosition(0, Instance.FirePoint.position);
 
-            if (Physics.Raycast(Instance.FirePoint.position, Instance.FirePoint.forward, out RaycastHit hit, _range))
+            if (Physics.Raycast(Instance.FirePoint.position, Instance.FirePoint.forward, out RaycastHit hit, _range)&& hit.transform.CompareTag("OpponentTank"))
             {
                 _lineRenderer.SetPosition(1, hit.point);
                 _lineRenderer.startColor = Color.green;

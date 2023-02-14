@@ -49,6 +49,7 @@ namespace Opponent
             for(int i = 0; i < Instance.OpponentSO.Waves[_currentWave].enemyPrefabs.Length; i++)
             {
                 var _enemy = PoolManager.Instance.Get(Instance.OpponentSO.Waves[_currentWave].enemyPrefabs[i], Instance.GetRandomSpawnPoint.position, Quaternion.identity);
+                _enemy.tag = "OpponentTank";
             }
         }
     }
