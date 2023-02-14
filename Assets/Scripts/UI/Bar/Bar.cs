@@ -31,9 +31,9 @@ namespace UI
             }
         }
 
-        private Image _barImage = null;
+        protected Image _barImage = null;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _barImage = transform.GetChild(0).GetComponent<Image>();
         }

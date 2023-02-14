@@ -35,7 +35,7 @@ namespace Tank
             base.OnHit(damage);
             _hpBar.Value = _currentHealth;
             _isHit = true;
-            if(_hpBar.Value <= 0f)
+            if(_hpBar.Value <= 0f && CompareTag("PlayerTank"))
             {
                 _playCanvas.ResultPanel.SetActive(true);
             }
