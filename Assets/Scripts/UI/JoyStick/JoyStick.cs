@@ -44,7 +44,7 @@ namespace UI
 
         public void OnDrag(PointerEventData eventData)
         {
-            Vector2 pos = (eventData.position - (Vector2)_rectTransform.position) / (_radius/10);
+            Vector2 pos = (eventData.position - (Vector2)_rectTransform.position) / (_radius/15);
             pos = Vector2.ClampMagnitude(pos, _radius);
             _rectTransformChild.localPosition = pos;
             
