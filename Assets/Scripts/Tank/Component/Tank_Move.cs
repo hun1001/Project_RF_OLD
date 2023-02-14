@@ -83,7 +83,7 @@ namespace Tank
                 }
             }
             
-            if (NavMesh.SamplePosition(transform.position + Instance.transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(transform.position + transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
             {
                 _rigidbody.velocity = Instance.transform.forward * _currentSpeed;
                 Instance.LineRenderer[0].positionCount = _currentSkidMark + 1;
