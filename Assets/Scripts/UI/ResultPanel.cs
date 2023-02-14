@@ -33,7 +33,7 @@ namespace UI
         {
             Time.timeScale = 1f;
             gameObject.SetActive(false);
-            SceneLoadManager.Instance.LoadScene("MapTesting");
+            SceneLoadManager.Instance.LoadScene("GameScene");
         }
     }
 }

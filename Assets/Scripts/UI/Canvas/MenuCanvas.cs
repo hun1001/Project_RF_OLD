@@ -15,7 +15,7 @@ namespace UI
 
         private void Awake()
         {
-            _startButton.onClick.AddListener(() => SceneLoadManager.Instance.LoadScene("MapTesting"));
+            _startButton.onClick.AddListener(() => SceneLoadManager.Instance.LoadScene("GameScene"));
             _exitButton.onClick.AddListener(() =>
             {
 #if UNITY_EDITOR
