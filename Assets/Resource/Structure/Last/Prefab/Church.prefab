@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8396934311849060758}
   - component: {fileID: 4839184671344584243}
   - component: {fileID: 7263404153275323129}
-  - component: {fileID: 7914700884627373400}
+  - component: {fileID: 6762145806273135532}
   m_Layer: 0
   m_Name: Church
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,6 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81d8ec5641e8de34baedfc2f106841d2, type: 2}
   - {fileID: 2100000, guid: b09cddcd13762c54ca28ef10cf500708, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -85,18 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!111 &7914700884627373400
-Animation:
+--- !u!65 &6762145806273135532
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9208796808019260204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  serializedVersion: 2
+  m_Size: {x: 45.09492, y: 24.706118, z: 17.773531}
+  m_Center: {x: -1.2208045, y: 12.353053, z: -0.5023824}
