@@ -9,7 +9,6 @@ namespace Player
 {
     public class Player : Base.CustomGameObject
     {
-        #region Body Parts
 
         private JoyStick _moveJoyStick = null;
         public JoyStick MoveJoyStick => _moveJoyStick;
@@ -17,10 +16,7 @@ namespace Player
         private Bar _hpBar = null;
         public Bar HpBar => _hpBar;
 
-        #endregion
-
-        #region Turret Parts
-        
+         
         private JoyStick _attackJoyStick = null;
         public JoyStick AttackJoyStick => _attackJoyStick;
 
@@ -30,7 +26,6 @@ namespace Player
         private AttackCancel _attackCancel = null;
         public AttackCancel AttackCancel => _attackCancel;
         
-        #endregion
 
         private void Awake()
         {
