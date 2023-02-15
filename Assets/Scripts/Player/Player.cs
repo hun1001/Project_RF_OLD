@@ -36,8 +36,6 @@ namespace Player
             _attackJoyStick = playCanvas.AttackJoyStick;
             _attackImage = playCanvas.AttackImage;
             _attackCancel = playCanvas.AttackCancel;
-            
-            Debug.Log(_moveJoyStick);
 
             base.Initialize();
         }
