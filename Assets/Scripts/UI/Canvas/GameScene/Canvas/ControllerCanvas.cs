@@ -6,7 +6,7 @@ using TMPro;
 
 namespace UI
 {
-    public class ControllerBaseCanvas : UI.BaseCanvas
+    public class ControllerCanvas : UI.BaseCanvas
     {
         [Header("JoyStick")]
         [SerializeField]
@@ -15,7 +15,7 @@ namespace UI
         
         [SerializeField]
         private JoyStick_ClickActive _attackJoyStick = null;
-        public  JoyStick_ClickActive AttackJoyStick => _attackJoyStick;
+        public JoyStick_ClickActive AttackJoyStick => _attackJoyStick;
 
         [Header("Attack")]
         [SerializeField]

@@ -14,9 +14,6 @@ namespace CameraManager
         private CinemachineVirtualCamera _cmvcam = null;
         private CinemachineTransposer _transposer = null;
 
-        private JoyStick _joyStick = null;
-        private JoyStick _attackJoyStick = null;
-
         private Turret_Attack _turretAttack = null;
         private float _attackRange = 0.0f;
 
@@ -39,9 +36,6 @@ namespace CameraManager
             _cmvcam = Instance.CMvcam;
             _transposer = _cmvcam.GetCinemachineComponent<CinemachineTransposer>();
 
-            _joyStick = Instance.JoyStick;
-            _attackJoyStick = Instance.AttackJoyStick;
-
             _turretAttack = GameObject.FindGameObjectWithTag("PlayerTank").GetComponent<Turret_Attack>();
             _attackRange = _turretAttack.Range;
 
@@ -50,36 +44,28 @@ namespace CameraManager
             _offsetDefalutPosition = _transposer.m_FollowOffset;
         }
 
-        private void Update()
-        {
-            //CameraRotation();
-            SnipingCamera();
-            FireCameraRebound();
-            HitCameraShake();
-        }
+        // private void CameraRotation()
+        // {
+        //     if (EventSystem.current.IsPointerOverGameObject() == false)
+        //     {
+        //         if (_joyStick.IsDragging == false && _attackJoyStick.IsDragging == false)
+        //         {
+        //             if (Input.GetMouseButton(0))
+        //             {
+        //                 //_cmvcam.m_Lens.Dutch = 0f;
+        //             }
+        //         }
+        //     }
+        // }
 
-        private void CameraRotation()
+        private void SnipingCamera(JoyStick joyStick)
         {
-            if (EventSystem.current.IsPointerOverGameObject() == false)
+            if(joyStick.IsDragging == true)
             {
-                if (_joyStick.IsDragging == false && _attackJoyStick.IsDragging == false)
-                {
-                    if (Input.GetMouseButton(0))
-                    {
-                        //_cmvcam.m_Lens.Dutch = 0f;
-                    }
-                }
-            }
-        }
-
-        private void SnipingCamera()
-        {
-            if(_attackJoyStick.IsDragging == true)
-            {
-                if(_attackJoyStick.DragTime >= 3f)
+                if(joyStick.DragTime >= 3f)
                 {
                     Vector3 offset = _offsetDefalutPosition;
-                    Vector3 direction = new Vector3(_attackJoyStick.Direction.x * _attackRange * 0.25f, 0f, _attackJoyStick.Direction.y * _attackRange * 0.25f);
+                    Vector3 direction = new Vector3(joyStick.Direction.x * _attackRange * 0.25f, 0f, joyStick.Direction.y * _attackRange * 0.25f);
                     offset += direction;
 
                     _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, offset, 2f * Time.deltaTime);
@@ -91,12 +77,12 @@ namespace CameraManager
             }
         }
 
-        public void FireCameraRebound()
+        public void FireCameraRebound(JoyStick joyStick)
         {
             if(_turretAttack.NextFire > 0 && _isReboundingPossible == true)
             {
-                float cameraPositionX = _attackJoyStick.Horizontal * -1f * _reboundDistance;
-                float cameraPositionZ = _attackJoyStick.Vertical * -1f * _reboundDistance;
+                float cameraPositionX = joyStick.Horizontal * -1f * _reboundDistance;
+                float cameraPositionZ = joyStick.Vertical * -1f * _reboundDistance;
                 Vector3 cameraPosition = _offsetDefalutPosition;
                 cameraPosition.x += cameraPositionX;
                 cameraPosition.z += cameraPositionZ;

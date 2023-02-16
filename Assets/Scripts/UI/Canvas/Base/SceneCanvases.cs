@@ -14,6 +14,7 @@ namespace UI
         public SceneType SceneType => _sceneType;
         
         private Dictionary<string, UI.BaseCanvas> _canvases = null;
+        public Dictionary<string, UI.BaseCanvas> Canvases => _canvases;
 
         private void Awake()
         {

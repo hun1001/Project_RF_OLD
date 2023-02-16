@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Codice.CM.SEIDInfo;
@@ -10,17 +11,6 @@ namespace Base
     {
         private T _instance = null;
 
-        protected T Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = GetComponent<T>();
-                }
-
-                return _instance;
-            }
-        }
+        protected T Instance => _instance ??= GetComponent<T>();
     }
 }

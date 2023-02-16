@@ -14,6 +14,7 @@ namespace UI
         private SceneType _currentSceneType = SceneType.None;
         
         private Dictionary<SceneType, SceneCanvases> _sceneCanvases = null;
+        public Dictionary<SceneType, SceneCanvases> SceneCanvases => _sceneCanvases;
 
         private void Awake()
         {

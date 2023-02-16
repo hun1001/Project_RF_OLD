@@ -9,18 +9,10 @@ namespace CameraManager
 {
     public class CameraManager : Base.CustomGameObject
     {
-        [Header("JoyStick")]
-        [SerializeField]
-        private JoyStick _joyStick = null;
-        [SerializeField]
-        private JoyStick _attackJoyStick = null;
-
         [Header("Cinemachine")]
         [SerializeField]
         private CinemachineVirtualCamera _cmvcam = null;
 
-        public JoyStick JoyStick => _joyStick;
-        public JoyStick AttackJoyStick => _attackJoyStick;
         public CinemachineVirtualCamera CMvcam => _cmvcam;
     }
 }
