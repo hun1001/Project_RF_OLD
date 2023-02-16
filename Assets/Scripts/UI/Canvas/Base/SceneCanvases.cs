@@ -18,6 +18,10 @@ namespace UI
         private void Awake()
         {
             _canvases = new();
+            
+            OnEnableAction += ()=> gameObject.SetActive(true);
+            OnDisableAction += ()=> gameObject.SetActive(false);
+            
             OnEnableAction += SetOnEnableAction;
             OnDisableAction += SetOnDisableAction;
             

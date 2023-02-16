@@ -1,12 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Scene;
+using UnityEngine.UI;
 
 namespace UI
 {
     public class ResultBaseCanvas : BaseCanvas
     {
+        [SerializeField]
+        private Button _mainButton = null;
+        
+        [SerializeField]
+        private Button _restartButton = null;
+
+        private void Start()
+        {
+            _mainButton.onClick.AddListener(MainButtonClicked);
+            _restartButton.onClick.AddListener(RestartButtonClicked);
+        }
 
         protected override void SetOnEnableAction()
         {

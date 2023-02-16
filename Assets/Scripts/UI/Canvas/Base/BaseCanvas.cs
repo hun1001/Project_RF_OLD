@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Base;
 using UnityEngine;
 
@@ -15,6 +12,9 @@ namespace UI
         private void Awake()
         {
             _canvas = GetComponent<Canvas>();
+            
+            OnEnableAction += () => _canvas.enabled = true;
+            OnDisableAction += () => _canvas.enabled = false;
             
             OnEnableAction += SetOnEnableAction;
             OnDisableAction += SetOnDisableAction;
