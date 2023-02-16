@@ -19,7 +19,7 @@ namespace Tank
 
         private bool _isMove = false;
 
-        public enum State
+        private enum State
         {
             Move,
             Attack,
@@ -91,7 +91,6 @@ namespace Tank
 
             NavMeshPath path = new NavMeshPath();
 
-            //while (!_agent.CalculatePath(movePoint, path))
             {
                 movePoint = movePoint.normalized * Random.Range(5f, _range);
             }

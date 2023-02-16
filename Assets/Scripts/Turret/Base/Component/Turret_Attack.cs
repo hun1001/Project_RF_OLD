@@ -11,22 +11,21 @@ namespace Turret
 {
     public class Turret_Attack : Base.CustomComponent<Turret>
     {
-        protected Transform _firePoint = null;
-        private JoyStick _joyStick = null;
-        private Image _attackImage = null;
+        private Transform _firePoint = null;
+        
         private AttackCancel _attackCancel = null;
 
         private float _shellSpeed = 1f;
 
         private float _range = 10f;
 
-        protected float _fireRate = 1f;
+        private float _fireRate = 1f;
 
-        protected float _nextFire = 0f;
+        private float _nextFire = 0f;
 
         private bool _isReload = false;
 
-        protected void Assignment()
+        protected void Awake()
         {
 
             _firePoint = Instance.FirePoint;
@@ -36,8 +35,6 @@ namespace Turret
             _range = Instance.TurretSO.attackRange;
 
             _fireRate = Instance.TurretSO.reloadSpeed;
-
-            _joyStick.AddOnPointerUpListener(Fire);
         }
 
         protected virtual void Update()
@@ -51,8 +48,6 @@ namespace Turret
                 _isReload = false;
                 SoundManager.Instance.PlaySound(Instance._reloadSound, SoundType.SFX, 0.5f);
             }
-
-            _attackImage.fillAmount = 1f - _nextFire / _fireRate;
         }
 
         public virtual void Fire()
@@ -85,5 +80,6 @@ namespace Turret
 
         public float Range => _range;
         public float NextFire => _nextFire;
+        public float FireRate => _fireRate;
     }
 }

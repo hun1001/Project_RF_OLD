@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UI;
 using UnityEngine.AI;
@@ -26,7 +27,7 @@ namespace Tank
 
         private bool _isMove = false;
 
-        protected void Assignment()
+        private void Awake()
         {
             _rigidbody = Instance.GetComponent<Rigidbody>();
             _moveSound = SoundManager.Instance.LoopPlaySound(Instance._moveSound, SoundType.SFX, 0.6f);
@@ -100,7 +101,6 @@ namespace Tank
             }
             else
             {
-                Debug.DrawLine(transform.position + transform.forward * _currentSpeed * Time.deltaTime, transform.position + transform.forward * _currentSpeed * Time.deltaTime + Vector3.up * 50f, Color.red);
                 _rigidbody.velocity = Vector3.zero;
             }
 

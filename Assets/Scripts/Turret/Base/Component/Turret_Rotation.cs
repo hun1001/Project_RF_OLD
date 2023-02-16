@@ -6,7 +6,7 @@ using UI;
 
 namespace Turret
 {
-    public class Turret_Rotate : Base.CustomComponent<Turret>
+    public class Turret_Rotation : Base.CustomComponent<Turret>
     {
         protected Transform _turret = null;
 

@@ -7,7 +7,7 @@ using Cinemachine;
 using Turret;
 using Tank;
 
-namespace CameraManager
+namespace CameraSpace
 {
     public class Camera_Move : Base.CustomComponent<CameraManager>
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Cinemachine;
 
-namespace CameraManager
+namespace CameraSpace
 {
     public class Camera_Rotation : MonoBehaviour
     {
