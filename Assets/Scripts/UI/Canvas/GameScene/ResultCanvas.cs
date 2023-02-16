@@ -5,7 +5,7 @@ using Scene;
 
 namespace UI
 {
-    public class ResultCanvas : MonoBehaviour
+    public class ResultCanvas : Canvas
     {
 
         private void OnEnable()

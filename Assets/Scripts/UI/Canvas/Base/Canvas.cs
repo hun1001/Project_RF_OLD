@@ -7,16 +7,20 @@ namespace UI
 {
     public abstract class Canvas : MonoBehaviour
     {
-        Canvas _canvas = null;
+        private Canvas _canvas = null;
+        
+        private Action _onEnable = null;
+        public Action OnEnable { get; protected set; }
+
+        private Action _onDisable = null;
+        public Action OnDisable { get; protected set; }
         
         private void Awake()
         {
             _canvas = GetComponent<Canvas>();
-        }
-        
-        public virtual void EnableCanvas()
-        {
-            _canvas.enabled = true;
+            
+            _onEnable += () => _canvas.enabled = true;
+            _onDisable += () => _canvas.enabled = false;
         }
     }
 }
