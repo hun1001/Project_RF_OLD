@@ -8,9 +8,14 @@ namespace UI
     public class ResultCanvas : Canvas
     {
 
-        private void OnEnable()
+        protected override void SetOnEnableAction()
         {
-            Time.timeScale = 0f;
+            
+        }
+        
+        protected override void SetOnDisableAction()
+        {
+            
         }
 
         private void MainButtonClicked()

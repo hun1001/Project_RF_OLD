@@ -7,6 +7,14 @@ namespace UI
 {
     public class ItemCanvas : Canvas
     {
+        protected override void SetOnEnableAction()
+        {
+            
+        }
         
+        protected override void SetOnDisableAction()
+        {
+            
+        }
     }
 }

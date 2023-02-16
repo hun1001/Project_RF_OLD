@@ -29,5 +29,15 @@ namespace UI
         [SerializeField]
         private Button[] _skillButtons = null;
         public Button[] SkillButtons => _skillButtons;
+        
+        protected override void SetOnEnableAction()
+        {
+            
+        }
+        
+        protected override void SetOnDisableAction()
+        {
+            
+        }
     }
 }

@@ -10,17 +10,23 @@ namespace UI
         private Canvas _canvas = null;
         
         private Action _onEnable = null;
-        public Action OnEnable { get; protected set; }
+        public Action OnEnable => _onEnable;
 
         private Action _onDisable = null;
-        public Action OnDisable { get; protected set; }
+        public Action OnDisable => _onDisable;
         
         private void Awake()
         {
             _canvas = GetComponent<Canvas>();
             
             _onEnable += () => _canvas.enabled = true;
+            _onEnable += SetOnEnableAction;
+            
             _onDisable += () => _canvas.enabled = false;
+            _onDisable += SetOnDisableAction;
         }
+        
+        protected abstract void SetOnEnableAction();
+        protected abstract void SetOnDisableAction();
     }
 }

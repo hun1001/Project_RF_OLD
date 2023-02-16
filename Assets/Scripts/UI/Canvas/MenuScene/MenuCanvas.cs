@@ -10,8 +10,19 @@ namespace UI
     {
         [SerializeField]
         private Button _startButton = null;
+        
         [SerializeField]
         private Button _exitButton = null;
+
+        protected override void SetOnEnableAction()
+        {
+            
+        }
+        
+        protected override void SetOnDisableAction()
+        {
+            
+        }
 
         private void Awake()
         {
