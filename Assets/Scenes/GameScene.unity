@@ -825,7 +825,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1749373069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ab5429474ca8af40929f52e3e9ad441, type: 3}
+  m_Script: {fileID: 11500000, guid: 09c12c1cc76093d489279b3036c70f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneType: 1
@@ -1189,7 +1189,7 @@ PrefabInstance:
     - target: {fileID: 973834917645878070, guid: 09d89848b6d1b574d81cc09934f189a9,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 0
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 973834917645878073, guid: 09d89848b6d1b574d81cc09934f189a9,
         type: 3}
