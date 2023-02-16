@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using Util;
 using UnityEngine;
 
-namespace Util
+namespace Game
 {
     public class GameManager : MonoSingleton<GameManager>
     {
