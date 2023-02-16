@@ -34,6 +34,10 @@ namespace Player
             
             Turret_Attack attack = _player.GetComponent<Turret_Attack>();
             _controllerCanvas.AttackJoyStick.AddOnPointerUpListener(attack.Fire);
+            
+            Turret_AimLine aimLine = _player.GetComponent<Turret_AimLine>();
+            _controllerCanvas.AttackJoyStick.AddOnPointerDownListener(aimLine.OnAimStart);
+            _controllerCanvas.AttackJoyStick.AddOnPointerUpListener(aimLine.OnAimEnd);
         }
 
         private void Update()
@@ -43,6 +47,9 @@ namespace Player
             
             Turret_Attack attack = _player.GetComponent<Turret_Attack>();
             _controllerCanvas.AttackImage.fillAmount = 1f - attack.NextFire / attack.FireRate;
+            
+            Turret_Rotation rotation = _player.GetComponent<Turret_Rotation>();
+            rotation.Rotate(_controllerCanvas.AttackJoyStick);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Tank
         
         private State _state = State.Move;
         
-        protected void Assignment()
+        protected void Awake()
         {
             _agent = GetComponent<NavMeshAgent>();
             _target = GameObject.FindGameObjectWithTag("PlayerTank").transform;

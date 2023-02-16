@@ -52,11 +52,11 @@ namespace Turret
 
         public virtual void Fire()
         {
-            if (_attackCancel.IsCancelAttack == true)
-            {
-                _attackCancel.CancelAttackReset();
-                return;
-            }
+            // if (_attackCancel.IsCancelAttack == true)
+            // {
+            //     _attackCancel.CancelAttackReset();
+            //     return;
+            // }
 
             if (_nextFire > 0)
             {

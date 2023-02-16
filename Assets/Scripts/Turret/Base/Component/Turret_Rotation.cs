@@ -14,7 +14,7 @@ namespace Turret
 
         public bool _isAim = false;
 
-        protected void Assignment()
+        protected void Awake()
         {
             _turret = Instance.Body;
 
