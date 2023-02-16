@@ -14,5 +14,6 @@ namespace CameraManager
         private CinemachineVirtualCamera _cmvcam = null;
 
         public CinemachineVirtualCamera CMvcam => _cmvcam;
+        
     }
 }
