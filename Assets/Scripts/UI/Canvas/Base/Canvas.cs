@@ -7,6 +7,8 @@ namespace UI
 {
     public abstract class Canvas : MonoBehaviour
     {
+        public string CanvasName => gameObject.name;
+        
         private Canvas _canvas = null;
         
         private Action _onEnable = null;

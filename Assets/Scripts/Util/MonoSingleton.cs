@@ -17,6 +17,8 @@ namespace Util
                 {
                     GameObject obj = new GameObject(typeof(T).FullName);
                     instance = obj.AddComponent(typeof(T)) as T;
+                    
+                    Debug.LogWarning($"[Singleton] An instance of {typeof(T)} is needed in the scene, so '{obj}' was created.");
 
                     DontDestroyOnLoad(obj);
                 }
@@ -25,12 +27,6 @@ namespace Util
                 return instance;
             });
 
-        public static T Instance
-        {
-            get
-            {
-                return _instance.Value;
-            }
-        }
+        public static T Instance => _instance.Value;
     }
 }
