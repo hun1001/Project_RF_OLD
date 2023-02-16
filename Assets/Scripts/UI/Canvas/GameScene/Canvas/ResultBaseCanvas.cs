@@ -5,7 +5,7 @@ using Scene;
 
 namespace UI
 {
-    public class ResultCanvas : Canvas
+    public class ResultBaseCanvas : BaseCanvas
     {
 
         protected override void SetOnEnableAction()

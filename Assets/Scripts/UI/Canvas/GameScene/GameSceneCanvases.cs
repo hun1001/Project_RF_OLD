@@ -6,6 +6,14 @@ namespace UI
 {
     public class GameSceneCanvases : SceneCanvases
     {
-        
+        protected override void SetOnEnableAction()
+        {
+            
+        }
+
+        protected override void SetOnDisableAction()
+        {
+            
+        }
     }
 }
