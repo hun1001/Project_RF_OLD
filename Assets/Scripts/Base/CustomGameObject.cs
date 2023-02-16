@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Base
 {
-    public class CustomGameObject : MonoBehaviour
+    public class CustomGameObject<T> : MonoBehaviour where T : CustomGameObject<T>
     {
-        private readonly Dictionary<ComponentType, CustomComponent<CustomGameObject>> _components = new();
-        public CustomComponent<CustomGameObject> GetComponent(ComponentType type) => _components.TryGetValue(type, out var component) ? component : null;
+        private readonly Dictionary<ComponentType, CustomComponent<T>> _components = new();
+        public CustomComponent<T> GetComponent(ComponentType type) => _components.TryGetValue(type, out var component) ? component : null;
         
-        public void AddComponent(ComponentType type, CustomComponent<CustomGameObject> component)
+        public void AddComponent(ComponentType type, CustomComponent<T> component)
         {
             if (_components.ContainsKey(type))
             {

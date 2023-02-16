@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Shell
 {
-    public class Shell : Base.CustomGameObject
+    public class Shell : Base.CustomGameObject<Shell>
     {
         [Header("Data")]
         [SerializeField]

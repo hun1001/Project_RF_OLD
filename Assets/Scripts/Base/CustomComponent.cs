@@ -6,8 +6,7 @@ using UnityEngine;
 
 namespace Base
 {
-    [RequireComponent(typeof(Base.CustomGameObject))]
-    public abstract class CustomComponent<T> : MonoBehaviour where T : CustomGameObject
+    public abstract class CustomComponent<T> : MonoBehaviour where T : CustomGameObject<T>
     {
         private T _instance = null;
 

@@ -5,7 +5,7 @@ using UI;
 
 namespace Tank
 {
-    public class Tank : Base.CustomGameObject
+    public class Tank : Base.CustomGameObject<Tank>
     {
         [Header("Data")]
         [SerializeField]

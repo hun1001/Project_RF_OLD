@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 
 namespace Opponent
 {
-    public class Opponent : CustomGameObject
+    public class Opponent : CustomGameObject<Opponent>
     {
         [SerializeField]
         private Transform _spawnPointParent = null;

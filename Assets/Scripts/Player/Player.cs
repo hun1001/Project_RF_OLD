@@ -9,7 +9,7 @@ using Scene;
 
 namespace Player
 {
-    public class Player : Base.CustomGameObject
+    public class Player : Base.CustomGameObject<Player>
     {
         [SerializeField]
         private ControllerCanvas _controllerCanvas = null;

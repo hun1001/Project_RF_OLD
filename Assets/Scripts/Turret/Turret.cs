@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Turret
 {
-    public class Turret : Base.CustomGameObject
+    public class Turret : Base.CustomGameObject<Turret>
     {
         [Header("Data")]
         [SerializeField]

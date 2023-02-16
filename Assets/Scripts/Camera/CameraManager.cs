@@ -7,7 +7,7 @@ using Cinemachine;
 
 namespace CameraManager
 {
-    public class CameraManager : Base.CustomGameObject
+    public class CameraManager : Base.CustomGameObject<CameraManager>
     {
         [Header("Cinemachine")]
         [SerializeField]
