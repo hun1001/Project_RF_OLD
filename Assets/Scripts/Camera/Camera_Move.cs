@@ -9,7 +9,7 @@ using Tank;
 
 namespace CameraManager
 {
-    public class Camera_Move : CameraComponent
+    public class Camera_Move : Base.CustomComponent<CameraManager>
     {
         private CinemachineVirtualCamera _cmvcam = null;
         private CinemachineTransposer _transposer = null;
@@ -33,6 +33,7 @@ namespace CameraManager
 
         private void Awake()
         {
+            
             _cmvcam = Instance.CMvcam;
             _transposer = _cmvcam.GetCinemachineComponent<CinemachineTransposer>();
 
