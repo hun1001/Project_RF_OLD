@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IAwake
+namespace Keyword
 {
-    void Awake();
+    public static class Address
+    {
+        
+    }
 }

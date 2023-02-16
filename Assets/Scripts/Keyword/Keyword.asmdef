@@ -1,6 +1,6 @@
 {
-    "name": "Enum",
-    "rootNamespace": "",
+    "name": "Keyword",
+    "rootNamespace": "Keyword",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

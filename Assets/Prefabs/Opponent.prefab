@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPointParent: {fileID: 0}
   _opponentSO: {fileID: 11400000, guid: 373be4de18067f14b814f4864333215c, type: 2}
+  _waveTimer: {fileID: 0}
 --- !u!114 &6779740082829415043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,4 +60,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0adb78fdd3dac804e886e016256b5816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delay: 120
+  _delay: 30

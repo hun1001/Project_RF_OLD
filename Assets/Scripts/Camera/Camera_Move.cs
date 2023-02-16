@@ -7,7 +7,7 @@ using Cinemachine;
 using Turret;
 using Tank;
 
-namespace CameraManage
+namespace CameraManager
 {
     public class Camera_Move : CameraComponent
     {

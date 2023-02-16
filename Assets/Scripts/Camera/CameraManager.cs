@@ -5,9 +5,9 @@ using UnityEngine;
 using UI;
 using Cinemachine;
 
-namespace CameraManage
+namespace CameraManager
 {
-    public partial class Camera : Base.CustomGameObject
+    public class CameraManager : Base.CustomGameObject
     {
         [Header("JoyStick")]
         [SerializeField]

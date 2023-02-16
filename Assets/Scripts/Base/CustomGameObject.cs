@@ -6,6 +6,6 @@ namespace Base
 {
     public class CustomGameObject : MonoBehaviour
     {
-        
+        private Dictionary<ComponentType, CustomComponent<CustomGameObject>> _components = new();
     }
 }
