@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace UI
 {
-    public class Canvas : MonoBehaviour
+    public abstract class Canvas : MonoBehaviour
     {
         
     }

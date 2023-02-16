@@ -7,7 +7,7 @@ namespace Tank
 {
     public class Tank_DamageWithHPBar : Tank_Damage
     {
-        private PlayCanvas _playCanvas = null;
+        private ControllerCanvas _controllerCanvas = null;
         private Bar _hpBar = null;
         private bool _isHit = false;
         public bool IsHit
@@ -24,7 +24,7 @@ namespace Tank
 
         protected new void Assignment()
         {
-            _playCanvas = FindObjectOfType<PlayCanvas>();
+            _controllerCanvas = FindObjectOfType<ControllerCanvas>();
             _hpBar.MaxValue = Instance.TankSO.hp;
         }
 
@@ -35,7 +35,7 @@ namespace Tank
             _isHit = true;
             if(_hpBar.Value <= 0f && CompareTag("PlayerTank"))
             {
-                _playCanvas.ResultPanel.SetActive(true);
+                //_controllerCanvas.ResultPanel.SetActive(true);
             }
         }
     }

@@ -21,7 +21,7 @@ namespace Tank
             if (_currentHealth <= 0)
             {
                 PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") + 1);
-                FindObjectOfType<UI.PlayCanvas>().GoldText.text = PlayerPrefs.GetInt("Gold").ToString();
+               // FindObjectOfType<UI.ControllerCanvas>().GoldText.text = PlayerPrefs.GetInt("Gold").ToString();
                 PoolManager.Instance.Pool(this.gameObject);
             }
         }

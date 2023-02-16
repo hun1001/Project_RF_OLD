@@ -675,7 +675,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3148990181017396403}
-  - component: {fileID: 3148990181017396400}
   m_Layer: 0
   m_Name: ResultPanel
   m_TagString: Untagged
@@ -707,18 +706,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &3148990181017396400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3148990181017396402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86e8378ac1e07344193c97328a2f2036, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3148990181202545669
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +718,7 @@ GameObject:
   - component: {fileID: 3148990181202545672}
   - component: {fileID: 3148990181202545675}
   - component: {fileID: 3148990181202545674}
+  - component: {fileID: 7021224609821625948}
   m_Layer: 5
   m_Name: ResultCanvas
   m_TagString: Untagged
@@ -766,7 +754,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3148990181202545669}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -820,6 +808,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7021224609821625948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3148990181202545669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e8378ac1e07344193c97328a2f2036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3148990181315710857
 GameObject:
   m_ObjectHideFlags: 0

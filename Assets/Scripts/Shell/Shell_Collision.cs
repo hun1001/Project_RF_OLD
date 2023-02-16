@@ -38,7 +38,7 @@ namespace Shell
                     case HitType.RICOCHET:
                         transform.rotation = Quaternion.LookRotation(Vector3Calculator.GetReflectionVector(Instance.transform.forward.normalized, other.contacts[0].normal));
                         SoundManager.Instance.PlaySound(Instance.RicochetSound, SoundType.SFX);
-                        PoolManager.Instance.Get<UI.TextEffect>("Assets/Prefabs/UI/TextEffect.prefab", transform.position, Quaternion.identity).SetTextEffect("Ricochet", Color.white, 2, 1f);
+                        PoolManager.Instance.Get<Effect.TextEffect>("Assets/Prefabs/UI/TextEffect.prefab", transform.position, Quaternion.identity).SetTextEffect("Ricochet", Color.white, 2, 1f);
                         break;
                 }
             }

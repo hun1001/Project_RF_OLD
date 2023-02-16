@@ -1,22 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 using Util;
 
-namespace UI
+namespace Effect
 {
-
     public class TextEffect : MonoBehaviour
     {
         private Transform _cameraTransform;
-        private TMPro.TMP_Text _text;
+        private TextController _text;
 
         private void Awake()
         {
             _cameraTransform = Camera.main.transform;
-            _text = GetComponentInChildren<TMPro.TMP_Text>();
         }
 
         void LateUpdate()
@@ -26,9 +25,6 @@ namespace UI
 
         public void SetTextEffect(string text, Color color, float size = 1, float duration = 1f)
         {
-            _text.text = text;
-            _text.color = color;
-            _text.fontSize = size;
             Invoke(nameof(Pooling), duration);
         }
 

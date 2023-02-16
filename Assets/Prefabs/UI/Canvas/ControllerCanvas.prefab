@@ -417,7 +417,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -475,13 +475,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveJoyStick: {fileID: 9190489406393634311}
   _attackJoyStick: {fileID: 3685459454919937773}
-  _hpBar: {fileID: 0}
-  _attackImage: {fileID: 4061879976485659043}
+  _attackImage: {fileID: 3538800363850498045}
   _attackCancel: {fileID: 3642004798400678280}
-  _resultPanel: {fileID: 0}
-  _mainButton: {fileID: 0}
-  _restartButton: {fileID: 0}
-  _goldText: {fileID: 0}
+  _skillButtons:
+  - {fileID: 3642004798215073813}
+  - {fileID: 3642004798009807147}
 --- !u!1 &8294815499728272031
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,18 +715,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3642004798723971854}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4061879976485659043 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 780726098979125933, guid: 7530b9d1c55212b4ea1fb5aaa182d330,
-    type: 3}
-  m_PrefabInstance: {fileID: 3642004798723971854}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3642004798800417718
 PrefabInstance:
   m_ObjectHideFlags: 0

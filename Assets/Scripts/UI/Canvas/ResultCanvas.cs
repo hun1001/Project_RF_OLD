@@ -5,17 +5,8 @@ using Util;
 
 namespace UI
 {
-    public class ResultPanel : MonoBehaviour
+    public class ResultCanvas : MonoBehaviour
     {
-        private PlayCanvas _playCanvas = null;
-
-        private void Awake()
-        {
-            _playCanvas = FindObjectOfType<PlayCanvas>();
-
-            _playCanvas.MainButton.onClick.AddListener(MainButtonClicked);
-            _playCanvas.RestartButton.onClick.AddListener(RestartButtonClicked);
-        }
 
         private void OnEnable()
         {

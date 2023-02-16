@@ -6,7 +6,7 @@ using TMPro;
 
 namespace UI
 {
-    public class PlayCanvas : UI.Canvas
+    public class ControllerCanvas : UI.Canvas
     {
         [Header("JoyStick")]
         [SerializeField]
@@ -16,12 +16,7 @@ namespace UI
         [SerializeField]
         private JoyStick_ClickActive _attackJoyStick = null;
         public  JoyStick_ClickActive AttackJoyStick => _attackJoyStick;
-        
-        [Header("Hp Bar")]
-        [SerializeField]
-        private Bar _hpBar = null;
-        public  Bar HpBar => _hpBar;
-        
+
         [Header("Attack")]
         [SerializeField]
         private Image _attackImage = null;
@@ -30,23 +25,9 @@ namespace UI
         [SerializeField]
         private AttackCancel _attackCancel = null;
         public AttackCancel AttackCancel => _attackCancel;
-
-        [Header("Result")]
+        
         [SerializeField]
-        private GameObject _resultPanel = null;
-        public GameObject ResultPanel => _resultPanel;
-
-        [SerializeField]
-        private Button _mainButton = null;
-        public Button MainButton => _mainButton;
-
-        [SerializeField]
-        private Button _restartButton = null;
-        public Button RestartButton => _restartButton;
-
-        [Header("Gold")]
-        [SerializeField]
-        private TextMeshProUGUI _goldText = null;
-        public TextMeshProUGUI GoldText => _goldText;
+        private Button[] _skillButtons = null;
+        public Button[] SkillButtons => _skillButtons;
     }
 }
