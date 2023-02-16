@@ -9,11 +9,6 @@ namespace Tank
     public class Tank_Skill : Base.CustomComponent<Tank>
     {
         private bool _isSkill = false;
-
-        protected override void Assignment()
-        {
-            
-        }
         
         public void Skill()
         {

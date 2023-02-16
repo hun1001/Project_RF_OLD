@@ -22,11 +22,9 @@ namespace Tank
             }
         }
 
-        protected override void Assignment()
+        protected new void Assignment()
         {
-            base.Assignment();
             _playCanvas = FindObjectOfType<PlayCanvas>();
-            _hpBar = Instance.HealthBar;
             _hpBar.MaxValue = Instance.TankSO.hp;
         }
 

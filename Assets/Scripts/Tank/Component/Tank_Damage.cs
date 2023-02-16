@@ -9,7 +9,7 @@ namespace Tank
     {
         protected float _currentHealth = 0;
 
-        protected override void Assignment()
+        protected void Assignment()
         {
             _currentHealth = Instance.TankSO.hp;
         }
