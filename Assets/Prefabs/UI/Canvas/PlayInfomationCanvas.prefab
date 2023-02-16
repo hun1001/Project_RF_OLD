@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 973834917172958798}
   - component: {fileID: 973834917172958800}
   - component: {fileID: 973834917172958801}
+  - component: {fileID: 5129007302067856616}
   m_Layer: 5
   m_Name: GoldText
   m_TagString: Untagged
@@ -285,6 +286,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5129007302067856616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973834917172958799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f928b5c83f960f048a9726043a3a0254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &973834917645878069
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +414,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d07bfaf8337a2b408b2db7e0ce9799c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hpBar: {fileID: 36019788169380660}
+  _waveTimer: {fileID: 973834917073306202}
+  _goldText: {fileID: 5129007302067856616}
 --- !u!1001 &973834916963830377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -535,6 +551,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 178cf82d58dd4744b92c4e56cacc421a, type: 3}
+--- !u!114 &36019788169380660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1007740326875023709, guid: 178cf82d58dd4744b92c4e56cacc421a,
+    type: 3}
+  m_PrefabInstance: {fileID: 973834916963830377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372f971255d0f634aaad4b059e5e6197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1863670936412221348 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1467847358041662925, guid: 178cf82d58dd4744b92c4e56cacc421a,

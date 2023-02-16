@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Util;
 
-namespace Util
+namespace Scene
 {
     public class SceneLoadManager : MonoSingleton<SceneLoadManager>
     {
@@ -12,6 +13,7 @@ namespace Util
             PoolManager.Instance.Clear();
             StartCoroutine(LoadMyAsyncScene(sceneName));
         }
+        
         public void LoadScene(int index)
         {
             PoolManager.Instance.Clear();
