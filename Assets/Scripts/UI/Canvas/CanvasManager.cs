@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using Util;
 
-namespace Keyword
+namespace UI
 {
-    public static class Address
+    public class CanvasManager : MonoSingleton<CanvasManager>
     {
         
     }

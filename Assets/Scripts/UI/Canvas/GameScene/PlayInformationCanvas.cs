@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UI
 {
-    public class PlayInformationCanvas : MonoBehaviour
+    public class PlayInformationCanvas : Canvas
     {
         [SerializeField]
         private Bar _hpBar = null;
@@ -17,5 +17,15 @@ namespace UI
         [SerializeField]
         private TextController _goldText = null;
         public TextController GoldText => _goldText;
+        
+        protected override void SetOnEnableAction()
+        {
+            
+        }
+        
+        protected override void SetOnDisableAction()
+        {
+            
+        }
     }
 }

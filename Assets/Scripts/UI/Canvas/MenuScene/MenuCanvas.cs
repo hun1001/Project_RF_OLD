@@ -26,7 +26,7 @@ namespace UI
 
         private void Awake()
         {
-            _startButton.onClick.AddListener(() => SceneLoadManager.Instance.LoadScene("GameScene"));
+            _startButton.onClick.AddListener(() => SceneLoadManager.Instance.LoadScene(SceneType.GameScene));
             _exitButton.onClick.AddListener(() =>
             {
 #if UNITY_EDITOR

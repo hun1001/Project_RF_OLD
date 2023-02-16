@@ -10,26 +10,26 @@ namespace UI
 
         protected override void SetOnEnableAction()
         {
-            
+            Time.timeScale = 0f;
         }
         
         protected override void SetOnDisableAction()
         {
-            
+            Time.timeScale = 1f;
         }
 
         private void MainButtonClicked()
         {
             Time.timeScale = 1f;
             gameObject.SetActive(false);
-            SceneLoadManager.Instance.LoadScene("MenuScene");
+            SceneLoadManager.Instance.LoadScene(SceneType.MenuScene);
         }
 
         private void RestartButtonClicked()
         {
             Time.timeScale = 1f;
             gameObject.SetActive(false);
-            SceneLoadManager.Instance.LoadScene("GameScene");
+            SceneLoadManager.Instance.LoadScene(SceneType.GameScene);
         }
     }
 }
