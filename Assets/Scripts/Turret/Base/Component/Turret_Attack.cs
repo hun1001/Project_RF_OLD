@@ -26,17 +26,10 @@ namespace Turret
 
         private bool _isReload = false;
 
-        protected override void Assignment()
+        protected void Assignment()
         {
-            base.Assignment();
 
             _firePoint = Instance.FirePoint;
-
-            _joyStick = Instance.JoyStick;
-
-            _attackImage = Instance.AttackImage;
-
-            _attackCancel = Instance.AttackCancel;
 
             _shellSpeed = Instance.TurretSO.shellSpeed;
 

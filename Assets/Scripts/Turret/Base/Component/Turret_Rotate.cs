@@ -8,47 +8,26 @@ namespace Turret
 {
     public class Turret_Rotate : Base.CustomComponent<Turret>
     {
-        private JoyStick _joyStick;
         protected Transform _turret = null;
 
         protected float _rotationSpeed = 1f;
 
-        protected bool _isAim = false;
+        public bool _isAim = false;
 
-        protected override void Assignment()
+        protected void Assignment()
         {
-            base.Assignment();
-            _joyStick = Instance.JoyStick;
             _turret = Instance.Body;
 
             _rotationSpeed = Instance.TurretSO.rotationSpeed;
-
-            _joyStick.AddOnPointerDownListener(() =>
-            {
-                _isAim = true;
-                StopCoroutine(nameof(Release));
-            });
         }
 
-        protected virtual void Update()
-        {
-            if (_joyStick.Direction != Vector2.zero)
-            {
-                Rotate();
-            }
-            else
-            {
-                StartCoroutine(nameof(Release));
-            }
-        }
-
-        protected virtual void Rotate()
+        public virtual void Rotate(JoyStick attackJoyStick)
         {
             Vector3 dir = Vector3.zero;
-            if(_joyStick.Direction != Vector2.zero)
+            if(attackJoyStick.Direction != Vector2.zero)
             {
-                dir.x = _joyStick.Horizontal;
-                dir.z = _joyStick.Vertical;
+                dir.x = attackJoyStick.Horizontal;
+                dir.z = attackJoyStick.Vertical;
             }
 
             _isAim = true;
@@ -57,7 +36,7 @@ namespace Turret
             _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(dir.normalized), 180 * Time.deltaTime * _rotationSpeed);
         }
 
-        protected IEnumerator Release()
+        public IEnumerator Release()
         {
             if (_isAim == false)
             {

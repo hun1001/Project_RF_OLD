@@ -13,19 +13,6 @@ namespace Turret
         private SO.TurretSO _turretSO = null;
         public SO.TurretSO TurretSO => _turretSO;
 
-        [Header("UI/UX")]
-        [SerializeField]
-        private Image _attackImage = null;
-        public Image AttackImage => _attackImage;
-
-        [SerializeField]
-        private JoyStick _joyStick = null;
-        public JoyStick JoyStick => _joyStick;
-
-        [SerializeField]
-        private AttackCancel _attackCancel = null;
-        public AttackCancel AttackCancel => _attackCancel;
-
         [Header("Transform")]
         [SerializeField]
         private Transform _body = null;
@@ -39,13 +26,7 @@ namespace Turret
         public AudioClip _fireSound = null;
         public AudioClip _reloadSound = null;
         public AudioClip _shellDropSound = null;
-
-        // public void Assignment(TurretUserData turretUserData)
-        // {
-        //     _attackImage = turretUserData.AttackImage;
-        //     _joyStick = turretUserData.AttackJoyStick;
-        //     _attackCancel = turretUserData.AttackCancel;
-        //     base.Initialize();
-        // }
+        
+        
     }
 }

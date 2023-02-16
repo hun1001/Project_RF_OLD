@@ -10,7 +10,6 @@ namespace Tank
     public class Tank_Move : Base.CustomComponent<Tank>
     {
         private Rigidbody _rigidbody = null;
-        private JoyStick _joyStick = null;
         private Sound.Sound _moveSound = null;
         private Sound.Sound _trackSound = null;
 
@@ -27,10 +26,9 @@ namespace Tank
 
         private bool _isMove = false;
 
-        protected override void Assignment()
+        protected void Assignment()
         {
             _rigidbody = Instance.GetComponent<Rigidbody>();
-            _joyStick = Instance.JoyStick;
             _moveSound = SoundManager.Instance.LoopPlaySound(Instance._moveSound, SoundType.SFX, 0.6f);
             _trackSound = SoundManager.Instance.LoopPlaySound(Instance._trackSound, SoundType.SFX, 0.3f, 0f);
 
@@ -43,16 +41,11 @@ namespace Tank
             _isMove = false;
         }
 
-        private void FixedUpdate()
+        public void Move(JoyStick moveJoystick)
         {
-            Move();
-        }
-
-        private void Move()
-        {
-            if (_joyStick.IsTouching)
+            if (moveJoystick.IsTouching)
             {
-                _currentMaxSpeed = _maxSpeed * _joyStick.Scalar;
+                _currentMaxSpeed = _maxSpeed * moveJoystick.Scalar;
                 
                 _currentSpeed += _acceleration * Time.deltaTime;
                 _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _currentMaxSpeed);
@@ -111,9 +104,9 @@ namespace Tank
                 _rigidbody.velocity = Vector3.zero;
             }
 
-            if (_joyStick.IsTouching)
+            if (moveJoystick.IsTouching)
             {
-                Vector3 direction = new Vector3(_joyStick.Horizontal, 0f, _joyStick.Vertical);
+                Vector3 direction = new Vector3(moveJoystick.Horizontal, 0f, moveJoystick.Vertical);
                 direction.y = 0f;
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 Instance.transform.rotation = Quaternion.Slerp(Instance.transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
