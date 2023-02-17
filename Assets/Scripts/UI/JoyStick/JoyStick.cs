@@ -4,19 +4,19 @@ using UnityEngine.EventSystems;
 
 namespace UI
 {
-    public class JoyStick : MonoBehaviour, IDragHandler,  IBeginDragHandler, IEndDragHandler, IPointerDownHandler, IPointerUpHandler
+    public class JoyStick : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerDownHandler, IPointerUpHandler
     {
-        protected RectTransform _rectTransform = null;
-        protected RectTransform _rectTransformChild = null;
+        private RectTransform _rectTransform = null;
+        private RectTransform _rectTransformChild = null;
 
         private Action _onPointerDown = null;
-        protected Action _onPointerUp = null;
+        private Action _onPointerUp = null;
 
         private Vector2 _direction = Vector2.zero;
         private Vector2 _joyStickOriginPosition = Vector2.zero;
 
         private float _radius = 0.0f;
-        protected float _dragTime = 0.0f;
+        private float _dragTime = 0.0f;
         
         private bool _isTouching = false;
         private bool _isDragging = false;

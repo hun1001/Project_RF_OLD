@@ -18,11 +18,10 @@ namespace UI
         {
             base.Awake();
             _attackButtonImage = transform.GetChild(0).GetComponent<Image>();
-            _attackCancelObject = _rectTransform.GetChild(1).gameObject;
-            _rectTransform = _rectTransform.GetChild(0).GetComponent<RectTransform>();
-            _rectTransformChild = _rectTransform.GetChild(0).GetComponent<RectTransform>();
-            _attackJoyStick = _rectTransform.gameObject;
-            
+            // _attackCancelObject = _rectTransform.GetChild(1).gameObject;
+            // _rectTransform = _rectTransform.GetChild(0).GetComponent<RectTransform>();
+            // _rectTransformChild = _rectTransform.GetChild(0).GetComponent<RectTransform>();
+            // _attackJoyStick = _rectTransform.gameObject;
         }
 
         private void Start()
@@ -45,9 +44,9 @@ namespace UI
             _attackJoyStick.SetActive(false);
             _attackCancelObject.SetActive(false);
             _attackButtonImage.enabled = true;
-            _dragTime = 0.0f;
-
-            _onPointerUp?.Invoke();
+            // _dragTime = 0.0f;
+            //
+            // _onPointerUp?.Invoke();
         }
     }
 }
