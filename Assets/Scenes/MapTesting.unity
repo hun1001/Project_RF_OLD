@@ -1142,13 +1142,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8010753156486241764, guid: 0bf498322c379b54aa2039e2dd468d3f,
         type: 3}
+      propertyPath: m_DetailObjectDensity
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010753156486241764, guid: 0bf498322c379b54aa2039e2dd468d3f,
+        type: 3}
       propertyPath: m_DrawTreesAndFoliage
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010753156486241764, guid: 0bf498322c379b54aa2039e2dd468d3f,
+        type: 3}
+      propertyPath: m_DetailObjectDistance
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 8010753156486241764, guid: 0bf498322c379b54aa2039e2dd468d3f,
         type: 3}
       propertyPath: m_BakeLightProbesForTrees
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9147120990870361760, guid: 0bf498322c379b54aa2039e2dd468d3f,
         type: 3}
