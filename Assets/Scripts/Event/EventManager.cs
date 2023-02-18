@@ -19,11 +19,32 @@ public static class EventManager
         }
     }
     
+    public static void StartListening(string eventName, Action listener)
+    {
+        if (_eventDictionary.TryGetValue(eventName, out var thisEvent))
+        {
+            thisEvent += args => listener();
+        }
+        else
+        {
+            thisEvent += args => listener();
+            _eventDictionary.Add(eventName, thisEvent);
+        }
+    }
+    
     public static void StopListening(string eventName, Action<object[]> listener)
     {
         if (_eventDictionary.TryGetValue(eventName, out var thisEvent))
         {
             thisEvent -= listener;
+        }
+    }
+    
+    public static void StopListening(string eventName, Action listener)
+    {
+        if (_eventDictionary.TryGetValue(eventName, out var thisEvent))
+        {
+            thisEvent -= args => listener();
         }
     }
     

@@ -62,6 +62,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 5363434820527817955}
   _rectTransformChild: {fileID: 5363434818694093618}
+  _attackButtonImage: {fileID: 8385096062689406402}
+  _attackJoyStick: {fileID: 5363434820527817964}
+  _attackCancelZone: {fileID: 9117654205780395501}
 --- !u!114 &9015980015883858844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +337,7 @@ GameObject:
   - component: {fileID: 9117654205780395500}
   - component: {fileID: 9117654205780395498}
   - component: {fileID: 9117654205780395499}
-  - component: {fileID: 9117654205780395497}
+  - component: {fileID: 301757378404864523}
   m_Layer: 5
   m_Name: AttackCancelImage
   m_TagString: Untagged
@@ -400,7 +403,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &9117654205780395497
+--- !u!114 &301757378404864523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -409,6 +412,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9117654205780395501}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c960b20657493c4186ae91ea7afd9b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 15d0fda6289b4f145b9609f7416a68d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

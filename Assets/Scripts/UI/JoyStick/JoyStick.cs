@@ -27,15 +27,16 @@ namespace UI
             _joyStickOriginPosition = _rectTransform.anchoredPosition;
         }
 
-        public virtual void OnPointerDown(PointerEventData eventData)
+        public void OnPointerDown(PointerEventData eventData)
         {
-            EventManager.TriggerEvent(EventKeyword.OnPointerDownAttackJoyStick);
+            OnPointerDownAction();
+            
             _rectTransform.position = eventData.position;
             _rectTransformChild.position = eventData.position;
             _isTouching = true;
         }
 
-        public virtual void OnBeginDrag(PointerEventData eventData)
+        public void OnBeginDrag(PointerEventData eventData)
         {
             _isDragging = true;
         }
@@ -50,20 +51,30 @@ namespace UI
             if (_dragTime < 3f) _dragTime += Time.deltaTime;
         }
         
-        public virtual void OnEndDrag(PointerEventData eventData)
+        public void OnEndDrag(PointerEventData eventData)
         {
             _isDragging = false;
         }
 
-        public virtual void OnPointerUp(PointerEventData eventData)
+        public void OnPointerUp(PointerEventData eventData)
         {
-            EventManager.TriggerEvent(EventKeyword.OnPointerUpMoveJoyStick);
+            OnPointerUpAction();
             
             _isTouching = false;
             _rectTransformChild.localPosition = Vector2.zero;
             _rectTransform.anchoredPosition = _joyStickOriginPosition;
             _direction = Vector2.zero;
             _dragTime = 0.0f;
+        }
+        
+        protected virtual void OnPointerDownAction()
+        {
+            EventManager.TriggerEvent(EventKeyword.OnPointerDownMoveJoyStick);
+        }
+        
+        protected virtual void OnPointerUpAction()
+        {
+            EventManager.TriggerEvent(EventKeyword.OnPointerDownMoveJoyStick);
         }
 
         public Vector2 Direction => _direction.normalized;
@@ -73,15 +84,5 @@ namespace UI
         public bool IsDragging => _isDragging;
         public bool IsTouching => _isTouching;
         public float DragTime => _dragTime;
-
-        public void AddOnPointerDownListener(Action action)
-        {
-            
-        }
-
-        public void AddOnPointerUpListener(Action action)
-        {
-            
-        }
     }
 }

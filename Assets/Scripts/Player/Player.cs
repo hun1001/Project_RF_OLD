@@ -8,7 +8,7 @@ using UI;
 using Scene;
 using Tank;
 using Turret;
-using UnityEngine.Pool;
+using Keyword;
 using Util;
 
 namespace Player
@@ -22,7 +22,6 @@ namespace Player
         private CameraManager _cameraManager = null;
         
         private Tank.Tank _player = null;
-        private Turret.Turret _turret = null;
 
         private void Awake()
         {
@@ -33,11 +32,11 @@ namespace Player
             _cameraManager.SetPlayer(_player.transform);
             
             Turret_Attack attack = _player.GetComponent<Turret_Attack>();
-            _controllerCanvas.AttackJoyStick.AddOnPointerUpListener(attack.Fire);
+            EventManager.StartListening(EventKeyword.OnPointerDownAttackJoyStick, attack.Fire);
             
             Turret_AimLine aimLine = _player.GetComponent<Turret_AimLine>();
-            _controllerCanvas.AttackJoyStick.AddOnPointerDownListener(aimLine.OnAimStart);
-            _controllerCanvas.AttackJoyStick.AddOnPointerUpListener(aimLine.OnAimEnd);
+            EventManager.StartListening(EventKeyword.OnPointerDownAttackJoyStick, aimLine.OnAimStart);
+            EventManager.StartListening(EventKeyword.OnPointerUpAttackJoyStick, aimLine.OnAimEnd);
         }
 
         private void Update()
@@ -46,7 +45,7 @@ namespace Player
             move.Move(_controllerCanvas.MoveJoyStick);
             
             Turret_Attack attack = _player.GetComponent<Turret_Attack>();
-            _controllerCanvas.AttackImage.fillAmount = 1f - attack.NextFire / attack.FireRate;
+            //_controllerCanvas.AttackImage.fillAmount = 1f - attack.NextFire / attack.FireRate;
             
             Turret_Rotation rotation = _player.GetComponent<Turret_Rotation>();
             rotation.Rotate(_controllerCanvas.AttackJoyStick);

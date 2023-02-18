@@ -13,7 +13,7 @@ namespace Turret
     {
         private Transform _firePoint = null;
         
-        private AttackCancel _attackCancel = null;
+        //private AttackCancel _attackCancel = null;
 
         private float _shellSpeed = 1f;
 

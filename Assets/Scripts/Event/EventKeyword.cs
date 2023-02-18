@@ -8,5 +8,7 @@ namespace Keyword
         
         public const string OnPointerDownAttackJoyStick = "OnPointerDownAttackJoyStick";
         public const string OnPointerUpAttackJoyStick = "OnPointerUpAttackJoyStick";
+        
+        public const string OnMainBatteryFire = "OnMainBatteryFire";
     }
 }
