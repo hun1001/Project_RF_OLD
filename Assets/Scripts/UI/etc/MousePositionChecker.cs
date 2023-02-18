@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,12 @@ namespace UI
     public class MousePositionChecker : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         public bool IsPointerStay { get; private set; }
-        
+
+        private void OnEnable()
+        {
+            IsPointerStay = false;
+        }
+
         public void OnPointerEnter(PointerEventData eventData)
         {
             IsPointerStay = true;

@@ -37,6 +37,11 @@ namespace Player
             Turret_AimLine aimLine = _player.GetComponent<Turret_AimLine>();
             EventManager.StartListening(EventKeyword.OnPointerDownAttackJoyStick, aimLine.OnAimStart);
             EventManager.StartListening(EventKeyword.OnPointerUpAttackJoyStick, aimLine.OnAimEnd);
+
+            foreach (Button button in _controllerCanvas.SkillButtons)
+            {
+                button.onClick.AddListener(() => { _player.GetComponent<Tank_Skill>().Skill(); });
+            }
         }
 
         private void Update()

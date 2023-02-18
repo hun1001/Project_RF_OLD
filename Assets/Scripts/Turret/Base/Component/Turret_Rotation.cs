@@ -17,7 +17,6 @@ namespace Turret
         protected void Awake()
         {
             _turret = Instance.Body;
-
             _rotationSpeed = Instance.TurretSO.rotationSpeed;
         }
 
