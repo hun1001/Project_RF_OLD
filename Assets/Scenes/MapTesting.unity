@@ -1133,7 +1133,7 @@ PrefabInstance:
     - target: {fileID: 8010753156486241764, guid: 0bf498322c379b54aa2039e2dd468d3f,
         type: 3}
       propertyPath: m_SplatMapDistance
-      value: 60
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8010753156486241764, guid: 0bf498322c379b54aa2039e2dd468d3f,
         type: 3}
