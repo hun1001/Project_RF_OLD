@@ -64,7 +64,7 @@ MonoBehaviour:
   _rectTransformChild: {fileID: 5363434818694093618}
   _attackButtonImage: {fileID: 8385096062689406402}
   _attackJoyStick: {fileID: 5363434820527817964}
-  _attackCancelZone: {fileID: 9117654205780395501}
+  _attackCancelZone: {fileID: 301757378404864523}
 --- !u!114 &9015980015883858844
 MonoBehaviour:
   m_ObjectHideFlags: 0
