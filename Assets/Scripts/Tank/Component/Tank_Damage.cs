@@ -9,7 +9,7 @@ namespace Tank
     {
         protected float _currentHealth = 0;
 
-        protected void Assignment()
+        protected void Awake()
         {
             _currentHealth = Instance.TankSO.hp;
         }

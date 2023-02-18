@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1870929817410345660}
   - component: {fileID: 7430245663559785617}
   - component: {fileID: 8394727244367740965}
-  - component: {fileID: 2245033036547355365}
+  - component: {fileID: -7017977116092051882}
   m_Layer: 0
   m_Name: T-34-57_zis-4
   m_TagString: Untagged
@@ -114,8 +114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tankSO: {fileID: 11400000, guid: ba9fc05780cd4f74aa0d024d1525117d, type: 2}
-  _joyStick: {fileID: 0}
-  _healthBar: {fileID: 6992872907622634997}
   _body: {fileID: 8463005181782090896}
   _lineRenderer: []
   _skidMark: []
@@ -135,9 +133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _turretSO: {fileID: 11400000, guid: 416b8dfcca4bab64084822852d547bb1, type: 2}
-  _attackImage: {fileID: 0}
-  _joyStick: {fileID: 0}
-  _attackCancel: {fileID: 0}
   _body: {fileID: 8337328794273468999}
   _firePoint: {fileID: 3912969802992225781}
   _fireSound: {fileID: 0}
@@ -191,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _turret: {fileID: 8337328794273468999}
---- !u!114 &2245033036547355365
+--- !u!114 &-7017977116092051882
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,7 +195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8284401350439969589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f86df285644d2a41b79a467d9268697, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d33b75170bf75d4887f3154b288ffc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3590414303554570912
@@ -333,18 +328,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3590414303554570912}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6992872907622634997 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5825434796936322901, guid: 06a6651fc7561e44dba1e86f6393bac1,
-    type: 3}
-  m_PrefabInstance: {fileID: 3590414303554570912}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b749e5e2d66c01d4984c4d72ba398c8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8284401350726648699
 PrefabInstance:
   m_ObjectHideFlags: 0

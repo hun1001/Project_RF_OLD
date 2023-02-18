@@ -7,7 +7,6 @@ namespace Tank
 {
     public class Tank_DamageWithHPBar : Tank_Damage
     {
-        private ControllerCanvas _controllerCanvas = null;
         private Bar _hpBar = null;
         private bool _isHit = false;
         public bool IsHit
@@ -22,9 +21,8 @@ namespace Tank
             }
         }
 
-        protected new void Assignment()
+        private void Assignment()
         {
-            _controllerCanvas = FindObjectOfType<ControllerCanvas>();
             _hpBar.MaxValue = Instance.TankSO.hp;
         }
 

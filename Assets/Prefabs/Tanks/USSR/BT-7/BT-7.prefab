@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 1402884555}
   - component: {fileID: 1402884554}
   - component: {fileID: 1402884553}
-  - component: {fileID: 6267709557289104922}
+  - component: {fileID: -1168361320088233683}
   m_Layer: 0
   m_Name: BT-7
   m_TagString: Untagged
@@ -472,8 +472,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tankSO: {fileID: 11400000, guid: 2bff8b1c040a9b642b5a5a50acc4b7c5, type: 2}
-  _joyStick: {fileID: 0}
-  _healthBar: {fileID: 4073786096800575731}
   _body: {fileID: 1391065142667464213}
   _lineRenderer: []
   _skidMark: []
@@ -493,9 +491,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _turretSO: {fileID: 11400000, guid: d567ff29daa80f04790166fe4a489636, type: 2}
-  _attackImage: {fileID: 0}
-  _joyStick: {fileID: 0}
-  _attackCancel: {fileID: 0}
   _body: {fileID: 94231915344139213}
   _firePoint: {fileID: 2627340983205383767}
   _fireSound: {fileID: 0}
@@ -527,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _turret: {fileID: 94231915344139213}
---- !u!114 &6267709557289104922
+--- !u!114 &-1168361320088233683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -536,7 +531,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8845604141091143141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f86df285644d2a41b79a467d9268697, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d33b75170bf75d4887f3154b288ffc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7516759335711535014
@@ -669,15 +664,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7516759335711535014}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4073786096800575731 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5825434796936322901, guid: 06a6651fc7561e44dba1e86f6393bac1,
-    type: 3}
-  m_PrefabInstance: {fileID: 7516759335711535014}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b749e5e2d66c01d4984c4d72ba398c8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
