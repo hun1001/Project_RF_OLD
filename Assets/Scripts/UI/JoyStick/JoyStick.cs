@@ -1,16 +1,16 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Keyword;
 
 namespace UI
 {
     public class JoyStick : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerDownHandler, IPointerUpHandler
     {
+        [SerializeField]
         private RectTransform _rectTransform = null;
+        [SerializeField]
         private RectTransform _rectTransformChild = null;
-
-        private Action _onPointerDown = null;
-        private Action _onPointerUp = null;
 
         private Vector2 _direction = Vector2.zero;
         private Vector2 _joyStickOriginPosition = Vector2.zero;
@@ -23,18 +23,16 @@ namespace UI
 
         protected virtual void Awake()
         {
-            _rectTransform = transform.GetChild(0).GetComponent<RectTransform>();
-            _rectTransformChild = _rectTransform.GetChild(0).GetComponent<RectTransform>();
             _radius = _rectTransform.rect.width * 0.5f;
             _joyStickOriginPosition = _rectTransform.anchoredPosition;
         }
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
+            EventManager.TriggerEvent(EventKeyword.OnPointerDownAttackJoyStick);
             _rectTransform.position = eventData.position;
             _rectTransformChild.position = eventData.position;
             _isTouching = true;
-            _onPointerDown?.Invoke();
         }
 
         public virtual void OnBeginDrag(PointerEventData eventData)
@@ -59,12 +57,13 @@ namespace UI
 
         public virtual void OnPointerUp(PointerEventData eventData)
         {
+            EventManager.TriggerEvent(EventKeyword.OnPointerUpMoveJoyStick);
+            
             _isTouching = false;
             _rectTransformChild.localPosition = Vector2.zero;
             _rectTransform.anchoredPosition = _joyStickOriginPosition;
             _direction = Vector2.zero;
             _dragTime = 0.0f;
-            _onPointerUp?.Invoke();
         }
 
         public Vector2 Direction => _direction.normalized;
@@ -77,12 +76,12 @@ namespace UI
 
         public void AddOnPointerDownListener(Action action)
         {
-            _onPointerDown += action;
+            
         }
 
         public void AddOnPointerUpListener(Action action)
         {
-            _onPointerUp += action;
+            
         }
     }
 }
