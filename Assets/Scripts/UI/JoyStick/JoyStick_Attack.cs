@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class JoyStick_ClickActive : JoyStick
+    public class JoyStick_Attack : JoyStick
     {
         [SerializeField]
         private Image _attackButtonImage = null;
+        public Image AttackButtonImage => _attackButtonImage;
 
         [SerializeField]
         private GameObject _attackJoyStick = null;

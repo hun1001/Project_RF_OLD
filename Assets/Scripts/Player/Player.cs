@@ -32,7 +32,7 @@ namespace Player
             _cameraManager.SetPlayer(_player.transform);
             
             Turret_Attack attack = _player.GetComponent<Turret_Attack>();
-            EventManager.StartListening(EventKeyword.OnPointerDownAttackJoyStick, attack.Fire);
+            EventManager.StartListening(EventKeyword.OnMainBatteryFire, attack.Fire);
             
             Turret_AimLine aimLine = _player.GetComponent<Turret_AimLine>();
             EventManager.StartListening(EventKeyword.OnPointerDownAttackJoyStick, aimLine.OnAimStart);
@@ -45,8 +45,8 @@ namespace Player
             move.Move(_controllerCanvas.MoveJoyStick);
             
             Turret_Attack attack = _player.GetComponent<Turret_Attack>();
-            //_controllerCanvas.AttackImage.fillAmount = 1f - attack.NextFire / attack.FireRate;
-            
+            _controllerCanvas.AttackJoyStick.AttackButtonImage.fillAmount = 1f - attack.NextFire / attack.FireRate;
+
             Turret_Rotation rotation = _player.GetComponent<Turret_Rotation>();
             rotation.Rotate(_controllerCanvas.AttackJoyStick);
         }

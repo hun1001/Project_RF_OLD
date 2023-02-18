@@ -14,8 +14,8 @@ namespace UI
         public  JoyStick MoveJoyStick => _moveJoyStick;
         
         [SerializeField]
-        private JoyStick_ClickActive _attackJoyStick = null;
-        public JoyStick_ClickActive AttackJoyStick => _attackJoyStick;
+        private JoyStick_Attack _attackJoyStick = null;
+        public JoyStick_Attack AttackJoyStick => _attackJoyStick;
         
         [SerializeField]
         private Button[] _skillButtons = null;

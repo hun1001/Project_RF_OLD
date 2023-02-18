@@ -8,11 +8,11 @@ namespace Turret
 {
     public class Turret_Rotation : Base.CustomComponent<Turret>
     {
-        protected Transform _turret = null;
+        private Transform _turret = null;
 
-        protected float _rotationSpeed = 1f;
+        private float _rotationSpeed = 1f;
 
-        public bool _isAim = false;
+        private bool _isAim = false;
 
         protected void Awake()
         {
