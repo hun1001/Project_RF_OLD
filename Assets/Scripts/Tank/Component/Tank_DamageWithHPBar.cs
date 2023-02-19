@@ -29,9 +29,9 @@ namespace Tank
         protected override void OnHit(float damage)
         {
             base.OnHit(damage);
-            _hpBar.Value = _currentHealth;
+            //_hpBar.Value = _currentHealth;
             _isHit = true;
-            if(_hpBar.Value <= 0f && CompareTag("PlayerTank"))
+            //if(_hpBar.Value <= 0f && CompareTag("PlayerTank"))
             {
                 //_controllerCanvas.ResultPanel.SetActive(true);
             }
