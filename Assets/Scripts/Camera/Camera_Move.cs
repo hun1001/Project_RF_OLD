@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UI;
-using UnityEngine.EventSystems;
 using Cinemachine;
 using Turret;
 using Tank;
