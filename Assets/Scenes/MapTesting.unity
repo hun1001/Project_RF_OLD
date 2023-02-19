@@ -210,7 +210,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _attackCancel
       value: 
-      objectReference: {fileID: 995556710}
+      objectReference: {fileID: 0}
     - target: {fileID: 8227962702631750332, guid: c41aa8bda019bfb4ab13d1b4caf280b7,
         type: 3}
       propertyPath: m_RootOrder
@@ -829,18 +829,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b3802da3af5b9847b775f3b7bffbf56, type: 3}
---- !u!114 &995556710 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3642004798400678280, guid: b58f4b00013d616488e304e3b929a088,
-    type: 3}
-  m_PrefabInstance: {fileID: 3642004798236320567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c960b20657493c4186ae91ea7afd9b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1024740103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,12 +1131,12 @@ PrefabInstance:
     - target: {fileID: 8010753156486241764, guid: 0bf498322c379b54aa2039e2dd468d3f,
         type: 3}
       propertyPath: m_DetailObjectDensity
-      value: 0.13
+      value: 0.071
       objectReference: {fileID: 0}
     - target: {fileID: 8010753156486241764, guid: 0bf498322c379b54aa2039e2dd468d3f,
         type: 3}
       propertyPath: m_DrawTreesAndFoliage
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8010753156486241764, guid: 0bf498322c379b54aa2039e2dd468d3f,
         type: 3}
@@ -1158,7 +1146,7 @@ PrefabInstance:
     - target: {fileID: 8010753156486241764, guid: 0bf498322c379b54aa2039e2dd468d3f,
         type: 3}
       propertyPath: m_BakeLightProbesForTrees
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9147120990870361760, guid: 0bf498322c379b54aa2039e2dd468d3f,
         type: 3}
@@ -1289,7 +1277,7 @@ MonoBehaviour:
     FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FarClipPlane: 100.8
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -1385,7 +1373,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100.8
   field of view: 60
   orthographic: 0
   orthographic size: 5
