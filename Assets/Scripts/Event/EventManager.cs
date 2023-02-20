@@ -48,6 +48,15 @@ public static class EventManager
         }
     }
     
+    public static void DeleteEvent(string eventName)
+    {
+        if (_eventDictionary.ContainsKey(eventName))
+        {
+            _eventDictionary[eventName] = null;
+            _eventDictionary.Remove(eventName);
+        }
+    }
+    
     public static void TriggerEvent(string eventName, params object[] args)
     {
         if (_eventDictionary.TryGetValue(eventName, out var thisEvent))

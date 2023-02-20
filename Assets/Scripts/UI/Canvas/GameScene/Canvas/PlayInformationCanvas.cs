@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Keyword;
 using UnityEngine;
 
 namespace UI
 {
+    //PlayInfomationCanvas
     public class PlayInformationCanvas : BaseCanvas
     {
         [SerializeField]
@@ -17,7 +19,16 @@ namespace UI
         [SerializeField]
         private TextController _goldText = null;
         public TextController GoldText => _goldText;
-        
+
+        protected override void Awake()
+        {
+            base.Awake();
+            EventManager.StartListening(EventKeyword.OnUpdateGold, (gold) =>
+            {
+                _goldText.SetText(gold[0].ToString());
+            });
+        }
+
         protected override void SetOnEnableAction()
         {
             

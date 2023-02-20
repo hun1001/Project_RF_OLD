@@ -14,6 +14,10 @@ namespace Keyword
         public const string OnSkillButtonClicked = "OnSkillButtonClicked";
         
         public const string OnTankDamaged = "OnTankDamaged";
-        public const string OnTankDestroyed = "OnEnemyTankDestroyed";
+        public const string OnTankDestroyed = "OnTankDestroyed";
+        
+        public const string OnGameOver = "OnGameOver";
+        
+        public const string OnUpdateGold = "OnUpdateGold";
     }
 }

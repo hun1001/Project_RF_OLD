@@ -20,33 +20,38 @@ namespace Player
         
         [SerializeField]
         private PlayInformationCanvas _playInformationCanvas = null;
-        
+
         [SerializeField]
         private CameraManager _cameraManager = null;
         
-        private Tank.Tank _player = null;
+        private Tank.Tank _playerTank = null;
+        public Tank.Tank PlayerTank => _playerTank;
+        
+        private Turret.Turret _playerTurret = null;
+        public Turret.Turret PlayerTurret => _playerTurret;
 
         private void Awake()
         {
-            _player = PoolManager.Instance.Get<Tank.Tank>("Assets/Prefabs/Tanks/HeavyTank/Tank_Tiger.prefab", this.transform);
+            GameObject tank = PoolManager.Instance.Get("Assets/Prefabs/Tanks/HeavyTank/Tank_Tiger.prefab", this.transform);
+            _playerTank = tank.GetComponent<Tank.Tank>();
+            _playerTurret = tank.GetComponent<Turret.Turret>();
+            tank.transform.SetParent(null);
+            tank.tag = "PlayerTank";
             
-            _player.transform.SetParent(null);
+            _playerTank.TankID = 1;
             
-            _player.tag = "PlayerTank";
-            _player.TankID = 1;
+            _playInformationCanvas.HpBar.MaxValue = _playerTank.Hp;
             
-            _playInformationCanvas.HpBar.MaxValue = _player.Hp;
+            _cameraManager.SetPlayer(_playerTank.transform);
             
-            _cameraManager.SetPlayer(_player.transform);
-            
-            Turret_Attack attack = _player.GetComponent<Turret_Attack>();
+            Turret_Attack attack = _playerTank.GetComponent<Turret_Attack>();
             EventManager.StartListening(EventKeyword.OnMainBatteryFire, attack.Fire);
             
-            Turret_AimLine aimLine = _player.GetComponent<Turret_AimLine>();
+            Turret_AimLine aimLine = _playerTank.GetComponent<Turret_AimLine>();
             EventManager.StartListening(EventKeyword.OnPointerDownAttackJoyStick, aimLine.OnAimStart);
             EventManager.StartListening(EventKeyword.OnPointerUpAttackJoyStick, aimLine.OnAimEnd);
             
-            EventManager.StartListening(EventKeyword.OnTankDamaged + _player.TankID, (dmg) =>
+            EventManager.StartListening(EventKeyword.OnTankDamaged + _playerTank.TankID, (dmg) =>
             {
                 float damage = (float)dmg[0];
                 _playInformationCanvas.HpBar.Value -= damage;
@@ -54,19 +59,26 @@ namespace Player
 
             foreach (Button button in _controllerCanvas.SkillButtons)
             {
-                button.onClick.AddListener(() => _player.GetComponent<Tank_Skill>().Skill());
+                button.onClick.AddListener(() => _playerTank.GetComponent<Tank_Skill>().Skill());
             }
+            
+            EventManager.StartListening(EventKeyword.OnTankDestroyed + _playerTank.TankID, () =>
+            {
+                var temp = CanvasManager.Instance.GetSceneCanvases(1);
+                var temp2 = temp as GameSceneCanvases;
+                temp2?.ChangeCanvas(1);
+            });
         }
 
         private void Update()
         {
-            Tank_Move move = _player.GetComponent<Tank_Move>();
+            Tank_Move move = _playerTank.GetComponent<Tank_Move>();
             move.Move(_controllerCanvas.MoveJoyStick);
             
-            Turret_Attack attack = _player.GetComponent<Turret_Attack>();
+            Turret_Attack attack = _playerTank.GetComponent<Turret_Attack>();
             _controllerCanvas.AttackJoyStick.AttackButtonImage.fillAmount = 1f - attack.NextFire / attack.FireRate;
 
-            Turret_Rotation rotation = _player.GetComponent<Turret_Rotation>();
+            Turret_Rotation rotation = _playerTank.GetComponent<Turret_Rotation>();
             rotation.Rotate(_controllerCanvas.AttackJoyStick);
         }
     }

@@ -9,10 +9,10 @@ namespace UI
         
         private Canvas _canvas = null;
         
-        private void Awake()
+        protected virtual void Awake()
         {
             _canvas = GetComponent<Canvas>();
-            
+            // 이거 MonoActiveEventBehaviour에서 해주는게 좋을듯 같은거 상속받은 다른 클래스에도 중복됨
             OnEnableAction += () => _canvas.enabled = true;
             OnDisableAction += () => _canvas.enabled = false;
             
