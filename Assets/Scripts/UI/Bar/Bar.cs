@@ -8,7 +8,12 @@ namespace UI
         private float _maxValue = 0;
         public float MaxValue
         {
-            set => _maxValue = _value = _maxValue == 0 ? value : _maxValue;
+            // TODO: 여기 Setter 나중에 상황 봐서 수정 필요해보임
+            set
+            {
+                _maxValue = _maxValue == 0 ? value : _maxValue; 
+                _value = _value == 0 ? value : _value;
+            }
         }
 
         private float _value;
