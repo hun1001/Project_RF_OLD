@@ -15,8 +15,9 @@ namespace UI
         [SerializeField]
         private Button _restartButton = null;
 
-        private void Start()
+        protected override void Awake()
         {
+            base.Awake();
             _mainButton.onClick.AddListener(MainButtonClicked);
             _restartButton.onClick.AddListener(RestartButtonClicked);
         }

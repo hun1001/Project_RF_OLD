@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 924506999371818845}
   - component: {fileID: 924506999371818842}
-  - component: {fileID: 109353133}
-  - component: {fileID: 2450621444056079991}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -47,28 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controllerCanvas: {fileID: 0}
+  _playInformationCanvas: {fileID: 0}
   _cameraManager: {fileID: 0}
---- !u!114 &109353133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924506999371818847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5b5b83181c8fd244ad0bf648cdb5eaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2450621444056079991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924506999371818847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9713402ddcd3cab488df0d5bc3a01029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
