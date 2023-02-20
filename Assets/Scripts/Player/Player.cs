@@ -36,7 +36,6 @@ namespace Player
             _player.TankID = 1;
             
             _playInformationCanvas.HpBar.MaxValue = _player.Hp;
-            Debug.Log(_player.Hp);
             
             _cameraManager.SetPlayer(_player.transform);
             
