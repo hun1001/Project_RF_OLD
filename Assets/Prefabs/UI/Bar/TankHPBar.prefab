@@ -166,3 +166,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372f971255d0f634aaad4b059e5e6197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gaugeImage: {fileID: 8941347637478540541}

@@ -26,7 +26,7 @@ namespace Item
             return Items[Random.Range(0, Items.Length)];
         }
         
-        public void SetItem(Item item, GameObject setItem)
+        private void SetItem(Item item, GameObject setItem)
         {
             var nameText = setItem.transform.GetChild(0).GetComponent<Text>();
             var descriptionText = setItem.transform.GetChild(1).GetComponent<Text>();

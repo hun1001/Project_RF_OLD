@@ -122,17 +122,9 @@ namespace Tank
         {
             while (true)
             {
-                if (_isAiming)
-                {
-                    ChangeLayer("OutLine", transform);
-                }
-                else
-                {
-                    ChangeLayer("Default", transform);
-                }
+                ChangeLayer(_isAiming ? "OutLine" : "Default", transform);
                 yield return null;
             }
-            yield break;
         }
         
         private void ChangeLayer(string layerName, Transform objTransform)

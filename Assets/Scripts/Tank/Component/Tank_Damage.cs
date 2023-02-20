@@ -2,20 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
+using Keyword;
 
 namespace Tank
 {
     public class Tank_Damage : Base.CustomComponent<Tank>
     {
-        protected float _currentHealth = 0;
+        private float _currentHealth = 0;
 
-        protected void Awake()
+        private void Awake()
         {
-            _currentHealth = Instance.TankSO.hp;
+            _currentHealth = Instance.Hp;
         }
 
-        protected virtual void OnHit(float damage)
+        private void OnHit(float damage)
         {
+            EventManager.TriggerEvent(EventKeyword.OnTankDamaged + Instance.TankID, damage);
             _currentHealth -= damage;
 
             if (_currentHealth <= 0)

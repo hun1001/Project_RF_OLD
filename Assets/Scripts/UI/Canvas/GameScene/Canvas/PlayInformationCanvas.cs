@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UI
 {
-    public class PlayInformationBaseCanvas : BaseCanvas
+    public class PlayInformationCanvas : BaseCanvas
     {
         [SerializeField]
         private Bar _hpBar = null;

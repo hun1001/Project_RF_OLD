@@ -1,41 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace UI
 {
     public class Bar : MonoBehaviour
     {
-        private float _maxValue;
+        private float _maxValue = 0;
         public float MaxValue
         {
-            set
-            {
-                _maxValue = value;
-            }
+            set => _maxValue = _maxValue == 0 ? value : _maxValue;
         }
 
         private float _value;
         public float Value
         {
-            get
-            {
-                return _value;
-            }
+            get => _value;
             
             set
             {
                 _value = value;
-                _barImage.fillAmount = _value / _maxValue;
+                _gaugeImage.fillAmount = _value / _maxValue;
             }
         }
 
-        protected Image _barImage = null;
-
-        protected virtual void Awake()
-        {
-            _barImage = transform.GetChild(0).GetComponent<Image>();
-        }
+        [SerializeField]
+        private Image _gaugeImage = null;
     }
 }

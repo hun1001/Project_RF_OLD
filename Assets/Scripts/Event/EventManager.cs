@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public static class EventManager
 {
     private static readonly Dictionary<string, Action<object[]>> _eventDictionary = new();
-    
+
     public static void StartListening(string eventName, Action<object[]> listener)
     {
         if (_eventDictionary.TryGetValue(eventName, out var thisEvent))
@@ -49,6 +50,7 @@ public static class EventManager
     
     public static void TriggerEvent(string eventName, params object[] args)
     {
+        Debug.Log("TriggerEvent " + eventName);
         if (_eventDictionary.TryGetValue(eventName, out var thisEvent))
         {
             thisEvent?.Invoke(args);

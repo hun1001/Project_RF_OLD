@@ -33,9 +33,9 @@ namespace Tank
             _moveSound = SoundManager.Instance.LoopPlaySound(Instance._moveSound, SoundType.SFX, 0.6f);
             _trackSound = SoundManager.Instance.LoopPlaySound(Instance._trackSound, SoundType.SFX, 0.3f, 0f);
 
-            _maxSpeed = Instance.TankSO.maxSpeed;
-            _acceleration = Instance.TankSO.acceleration;
-            _rotationSpeed = Instance.TankSO.rotationSpeed;
+            _maxSpeed = Instance.MaxSpeed;
+            _acceleration = Instance.Acceleration;
+            _rotationSpeed = Instance.RotationSpeed;
 
             _currentSpeed = 0f;
 

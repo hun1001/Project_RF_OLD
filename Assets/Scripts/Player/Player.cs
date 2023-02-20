@@ -19,6 +19,9 @@ namespace Player
         private ControllerCanvas _controllerCanvas = null;
         
         [SerializeField]
+        private PlayInformationCanvas _playInformationCanvas = null;
+        
+        [SerializeField]
         private CameraManager _cameraManager = null;
         
         private Tank.Tank _player = null;
@@ -29,6 +32,11 @@ namespace Player
             
             _player.transform.SetParent(null);
             
+            _player.tag = "PlayerTank";
+            _player.TankID = 1;
+            
+            _playInformationCanvas.HpBar.MaxValue = _player.Hp;
+            
             _cameraManager.SetPlayer(_player.transform);
             
             Turret_Attack attack = _player.GetComponent<Turret_Attack>();
@@ -37,10 +45,16 @@ namespace Player
             Turret_AimLine aimLine = _player.GetComponent<Turret_AimLine>();
             EventManager.StartListening(EventKeyword.OnPointerDownAttackJoyStick, aimLine.OnAimStart);
             EventManager.StartListening(EventKeyword.OnPointerUpAttackJoyStick, aimLine.OnAimEnd);
+            
+            EventManager.StartListening(EventKeyword.OnTankDamaged + _player.TankID, (dmg) =>
+            {
+                Debug.Log($"Player Damaged: {dmg}");
+                // _playInformationCanvas.HpBar.Value -= (int)damage[0];
+            });
 
             foreach (Button button in _controllerCanvas.SkillButtons)
             {
-                button.onClick.AddListener(() => { _player.GetComponent<Tank_Skill>().Skill(); });
+                button.onClick.AddListener(() => _player.GetComponent<Tank_Skill>().Skill());
             }
         }
 

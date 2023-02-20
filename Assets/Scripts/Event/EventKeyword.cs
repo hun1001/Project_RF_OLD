@@ -12,5 +12,8 @@ namespace Keyword
         public const string OnMainBatteryFire = "OnMainBatteryFire";
         
         public const string OnSkillButtonClicked = "OnSkillButtonClicked";
+        
+        public const string OnTankDamaged = "OnTankDamaged";
+        public const string OnTankDestroyed = "OnEnemyTankDestroyed";
     }
 }

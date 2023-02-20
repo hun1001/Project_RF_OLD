@@ -26,7 +26,7 @@ namespace CameraSpace
         private float _hitShakeDuration = 0.3f;
         [SerializeField]
         private float _hitShakeDistance = 0.05f;
-        private Tank_DamageWithHPBar _tank_damage = null;
+        private Tank_Damage _tank_damage = null;
 
         private void Awake()
         {
@@ -37,7 +37,7 @@ namespace CameraSpace
             _turretAttack = GameObject.FindGameObjectWithTag("PlayerTank").GetComponent<Turret_Attack>();
             _attackRange = _turretAttack.Range;
 
-            _tank_damage = GameObject.FindGameObjectWithTag("PlayerTank").GetComponent<Tank_DamageWithHPBar>();
+            _tank_damage = GameObject.FindGameObjectWithTag("PlayerTank").GetComponent<Tank_Damage>();
 
             _offsetDefalutPosition = _transposer.m_FollowOffset;
         }
@@ -105,12 +105,13 @@ namespace CameraSpace
 
         public void HitCameraShake()
         {
-            if(_tank_damage.IsHit == true)
-            {
-                _tank_damage.IsHit = false;
-                InvokeRepeating("HitStartShake", 0f, 0.005f);
-                Invoke("HitStopShake", _hitShakeDuration);
-            }
+            // TODO: 여기 고쳐야됨
+            // if(_tank_damage.IsHit == true)
+            // {
+            //     _tank_damage.IsHit = false;
+            //     InvokeRepeating("HitStartShake", 0f, 0.005f);
+            //     Invoke("HitStopShake", _hitShakeDuration);
+            // }
         }
 
         private void HitStartShake()

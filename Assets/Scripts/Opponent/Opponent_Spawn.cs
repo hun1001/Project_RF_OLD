@@ -39,7 +39,7 @@ namespace Opponent
             {
                 _gameTime = 0;
                 _currentWave++;
-                FindObjectOfType<ItemManager>()?.ItemShow();
+                //FindObjectOfType<ItemManager>()?.ItemShow();
             }
             _waveTimer.SetTimer(_delay - _gameTime);
         }

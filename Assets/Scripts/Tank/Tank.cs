@@ -10,7 +10,11 @@ namespace Tank
         [Header("Data")]
         [SerializeField]
         private SO.TankSO _tankSO = null;
-        public SO.TankSO TankSO => _tankSO;
+        
+        public float Hp => _tankSO.hp;
+        public float MaxSpeed => _tankSO.maxSpeed;
+        public float Acceleration => _tankSO.acceleration;
+        public float RotationSpeed => _tankSO.rotationSpeed;
 
         [Header("Transform")]
         [SerializeField]
@@ -30,5 +34,13 @@ namespace Tank
         public AudioClip _moveSound = null;
         public AudioClip _trackSound = null;
         public AudioClip _loadSound = null;
+        
+        private uint _tankID = 0;
+
+        public uint TankID
+        {
+            get => _tankID;
+            set => _tankID = _tankID == 0 ? value : _tankID;
+        }
     }
 }
