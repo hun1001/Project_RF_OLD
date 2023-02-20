@@ -50,7 +50,6 @@ public static class EventManager
     
     public static void TriggerEvent(string eventName, params object[] args)
     {
-        Debug.Log("TriggerEvent " + eventName);
         if (_eventDictionary.TryGetValue(eventName, out var thisEvent))
         {
             thisEvent?.Invoke(args);

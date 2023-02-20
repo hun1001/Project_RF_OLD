@@ -36,6 +36,7 @@ namespace Player
             _player.TankID = 1;
             
             _playInformationCanvas.HpBar.MaxValue = _player.Hp;
+            Debug.Log(_player.Hp);
             
             _cameraManager.SetPlayer(_player.transform);
             
@@ -48,8 +49,8 @@ namespace Player
             
             EventManager.StartListening(EventKeyword.OnTankDamaged + _player.TankID, (dmg) =>
             {
-                Debug.Log($"Player Damaged: {dmg}");
-                // _playInformationCanvas.HpBar.Value -= (int)damage[0];
+                float damage = (float)dmg[0];
+                _playInformationCanvas.HpBar.Value -= damage;
             });
 
             foreach (Button button in _controllerCanvas.SkillButtons)
