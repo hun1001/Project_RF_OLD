@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace UI
 {
-    public class ItemBaseCanvas : BaseCanvas
+    public class ItemCanvas : BaseCanvas
     {
         protected override void SetOnEnableAction()
         {

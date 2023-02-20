@@ -35,6 +35,14 @@ namespace UI
                 }
             }
         }
+        
+        public void ChangeCanvas(string name)
+        {
+            foreach (var c in _canvases)
+            {
+                c.Value.gameObject.SetActive(c.Key == name);
+            }
+        }
 
         protected abstract void SetOnEnableAction();
         protected abstract void SetOnDisableAction();
