@@ -36,11 +36,14 @@ namespace UI
             }
         }
         
-        public void ChangeCanvas(string name)
+        public virtual void ChangeCanvas(string name)
         {
             foreach (var c in _canvases)
             {
-                c.Value.gameObject.SetActive(c.Key == name);
+                if(c.Key == name)
+                    c.Value.OnEnableAction?.Invoke();
+                else
+                    c.Value.OnDisableAction?.Invoke();
             }
         }
 

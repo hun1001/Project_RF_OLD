@@ -11,7 +11,7 @@ namespace Item
         
         public void ItemShow()
         {
-            selectObject.SetActive(true);
+            //selectObject.SetActive(true);
             Time.timeScale = 0;
 
             for (int i = 0; i < 3; i++)
@@ -45,7 +45,7 @@ namespace Item
                 Debug.Log($"get Item : {item.itemSO.itemName}");
                 item.AddItem();
                 Time.timeScale = 1;
-                selectObject.SetActive(false);
+                //selectObject.SetActive(false);
             });
             
             e.triggers.Add(entry);
