@@ -35,14 +35,17 @@ namespace UI
         private void MainButtonClicked()
         {
             Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            CanvasManager.Instance.ChangeSceneCanvas(SceneType.MenuScene);
             SceneLoadManager.Instance.LoadScene(SceneType.MenuScene);
         }
 
         private void RestartButtonClicked()
         {
             Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            CanvasManager.Instance.ChangeSceneCanvas(SceneType.GameScene);
+            var temp = CanvasManager.Instance.GetSceneCanvases(1);
+            var temp2 = temp as GameSceneCanvases;
+            temp2?.ChangeCanvas(0);
             SceneLoadManager.Instance.LoadScene(SceneType.GameScene);
         }
     }

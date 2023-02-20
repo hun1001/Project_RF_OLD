@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace UI
 {
-    //PlayInfomationCanvas
     public class PlayInformationCanvas : BaseCanvas
     {
         [SerializeField]

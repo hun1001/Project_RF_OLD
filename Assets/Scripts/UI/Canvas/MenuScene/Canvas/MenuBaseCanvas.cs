@@ -6,7 +6,7 @@ using Scene;
 
 namespace UI
 {
-    public class MenuBaseCanvas : UI.BaseCanvas
+    public class MenuBaseCanvas : BaseCanvas
     {
         [SerializeField]
         private Button _startButton = null;
@@ -26,7 +26,11 @@ namespace UI
 
         private void Awake()
         {
-            _startButton.onClick.AddListener(() => SceneLoadManager.Instance.LoadScene(SceneType.GameScene));
+            _startButton.onClick.AddListener(() =>
+            {
+                CanvasManager.Instance.ChangeSceneCanvas(SceneType.GameScene);
+                SceneLoadManager.Instance.LoadScene(SceneType.GameScene);
+            });
             _exitButton.onClick.AddListener(() =>
             {
 #if UNITY_EDITOR

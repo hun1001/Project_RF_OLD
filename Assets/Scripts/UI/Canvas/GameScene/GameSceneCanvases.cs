@@ -9,7 +9,7 @@ namespace UI
     {
         protected override void SetOnEnableAction()
         {
-            
+            ChangeCanvas(CanvasChangeType.PlayGame);
         }
 
         protected override void SetOnDisableAction()
