@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using PlasticPipe.PlasticProtocol.Messages;
+using UnityEditor;
 using UnityEngine;
 
 namespace UI
@@ -9,7 +11,7 @@ namespace UI
     {
         protected override void SetOnEnableAction()
         {
-            
+            gameObject.SendMessage("ItemShow");
         }
         
         protected override void SetOnDisableAction()

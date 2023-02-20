@@ -16,6 +16,12 @@ namespace UI
         {
             
         }
+        
+        // TODO: this method will delete
+        public void ChangeCanvas(int index)
+        {
+            ChangeCanvas((CanvasChangeType)index);
+        }
 
         public void ChangeCanvas(CanvasChangeType type)
         {

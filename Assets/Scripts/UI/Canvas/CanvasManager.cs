@@ -32,6 +32,11 @@ namespace UI
             ChangeSceneCanvas(_currentSceneType);
         }
         
+        public SceneCanvases GetSceneCanvases(int index)
+        {
+            return _sceneCanvases[(SceneType)index];
+        }
+        
         public void ChangeSceneCanvas(SceneType type)
         {
             if (_currentSceneType != SceneType.None)

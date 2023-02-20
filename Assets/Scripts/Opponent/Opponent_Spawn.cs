@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Item;
+using UI;
 using UnityEngine;
 using Util;
 
@@ -39,7 +40,9 @@ namespace Opponent
             {
                 _gameTime = 0;
                 _currentWave++;
-                //FindObjectOfType<ItemManager>()?.ItemShow();
+                // TODO: 여기도 아이템 구조 한 번 더 개편하면 고쳐질 예정
+                var temp = CanvasManager.Instance.GetSceneCanvases(1) as GameSceneCanvases;
+                temp?.ChangeCanvas(CanvasChangeType.Item);
             }
             _waveTimer.SetTimer(_delay - _gameTime);
         }

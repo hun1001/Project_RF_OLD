@@ -1,17 +1,19 @@
+using SO;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UI;
 
 namespace Item
 {
     public class ItemManager : MonoBehaviour
     {
+        // TODO: Must change this structure
         public GameObject selectObject;
-        public Item[] Items;
+        public ItemBundleSO Items;
         
         public void ItemShow()
         {
-            //selectObject.SetActive(true);
             Time.timeScale = 0;
 
             for (int i = 0; i < 3; i++)
@@ -23,7 +25,7 @@ namespace Item
         
         private Item GetRandomItem()
         {
-            return Items[Random.Range(0, Items.Length)];
+            return Items.items[Random.Range(0, Items.items.Length)];
         }
         
         private void SetItem(Item item, GameObject setItem)
@@ -42,10 +44,12 @@ namespace Item
             
             entry.callback.AddListener((data) =>
             {
-                Debug.Log($"get Item : {item.itemSO.itemName}");
                 item.AddItem();
                 Time.timeScale = 1;
-                //selectObject.SetActive(false);
+                //TODO: Will change this code
+                var temp = CanvasManager.Instance.GetSceneCanvases(1);
+                var temp2 = temp as GameSceneCanvases;
+                temp2?.ChangeCanvas(0);
             });
             
             e.triggers.Add(entry);
