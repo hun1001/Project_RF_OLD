@@ -8,6 +8,8 @@ namespace Scene
 {
     public class SceneLoadManager : MonoSingleton<SceneLoadManager>
     {
+        public void LoadScene(int index) => LoadScene((SceneType)index);
+        
         public void LoadScene(SceneType type)
         {
             PoolManager.Instance.Clear();
