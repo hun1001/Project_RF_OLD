@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d84d2bde7ff0343a062c23dd1c8d4f, type: 3}
   m_Name: AdrenalineSO
   m_EditorClassIdentifier: 
+  itemID: adr
   itemName: "\uC544\uB4DC\uB808\uB0A0\uB9B0"
   rarity: 2
   description: "\uCCB4\uB825\uC774 1% \uAC10\uC18C \uD560\uB54C\uB9C8\uB2E4 \uBAA8\uB4E0\uC2A4\uD0EF
     0.1% \uC0C1\uC2B9"
   itemSprite: {fileID: 21300000, guid: d73dd1fe70adcf54e9b113329c9b2c1f, type: 3}
+  NecessaryGold: 10

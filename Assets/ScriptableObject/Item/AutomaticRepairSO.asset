@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d84d2bde7ff0343a062c23dd1c8d4f, type: 3}
   m_Name: AutomaticRepairSO
   m_EditorClassIdentifier: 
+  itemID: auto_heal
   itemName: "\uC790\uB3D9\uC218\uB9AC"
   rarity: 2
   description: "\uC804\uD22C\uC2DC 1\uCD08\uC5D0 0.1% \uCCB4\uB825\uD68C\uBCF5"
   itemSprite: {fileID: 21300000, guid: adfb7f647fb791d4f8c209a595507c26, type: 3}
+  NecessaryGold: 8

@@ -24,8 +24,9 @@ namespace UI
             
         }
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _startButton.onClick.AddListener(() =>
             {
                 CanvasManager.Instance.ChangeSceneCanvas(SceneType.GameScene);

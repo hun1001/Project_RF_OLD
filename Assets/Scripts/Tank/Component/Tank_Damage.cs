@@ -20,10 +20,13 @@ namespace Tank
 
             if (_currentHealth <= 0)
             {
-                PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") + 1);
+                if(CompareTag("PlayerTank") == false)
+                {
+                    PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") + 1);
+                    EventManager.TriggerEvent(EventKeyword.OnUpdateGold, PlayerPrefs.GetInt("Gold"));
+                }
+                
                 EventManager.TriggerEvent(EventKeyword.OnTankDestroyed + Instance.TankID);
-                // TODO: 여기 지금 이대로면 플레이어 죽어도 1원 추가됨
-                EventManager.TriggerEvent(EventKeyword.OnUpdateGold, PlayerPrefs.GetInt("Gold"));
                 PoolManager.Instance.Pool(this.gameObject);
             }
         }

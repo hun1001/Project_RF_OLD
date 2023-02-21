@@ -32,9 +32,11 @@ namespace Item
         {
             var nameText = setItem.transform.GetChild(0).GetComponent<Text>();
             var descriptionText = setItem.transform.GetChild(1).GetComponent<Text>();
+            var goldText = setItem.transform.GetChild(2).GetComponent<Text>();
 
             nameText.text = item.itemSO.itemName;
             descriptionText.text = item.itemSO.description;
+            goldText.text = item.itemSO.NecessaryGold.ToString();
             setItem.GetComponent<Image>().sprite = item.itemSO.itemSprite;
 
             EventTrigger e = setItem.GetComponent<EventTrigger>();
