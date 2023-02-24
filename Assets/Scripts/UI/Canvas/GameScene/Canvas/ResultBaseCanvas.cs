@@ -9,11 +9,19 @@ namespace UI
 {
     public class ResultBaseCanvas : BaseCanvas
     {
+        [Header("Button")]
         [SerializeField]
         private Button _mainButton = null;
         
         [SerializeField]
         private Button _restartButton = null;
+
+        [Header("Text")]
+        [SerializeField]
+        private TextController _lifeTimeSecondText;
+
+        [SerializeField]
+        private TextController _destroyText;
 
         protected override void Awake()
         {
@@ -25,6 +33,8 @@ namespace UI
         protected override void SetOnEnableAction()
         {
             Time.timeScale = 0f;
+            _lifeTimeSecondText.SetText(string.Format("{0} sec", Time.time));
+            _destroyText.SetText(PlayerPrefs.GetInt("Destroy").ToString());
         }
         
         protected override void SetOnDisableAction()

@@ -9,6 +9,7 @@ namespace Game
         {
             Application.targetFrameRate = 120;
             PlayerPrefs.SetInt("Gold", 0);
+            PlayerPrefs.SetInt("Destroy", 0);
         }
     }
 }
