@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,10 +15,10 @@ namespace SO
         
         public string description;
 
-        //»ç¿ëÇÒ ¾ÆÀÌÅÛÀÇ ÀÌ¹ÌÁö ½ºÇÁ¶óÀÌÆ®
+        //ì‚¬ìš©í•  ì•„ì´í…œì˜ ì´ë¯¸ì§€ ìŠ¤í”„ë¼ì´íŠ¸
         public Sprite itemSprite;
 
-        //¾ÆÀÌÅÛ ±¸¸Å¿¡ ÇÊ¿äÇÑ ÀçÈ­ ¾ç
+        //ì•„ì´í…œ êµ¬ë§¤ì— í•„ìš”í•œ ì¬í™” ì–‘
         public int NecessaryGold;
     }
 }

@@ -12,8 +12,8 @@ namespace UI
         public Bar HpBar => _hpBar;
         
         [SerializeField]
-        private WaveTimer _waveTimer = null;
-        public WaveTimer WaveTimer => _waveTimer;
+        private TextController _waveTimer = null;
+        public TextController WaveTimer => _waveTimer;
         
         [SerializeField]
         private TextController _goldText = null;

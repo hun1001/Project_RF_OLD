@@ -22,7 +22,8 @@ namespace Tank
             {
                 if(CompareTag("PlayerTank") == false)
                 {
-                    PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") + 1);
+                    PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") + 2);
+                    PlayerPrefs.SetInt("Destroy", PlayerPrefs.GetInt("Destroy") + 1);
                     EventManager.TriggerEvent(EventKeyword.OnUpdateGold, PlayerPrefs.GetInt("Gold"));
                 }
                 

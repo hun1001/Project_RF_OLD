@@ -17,7 +17,7 @@ namespace Opponent
         
         private float _gameTime = 0;
 
-        private UI.WaveTimer _waveTimer = null;
+        private UI.TextController _waveTimer = null;
 
         private void Awake()
         {
@@ -44,7 +44,7 @@ namespace Opponent
                 var temp = CanvasManager.Instance.GetSceneCanvases(1) as GameSceneCanvases;
                 temp?.ChangeCanvas(CanvasChangeType.Item);
             }
-            _waveTimer.SetTimer(_delay - _gameTime);
+            _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
         }
         
         uint _count = 2;
