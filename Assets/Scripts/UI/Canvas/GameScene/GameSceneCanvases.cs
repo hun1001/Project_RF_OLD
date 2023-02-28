@@ -54,6 +54,15 @@ namespace UI
                             canvas.Value.OnDisableAction?.Invoke();
                     }
                     break;
+                case CanvasChangeType.Setting:
+                    foreach(var canvas in Canvases)
+                    {
+                        if (canvas.Key == CanvasNameKeyword.SettingCanvas)
+                            canvas.Value.OnEnableAction?.Invoke();
+                        else
+                            canvas.Value.OnDisableAction?.Invoke();
+                    }
+                    break;
                 default:
                     Debug.LogError("CanvasChangeType is not defined");
                     break;
