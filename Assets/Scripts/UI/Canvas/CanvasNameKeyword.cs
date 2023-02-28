@@ -11,5 +11,6 @@ namespace Keyword
         public const string ItemCanvas = "ItemCanvas";
         public const string PlayInformationCanvas = "PlayInformationCanvas";
         public const string ResultCanvas = "ResultCanvas";
+        public const string SettingCanvas = "SettingCanvas";
     }
 }
