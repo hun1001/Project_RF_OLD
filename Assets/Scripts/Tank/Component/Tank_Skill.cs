@@ -8,10 +8,14 @@ namespace Tank
 {
     public class Tank_Skill : Base.CustomComponent<Tank>
     {
+        [Header("Cooldown")]
         [SerializeField]
         protected float _cooldown = 0f;
-        [SerializeField]
         protected float _currentCooldown = 0f;
+
+        [Header("Duration")]
+        [SerializeField]
+        protected float _duration = 0f;
 
         protected bool _isSkill = false;
 
@@ -25,6 +29,10 @@ namespace Tank
             //if (_currentCooldown > 0f) return;
             _currentCooldown = _cooldown;
             StartCoroutine(SkillCooldown());
+            if(_duration > 0f)
+            {
+                Invoke(nameof(Restoration), _duration);
+            }
         }
 
         IEnumerator SkillCooldown()
@@ -35,6 +43,11 @@ namespace Tank
 
                 yield return new WaitForFixedUpdate();
             }
+        }
+
+        protected virtual void Restoration()
+        {
+
         }
 
         //private void Update()

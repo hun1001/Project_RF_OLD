@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using Util;
 using Keyword;
 
@@ -8,7 +8,7 @@ namespace Tank
     {
         private float _currentHealth = 0;
 
-        //TODO : ¿©±â HP¹Ù °ü·ÃµÈ°Íµµ ¼öÁ¤ ÇÊ¿ä
+        //TODO : ì—¬ê¸° HPë°” ê´€ë ¨ëœê²ƒë„ ìˆ˜ì • í•„ìš”
 
         public void Repair(float percent)
         {
@@ -30,6 +30,14 @@ namespace Tank
 
         private void OnHit(float damage)
         {
+            #region 2ë²ˆ ìŠ¤í‚¬ í…ŒìŠ¤íŠ¸
+            Skill_Test2 _skill = GetComponent<Skill_Test2>();
+            if (_skill != null)
+            {
+                damage = damage - ((damage / 100f) * _skill.CurrentArmour);
+            }
+            #endregion
+
             EventManager.TriggerEvent(EventKeyword.OnTankDamaged + Instance.TankID, damage);
             _currentHealth -= damage;
 
