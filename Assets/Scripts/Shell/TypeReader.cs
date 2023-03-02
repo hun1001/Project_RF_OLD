@@ -4,14 +4,27 @@ using UnityEngine;
 
 namespace Util
 {
-    public static class TypeReader
+    public class TypeReader : Singleton<TypeReader>
     {
-        public static HitType GetHitType(float angle) => angle switch
+        private float _ricochetAngle = 30f;
+        public float RicochetAngle
         {
-            < 30f => HitType.RICOCHET,
-            _ => HitType.PENETRATION
-        };
+            get
+            {
+                return _ricochetAngle;
+            }
+            set
+            {
+                _ricochetAngle = value;
+            }
+        }
 
-        public static HitType GetHitType(Vector3 incoming, Vector3 normal) => GetHitType(Vector3Calculator.GetIncomingAngle(incoming, normal));
+        public HitType GetHitType(float angle)
+        {
+            if (angle < _ricochetAngle) return HitType.RICOCHET;
+            else return HitType.PENETRATION;
+        }
+
+        public HitType GetHitType(Vector3 incoming, Vector3 normal) => GetHitType(Vector3Calculator.GetIncomingAngle(incoming, normal));
     }
 }

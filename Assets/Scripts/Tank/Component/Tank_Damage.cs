@@ -32,10 +32,10 @@ namespace Tank
         private void OnHit(float damage)
         {
             #region 2번 스킬 테스트
-            Skill_Test2 _skill = GetComponent<Skill_Test2>();
-            if (_skill != null)
+            Skill_Test2 _skill2 = GetComponent<Skill_Test2>();
+            if (_skill2 != null)
             {
-                damage = damage - ((damage / 100f) * _skill.CurrentArmour);
+                damage = damage - ((damage / 100f) * _skill2.CurrentArmour);
             }
             #endregion
 

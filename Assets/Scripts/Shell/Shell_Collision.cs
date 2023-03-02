@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
@@ -14,7 +14,7 @@ namespace Shell
 
             if (other.transform.CompareTag("Map") == true)
             {
-                switch (TypeReader.GetHitType(angle))
+                switch (TypeReader.Instance.GetHitType(angle))
                 {
                     case HitType.PENETRATION:
                         PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position, Quaternion.identity);
@@ -28,7 +28,7 @@ namespace Shell
             }
             else
             {
-                switch (TypeReader.GetHitType(angle))
+                switch (TypeReader.Instance.GetHitType(angle))
                 {
                     case HitType.PENETRATION:
                         PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position,  Quaternion.identity);
@@ -41,6 +41,10 @@ namespace Shell
                         PoolManager.Instance.Get<Effect.TextEffect>("Assets/Prefabs/UI/TextEffect.prefab", transform.position, Quaternion.identity).SetTextEffect("Ricochet", Color.white, 2, 1f);
                         break;
                 }
+                #region 3번 스킬 테스트
+                if (other.gameObject.CompareTag("PlayerTank") && TypeReader.Instance.RicochetAngle != 30f)
+                    TypeReader.Instance.RicochetAngle = 30f;
+                #endregion
             }
         }
     }
