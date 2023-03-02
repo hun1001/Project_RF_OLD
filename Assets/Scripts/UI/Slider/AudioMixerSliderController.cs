@@ -18,6 +18,10 @@ namespace UI
         {
             base.Awake();
             _slider.value = PlayerPrefs.GetFloat(_mixerName);
+        }
+
+        private void Start()
+        {
             _audioMixer.SetFloat(_mixerName, PlayerPrefs.GetFloat(_mixerName));
         }
 
