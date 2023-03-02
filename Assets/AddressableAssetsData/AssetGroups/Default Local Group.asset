@@ -61,6 +61,18 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/UI/Bar/HPCanvas.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 92c2691193744e846989b273301f2f7f
+    m_Address: AutomaticRepair
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0439d1508f6c44841afcb84fb248a7cf
+    m_Address: FrontalMachineGun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a4958a1b71cd1c5439020c600970c4fe
+    m_Address: Adrenaline
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 83677132a06df9140834c0d848060f27, type: 2}
   m_SchemaSet:

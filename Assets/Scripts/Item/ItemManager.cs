@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UI;
+using Util;
 using Keyword;
 
 namespace Item
@@ -26,12 +27,12 @@ namespace Item
                 SetItem(GetRandomItem(), setItem);
             }
         }
-        
+
         private Item GetRandomItem()
         {
             return Items.items[Random.Range(0, Items.items.Length)];
         }
-        
+
         private void SetItem(Item item, GameObject setItem)
         {
             var nameText = setItem.transform.GetChild(0).GetComponent<Text>();
@@ -44,27 +45,26 @@ namespace Item
             setItem.GetComponent<Image>().sprite = item.itemSO.itemSprite;
 
             EventTrigger e = setItem.GetComponent<EventTrigger>();
-            
+
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerClick;
-            
+
             entry.callback.AddListener((data) =>
             {
-                if(PlayerPrefs.GetInt("Gold") < item.itemSO.NecessaryGold)
+                if (PlayerPrefs.GetInt("Gold") < item.itemSO.NecessaryGold)
                 {
                     //TODO: 재화 부족 창 띄우기
                     return;
                 }
                 PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") - item.itemSO.NecessaryGold);
                 gameObject.SendMessage("UpdateGoldText");
-                item.AddItem();
+
+                PoolManager.Instance.Get<Item>(item.gameObject.name, GameObject.Find("Player").transform.GetChild(0)).AddItem();
+
                 setItem.SetActive(false);
 
                 //TODO: Will change this code
 
-                //var temp = CanvasManager.Instance.GetSceneCanvases(1);
-                //var temp2 = temp as GameSceneCanvases;
-                //temp2?.ChangeCanvas(0);
                 if (_itemSelectCnt++ > 1)
                 {
                     gameObject.SendMessage("BackCanvas");

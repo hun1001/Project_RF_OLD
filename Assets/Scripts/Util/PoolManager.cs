@@ -36,20 +36,19 @@ namespace Util
         {
             return GetObject(obj);
         }
-        
-        public GameObject Get(GameObject obj, Vector3 position)
+
+        public GameObject Get(GameObject obj, Transform position)
         {
             GameObject temp = GetObject(obj);
-
-            temp.transform.position = position;
+            temp.transform.SetParent(position);
 
             return temp;
         }
-        
+
         public GameObject Get(GameObject obj, Vector3 position, Quaternion rotation)
         {
             GameObject temp = GetObject(obj);
-            
+
             temp.transform.position = position;
             temp.transform.rotation = rotation;
 
@@ -61,6 +60,12 @@ namespace Util
         public T Get<T>(string name, Transform parent) where T : MonoBehaviour => Get(name, parent).GetComponent<T>();
 
         public T Get<T>(string name, Vector3 position, Quaternion rotation) where T : MonoBehaviour => Get(name, position, rotation).GetComponent<T>();
+
+        public T Get<T>(GameObject obj) where T : MonoBehaviour => GetObject(obj).GetComponent<T>();
+
+        public T Get<T>(GameObject obj, Transform parent) where T : MonoBehaviour => Get(obj, parent).GetComponent<T>();
+
+        public T Get<T>(GameObject obj, Vector3 position, Quaternion rotation) where T : MonoBehaviour => Get(obj, position, rotation).GetComponent<T>();
 
         public void Pool(string name, GameObject obj)
         {
@@ -76,7 +81,7 @@ namespace Util
                 _poolingDictionaryQueue[name].Enqueue(obj);
             }
         }
-        
+
         public void Pool(GameObject obj) => Pool(obj.name, obj);
 
         private GameObject GetObject(string name)
@@ -127,10 +132,10 @@ namespace Util
             }
 
             temp.SetActive(true);
-            
+
             return temp;
         }
-        
+
         public void Clear()
         {
             _poolingDictionaryQueue.Clear();
