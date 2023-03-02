@@ -17,7 +17,7 @@ namespace UI
 
         private float _radius = 0.0f;
         private float _dragTime = 0.0f;
-        
+
         private bool _isTouching = false;
         private bool _isDragging = false;
 
@@ -30,7 +30,7 @@ namespace UI
         public void OnPointerDown(PointerEventData eventData)
         {
             OnPointerDownAction();
-            
+
             _rectTransform.position = eventData.position;
             _rectTransformChild.position = eventData.position;
             _isTouching = true;
@@ -43,14 +43,14 @@ namespace UI
 
         public void OnDrag(PointerEventData eventData)
         {
-            Vector2 pos = (eventData.position - (Vector2)_rectTransform.position) / (_radius/15);
+            Vector2 pos = (eventData.position - (Vector2)_rectTransform.position) / (_radius / 10f);
             pos = Vector2.ClampMagnitude(pos, _radius);
             _rectTransformChild.localPosition = pos;
-            
+
             _direction = pos;
             if (_dragTime < 3f) _dragTime += Time.deltaTime;
         }
-        
+
         public void OnEndDrag(PointerEventData eventData)
         {
             _isDragging = false;
@@ -59,26 +59,26 @@ namespace UI
         public void OnPointerUp(PointerEventData eventData)
         {
             OnPointerUpAction();
-            
+
             _isTouching = false;
             _rectTransformChild.localPosition = Vector2.zero;
             _rectTransform.anchoredPosition = _joyStickOriginPosition;
             _direction = Vector2.zero;
             _dragTime = 0.0f;
         }
-        
+
         protected virtual void OnPointerDownAction()
         {
             EventManager.TriggerEvent(EventKeyword.OnPointerDownMoveJoyStick);
         }
-        
+
         protected virtual void OnPointerUpAction()
         {
             EventManager.TriggerEvent(EventKeyword.OnPointerDownMoveJoyStick);
         }
 
         public Vector2 Direction => _direction.normalized;
-        public float Scalar => _direction.magnitude/_radius;
+        public float Scalar => _direction.magnitude / _radius;
         public float Vertical => _direction.normalized.y;
         public float Horizontal => _direction.normalized.x;
         public bool IsDragging => _isDragging;
