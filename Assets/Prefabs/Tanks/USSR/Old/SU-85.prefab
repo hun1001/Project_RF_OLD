@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7516545465507919544}
   - component: {fileID: 6706610626111772891}
   - component: {fileID: 7215292184890106805}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SU-85 Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4820358229712331106}
   - component: {fileID: 8451710381103869639}
   - component: {fileID: 5957829760456169997}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SU-85
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7033142932703975979}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SU-85
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 8956785074079854690}
   - component: {fileID: 8568510770538798522}
   - component: {fileID: 2619064404554443131}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SU-85 Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

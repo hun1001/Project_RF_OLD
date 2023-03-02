@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2487821634393560662}
   - component: {fileID: 7549104245280736546}
   - component: {fileID: 8498650665874556267}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-7 Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2968297320667363964}
   - component: {fileID: 6099595673306316619}
   - component: {fileID: 8555365017476794745}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-7M Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 6155580912732717773}
   - component: {fileID: 7625474253684718787}
   - component: {fileID: 8287048754547001465}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-7M Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 3496567464757005198}
   - component: {fileID: 516108559592227883}
   - component: {fileID: 2363652348990484705}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-7M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7282516141860473211}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-7M
   m_TagString: Untagged
   m_Icon: {fileID: 0}

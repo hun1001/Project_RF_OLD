@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 296315702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 613254130}
   - component: {fileID: 613254129}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SkidLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 698988375}
   - component: {fileID: 698988374}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SkidRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1523428035}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 5447091331282197947}
   - component: {fileID: 7728497388725873769}
   - component: {fileID: 869912338466366358}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 3102452112733508451}
   - component: {fileID: 2400869219910499701}
   - component: {fileID: 5433152023025287772}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 8507402073674040184}
   - component: {fileID: 9002650337865514914}
   - component: {fileID: 4422082903940326118}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 1326343564693191602}
   - component: {fileID: 5674628101853645819}
   - component: {fileID: 3912251908626076549}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,7 @@ GameObject:
   - component: {fileID: 3981147935048310106}
   - component: {fileID: 40597686404682495}
   - component: {fileID: 2843121739612448309}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tiger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 6810844012845979086}
   - component: {fileID: 1153790455528533993}
   - component: {fileID: 991199594691540594}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -838,13 +838,13 @@ GameObject:
   - component: {fileID: 3424633289465488314}
   - component: {fileID: 8227962702631750305}
   - component: {fileID: 3846265029738338640}
-  - component: {fileID: 112010500334292537}
+  - component: {fileID: 7668529692335559639}
   - component: {fileID: 6316762985748217792}
   - component: {fileID: 8227962702631750304}
   - component: {fileID: 8227962702631750307}
   - component: {fileID: 2787651772665990127}
   - component: {fileID: 479435561}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tank_Tiger
   m_TagString: PlayerTank
   m_Icon: {fileID: 0}
@@ -947,7 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d33b75170bf75d4887f3154b288ffc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &112010500334292537
+--- !u!114 &7668529692335559639
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -956,9 +956,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8227962702631750333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f727e272dc7031545a81a84aca17f962, type: 3}
+  m_Script: {fileID: 11500000, guid: 213468ae53a51804190998be442b25a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cooldown: 13
+  _currentCooldown: 0
+  _radius: 10
 --- !u!114 &6316762985748217792
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2184629908500434926}
   - component: {fileID: 3026004188826157131}
   - component: {fileID: 1016249525217735809}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: A-20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4681426610827506920}
   - component: {fileID: 2958800528886905265}
   - component: {fileID: 2564091266039906469}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: A-20 Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 3388169065856781345}
   - component: {fileID: 5918015378833584402}
   - component: {fileID: 4039170249435830289}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: A-20 Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 2525815788872258332}
   - component: {fileID: 6089899602185531590}
   - component: {fileID: 2536076826070078383}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: A-20 Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8934199250440391892}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: A-20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
