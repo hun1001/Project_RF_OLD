@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 821895226}
   - component: {fileID: 821895227}
   - component: {fileID: 6921222051118611604}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tank_M4Sherman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,11 +81,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tankSO: {fileID: 11400000, guid: 00f8da0e1d2868d43bcad05ce3430c23, type: 2}
-  _joyStick: {fileID: 0}
-  _healthBar: {fileID: 0}
   _body: {fileID: 6118934760728988913}
   _lineRenderer: []
   _skidMark: []
+  _moveSound: {fileID: 0}
+  _trackSound: {fileID: 0}
+  _loadSound: {fileID: 0}
 --- !u!195 &821895225
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -157,7 +158,7 @@ GameObject:
   - component: {fileID: 4418533443728098405}
   - component: {fileID: 8346898561205321282}
   - component: {fileID: 7932035820134246361}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +242,7 @@ GameObject:
   - component: {fileID: 6118934760728988913}
   - component: {fileID: 7153133665969865556}
   - component: {fileID: 4945513564788324254}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: M4Sherman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +328,7 @@ GameObject:
   - component: {fileID: 1413044483534703041}
   - component: {fileID: 723604970815779650}
   - component: {fileID: 7629990279068696583}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +411,7 @@ GameObject:
   - component: {fileID: 5249839855788819144}
   - component: {fileID: 4793144603608886494}
   - component: {fileID: 2932789695291134967}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

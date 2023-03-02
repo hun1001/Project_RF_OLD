@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 390028474594754699}
   - component: {fileID: 3658738472686784302}
   - component: {fileID: 1522924795587328996}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KV-85
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5525400928372339414}
   - component: {fileID: 2658633661235876185}
   - component: {fileID: 6753192887578583261}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KV-85 Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 180912183936273669}
   - component: {fileID: 3967887950831784789}
   - component: {fileID: 7498640328559940242}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KV-85 Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6632217292609780967}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KV-85
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 6300528181017968553}
   - component: {fileID: 9077907492930687001}
   - component: {fileID: 5150556843994112967}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KV-85 Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}

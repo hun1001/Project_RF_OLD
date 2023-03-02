@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 872510054365980097}
   - component: {fileID: 4302095227138599524}
   - component: {fileID: 2040389674122288814}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KV-1S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5949728061132762296}
   - component: {fileID: 8087355613537082464}
   - component: {fileID: 6443584254320586213}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KV-1S Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 4169518977206252960}
   - component: {fileID: 2302431002443331278}
   - component: {fileID: 3986589463375362671}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KV-1S Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 2728734405379109770}
   - component: {fileID: 1320810830703086867}
   - component: {fileID: 2892492527456601982}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KV-1S Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8355937644651458156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KV-1S
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5477815538945964201}
   - component: {fileID: 4379016171690444664}
   - component: {fileID: -4483278351299529200}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 499867784231784853}
   - component: {fileID: 7083819894597592988}
   - component: {fileID: 7473114104461578154}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-5 Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 7467096290709558523}
   - component: {fileID: 3174781706832359943}
   - component: {fileID: 882470367712568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-5 Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 5034699959365112230}
   - component: {fileID: 8246376126674279939}
   - component: {fileID: 6167103736863681225}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 5288018586367377063}
   - component: {fileID: 5562305093745256739}
   - component: {fileID: 915217586324579697}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-5 Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3591442157883701578}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

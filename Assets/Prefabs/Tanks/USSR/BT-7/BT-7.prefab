@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 94231915344139213}
   - component: {fileID: 5407571520052707513}
   - component: {fileID: 6213003987106382064}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-7 Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1391065142667464213}
   - component: {fileID: 2657640506826178992}
   - component: {fileID: 217618348450559354}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2627340983205383767}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 5886813460881351703}
   - component: {fileID: 4717021697713771734}
   - component: {fileID: 2655040216274567108}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-7 Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 5257053145001177967}
   - component: {fileID: 2931466112984863079}
   - component: {fileID: 7639014884231398291}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-7 Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 1402884554}
   - component: {fileID: 1402884553}
   - component: {fileID: -1168361320088233683}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BT-7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
