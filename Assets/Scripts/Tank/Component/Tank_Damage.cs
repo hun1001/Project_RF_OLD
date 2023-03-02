@@ -7,6 +7,7 @@ namespace Tank
     public class Tank_Damage : Base.CustomComponent<Tank>
     {
         private float _currentHealth = 0;
+        public float CurrentHealthPercent => _currentHealth / Instance.Hp * 100;
 
         //TODO : 여기 HP바 관련된것도 수정 필요
 
