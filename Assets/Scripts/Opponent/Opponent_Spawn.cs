@@ -10,11 +10,11 @@ namespace Opponent
 {
     public class Opponent_Spawn : Base.CustomComponent<Opponent>
     {
-        [SerializeField] 
+        [SerializeField]
         private float _delay = 120f;
-        
+
         private int _currentWave = 0;
-        
+
         private float _gameTime = 0;
 
         private UI.TextController _waveTimer = null;
@@ -40,18 +40,18 @@ namespace Opponent
             {
                 _gameTime = 0;
                 _currentWave++;
-                // TODO: ?¨Í∏∞???ÑÏù¥??Íµ¨Ï°∞ ??Î≤???Í∞úÌé∏?òÎ©¥ Í≥†Ï≥êÏß??àÏ†ï
-                var temp = CanvasManager.Instance.GetSceneCanvases(1) as GameSceneCanvases;
-                temp?.ChangeCanvas(CanvasChangeType.Item);
+                // TODO: ???∏∞??????¥???????∞ ??Î?????∞?Ì?∏??Îä¥ ??†????ß????†?
+                // var temp = CanvasManager.Instance.GetSceneCanvases(1) as GameSceneCanvases;
+                // temp?.ChangeCanvas(CanvasChangeType.Item);
             }
             _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
         }
-        
+
         uint _count = 2;
 
         private void Spawn()
         {
-            for(int i = 0; i < Instance.OpponentSO.Waves[_currentWave].enemyPrefabs.Length; i++)
+            for (int i = 0; i < Instance.OpponentSO.Waves[_currentWave].enemyPrefabs.Length; i++)
             {
                 var enemy = PoolManager.Instance.Get(Instance.OpponentSO.Waves[_currentWave].enemyPrefabs[i], Instance.GetRandomSpawnPoint.position, Quaternion.identity);
                 enemy.tag = "OpponentTank";
@@ -60,7 +60,7 @@ namespace Opponent
                 var enemyHPBar = PoolManager.Instance.Get<Bar>("Assets/Prefabs/UI/Bar/HPCanvas.prefab", enemy.transform);
                 enemyHPBar.transform.localPosition = new Vector3(0, 10f, 0);
                 enemyHPBar.MaxValue = eT.Hp;
-                
+
                 EventManager.StartListening(Keyword.EventKeyword.OnTankDamaged + eT.TankID, (dmg) =>
                 {
                     float damage = (float)dmg[0];

@@ -5,16 +5,16 @@ using UnityEngine;
 
 namespace UI
 {
-    public class PlayInformationCanvas : BaseCanvas
+    public class PlayInformationCanvas : BaseCanvas<GameSceneCanvases>
     {
         [SerializeField]
         private Bar _hpBar = null;
         public Bar HpBar => _hpBar;
-        
+
         [SerializeField]
         private TextController _waveTimer = null;
         public TextController WaveTimer => _waveTimer;
-        
+
         [SerializeField]
         private TextController _goldText = null;
         public TextController GoldText => _goldText;
@@ -30,12 +30,12 @@ namespace UI
 
         protected override void SetOnEnableAction()
         {
-            
+
         }
-        
+
         protected override void SetOnDisableAction()
         {
-            
+
         }
     }
 }

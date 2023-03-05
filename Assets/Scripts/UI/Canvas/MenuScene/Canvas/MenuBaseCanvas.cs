@@ -6,22 +6,22 @@ using Scene;
 
 namespace UI
 {
-    public class MenuBaseCanvas : BaseCanvas
+    public class MenuBaseCanvas : BaseCanvas<MenuSceneCanvases>
     {
         [SerializeField]
         private Button _startButton = null;
-        
+
         [SerializeField]
         private Button _exitButton = null;
 
         protected override void SetOnEnableAction()
         {
-            
+
         }
-        
+
         protected override void SetOnDisableAction()
         {
-            
+
         }
 
         protected override void Awake()
@@ -29,7 +29,6 @@ namespace UI
             base.Awake();
             _startButton.onClick.AddListener(() =>
             {
-                CanvasManager.Instance.ChangeSceneCanvas(SceneType.GameScene);
                 SceneLoadManager.Instance.LoadScene(SceneType.GameScene);
             });
             _exitButton.onClick.AddListener(() =>

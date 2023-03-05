@@ -9,7 +9,7 @@ using Keyword;
 
 namespace UI
 {
-    public class ItemCanvas : BaseCanvas
+    public class ItemCanvas : BaseCanvas<GameSceneCanvases>
     {
         [SerializeField]
         private Button _backButton = null;
@@ -33,10 +33,10 @@ namespace UI
             UpdateGoldText();
             gameObject.SendMessage("ItemShow");
         }
-        
+
         protected override void SetOnDisableAction()
         {
-            
+
         }
 
         public void UpdateGoldText()
@@ -48,9 +48,9 @@ namespace UI
         {
             Time.timeScale = 1f;
             EventManager.TriggerEvent(EventKeyword.OnUpdateGold, PlayerPrefs.GetInt("Gold"));
-            var temp = CanvasManager.Instance.GetSceneCanvases(1);
-            var temp2 = temp as GameSceneCanvases;
-            temp2?.ChangeCanvas(0);
+            // var temp = CanvasManager.Instance.GetSceneCanvases(1);
+            // var temp2 = temp as GameSceneCanvases;
+            // temp2?.ChangeCanvas(0);
         }
     }
 }

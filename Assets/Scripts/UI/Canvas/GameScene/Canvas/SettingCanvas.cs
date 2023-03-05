@@ -6,7 +6,7 @@ using Scene;
 
 namespace UI
 {
-    public class SettingCanvas : BaseCanvas
+    public class SettingCanvas : BaseCanvas<GameSceneCanvases>
     {
         [Header("Button")]
         [SerializeField]
@@ -25,7 +25,7 @@ namespace UI
 
         private void OnGUI()
         {
-            if(Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Escape)
+            if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Escape)
             {
                 OpenSettingCanvas();
             }
@@ -45,16 +45,12 @@ namespace UI
         private void ExitButtonClicked()
         {
             Time.timeScale = 1f;
-            CanvasManager.Instance.ChangeSceneCanvas(SceneType.MenuScene);
             SceneLoadManager.Instance.LoadScene(SceneType.MenuScene);
         }
 
         private void CloseButtonClicked()
         {
             Time.timeScale = 1f;
-            var temp = CanvasManager.Instance.GetSceneCanvases(1);
-            var temp2 = temp as GameSceneCanvases;
-            temp2?.ChangeCanvas(0);
         }
 
         private void OpenSettingCanvas()
@@ -63,9 +59,9 @@ namespace UI
             {
                 if (true) // 결과창, 아이템창이 안떴을때
                 {
-                    var temp = CanvasManager.Instance.GetSceneCanvases(1);
-                    var temp2 = temp as GameSceneCanvases;
-                    temp2?.ChangeCanvas(3);
+                    // var temp = CanvasManager.Instance.GetSceneCanvases(1);
+                    // var temp2 = temp as GameSceneCanvases;
+                    // temp2?.ChangeCanvas(3);
                 }
             }
             else

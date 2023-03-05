@@ -7,12 +7,12 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class ResultBaseCanvas : BaseCanvas
+    public class ResultBaseCanvas : BaseCanvas<GameSceneCanvases>
     {
         [Header("Button")]
         [SerializeField]
         private Button _mainButton = null;
-        
+
         [SerializeField]
         private Button _restartButton = null;
 
@@ -36,7 +36,7 @@ namespace UI
             _lifeTimeSecondText.SetText(string.Format("{0} sec", Time.time));
             _destroyText.SetText(PlayerPrefs.GetInt("Destroy").ToString());
         }
-        
+
         protected override void SetOnDisableAction()
         {
             Time.timeScale = 1f;
@@ -45,17 +45,12 @@ namespace UI
         private void MainButtonClicked()
         {
             Time.timeScale = 1f;
-            CanvasManager.Instance.ChangeSceneCanvas(SceneType.MenuScene);
             SceneLoadManager.Instance.LoadScene(SceneType.MenuScene);
         }
 
         private void RestartButtonClicked()
         {
             Time.timeScale = 1f;
-            CanvasManager.Instance.ChangeSceneCanvas(SceneType.GameScene);
-            var temp = CanvasManager.Instance.GetSceneCanvases(1);
-            var temp2 = temp as GameSceneCanvases;
-            temp2?.ChangeCanvas(0);
             SceneLoadManager.Instance.LoadScene(SceneType.GameScene);
         }
     }
