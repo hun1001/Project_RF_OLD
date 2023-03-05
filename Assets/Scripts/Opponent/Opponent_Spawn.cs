@@ -40,7 +40,7 @@ namespace Opponent
             {
                 _gameTime = 0;
                 _currentWave++;
-                // TODO: 여기도 아이템 구조 한 번 더 개편하면 고쳐질 예정
+                // TODO: ?�기???�이??구조 ??�???개편?�면 고쳐�??�정
                 var temp = CanvasManager.Instance.GetSceneCanvases(1) as GameSceneCanvases;
                 temp?.ChangeCanvas(CanvasChangeType.Item);
             }
