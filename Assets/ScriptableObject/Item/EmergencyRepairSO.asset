@@ -17,5 +17,5 @@ MonoBehaviour:
   rarity: 3
   description: "\uCCB4\uB825\uC774 10%\uBBF8\uB9CC\uC77C \uACBD\uC6B0 1\uCD08\uC5D0
     0.5% \uCCB4\uB825\uD68C\uBCF5"
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: adfb7f647fb791d4f8c209a595507c26, type: 3}
   NecessaryGold: 9
