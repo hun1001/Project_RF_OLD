@@ -18,6 +18,10 @@ namespace TechTree
                 {
                     var techTreeNode = PoolManager.Instance.Get(_techTreeSO.techTreeNodes[i].gameObject, t);
                 }
+                else
+                {
+                    var techTreeNode = PoolManager.Instance.Get("", t);
+                }
             }
         }
     }
