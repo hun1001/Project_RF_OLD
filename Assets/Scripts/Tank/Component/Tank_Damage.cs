@@ -9,6 +9,8 @@ namespace Tank
         private float _currentHealth = 0;
         public float CurrentHealthPercent => _currentHealth / Instance.Hp * 100;
 
+        private float _armour = 0f;
+
         //TODO : 여기 HP바 관련된것도 수정 필요
 
         public void Repair(float percent)
@@ -32,11 +34,7 @@ namespace Tank
         private void OnHit(float damage)
         {
             #region 2번 스킬 테스트
-            Skill_Test2 _skill2 = GetComponent<Skill_Test2>();
-            if (_skill2 != null)
-            {
-                damage = damage - ((damage / 100f) * _skill2.CurrentArmour);
-            }
+            damage = damage - ((damage / 100f) * _armour);
             #endregion
 
             EventManager.TriggerEvent(EventKeyword.OnTankDamaged + Instance.TankID, damage);
@@ -54,6 +52,11 @@ namespace Tank
                 EventManager.TriggerEvent(EventKeyword.OnTankDestroyed + Instance.TankID);
                 PoolManager.Instance.Pool(this.gameObject);
             }
+        }
+
+        public void SetArmour(float value)
+        {
+            _armour = value;
         }
     }
 }

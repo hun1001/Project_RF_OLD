@@ -11,20 +11,17 @@ namespace Tank
         [SerializeField]
         private float _armour = 90f;
 
-        private float _currentArmour = 0f;
-        public float CurrentArmour => _currentArmour;
-
         public override void Skill()
         {
             if (_currentCooldown > 0f) return;
             base.Skill();
 
-            _currentArmour = _armour;
+            SendMessage("SetArmour", _armour);
         }
 
         protected override void Restoration()
         {
-            _currentArmour = 0f;
+            SendMessage("SetArmour", 0f);
         }
     }
 }
