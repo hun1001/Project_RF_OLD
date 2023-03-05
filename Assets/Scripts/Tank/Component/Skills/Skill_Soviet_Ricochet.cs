@@ -5,7 +5,7 @@ using Util;
 
 namespace Tank
 {
-    public class Skill_Test3 : Tank_Skill
+    public class Skill_Soviet_Ricochet : Tank_Skill
     {
         public override void Skill()
         {

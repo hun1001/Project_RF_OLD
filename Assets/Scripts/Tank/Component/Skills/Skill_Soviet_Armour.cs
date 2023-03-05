@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Tank
 {
-    public class Skill_Test2 : Tank_Skill
+    public class Skill_Soviet_Armour : Tank_Skill
     {
         [Header("Other")]
         [Range(0f, 100f)]

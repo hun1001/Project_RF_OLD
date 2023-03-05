@@ -5,7 +5,7 @@ using Keyword;
 
 namespace Tank
 {
-    public class Skill_Test1 : Tank_Skill
+    public class Skill_Soviet_Seizure : Tank_Skill
     {
         [Header("Other")]
         [SerializeField]
