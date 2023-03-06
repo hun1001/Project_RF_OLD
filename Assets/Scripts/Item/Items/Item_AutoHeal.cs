@@ -13,9 +13,10 @@ namespace Item
 
         protected virtual IEnumerator RepairCoroutine()
         {
+            WaitForSeconds waitSeconds = new WaitForSeconds(1f);
             while (true)
             {
-                yield return new WaitForSeconds(1f);
+                yield return waitSeconds;
                 transform.parent.SendMessage("Repair", 0.1f, SendMessageOptions.DontRequireReceiver);
             }
         }
