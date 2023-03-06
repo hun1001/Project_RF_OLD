@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99e3036c05085c947967155ee4245f71, type: 3}
-  m_Name: Pz.II J Turret
+  m_Name: Pz.III J Turret
   m_EditorClassIdentifier: 
   rotationSpeed: 46
   reloadSpeed: 5.2

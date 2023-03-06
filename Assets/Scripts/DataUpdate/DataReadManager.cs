@@ -7,13 +7,15 @@ using SO;
 
 public class DataReadManager : MonoBehaviour
 {
-    const string URL = "https://docs.google.com/spreadsheets/d/1wXlWQ0fiFp1mDJiqnh9V2Qe4pGtroN_HKhJP4GgiXaA/export?format=tsv";
-    const string URLTurret = "";
+    const string URL = "https://docs.google.com/spreadsheets/d/1Sph3_eEfKFAfOT_EEN2-XzM9RK7mrly_9FTFSueqgSo/export?format=tsv";
+    const string URLTurret = "https://docs.google.com/spreadsheets/d/1mUDMYbdVgwLQDmMQb2mB6kYl4SzZdbGfOmiaQ9Ww0g4/export?format=tsv";
     Dictionary<string, List<string>> setData = new Dictionary<string, List<string>>();
     Dictionary<string, List<string>> turretData = new Dictionary<string, List<string>>();
     string soPath = "Assets/ScriptableObject/Tanks/";
     public List<TankSO> tankSO;
     public List<TurretSO> turretSO;
+    public string set;
+    public string ret;
 
 
     IEnumerator Start()
@@ -46,14 +48,20 @@ public class DataReadManager : MonoBehaviour
                 {
                     setData[rowcol[j]] = new List<string>() { newData[j] };
                 }
-                
-                Debug.Log(setData[rowcol[j]][i]);
+              
             }   
         }
 
+        foreach(var kvp in setData)
+        {
+            Debug.Log(kvp.Key);
+            set = kvp.Key;
+        }
+        
+
         for(int i = 0; i<turretrow.Length; i++)
         {
-            turretset = turret.Split('\t');
+            turretset = turretrow[i].Split('\t');
             for(int j = 0; j< turretset.Length; j++)
             {
                 if (turretData.ContainsKey(turretcol[j]))
@@ -71,13 +79,13 @@ public class DataReadManager : MonoBehaviour
         {
             for(int j = 0; j<setData["이름"].Count; j++)
             {
-                if (tankSO[i].name == setData["이름"][j])
+                if (tankSO[i].name == setData["이름"][j]+"SO"||tankSO[i].name == setData["이름"][j]||tankSO[i].name == setData["이름"][j]+" SO")
                 {
                     tankSO[i].acceleration = float.Parse(setData["가속"][j]);
-                    tankSO[i].maxSpeed = float.Parse(setData["최고속도"][j]);
-                    tankSO[i].mass = float.Parse(setData["질량"][j]);
-                    tankSO[i].hp = float.Parse(setData["체력"][j]);
-                    tankSO[i].rotationSpeed = float.Parse(setData["선회속도(회전 속도)"][j]);
+                    tankSO[i].maxSpeed = float.Parse(setData["최고 속도"][j].Replace("km/h",""));
+                    tankSO[i].mass = float.Parse(setData["질량"][j].Replace("t",""));
+                    tankSO[i].hp = float.Parse(setData[set][j]);
+                    tankSO[i].rotationSpeed = float.Parse(setData["선회속도(회전 속도)"][j].Replace("deg/s", ""));
                     tankSO[i].armour = float.Parse(setData["장갑"][j]);
                 }
             }
@@ -87,7 +95,7 @@ public class DataReadManager : MonoBehaviour
         {
             for(int j =0; j<turretData.Count; j++)
             {
-                if(turretSO[i].name == turretData["이름"][j]+" Turret")
+                if(turretSO[i].name == turretData["이름"][j]+"TurretSO"||turretSO[i].name == turretData["이름"][j]+" Turret"||turretSO[i].name == turretData["이름"][j]+"Turret")
                 {
                     turretSO[i].reloadSpeed = float.Parse(turretData["장전시간"][j]);
                     turretSO[i].rotationSpeed = float.Parse(turretData["포탑회전 속도"][j].Replace("deg/s", ""));
