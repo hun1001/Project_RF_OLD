@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -34,6 +36,8 @@ namespace UI
             _rectTransform.position = eventData.position;
             _rectTransformChild.position = eventData.position;
             _isTouching = true;
+
+            StartCoroutine(nameof(CheckTime));
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -48,7 +52,6 @@ namespace UI
             _rectTransformChild.localPosition = pos;
 
             _direction = pos;
-            if (_dragTime < 3f) _dragTime += Time.deltaTime;
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -59,6 +62,8 @@ namespace UI
         public void OnPointerUp(PointerEventData eventData)
         {
             OnPointerUpAction();
+
+            StopCoroutine(nameof(CheckTime));
 
             _isTouching = false;
             _rectTransformChild.localPosition = Vector2.zero;
@@ -84,5 +89,14 @@ namespace UI
         public bool IsDragging => _isDragging;
         public bool IsTouching => _isTouching;
         public float DragTime => _dragTime;
+
+        private IEnumerator CheckTime()
+        {
+            while (true)
+            {
+                _dragTime += Time.deltaTime;
+                yield return null;
+            }
+        }
     }
 }

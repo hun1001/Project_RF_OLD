@@ -30,7 +30,7 @@ namespace CameraSpace
 
         private void Awake()
         {
-            
+
             _cmvcam = Instance.CMvcam;
             _transposer = _cmvcam.GetCinemachineComponent<CinemachineTransposer>();
 
@@ -56,11 +56,11 @@ namespace CameraSpace
         //     }
         // }
 
-        private void SnipingCamera(JoyStick joyStick)
+        public void SnipingCamera(JoyStick joyStick)
         {
-            if(joyStick.IsDragging == true)
+            if (joyStick.IsDragging == true)
             {
-                if(joyStick.DragTime >= 3f)
+                if (joyStick.DragTime >= 3f)
                 {
                     Vector3 offset = _offsetDefalutPosition;
                     Vector3 direction = new Vector3(joyStick.Direction.x * _attackRange * 0.25f, 0f, joyStick.Direction.y * _attackRange * 0.25f);
@@ -69,7 +69,7 @@ namespace CameraSpace
                     _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, offset, 2f * Time.deltaTime);
                 }
             }
-            else if(_transposer.m_FollowOffset != _offsetDefalutPosition || _isReboundingEnd == false)
+            else if (_transposer.m_FollowOffset != _offsetDefalutPosition || _isReboundingEnd == false)
             {
                 _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, _offsetDefalutPosition, 2f * Time.deltaTime);
             }
@@ -77,7 +77,7 @@ namespace CameraSpace
 
         public void FireCameraRebound(JoyStick joyStick)
         {
-            if(_turretAttack.NextFire > 0 && _isReboundingPossible == true)
+            if (_turretAttack.NextFire > 0 && _isReboundingPossible == true)
             {
                 float cameraPositionX = joyStick.Horizontal * -1f * _reboundDistance;
                 float cameraPositionZ = joyStick.Vertical * -1f * _reboundDistance;
@@ -85,13 +85,13 @@ namespace CameraSpace
                 cameraPosition.x += cameraPositionX;
                 cameraPosition.z += cameraPositionZ;
                 _transposer.m_FollowOffset = Vector3.Lerp(_transposer.m_FollowOffset, cameraPosition, 5f * Time.deltaTime);
-                if(_isReboundingEnd == false)
+                if (_isReboundingEnd == false)
                 {
                     _isReboundingEnd = true;
                     Invoke("CameraReboundEnd", 0.2f);
                 }
             }
-            else if(_turretAttack.NextFire <= 0 && _isReboundingPossible == false)
+            else if (_turretAttack.NextFire <= 0 && _isReboundingPossible == false)
             {
                 _isReboundingPossible = true;
             }
@@ -105,13 +105,8 @@ namespace CameraSpace
 
         public void HitCameraShake()
         {
-            // TODO: 여기 고쳐야됨
-            // if(_tank_damage.IsHit == true)
-            // {
-            //     _tank_damage.IsHit = false;
-            //     InvokeRepeating("HitStartShake", 0f, 0.005f);
-            //     Invoke("HitStopShake", _hitShakeDuration);
-            // }
+            InvokeRepeating("HitStartShake", 0f, 0.005f);
+            Invoke("HitStopShake", _hitShakeDuration);
         }
 
         private void HitStartShake()

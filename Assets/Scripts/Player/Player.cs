@@ -54,6 +54,7 @@ namespace Player
             {
                 float damage = (float)dmg[0];
                 _playInformationCanvas.HpBar.Value -= damage;
+                GetComponent<Camera_Move>().HitCameraShake();
             });
 
             foreach (Button button in _controllerCanvas.SkillButtons)
@@ -79,6 +80,10 @@ namespace Player
 
             Turret_Rotation rotation = _playerTank.GetComponent<Turret_Rotation>();
             rotation.Rotate(_controllerCanvas.AttackJoyStick);
+
+            var c = _cameraManager.GetComponent<Camera_Move>();
+            c.SnipingCamera(_controllerCanvas.AttackJoyStick);
+            c.FireCameraRebound(_controllerCanvas.AttackJoyStick);
         }
     }
 }
