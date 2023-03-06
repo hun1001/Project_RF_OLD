@@ -64,9 +64,7 @@ namespace Player
 
             EventManager.StartListening(EventKeyword.OnTankDestroyed + _playerTank.TankID, () =>
             {
-                // var temp = CanvasManager.Instance.GetSceneCanvases(1);
-                // var temp2 = temp as GameSceneCanvases;
-                // temp2?.ChangeCanvas(1);
+                FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Result);
             });
         }
 
