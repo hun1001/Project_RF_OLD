@@ -14,9 +14,9 @@ namespace UI
 
         protected override void SetOnDisableAction()
         {
-            
+
         }
-        
+
         // TODO: this method will delete
         public void ChangeCanvas(int index)
         {
@@ -30,7 +30,7 @@ namespace UI
                 case CanvasChangeType.Item:
                     foreach (var canvas in Canvases)
                     {
-                        if(canvas.Key == CanvasNameKeyword.ItemCanvas)
+                        if (canvas.Key == CanvasNameKeyword.ItemCanvas)
                             canvas.Value.OnEnableAction?.Invoke();
                         else
                             canvas.Value.OnDisableAction?.Invoke();
@@ -39,7 +39,7 @@ namespace UI
                 case CanvasChangeType.Result:
                     foreach (var canvas in Canvases)
                     {
-                        if(canvas.Key == CanvasNameKeyword.ResultCanvas)
+                        if (canvas.Key == CanvasNameKeyword.ResultCanvas)
                             canvas.Value.OnEnableAction?.Invoke();
                         else
                             canvas.Value.OnDisableAction?.Invoke();
@@ -48,14 +48,14 @@ namespace UI
                 case CanvasChangeType.PlayGame:
                     foreach (var canvas in Canvases)
                     {
-                        if(canvas.Key == CanvasNameKeyword.PlayInformationCanvas || canvas.Key == CanvasNameKeyword.ControllerCanvas)
+                        if (canvas.Key == CanvasNameKeyword.PlayInformationCanvas || canvas.Key == CanvasNameKeyword.ControllerCanvas)
                             canvas.Value.OnEnableAction?.Invoke();
                         else
                             canvas.Value.OnDisableAction?.Invoke();
                     }
                     break;
                 case CanvasChangeType.Setting:
-                    foreach(var canvas in Canvases)
+                    foreach (var canvas in Canvases)
                     {
                         if (canvas.Key == CanvasNameKeyword.SettingCanvas)
                             canvas.Value.OnEnableAction?.Invoke();

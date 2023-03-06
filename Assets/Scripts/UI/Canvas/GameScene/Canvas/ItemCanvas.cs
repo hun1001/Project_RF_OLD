@@ -9,7 +9,7 @@ using Keyword;
 
 namespace UI
 {
-    public class ItemCanvas : BaseCanvas<GameSceneCanvases>
+    public class ItemCanvas : BaseCanvas
     {
         [SerializeField]
         private Button _backButton = null;
@@ -48,9 +48,7 @@ namespace UI
         {
             Time.timeScale = 1f;
             EventManager.TriggerEvent(EventKeyword.OnUpdateGold, PlayerPrefs.GetInt("Gold"));
-            // var temp = CanvasManager.Instance.GetSceneCanvases(1);
-            // var temp2 = temp as GameSceneCanvases;
-            // temp2?.ChangeCanvas(0);
+            FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.PlayGame);
         }
     }
 }

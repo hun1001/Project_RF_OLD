@@ -6,7 +6,7 @@ using Scene;
 
 namespace UI
 {
-    public class MenuBaseCanvas : BaseCanvas<MenuSceneCanvases>
+    public class MenuBaseCanvas : BaseCanvas
     {
         [SerializeField]
         private Button _startButton = null;

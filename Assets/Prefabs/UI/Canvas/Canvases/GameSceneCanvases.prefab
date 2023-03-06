@@ -49,7 +49,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c12c1cc76093d489279b3036c70f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneType: 1
 --- !u!1001 &3499076937781070418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -370,7 +369,7 @@ PrefabInstance:
     - target: {fileID: 973834917645878069, guid: 09d89848b6d1b574d81cc09934f189a9,
         type: 3}
       propertyPath: m_Name
-      value: PlayInfomationCanvas
+      value: PlayInformationCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 973834917645878073, guid: 09d89848b6d1b574d81cc09934f189a9,
         type: 3}

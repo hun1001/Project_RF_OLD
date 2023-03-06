@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class ResultBaseCanvas : BaseCanvas<GameSceneCanvases>
+    public class ResultBaseCanvas : BaseCanvas
     {
         [Header("Button")]
         [SerializeField]

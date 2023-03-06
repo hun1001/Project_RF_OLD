@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UI
 {
-    public abstract class BaseCanvas<T> : MonoActiveEventBehaviour where T : SceneCanvases
+    public abstract class BaseCanvas : MonoActiveEventBehaviour
     {
         public string CanvasName => gameObject.name;
 

@@ -40,9 +40,7 @@ namespace Opponent
             {
                 _gameTime = 0;
                 _currentWave++;
-                // TODO: ???¸°??????´???????° ??ë?????°?í?¸??ëŠ´ ?? ????§???? ?
-                // var temp = CanvasManager.Instance.GetSceneCanvases(1) as GameSceneCanvases;
-                // temp?.ChangeCanvas(CanvasChangeType.Item);
+                FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item);
             }
             _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
         }

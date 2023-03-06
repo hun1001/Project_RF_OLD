@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UI
 {
-    public class TechTreeCanvas : BaseCanvas<MenuSceneCanvases>
+    public class TechTreeCanvas : BaseCanvas
     {
         protected override void SetOnEnableAction()
         {

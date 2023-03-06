@@ -9,12 +9,8 @@ namespace UI
 {
     public abstract class SceneCanvases : MonoBehaviour
     {
-        [SerializeField]
-        private SceneType _sceneType = SceneType.None;
-        public SceneType SceneType => _sceneType;
-
-        private Dictionary<string, UI.BaseCanvas<SceneCanvases>> _canvases = null;
-        public Dictionary<string, UI.BaseCanvas<SceneCanvases>> Canvases => _canvases;
+        private Dictionary<string, UI.BaseCanvas> _canvases = null;
+        public Dictionary<string, UI.BaseCanvas> Canvases => _canvases;
 
         public Action OnEnableAction { get; protected set; }
         public Action OnDisableAction { get; protected set; }
@@ -31,7 +27,7 @@ namespace UI
 
             foreach (Transform c in transform)
             {
-                var canvas = c.GetComponent<UI.BaseCanvas<SceneCanvases>>();
+                var canvas = c.GetComponent<UI.BaseCanvas>();
                 if (canvas != null)
                 {
                     _canvases.Add(canvas.CanvasName, canvas);

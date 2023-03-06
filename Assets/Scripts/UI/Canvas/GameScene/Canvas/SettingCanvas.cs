@@ -6,7 +6,7 @@ using Scene;
 
 namespace UI
 {
-    public class SettingCanvas : BaseCanvas<GameSceneCanvases>
+    public class SettingCanvas : BaseCanvas
     {
         [Header("Button")]
         [SerializeField]

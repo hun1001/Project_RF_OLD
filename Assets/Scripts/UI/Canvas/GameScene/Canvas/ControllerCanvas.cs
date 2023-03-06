@@ -6,7 +6,7 @@ using TMPro;
 
 namespace UI
 {
-    public class ControllerCanvas : BaseCanvas<GameSceneCanvases>
+    public class ControllerCanvas : BaseCanvas
     {
         [Header("JoyStick")]
         [SerializeField]
