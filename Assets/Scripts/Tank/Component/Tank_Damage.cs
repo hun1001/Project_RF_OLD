@@ -22,8 +22,8 @@ namespace Tank
             else
             {
                 _currentHealth += Instance.Hp * (percent / 100);
-                EventManager.TriggerEvent(EventKeyword.OnTankDamaged + Instance.TankID, -Instance.Hp * (percent / 100));
             }
+            EventManager.TriggerEvent(EventKeyword.OnTankDamaged + Instance.TankID, -Instance.Hp * (percent / 100));
         }
 
         private void Awake()

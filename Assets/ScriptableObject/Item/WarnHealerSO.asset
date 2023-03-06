@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1d84d2bde7ff0343a062c23dd1c8d4f, type: 3}
-  m_Name: EmergencyRepairSO
+  m_Name: WarnHealerSO
   m_EditorClassIdentifier: 
   itemID: warn_healer
   itemName: "\uC751\uAE09\uC218\uB9AC\uBCD1"
