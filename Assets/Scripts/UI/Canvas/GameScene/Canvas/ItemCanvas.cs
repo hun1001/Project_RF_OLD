@@ -30,13 +30,14 @@ namespace UI
 
         protected override void SetOnEnableAction()
         {
+            Time.timeScale = 0f;
             UpdateGoldText();
             gameObject.SendMessage("ItemShow");
         }
 
         protected override void SetOnDisableAction()
         {
-
+            Time.timeScale = 1f;
         }
 
         public void UpdateGoldText()

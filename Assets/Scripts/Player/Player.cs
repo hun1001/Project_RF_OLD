@@ -78,7 +78,10 @@ namespace Player
 
             Turret_Rotation rotation = _playerTank.GetComponent<Turret_Rotation>();
             rotation.Rotate(_controllerCanvas.AttackJoyStick);
+        }
 
+        private void LateUpdate()
+        {
             var c = _cameraManager.GetComponent<Camera_Move>();
             c.SnipingCamera(_controllerCanvas.AttackJoyStick);
             c.FireCameraRebound(_controllerCanvas.AttackJoyStick);

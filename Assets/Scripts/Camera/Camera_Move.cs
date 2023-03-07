@@ -79,6 +79,7 @@ namespace CameraSpace
         {
             if (_turretAttack.NextFire > 0 && _isReboundingPossible == true)
             {
+                Debug.Log("Rebound");
                 float cameraPositionX = joyStick.Horizontal * -1f * _reboundDistance;
                 float cameraPositionZ = joyStick.Vertical * -1f * _reboundDistance;
                 Vector3 cameraPosition = _offsetDefalutPosition;
