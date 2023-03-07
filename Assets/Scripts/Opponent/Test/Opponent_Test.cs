@@ -9,6 +9,7 @@ namespace Opponent
     public class Opponent_Test : Base.CustomComponent<Opponent>
     {
         private int _stage = 0;
+        private bool _isStageClear = false;
 
         private TextController _remainingEnemyText = null;
 
@@ -18,6 +19,13 @@ namespace Opponent
             PlayerPrefs.SetInt("RemainingEnemy", Instance.OpponentSO.Waves[_stage].enemyPrefabs.Length);
 
             Spawn();
+            EventManager.StartListening(Keyword.EventKeyword.OnStageClear, () =>
+            {
+                if(_isStageClear == true)
+                {
+                    NextStage();
+                }
+            });
         }
 
         uint _count = 2;
@@ -55,14 +63,16 @@ namespace Opponent
         private void StageClear()
         {
             FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item);
-
+            _isStageClear = true;
+            Debug.Log("Stage Clear!");
         }
 
         private void NextStage()
         {
+            _isStageClear = false;
             _stage++;
             PlayerPrefs.SetInt("RemainingEnemy", Instance.OpponentSO.Waves[_stage].enemyPrefabs.Length);
-
+            Debug.Log("Next Stage!!");
             Spawn();
         }
     }
