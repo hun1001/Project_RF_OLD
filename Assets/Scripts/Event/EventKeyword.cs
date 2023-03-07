@@ -15,7 +15,8 @@ namespace Keyword
         
         public const string OnTankDamaged = "OnTankDamaged";
         public const string OnTankDestroyed = "OnTankDestroyed";
-        
+
+        public const string OnStageClear = "OnStageClear";
         public const string OnGameOver = "OnGameOver";
         
         public const string OnUpdateGold = "OnUpdateGold";

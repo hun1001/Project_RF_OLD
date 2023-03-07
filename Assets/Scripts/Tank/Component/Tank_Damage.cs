@@ -34,7 +34,7 @@ namespace Tank
         private void OnHit(float damage)
         {
             #region 2번 스킬 테스트
-            damage = damage - ((damage / 100f) * _armour);
+            damage = damage - (damage / 100f * _armour);
             #endregion
 
             EventManager.TriggerEvent(EventKeyword.OnTankDamaged + Instance.TankID, damage);

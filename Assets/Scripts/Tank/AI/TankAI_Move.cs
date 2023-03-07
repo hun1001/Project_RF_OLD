@@ -15,15 +15,17 @@ namespace Tank
         private NavMeshAgent _agent = null;
         private Transform _target = null;
 
-        private const float Range = 20f;
+        private const float DetectionRange = 60f;
+        private const float AttackRange = 20f;
 
         private enum State
         {
+            Idle,
             Move,
             Attack,
         }
         
-        private State _state = State.Move;
+        private State _state = State.Idle;
         
         protected void Awake()
         {
@@ -35,13 +37,17 @@ namespace Tank
 
         private void Update()
         {
-            _state = Vector3.Distance(transform.position, _target.position) > Range ? State.Move : State.Attack;
+            float distance = Vector3.Distance(transform.position, _target.position);
+            _state = distance > DetectionRange ? State.Idle : distance > AttackRange ? State.Move : State.Attack;
         }
         
         private void LateUpdate()
         {
             switch (_state)
             {
+                case State.Idle:
+                    _agent.isStopped = true;
+                    break;
                 case State.Move:
                     _agent.isStopped = false;
                     _agent.SetDestination(_target.position);
@@ -85,12 +91,12 @@ namespace Tank
         private void FindMovePoint()
         {
             Vector3 movePoint = _target.position - transform.position;
-            movePoint = movePoint.normalized * Random.Range(10f, Range);
+            movePoint = movePoint.normalized * Random.Range(10f, AttackRange);
 
             NavMeshPath path = new NavMeshPath();
 
             {
-                movePoint = movePoint.normalized * Random.Range(5f, Range);
+                movePoint = movePoint.normalized * Random.Range(5f, AttackRange);
             }
             
             _agent.SetDestination(movePoint);
