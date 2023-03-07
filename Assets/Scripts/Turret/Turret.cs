@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UI;
 using UnityEngine.UI;
@@ -21,12 +19,12 @@ namespace Turret
         [SerializeField]
         private Transform _firePoint = null;
         public Transform FirePoint => _firePoint;
-        
+
         [Header("Sound")]
         public AudioClip _fireSound = null;
         public AudioClip _reloadSound = null;
         public AudioClip _shellDropSound = null;
-        
-        
+
+
     }
 }

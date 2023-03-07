@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UI;
-using Util;
 
 namespace Turret
 {
@@ -28,7 +24,7 @@ namespace Turret
         {
             _lineRenderer.SetPosition(0, Instance.FirePoint.position);
 
-            if (Physics.Raycast(Instance.FirePoint.position, Instance.FirePoint.forward, out RaycastHit hit, _range)&& hit.transform.CompareTag("OpponentTank"))
+            if (Physics.Raycast(Instance.FirePoint.position, Instance.FirePoint.forward, out RaycastHit hit, _range) && hit.transform.CompareTag("OpponentTank"))
             {
                 _lineRenderer.SetPosition(1, hit.point);
                 _lineRenderer.startColor = Color.green;
@@ -43,7 +39,7 @@ namespace Turret
                 _lineRenderer.SetPosition(1, Instance.FirePoint.position + Instance.FirePoint.forward * _range);
             }
         }
-        
+
         public void OnAimStart()
         {
             _lineRenderer.enabled = true;

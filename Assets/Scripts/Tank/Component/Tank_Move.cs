@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UI;
+﻿using UI;
 using UnityEngine.AI;
 using Sound;
 using UnityEngine;
@@ -16,13 +13,13 @@ namespace Tank
 
         private float _currentSpeed = 0f;
         private float _maxSpeed = 0f;
-        
+
         private float _currentMaxSpeed = 0f;
 
         private float _acceleration = 0f;
 
         private float _rotationSpeed = 0f;
-        
+
         private int _currentSkidMark = 0;
 
         private bool _isMove = false;
@@ -47,7 +44,7 @@ namespace Tank
             if (moveJoystick.IsTouching)
             {
                 _currentMaxSpeed = _maxSpeed * moveJoystick.Scalar;
-                
+
                 _currentSpeed += _acceleration * Time.deltaTime;
                 _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _currentMaxSpeed);
 
@@ -57,7 +54,7 @@ namespace Tank
                     SoundManager.Instance.PlaySound(Instance._loadSound, SoundType.SFX, 0.4f);
                 }
 
-                if(_currentSpeed != _maxSpeed)
+                if (_currentSpeed != _maxSpeed)
                 {
                     float pitch = (_currentSpeed * 2f) / _maxSpeed;
                     _moveSound.PitchSetting(pitch);
@@ -76,15 +73,15 @@ namespace Tank
                     _trackSound.PitchSetting(0f);
                 }
             }
-            
+
             if (NavMesh.SamplePosition(transform.position + transform.forward * _currentSpeed * Time.deltaTime, out NavMeshHit hit, 1f, NavMesh.AllAreas))
             {
                 _rigidbody.velocity = Instance.transform.forward * _currentSpeed;
                 Instance.LineRenderer[0].positionCount = _currentSkidMark + 1;
                 Instance.LineRenderer[1].positionCount = _currentSkidMark + 1;
-                Instance.LineRenderer[0].SetPosition(_currentSkidMark, Instance.SkidMark[0].position + new Vector3(0,0.1f,0));
+                Instance.LineRenderer[0].SetPosition(_currentSkidMark, Instance.SkidMark[0].position + new Vector3(0, 0.1f, 0));
                 Instance.LineRenderer[1].SetPosition(_currentSkidMark, Instance.SkidMark[1].position + new Vector3(0, 0.1f, 0));
-                if(Instance.LineRenderer[0].positionCount > 100)
+                if (Instance.LineRenderer[0].positionCount > 100)
                 {
                     Instance.LineRenderer[0].positionCount = 101;
                     Instance.LineRenderer[1].positionCount = 101;

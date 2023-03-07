@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
-using Util;
 
 namespace Tank
 {
@@ -29,7 +27,7 @@ namespace Tank
             //if (_currentCooldown > 0f) return;
             _currentCooldown = _cooldown;
             StartCoroutine(SkillCooldown());
-            if(_duration > 0f)
+            if (_duration > 0f)
             {
                 Invoke(nameof(Restoration), _duration);
             }
@@ -37,7 +35,7 @@ namespace Tank
 
         IEnumerator SkillCooldown()
         {
-            while(_currentCooldown > 0f)
+            while (_currentCooldown > 0f)
             {
                 _currentCooldown -= Time.deltaTime;
 
@@ -59,7 +57,7 @@ namespace Tank
         //        {
         //            PoolManager.Instance.Get("Assets/Prefabs/Effect/WFXMR_ExplosiveSmokeGround Big.prefab", hit.point + Vector3.up, Quaternion.identity);
         //            Collider[] colliders = Physics.OverlapSphere(hit.point, 4f);
-                    
+
         //            foreach (var c in colliders)
         //            {
         //                if(c.CompareTag("PlayerTank") == false)

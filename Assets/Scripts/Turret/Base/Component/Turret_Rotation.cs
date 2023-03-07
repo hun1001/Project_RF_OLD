@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,7 +22,7 @@ namespace Turret
         public virtual void Rotate(JoyStick attackJoyStick)
         {
             Vector3 dir = Vector3.zero;
-            if(attackJoyStick.Direction != Vector2.zero)
+            if (attackJoyStick.Direction != Vector2.zero)
             {
                 dir.x = attackJoyStick.Horizontal;
                 dir.z = attackJoyStick.Vertical;

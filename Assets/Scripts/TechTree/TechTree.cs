@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
 using UnityEngine.EventSystems;
-using System;
 
 namespace TechTree
 {

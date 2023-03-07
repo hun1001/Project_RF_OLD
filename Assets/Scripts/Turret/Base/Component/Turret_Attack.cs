@@ -1,10 +1,5 @@
-using System.Net.Mime;
-using System.Collections;
-using System.Collections.Generic;
 using Sound;
 using UnityEngine;
-using UI;
-using UnityEngine.UI;
 using Util;
 
 namespace Turret
@@ -12,7 +7,7 @@ namespace Turret
     public class Turret_Attack : Base.CustomComponent<Turret>
     {
         private Transform _firePoint = null;
-        
+
         //private AttackCancel _attackCancel = null;
 
         private float _shellSpeed = 1f;
@@ -43,7 +38,7 @@ namespace Turret
             {
                 _nextFire -= Time.deltaTime;
             }
-            if(_isReload == true && _nextFire < Instance._reloadSound.length - 0.5f)
+            if (_isReload == true && _nextFire < Instance._reloadSound.length - 0.5f)
             {
                 _isReload = false;
                 SoundManager.Instance.PlaySound(Instance._reloadSound, SoundType.SFX, 0.5f);

@@ -2,9 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UI;
 using Util;
-using Keyword;
 
 namespace Item
 {
@@ -21,7 +19,7 @@ namespace Item
         private void Awake()
         {
             int weight = 0;
-            foreach(var item in Items.items)
+            foreach (var item in Items.items)
             {
                 // y = -x + 6
                 weight = -item.itemSO.rarity + 6;

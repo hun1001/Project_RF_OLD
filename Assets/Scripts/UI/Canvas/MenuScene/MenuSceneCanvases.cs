@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace UI
 {
@@ -8,12 +5,12 @@ namespace UI
     {
         protected override void SetOnEnableAction()
         {
-            
+
         }
 
         protected override void SetOnDisableAction()
         {
-            
+
         }
     }
 }

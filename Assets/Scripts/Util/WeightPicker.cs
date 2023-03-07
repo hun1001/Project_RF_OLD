@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -115,11 +114,11 @@ namespace Util
             if (randomValue > SumOfWeights) randomValue = SumOfWeights - 0.00000001;
 
             double current = 0.0;
-            foreach(var pair in _itemWeightDictionary)
+            foreach (var pair in _itemWeightDictionary)
             {
                 current += pair.Value;
-                
-                if(randomValue < current)
+
+                if (randomValue < current)
                 {
                     return pair.Key;
                 }
@@ -161,7 +160,7 @@ namespace Util
             _isDirty = false;
 
             _sumOfWeights = 0.0f;
-            foreach(var pair in _itemWeightDictionary)
+            foreach (var pair in _itemWeightDictionary)
             {
                 _sumOfWeights += pair.Value;
             }

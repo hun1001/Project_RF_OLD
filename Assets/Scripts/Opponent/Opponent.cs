@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Base;
 using System.Linq;
-using Util;
 using Random = UnityEngine.Random;
 
 namespace Opponent

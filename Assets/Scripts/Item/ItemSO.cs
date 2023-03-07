@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SO
 {
@@ -10,9 +8,9 @@ namespace SO
         public string itemID;
 
         public string itemName;
-        
+
         public int rarity;
-        
+
         public string description;
 
         //사용할 아이템의 이미지 스프라이트
