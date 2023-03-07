@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Util;
 using UnityEngine.EventSystems;
+using System;
 
 namespace TechTree
 {
@@ -23,15 +24,7 @@ namespace TechTree
                 {
                     techTreeNode.SetNode(_techTreeSO.techTreeNodes[i].name);
 
-                    EventTrigger trigger = techTreeNode.GetComponent<EventTrigger>();
-                    EventTrigger.Entry entry = new EventTrigger.Entry();
-
-                    entry.eventID = EventTriggerType.PointerClick;
-
-                    entry.callback.AddListener((data) =>
-                    {
-                        EventManager.TriggerEvent("ChangeModel", _techTreeSO.techTreeNodes[i].transform.GetChild(0).gameObject);
-                    });
+                    SetNode(i, techTreeNode);
                 }
                 else
                 {
@@ -50,6 +43,21 @@ namespace TechTree
             }
 
             _techTreeNodes.Clear();
+        }
+
+        private void SetNode(int i, TechTreeNode techTreeNode)
+        {
+            EventTrigger trigger = techTreeNode.GetComponent<EventTrigger>();
+            EventTrigger.Entry entry = new EventTrigger.Entry();
+
+            entry.eventID = EventTriggerType.PointerClick;
+
+            entry.callback.AddListener((data) =>
+            {
+                EventManager.TriggerEvent("ChangeModel", _techTreeSO.techTreeNodes[i].transform.GetChild(0).gameObject);
+            });
+
+            trigger.triggers.Add(entry);
         }
     }
 }
