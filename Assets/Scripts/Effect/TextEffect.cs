@@ -7,6 +7,8 @@ namespace Effect
     public class TextEffect : MonoBehaviour
     {
         private Transform _cameraTransform;
+
+        [SerializeField]
         private TextController _text;
 
         private void Awake()
