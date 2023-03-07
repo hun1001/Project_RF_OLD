@@ -77,6 +77,10 @@ MonoBehaviour:
     m_Address: EmergencyRepair
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 799b794f9ccbead419484b9fab213371
+    m_Address: Assets/Prefabs/UI/Node/TankNode.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 83677132a06df9140834c0d848060f27, type: 2}
   m_SchemaSet:

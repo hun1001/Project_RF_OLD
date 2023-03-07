@@ -10,19 +10,35 @@ namespace TechTree
         [SerializeField]
         private TechTreeSO _techTreeSO;
 
-        private void SetTechTree(Transform t)
+        private List<TechTreeNode> _techTreeNodes = new List<TechTreeNode>();
+
+        public void SetTechTree(Transform t)
         {
             for (int i = 0; i < _techTreeSO.techTreeNodes.Length; i++)
             {
+                var techTreeNode = PoolManager.Instance.Get<TechTreeNode>("Assets/Prefabs/UI/Node/TankNode.prefab", t);
+
                 if (_techTreeSO.techTreeNodes[i] is not null)
                 {
-                    var techTreeNode = PoolManager.Instance.Get(_techTreeSO.techTreeNodes[i].gameObject, t);
+                    techTreeNode.SetNode(_techTreeSO.techTreeNodes[i].name);
                 }
                 else
                 {
-                    var techTreeNode = PoolManager.Instance.Get("", t);
+                    techTreeNode.SetNode("???");
                 }
+
+                _techTreeNodes.Add(techTreeNode);
             }
+        }
+
+        public void ResetTechTree()
+        {
+            for (int i = 0; i < _techTreeNodes.Count; i++)
+            {
+                PoolManager.Instance.Pool("Assets/Prefabs/UI/Node/TankNode.prefab", _techTreeNodes[i].gameObject);
+            }
+
+            _techTreeNodes.Clear();
         }
     }
 }
