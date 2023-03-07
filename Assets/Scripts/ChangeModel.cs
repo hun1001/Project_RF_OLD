@@ -10,8 +10,10 @@ public class ChangeModel : MonoBehaviour
         {
             var obj = e[0] as GameObject;
 
-            Util.PoolManager.Instance.Pool(transform.GetChild(0).gameObject);
+            Destroy(transform.GetChild(0).gameObject);
             Util.PoolManager.Instance.Get(obj, transform);
+
+            FindObjectOfType<UI.MenuSceneCanvases>().ChangeCanvas("MenuCanvas");
         });
     }
 }
