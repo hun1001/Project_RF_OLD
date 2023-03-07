@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace UI
 {
@@ -24,6 +25,9 @@ namespace UI
         protected override void Awake()
         {
             base.Awake();
+
+            // 애니메이션 추가 예정
+
             _backButton.onClick.AddListener(() =>
             {
                 FindObjectOfType<MenuSceneCanvases>().ChangeCanvas("MenuCanvas");
