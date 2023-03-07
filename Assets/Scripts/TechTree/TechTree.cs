@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
+using UnityEngine.EventSystems;
 
 namespace TechTree
 {
@@ -21,6 +22,16 @@ namespace TechTree
                 if (_techTreeSO.techTreeNodes[i] is not null)
                 {
                     techTreeNode.SetNode(_techTreeSO.techTreeNodes[i].name);
+
+                    EventTrigger trigger = techTreeNode.GetComponent<EventTrigger>();
+                    EventTrigger.Entry entry = new EventTrigger.Entry();
+
+                    entry.eventID = EventTriggerType.PointerClick;
+
+                    entry.callback.AddListener((data) =>
+                    {
+                        EventManager.TriggerEvent("ChangeModel", _techTreeSO.techTreeNodes[i].transform.GetChild(0).gameObject);
+                    });
                 }
                 else
                 {

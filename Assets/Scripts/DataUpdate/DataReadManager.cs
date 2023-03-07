@@ -11,7 +11,6 @@ public class DataReadManager : MonoBehaviour
     const string URLTurret = "https://docs.google.com/spreadsheets/d/1mUDMYbdVgwLQDmMQb2mB6kYl4SzZdbGfOmiaQ9Ww0g4/export?format=tsv";
     Dictionary<string, List<string>> setData = new Dictionary<string, List<string>>();
     Dictionary<string, List<string>> turretData = new Dictionary<string, List<string>>();
-    string soPath = "Assets/ScriptableObject/Tanks/";
     public List<TankSO> tankSO;
     public List<TurretSO> turretSO;
     public string set;
@@ -38,7 +37,7 @@ public class DataReadManager : MonoBehaviour
         string[] newData = new string[9999];
         string[] turretset = new string[9999];
 
-        if(tankSO.Count == 0 && turretSO.Count == 0)
+        if (tankSO.Count == 0 && turretSO.Count == 0)
         {
             for (int i = 0; i < getTankSO.Length; i++)
             {
@@ -52,10 +51,10 @@ public class DataReadManager : MonoBehaviour
 
         }
 
-        for (int i = 1; i<row.Length; i++)
+        for (int i = 1; i < row.Length; i++)
         {
             newData = row[i].Split('\t');
-            for(int j = 0; j<newData.Length; j++)
+            for (int j = 0; j < newData.Length; j++)
             {
                 if (setData.ContainsKey(rowcol[j]))
                 {
@@ -65,15 +64,15 @@ public class DataReadManager : MonoBehaviour
                 {
                     setData[rowcol[j]] = new List<string>() { newData[j] };
                 }
-              
-            }   
-        }
-        
 
-        for(int i = 1; i<turretrow.Length; i++)
+            }
+        }
+
+
+        for (int i = 1; i < turretrow.Length; i++)
         {
             turretset = turretrow[i].Split('\t');
-            for(int j = 0; j< turretset.Length; j++)
+            for (int j = 0; j < turretset.Length; j++)
             {
                 if (turretData.ContainsKey(turretcol[j]))
                 {
@@ -94,15 +93,15 @@ public class DataReadManager : MonoBehaviour
             set = kvp.Key;
         }
 
-        for (int i = 0; i<tankSO.Count; i++)
+        for (int i = 0; i < tankSO.Count; i++)
         {
-            for(int j = 0; j<setData["이름"].Count; j++)
+            for (int j = 0; j < setData["이름"].Count; j++)
             {
-                if (tankSO[i].name == setData["이름"][j]+"SO"||tankSO[i].name == setData["이름"][j]||tankSO[i].name == setData["이름"][j]+" SO")
+                if (tankSO[i].name == setData["이름"][j] + "SO" || tankSO[i].name == setData["이름"][j] || tankSO[i].name == setData["이름"][j] + " SO")
                 {
                     tankSO[i].acceleration = float.Parse(setData["가속"][j]);
-                    tankSO[i].maxSpeed = float.Parse(setData["최고 속도"][j].Replace("km/h",""));
-                    tankSO[i].mass = float.Parse(setData["질량"][j].Replace("t",""));
+                    tankSO[i].maxSpeed = float.Parse(setData["최고 속도"][j].Replace("km/h", ""));
+                    tankSO[i].mass = float.Parse(setData["질량"][j].Replace("t", ""));
                     tankSO[i].hp = float.Parse(setData[set][j]);
                     tankSO[i].rotationSpeed = float.Parse(setData["선회속도(회전 속도)"][j].Replace("deg/s", ""));
                     tankSO[i].armour = float.Parse(setData["장갑"][j]);
@@ -110,11 +109,11 @@ public class DataReadManager : MonoBehaviour
             }
         }
 
-        for (int i = 0; i<turretSO.Count; i++)
+        for (int i = 0; i < turretSO.Count; i++)
         {
-            for(int j =0; j<turretData["이름"].Count; j++)
+            for (int j = 0; j < turretData["이름"].Count; j++)
             {
-                if (turretSO[i].name == turretData["이름"][j]+"TurretSO"||turretSO[i].name == turretData["이름"][j]+" Turret"||turretSO[i].name == turretData["이름"][j]+"Turret")
+                if (turretSO[i].name == turretData["이름"][j] + "TurretSO" || turretSO[i].name == turretData["이름"][j] + " Turret" || turretSO[i].name == turretData["이름"][j] + "Turret")
                 {
                     turretSO[i].reloadSpeed = float.Parse(turretData["장전시간"][j]);
                     turretSO[i].rotationSpeed = float.Parse(turretData["포탑회전 속도"][j].Replace("deg/s", ""));
@@ -122,6 +121,6 @@ public class DataReadManager : MonoBehaviour
                 }
             }
         }
-        
+
     }
 }
