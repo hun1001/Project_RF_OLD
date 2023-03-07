@@ -21,7 +21,8 @@ namespace Tank
 
         protected override void Restoration()
         {
-            SendMessage("SetArmour", 0f);
+            float dummy = 0f;
+            SendMessage("SetArmour", dummy);
         }
     }
 }
