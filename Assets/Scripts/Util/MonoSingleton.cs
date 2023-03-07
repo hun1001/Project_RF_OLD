@@ -19,7 +19,7 @@ namespace Util
 
                     Debug.LogWarning($"[Singleton] An instance of {typeof(T)} is needed in the scene, so '{obj}' was created.");
                 }
-                // DontDestroyOnLoad(instance);
+                DontDestroyOnLoad(instance);
 
                 return instance;
             });

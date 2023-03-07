@@ -23,7 +23,6 @@ namespace Effect
 
         public void SetTextEffect(string text, Color color, float size = 1, float duration = 1f)
         {
-            _text = GetComponent<TextController>();
             _text.SetText(text);
             Invoke(nameof(Pooling), duration);
         }
