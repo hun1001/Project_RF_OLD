@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MachingunShellSO
   m_EditorClassIdentifier: 
   penetratingPower: 60
-  baseDamage: 200
+  baseDamage: 6

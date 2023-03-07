@@ -9,6 +9,7 @@ namespace Tank
         private SO.TankSO _tankSO = null;
 
         public float Hp => _tankSO.hp;
+        public float Armour => _tankSO.armour;
         public float MaxSpeed => _tankSO.maxSpeed;
         public float Acceleration => _tankSO.acceleration;
         public float RotationSpeed => _tankSO.rotationSpeed;

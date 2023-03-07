@@ -11,5 +11,7 @@ namespace SO
         public float penetratingPower;
         [Header("Base Damage")]
         public float baseDamage;
+        [Header("Speed")]
+        public float speed;
     }
 }

@@ -29,6 +29,7 @@ namespace Tank
         private void Awake()
         {
             _currentHealth = Instance.Hp;
+            //_armour = Instance.Armour;
         }
 
         private void OnHit(float damage)
@@ -57,6 +58,10 @@ namespace Tank
         public void SetArmour(float value)
         {
             _armour = value;
+            //if(value <= 0f)
+            //{
+            //    _armour = Instance.Armour;
+            //}
         }
     }
 }

@@ -85,6 +85,10 @@ MonoBehaviour:
     m_Address: AutoHealer
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: e8947ea18f1612548803495876064583
+    m_Address: Assets/Prefabs/Shell/MachingunShell.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 83677132a06df9140834c0d848060f27, type: 2}
   m_SchemaSet:
