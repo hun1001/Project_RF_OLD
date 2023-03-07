@@ -18,8 +18,11 @@ public class DataReadManager : MonoBehaviour
     public string ret;
 
 
-    IEnumerator Start()
+    public IEnumerator DataReader()
     {
+        var getTankSO = Resources.LoadAll<TankSO>("ScriptableObject/Tanks");
+        var getTurretSO = Resources.LoadAll<TurretSO>("ScriptableObject/Tanks");
+
         UnityWebRequest www = UnityWebRequest.Get(URL);
         UnityWebRequest www2 = UnityWebRequest.Get(URLTurret);
         yield return www.SendWebRequest();
@@ -35,7 +38,21 @@ public class DataReadManager : MonoBehaviour
         string[] newData = new string[9999];
         string[] turretset = new string[9999];
 
-        for(int i = 0; i<row.Length; i++)
+        if(tankSO.Count == 0 && turretSO.Count == 0)
+        {
+            for (int i = 0; i < getTankSO.Length; i++)
+            {
+                tankSO.Add(getTankSO[i]);
+            }
+
+            for (int i = 0; i < getTurretSO.Length; i++)
+            {
+                turretSO.Add(getTurretSO[i]);
+            }
+
+        }
+
+        for (int i = 1; i<row.Length; i++)
         {
             newData = row[i].Split('\t');
             for(int j = 0; j<newData.Length; j++)
@@ -51,15 +68,9 @@ public class DataReadManager : MonoBehaviour
               
             }   
         }
-
-        foreach(var kvp in setData)
-        {
-            Debug.Log(kvp.Key);
-            set = kvp.Key;
-        }
         
 
-        for(int i = 0; i<turretrow.Length; i++)
+        for(int i = 1; i<turretrow.Length; i++)
         {
             turretset = turretrow[i].Split('\t');
             for(int j = 0; j< turretset.Length; j++)
@@ -67,15 +78,23 @@ public class DataReadManager : MonoBehaviour
                 if (turretData.ContainsKey(turretcol[j]))
                 {
                     turretData[turretcol[j]].Add(turretset[j]);
+                    Debug.Log(turretData["이름"].Count);
                 }
                 else
                 {
                     turretData[turretcol[j]] = new List<string>() { turretset[j] };
+                    Debug.Log(turretData["이름"].Count);
                 }
             }
         }
 
-        for(int i = 0; i<tankSO.Count; i++)
+
+        foreach (var kvp in setData)
+        {
+            set = kvp.Key;
+        }
+
+        for (int i = 0; i<tankSO.Count; i++)
         {
             for(int j = 0; j<setData["이름"].Count; j++)
             {
@@ -91,11 +110,11 @@ public class DataReadManager : MonoBehaviour
             }
         }
 
-        for(int i = 0; i<turretSO.Count; i++)
+        for (int i = 0; i<turretSO.Count; i++)
         {
-            for(int j =0; j<turretData.Count; j++)
+            for(int j =0; j<turretData["이름"].Count; j++)
             {
-                if(turretSO[i].name == turretData["이름"][j]+"TurretSO"||turretSO[i].name == turretData["이름"][j]+" Turret"||turretSO[i].name == turretData["이름"][j]+"Turret")
+                if (turretSO[i].name == turretData["이름"][j]+"TurretSO"||turretSO[i].name == turretData["이름"][j]+" Turret"||turretSO[i].name == turretData["이름"][j]+"Turret")
                 {
                     turretSO[i].reloadSpeed = float.Parse(turretData["장전시간"][j]);
                     turretSO[i].rotationSpeed = float.Parse(turretData["포탑회전 속도"][j].Replace("deg/s", ""));
