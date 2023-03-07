@@ -17,7 +17,7 @@ namespace Opponent
 
         private float _gameTime = 0;
 
-        private UI.TextController _waveTimer = null;
+        private TextController _waveTimer = null;
 
         private void Awake()
         {
