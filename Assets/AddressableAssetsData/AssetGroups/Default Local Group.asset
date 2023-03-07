@@ -62,7 +62,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 92c2691193744e846989b273301f2f7f
-    m_Address: AutomaticRepair
+    m_Address: AutoHeal
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 0439d1508f6c44841afcb84fb248a7cf
@@ -74,11 +74,15 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 1e380748abcd4524b8a05a718c88858a
-    m_Address: EmergencyRepair
+    m_Address: WarnHealer
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 799b794f9ccbead419484b9fab213371
     m_Address: Assets/Prefabs/UI/Node/TankNode.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 99ac776ca6db134419f342384b54e280
+    m_Address: AutoHealer
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
