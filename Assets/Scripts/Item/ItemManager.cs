@@ -16,6 +16,19 @@ namespace Item
 
         private int _itemSelectCnt = 0;
 
+        private WeightPicker<Item> _picker = new WeightPicker<Item>();
+
+        private void Awake()
+        {
+            int weight = 0;
+            foreach(var item in Items.items)
+            {
+                // y = -x + 6
+                weight = -item.itemSO.rarity + 6;
+                _picker.Add(item, weight);
+            }
+        }
+
         public void ItemShow()
         {
             Time.timeScale = 0;
@@ -24,13 +37,8 @@ namespace Item
             {
                 var setItem = selectObject.transform.GetChild(i).gameObject;
                 setItem.SetActive(true);
-                SetItem(GetRandomItem(), setItem);
+                SetItem(_picker.GetRandomPick(), setItem);
             }
-        }
-
-        private Item GetRandomItem()
-        {
-            return Items.items[Random.Range(0, Items.items.Length)];
         }
 
         private void SetItem(Item item, GameObject setItem)
