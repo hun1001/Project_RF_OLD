@@ -18,6 +18,17 @@ namespace CameraSpace
         [SerializeField]
         private float _reboundDistance = 5f;
         private Vector3 _offsetDefalutPosition = Vector3.zero;
+        private Vector3 OffsetDefalutPosition
+        {
+            get
+            {
+                if(_offsetDefalutPosition == Vector3.zero)
+                {
+                    _offsetDefalutPosition = _transposer.m_FollowOffset;
+                }
+                return _offsetDefalutPosition;
+            }
+        }
         private bool _isReboundingPossible = false;
         private bool _isReboundingEnd = false;
 
@@ -62,16 +73,16 @@ namespace CameraSpace
             {
                 if (joyStick.DragTime >= 3f)
                 {
-                    Vector3 offset = _offsetDefalutPosition;
+                    Vector3 offset = OffsetDefalutPosition;
                     Vector3 direction = new Vector3(joyStick.Direction.x * _attackRange * 0.25f, 0f, joyStick.Direction.y * _attackRange * 0.25f);
                     offset += direction;
 
                     _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, offset, 2f * Time.deltaTime);
                 }
             }
-            else if (_transposer.m_FollowOffset != _offsetDefalutPosition || _isReboundingEnd == false)
+            else if (_transposer.m_FollowOffset != OffsetDefalutPosition || _isReboundingEnd == false)
             {
-                _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, _offsetDefalutPosition, 2f * Time.deltaTime);
+                _transposer.m_FollowOffset = Vector3.Slerp(_transposer.m_FollowOffset, OffsetDefalutPosition, 2f * Time.deltaTime);
             }
         }
 
@@ -82,7 +93,7 @@ namespace CameraSpace
                 Debug.Log("Rebound");
                 float cameraPositionX = joyStick.Horizontal * -1f * _reboundDistance;
                 float cameraPositionZ = joyStick.Vertical * -1f * _reboundDistance;
-                Vector3 cameraPosition = _offsetDefalutPosition;
+                Vector3 cameraPosition = OffsetDefalutPosition;
                 cameraPosition.x += cameraPositionX;
                 cameraPosition.z += cameraPositionZ;
                 _transposer.m_FollowOffset = Vector3.Lerp(_transposer.m_FollowOffset, cameraPosition, 5f * Time.deltaTime);
@@ -122,7 +133,7 @@ namespace CameraSpace
         private void HitStopShake()
         {
             CancelInvoke("HitStartShake");
-            _transposer.m_FollowOffset = _offsetDefalutPosition;
+            _transposer.m_FollowOffset = OffsetDefalutPosition;
         }
     }
 }
