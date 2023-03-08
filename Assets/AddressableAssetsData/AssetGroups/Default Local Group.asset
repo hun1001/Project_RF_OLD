@@ -22,7 +22,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 064d9c18534db0741af0c758b2af902c
-    m_Address: Assets/Prefabs/Shell/Shell.prefab
+    m_Address: Shell
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: c41aa8bda019bfb4ab13d1b4caf280b7
@@ -86,11 +86,15 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: e8947ea18f1612548803495876064583
-    m_Address: Assets/Prefabs/Shell/MachingunShell.prefab
+    m_Address: MachingunShell
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 9aae8f77443000441a049f9c8c0584d4
     m_Address: Assets/Prefabs/UI/Toggle/TechTreeCountryToggle.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c105ca9c40b3f3a4285a7509d9a4e2a8
+    m_Address: BackMachineGun
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
