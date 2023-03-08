@@ -24,8 +24,6 @@ namespace TechTree
         {
             ResetTechTree();
 
-            Debug.Log(index);
-
             for (int i = 0; i < _techTreeSO[index].techTreeNodes.Length; i++)
             {
                 var techTreeNode = PoolManager.Instance.Get<TechTreeNode>("Assets/Prefabs/UI/Node/TankNode.prefab", t);
