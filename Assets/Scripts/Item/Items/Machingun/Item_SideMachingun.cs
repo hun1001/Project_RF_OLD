@@ -17,6 +17,7 @@ namespace Item
         {
             if (sideMachinegun % 2 == 1)
             {
+                sideMachinegun++;
                 transform.localPosition = new Vector3(3f, 2f, 0f);
                 transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
 
@@ -24,10 +25,10 @@ namespace Item
             }
             else
             {
+                sideMachinegun++;
                 transform.localPosition = new Vector3(-3f, 2f, 0f);
                 transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
             }
-            sideMachinegun++;
         }
     }
 }
