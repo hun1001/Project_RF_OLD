@@ -13,6 +13,8 @@ namespace Turret
 
         private bool _isAim = false;
 
+        Vector3 _dir = Vector3.zero;
+
         protected void Awake()
         {
             _turret = Instance.Body;
@@ -21,17 +23,16 @@ namespace Turret
 
         public virtual void Rotate(JoyStick attackJoyStick)
         {
-            Vector3 dir = Vector3.zero;
             if (attackJoyStick.Direction != Vector2.zero)
             {
-                dir.x = attackJoyStick.Horizontal;
-                dir.z = attackJoyStick.Vertical;
+                _dir.x = attackJoyStick.Horizontal;
+                _dir.z = attackJoyStick.Vertical;
             }
-
+            
             _isAim = true;
             StopCoroutine(nameof(Release));
 
-            _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(dir.normalized), 180 * Time.deltaTime * _rotationSpeed);
+            _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(_dir.normalized), 180 * Time.deltaTime * _rotationSpeed);
         }
 
         public IEnumerator Release()
