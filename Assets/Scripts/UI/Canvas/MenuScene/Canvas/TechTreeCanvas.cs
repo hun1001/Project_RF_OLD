@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Keyword;
 
 namespace UI
 {
@@ -12,26 +14,39 @@ namespace UI
         [SerializeField]
         private Transform _techTreeTransform = null;
 
+        [SerializeField]
+        private Transform _techTreeToggleTransform = null;
+
+
         protected override void SetOnEnableAction()
         {
-            gameObject.SendMessage("SetTechTree", _techTreeTransform);
+            EventManager.TriggerEvent(EventKeyword.OnSetTechTree, _techTreeTransform, 0);
+            MoveTechTreePanel(30f);
         }
 
         protected override void SetOnDisableAction()
         {
-            gameObject.SendMessage("ResetTechTree");
+            EventManager.TriggerEvent(EventKeyword.OnResetTechTree);
+            MoveTechTreePanel(-360f);
         }
 
         protected override void Awake()
         {
             base.Awake();
 
-            // 애니메이션 추가 예정
+            EventManager.TriggerEvent(EventKeyword.OnSetTechTreeToggle, _techTreeToggleTransform, _techTreeTransform);
+
+            OnDisableAction?.Invoke();
 
             _backButton.onClick.AddListener(() =>
             {
                 FindObjectOfType<MenuSceneCanvases>().ChangeCanvas("MenuCanvas");
             });
+        }
+
+        private void MoveTechTreePanel(float moveY, float duration = 0.5f)
+        {
+            _techTreeTransform.DOLocalMoveY(moveY, duration);
         }
     }
 }
