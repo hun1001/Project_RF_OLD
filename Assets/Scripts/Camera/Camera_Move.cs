@@ -11,7 +11,23 @@ namespace CameraSpace
         private CinemachineVirtualCamera _cmvcam = null;
         private CinemachineTransposer _transposer = null;
 
+        [SerializeField]
         private Turret_Attack _turretAttack = null;
+        private Turret_Attack _TurretAttack
+        {
+            get
+            {
+                if(_turretAttack == null)
+                {
+                    _turretAttack = GameObject.FindGameObjectWithTag("PlayerTank")?.GetComponent<Turret_Attack>();
+                }
+                return _turretAttack;
+            }
+            set
+            {
+                _turretAttack = value;
+            }
+        }
         private float _attackRange = 0.0f;
 
         [Header("Rebound")]
@@ -22,7 +38,7 @@ namespace CameraSpace
         {
             get
             {
-                if(_offsetDefalutPosition == Vector3.zero)
+                if (_offsetDefalutPosition == Vector3.zero)
                 {
                     _offsetDefalutPosition = _transposer.m_FollowOffset;
                 }
@@ -37,20 +53,20 @@ namespace CameraSpace
         private float _hitShakeDuration = 0.3f;
         [SerializeField]
         private float _hitShakeDistance = 0.05f;
-        private Tank_Damage _tank_damage = null;
 
         private void Awake()
         {
-
             _cmvcam = Instance.CMvcam;
             _transposer = _cmvcam.GetCinemachineComponent<CinemachineTransposer>();
 
-            _turretAttack = GameObject.FindGameObjectWithTag("PlayerTank").GetComponent<Turret_Attack>();
-            _attackRange = _turretAttack.Range;
-
-            _tank_damage = GameObject.FindGameObjectWithTag("PlayerTank").GetComponent<Tank_Damage>();
+            _turretAttack = GameObject.FindGameObjectWithTag("PlayerTank")?.GetComponent<Turret_Attack>();
 
             _offsetDefalutPosition = _transposer.m_FollowOffset;
+        }
+
+        private void Start()
+        {
+            _attackRange = _TurretAttack.Range;
         }
 
         // private void CameraRotation()
@@ -88,7 +104,7 @@ namespace CameraSpace
 
         public void FireCameraRebound(JoyStick joyStick)
         {
-            if (_turretAttack.NextFire > 0 && _isReboundingPossible == true)
+            if (_TurretAttack.NextFire > 0 && _isReboundingPossible == true)
             {
                 Debug.Log("Rebound");
                 float cameraPositionX = joyStick.Horizontal * -1f * _reboundDistance;
@@ -103,7 +119,7 @@ namespace CameraSpace
                     Invoke("CameraReboundEnd", 0.2f);
                 }
             }
-            else if (_turretAttack.NextFire <= 0 && _isReboundingPossible == false)
+            else if (_TurretAttack.NextFire <= 0 && _isReboundingPossible == false)
             {
                 _isReboundingPossible = true;
             }
