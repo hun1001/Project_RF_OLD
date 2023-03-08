@@ -5,19 +5,18 @@ namespace Item
 {
     public class Item_SideMachingun : Item_Machingun
     {
-        private static bool _isFirst = false;
+        private static int sideMachinegun = 1;
 
         public override void AddItem()
         {
             base.AddItem();
-            Cover(_isFirst);
+            Cover(sideMachinegun);
         }
 
-        private void Cover(bool isFirst)
+        private void Cover(int i)
         {
-            if (isFirst == false)
+            if (sideMachinegun % 2 == 1)
             {
-                _isFirst = true;
                 transform.localPosition = new Vector3(3f, 2f, 0f);
                 transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
 
@@ -28,6 +27,7 @@ namespace Item
                 transform.localPosition = new Vector3(-3f, 2f, 0f);
                 transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
             }
+            sideMachinegun++;
         }
     }
 }
