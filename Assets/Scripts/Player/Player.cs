@@ -23,7 +23,6 @@ namespace Player
 
         [SerializeField]
         private CameraManager _cameraManager = null;
-        private Camera_Move _cameraMove = null;
 
         private Tank.Tank _playerTank = null;
         public Tank.Tank PlayerTank => _playerTank;
@@ -42,7 +41,6 @@ namespace Player
 
             _playInformationCanvas.HpBar.MaxValue = _playerTank.Hp;
 
-            _cameraMove = _cameraManager.GetComponent<Camera_Move>();
             _cameraManager.SetPlayer(_playerTank.transform);
 
             Turret_Attack attack = _playerTank.GetComponent<Turret_Attack>();
@@ -58,7 +56,7 @@ namespace Player
                 _playInformationCanvas.HpBar.Value -= damage;
                 if(damage >= 0f)
                 {
-                    _cameraMove.HitCameraShake();
+                    _cameraManager.GetComponent<Camera_Move>().HitCameraShake();
                 }
             });
 
@@ -87,8 +85,9 @@ namespace Player
 
         private void LateUpdate()
         {
-            _cameraMove.SnipingCamera(_controllerCanvas.AttackJoyStick);
-            _cameraMove.FireCameraRebound(_controllerCanvas.AttackJoyStick);
+            var c = _cameraManager.GetComponent<Camera_Move>();
+            c.SnipingCamera(_controllerCanvas.AttackJoyStick);
+            c.FireCameraRebound(_controllerCanvas.AttackJoyStick);
         }
     }
 }
