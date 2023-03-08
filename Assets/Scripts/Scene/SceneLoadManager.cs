@@ -13,6 +13,7 @@ namespace Scene
         public void LoadScene(SceneType type)
         {
             PoolManager.Instance.Clear();
+            EventManager.ClearEvent();
             StartCoroutine(LoadMyAsyncScene((int)type));
         }
 

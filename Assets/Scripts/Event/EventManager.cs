@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public static class EventManager
 {
@@ -63,6 +62,11 @@ public static class EventManager
         {
             thisEvent?.Invoke(args);
         }
+    }
+
+    public static void ClearEvent()
+    {
+        _eventDictionary.Clear();
     }
 }
 
