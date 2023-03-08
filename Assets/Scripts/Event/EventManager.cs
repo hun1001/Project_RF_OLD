@@ -18,7 +18,7 @@ public static class EventManager
             _eventDictionary.Add(eventName, thisEvent);
         }
     }
-    
+
     public static void StartListening(string eventName, Action listener)
     {
         if (_eventDictionary.TryGetValue(eventName, out var thisEvent))
@@ -31,7 +31,7 @@ public static class EventManager
             _eventDictionary.Add(eventName, thisEvent);
         }
     }
-    
+
     public static void StopListening(string eventName, Action<object[]> listener)
     {
         if (_eventDictionary.TryGetValue(eventName, out var thisEvent))
@@ -39,7 +39,7 @@ public static class EventManager
             thisEvent -= listener;
         }
     }
-    
+
     public static void StopListening(string eventName, Action listener)
     {
         if (_eventDictionary.TryGetValue(eventName, out var thisEvent))
@@ -47,7 +47,7 @@ public static class EventManager
             thisEvent -= args => listener();
         }
     }
-    
+
     public static void DeleteEvent(string eventName)
     {
         if (_eventDictionary.ContainsKey(eventName))
@@ -56,7 +56,7 @@ public static class EventManager
             _eventDictionary.Remove(eventName);
         }
     }
-    
+
     public static void TriggerEvent(string eventName, params object[] args)
     {
         if (_eventDictionary.TryGetValue(eventName, out var thisEvent))
