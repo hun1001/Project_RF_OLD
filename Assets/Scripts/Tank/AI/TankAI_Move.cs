@@ -78,7 +78,7 @@ namespace Tank
                 if (fireTime > 1f)
                 {
                     fireTime = 0f;
-                    var shell = PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
+                    var shell = PoolManager.Instance.Get("Shell", _firePoint.position, _firePoint.rotation);
                     shell.SendMessage("SetSpeed", 20f);
                     shell.SendMessage("SetRange", 20f);
                 }

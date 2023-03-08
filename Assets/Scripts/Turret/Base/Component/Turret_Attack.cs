@@ -62,7 +62,7 @@ namespace Turret
             _isReload = true;
 
             SoundManager.Instance.PlaySound(Instance._fireSound, SoundType.SFX, 0.7f);
-            var shell = PoolManager.Instance.Get("Assets/Prefabs/Shell/Shell.prefab", _firePoint.position, _firePoint.rotation);
+            var shell = PoolManager.Instance.Get("Shell", _firePoint.position, _firePoint.rotation);
             shell.SendMessage("SetSpeed", _shellSpeed);
             shell.SendMessage("SetRange", _range);
             Invoke("ShellDropSoundPlay", 0.6f);

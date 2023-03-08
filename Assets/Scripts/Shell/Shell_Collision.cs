@@ -18,7 +18,7 @@ namespace Shell
                 {
                     case HitType.PENETRATION:
                         PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position, Quaternion.identity);
-                        PoolManager.Instance.Pool("Assets/Prefabs/Shell/Shell.prefab", gameObject);
+                        PoolManager.Instance.Pool(name, gameObject);
                         break;
                     case HitType.RICOCHET:
                         transform.rotation = Quaternion.LookRotation(Vector3Calculator.GetReflectionVector(Instance.transform.forward.normalized, other.contacts[0].normal));
@@ -32,7 +32,7 @@ namespace Shell
                 {
                     case HitType.PENETRATION:
                         PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position,  Quaternion.identity);
-                        PoolManager.Instance.Pool("Assets/Prefabs/Shell/Shell.prefab", gameObject);
+                        PoolManager.Instance.Pool(name, gameObject);
                         other.gameObject.SendMessage("OnHit", Instance.ShellSO.baseDamage, SendMessageOptions.DontRequireReceiver);
                         break;
                     case HitType.RICOCHET:

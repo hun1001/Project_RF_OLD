@@ -71,7 +71,7 @@ namespace Item
                 Quaternion dir = Quaternion.LookRotation(enemy.position - transform.position);
                 dir.x = 0f;
                 dir.z = 0f;
-                var shell = PoolManager.Instance.Get("Assets/Prefabs/Shell/MachingunShell.prefab", transform.position, dir);
+                var shell = PoolManager.Instance.Get("MachingunShell", transform.position, dir);
                 shell.SendMessage("SetSpeed", 50f);
                 shell.SendMessage("SetRange", 20f);
 
