@@ -97,6 +97,10 @@ MonoBehaviour:
     m_Address: BackMachineGun
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: b2429d0a32da7c14fbff3a0bfc02cefc
+    m_Address: SideMachineGun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 83677132a06df9140834c0d848060f27, type: 2}
   m_SchemaSet:

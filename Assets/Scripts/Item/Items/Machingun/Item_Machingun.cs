@@ -43,7 +43,7 @@ namespace Item
 
                 // 적 탐색
                 cols = Physics.OverlapSphere(transform.position, _range, _layerMask);
-                for(int i = 0; i < cols.Length; i++)
+                for (int i = 0; i < cols.Length; i++)
                 {
                     // 플레이어 제외
                     if (cols[i].CompareTag("PlayerTank")) continue;
@@ -53,11 +53,11 @@ namespace Item
 
                     // FOV
                     // 머신건과 적 사이에 플레이어가 있으면 플레이어가 맞기에 시야각을 설정함
-                    if(Vector3.Angle(transform.forward, dirToTarget.normalized) < _angle / 2)
+                    if (Vector3.Angle(transform.forward, dirToTarget.normalized) < _angle / 2)
                     {
                         // 가장 가까운 적을 때리기 위해
                         float dist = dirToTarget.sqrMagnitude;
-                        if(nearDist > dist)
+                        if (nearDist > dist)
                         {
                             nearDist = dist;
                             enemy = target;
@@ -76,7 +76,7 @@ namespace Item
                 shell.SendMessage("SetRange", 20f);
 
                 _currentMagazine--;
-                if(_currentMagazine <= 0)
+                if (_currentMagazine <= 0)
                 {
                     _currentMagazine = _maxMagazine;
                     yield return reloadTime;

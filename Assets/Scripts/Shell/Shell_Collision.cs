@@ -26,12 +26,16 @@ namespace Shell
                         break;
                 }
             }
+            else if (other.transform.CompareTag("Shell") == true)
+            {
+
+            }
             else
             {
                 switch (TypeReader.Instance.GetHitType(angle))
                 {
                     case HitType.PENETRATION:
-                        PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position,  Quaternion.identity);
+                        PoolManager.Instance.Get("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", Instance.transform.position, Quaternion.identity);
                         PoolManager.Instance.Pool(name, gameObject);
                         other.gameObject.SendMessage("OnHit", Instance.ShellSO.baseDamage, SendMessageOptions.DontRequireReceiver);
                         break;
