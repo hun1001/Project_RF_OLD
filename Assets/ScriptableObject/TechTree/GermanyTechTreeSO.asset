@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GermanyTechTreeSO
   m_EditorClassIdentifier: 
   techTreeName: Germany
+  countryFlag: {fileID: 21300000, guid: 95160dfc8f778e346960fbbde546db1d, type: 3}
   techTreeNodes:
   - {fileID: 8227962702631750333, guid: c41aa8bda019bfb4ab13d1b4caf280b7, type: 3}
   - {fileID: 8227962702631750333, guid: c41aa8bda019bfb4ab13d1b4caf280b7, type: 3}

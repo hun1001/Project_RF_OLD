@@ -15,6 +15,6 @@ namespace TechTree
         public void SetToggleEvent(UnityAction<bool> action) => _toggle.onValueChanged.AddListener(action);
         public void SetToggleGroup(GameObject toggleGroup) => _toggle.group = toggleGroup.GetComponent<ToggleGroup>();
         public void SetToggleName(string name) => _text.text = name;
-
+        public void SetIcon(Sprite icon) => _toggle.transform.GetChild(0).GetComponent<Image>().sprite = icon;
     }
 }

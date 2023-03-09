@@ -68,6 +68,7 @@ namespace TechTree
                 rT.localPosition = new Vector3(rT.localPosition.x - (offset * i), rT.localPosition.y, rT.localPosition.z);
 
                 techTreeToggle.SetToggleName(_techTreeSO[i].techTreeName);
+                techTreeToggle.SetIcon(_techTreeSO[i].countryFlag);
                 techTreeToggle.SetToggleGroup(t.gameObject);
                 SetToggle(techTreeToggle, i, nodeT);
             }

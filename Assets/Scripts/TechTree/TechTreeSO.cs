@@ -6,6 +6,7 @@ namespace TechTree
     public class TechTreeSO : ScriptableObject
     {
         public string techTreeName;
+        public Sprite countryFlag;
         public GameObject[] techTreeNodes;
     }
 }

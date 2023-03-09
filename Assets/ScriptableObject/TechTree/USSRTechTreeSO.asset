@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: USSRTechTreeSO
   m_EditorClassIdentifier: 
   techTreeName: USSR
+  countryFlag: {fileID: 21300000, guid: a5a55d06fe887cc4b82a16b8387c0a13, type: 3}
   techTreeNodes:
   - {fileID: 503060584111259674, guid: 9dd28be114d4ebd43bf406e727b3bf42, type: 3}
   - {fileID: 503060584111259674, guid: 9dd28be114d4ebd43bf406e727b3bf42, type: 3}
