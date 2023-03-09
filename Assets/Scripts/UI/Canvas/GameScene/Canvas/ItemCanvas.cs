@@ -26,6 +26,7 @@ namespace UI
         protected override void SetOnEnableAction()
         {
             Time.timeScale = 0f;
+            EventManager.TriggerEvent(EventKeyword.OnItemCanvasOpen);
             UpdateGoldText();
             gameObject.SendMessage("ItemShow");
         }
@@ -33,6 +34,7 @@ namespace UI
         protected override void SetOnDisableAction()
         {
             Time.timeScale = 1f;
+            EventManager.TriggerEvent(EventKeyword.OnItemCanvasClose);
         }
 
         public void UpdateGoldText()
