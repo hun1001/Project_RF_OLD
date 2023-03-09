@@ -32,30 +32,46 @@ namespace Tank
             _agent = GetComponent<NavMeshAgent>();
             _target = GameObject.FindGameObjectWithTag("PlayerTank").transform;
 
+            StartCoroutine(nameof(UpdateLogic));
+            StartCoroutine(nameof(LateUpdateLogic));
             StartCoroutine(nameof(Checker));
+
+            EventManager.StartListening("OnTankDestroyed1", () =>
+            {
+                PoolManager.Instance.Pool(this.gameObject);
+            });
         }
 
-        private void Update()
+        private IEnumerator UpdateLogic()
         {
-            float distance = Vector3.Distance(transform.position, _target.position);
-            _state = distance > DetectionRange ? State.Idle : distance > AttackRange ? State.Move : State.Attack;
-        }
-        
-        private void LateUpdate()
-        {
-            switch (_state)
+            while (true)
             {
-                case State.Idle:
-                    _agent.isStopped = true;
-                    break;
-                case State.Move:
-                    _agent.isStopped = false;
-                    _agent.SetDestination(_target.position);
-                    break;
-                case State.Attack:
-                    _agent.isStopped = true;
-                    StartCoroutine(FireCoroutine());
-                    break;
+                float distance = Vector3.Distance(transform.position, _target.position);
+                _state = distance > DetectionRange ? State.Idle : distance > AttackRange ? State.Move : State.Attack;
+                yield return null;
+            }
+        }
+
+        private IEnumerator LateUpdateLogic()
+        {
+            WaitForEndOfFrame waitForEndOfFrame = new WaitForEndOfFrame();
+            while (true)
+            {
+                switch (_state)
+                {
+                    case State.Idle:
+                        _agent.isStopped = true;
+                        break;
+                    case State.Move:
+                        _agent.isStopped = false;
+                        _agent.SetDestination(_target.position);
+                        break;
+                    case State.Attack:
+                        _agent.isStopped = true;
+                        StartCoroutine(FireCoroutine());
+                        break;
+                }
+                yield return waitForEndOfFrame;
             }
         }
 

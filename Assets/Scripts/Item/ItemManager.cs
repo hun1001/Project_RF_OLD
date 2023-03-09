@@ -1,4 +1,4 @@
-﻿using SO;
+using SO;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,7 +9,8 @@ namespace Item
     public class ItemManager : MonoBehaviour
     {
         // TODO: Must change this structure
-        public GameObject selectObject;
+        [SerializeField]
+        private GameObject _selectObject;
         public ItemBundleSO Items;
 
         private int _itemSelectCnt = 0;
@@ -33,7 +34,7 @@ namespace Item
             _itemSelectCnt = 0;
             for (int i = 0; i < 3; i++)
             {
-                var setItem = selectObject.transform.GetChild(i).gameObject;
+                var setItem = _selectObject.transform.GetChild(i).gameObject;
                 setItem.SetActive(true);
                 SetItem(_picker.GetRandomPick(), setItem);
             }

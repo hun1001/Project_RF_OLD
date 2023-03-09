@@ -30,7 +30,7 @@ namespace UI
         protected override void SetOnEnableAction()
         {
             Time.timeScale = 0f;
-            _lifeTimeSecondText.SetText(string.Format("{0} sec", Time.time));
+            _lifeTimeSecondText.SetText(string.Format("{0:0.0} sec", Time.timeSinceLevelLoad));
             _destroyText.SetText(PlayerPrefs.GetInt("Destroy").ToString());
         }
 
