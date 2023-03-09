@@ -21,9 +21,6 @@ namespace Keyword
 
         public const string OnUpdateGold = "OnUpdateGold";
 
-        public const string OnItemCanvasOpen = "OnItemCanvasOpen";
-        public const string OnItemCanvasClose = "OnItemCanvasClose";
-
         public const string OnSetTechTree = "OnSetTechTree";
         public const string OnResetTechTree = "OnResetTechTree";
 

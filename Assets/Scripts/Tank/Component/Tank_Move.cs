@@ -1,4 +1,4 @@
-﻿using UI;
+using UI;
 using UnityEngine.AI;
 using Sound;
 using UnityEngine;
@@ -41,7 +41,7 @@ namespace Tank
 
         public void Move(JoyStick moveJoystick)
         {
-            if (moveJoystick.IsTouching)
+            if (moveJoystick.IsTouching && Game.GameManager.Instance.IsStop == false)
             {
                 _currentMaxSpeed = _maxSpeed * moveJoystick.Scalar;
 
@@ -61,6 +61,13 @@ namespace Tank
                     if (pitch < 0.1f) pitch = 0f;
                     _trackSound.PitchSetting(pitch);
                 }
+            }
+            else if (Game.GameManager.Instance.IsStop && _currentSpeed != 0f)
+            {
+                _currentSpeed = 0f;
+                _isMove = false;
+                _moveSound.PitchSetting(0.5f);
+                _trackSound.PitchSetting(0f);
             }
             else
             {
@@ -101,7 +108,7 @@ namespace Tank
                 _rigidbody.velocity = Vector3.zero;
             }
 
-            if (moveJoystick.IsTouching)
+            if (moveJoystick.IsTouching && Game.GameManager.Instance.IsStop == false)
             {
                 Vector3 direction = new Vector3(moveJoystick.Horizontal, 0f, moveJoystick.Vertical);
                 direction.y = 0f;

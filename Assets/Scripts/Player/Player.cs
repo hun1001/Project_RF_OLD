@@ -30,8 +30,6 @@ namespace Player
         private Turret.Turret _playerTurret = null;
         public Turret.Turret PlayerTurret => _playerTurret;
 
-        private bool _isStop = false;
-
         private void Awake()
         {
             GameObject tank = PoolManager.Instance.Get("Assets/Prefabs/Tanks/HeavyTank/Tank_Tiger.prefab", this.transform);
@@ -72,19 +70,12 @@ namespace Player
                 FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Result);
             });
 
-            EventManager.StartListening(EventKeyword.OnItemCanvasOpen, () =>
-            {
-                _isStop = true;
-            });
-            EventManager.StartListening(EventKeyword.OnItemCanvasClose, () =>
-            {
-                _isStop = false;
-            });
+            StartCoroutine(nameof(UpdateLogic));
         }
 
-        private void Update()
+        private IEnumerator UpdateLogic()
         {
-            if(_isStop == false)
+            while (true)
             {
                 Tank_Move move = _playerTank.GetComponent<Tank_Move>();
                 move.Move(_controllerCanvas.MoveJoyStick);
@@ -94,6 +85,7 @@ namespace Player
 
                 Turret_Rotation rotation = _playerTank.GetComponent<Turret_Rotation>();
                 rotation.Rotate(_controllerCanvas.AttackJoyStick);
+                yield return null;
             }
         }
 

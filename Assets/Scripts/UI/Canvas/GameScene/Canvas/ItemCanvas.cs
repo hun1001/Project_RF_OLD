@@ -17,16 +17,12 @@ namespace UI
         {
             base.Awake();
             _backButton.onClick.AddListener(BackCanvas);
-            //EventManager.StartListening(EventKeyword.OnUpdateGold, (gold) =>
-            //{
-            //    _goldText.SetText(gold[0].ToString());
-            //});
         }
 
         protected override void SetOnEnableAction()
         {
             Time.timeScale = 0f;
-            EventManager.TriggerEvent(EventKeyword.OnItemCanvasOpen);
+            Game.GameManager.Instance.IsStop = true;
             UpdateGoldText();
             gameObject.SendMessage("ItemShow");
         }
@@ -34,7 +30,7 @@ namespace UI
         protected override void SetOnDisableAction()
         {
             Time.timeScale = 1f;
-            EventManager.TriggerEvent(EventKeyword.OnItemCanvasClose);
+            Game.GameManager.Instance.IsStop = false;
         }
 
         public void UpdateGoldText()

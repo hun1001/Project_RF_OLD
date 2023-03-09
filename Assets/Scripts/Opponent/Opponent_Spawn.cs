@@ -38,8 +38,13 @@ namespace Opponent
         {
             while (_currentWave < Instance.OpponentSO.Waves.Length)
             {
-                Spawn();
-                yield return new WaitForSeconds(Instance.OpponentSO.Delay[_currentWave]);
+                if(Game.GameManager.Instance.IsStop == false)
+                {
+                    Spawn();
+                    yield return new WaitForSeconds(Instance.OpponentSO.Delay[_currentWave]);
+                }
+                
+                yield return null;
             }
         }
 
@@ -47,14 +52,18 @@ namespace Opponent
         {
             while (true)
             {
-                _gameTime += Time.deltaTime;
-                if (_gameTime >= _delay)
+                if (Game.GameManager.Instance.IsStop == false)
                 {
-                    _gameTime = 0;
-                    _currentWave++;
-                    FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item);
+                    _gameTime += Time.deltaTime;
+                    if (_gameTime >= _delay)
+                    {
+                        _gameTime = 0;
+                        _currentWave++;
+                        FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item);
+                    }
+                    _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
                 }
-                _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
+                
                 yield return null;
             }
         }
