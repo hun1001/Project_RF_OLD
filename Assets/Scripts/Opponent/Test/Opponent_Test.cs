@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UI;
 using Util;
+using Keyword;
 
 namespace Opponent
 {
@@ -62,7 +63,7 @@ namespace Opponent
 
         private void StageClear()
         {
-            FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item);
+            FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item, CanvasNameKeyword.PlayInformationCanvas);
             _isStageClear = true;
             Debug.Log("Stage Clear!");
         }

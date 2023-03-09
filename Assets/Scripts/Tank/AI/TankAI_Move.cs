@@ -46,12 +46,8 @@ namespace Tank
         {
             while (true)
             {
-                if (Game.GameManager.Instance.IsStop == false)
-                {
-                    float distance = Vector3.Distance(transform.position, _target.position);
-                    _state = distance > DetectionRange ? State.Idle : distance > AttackRange ? State.Move : State.Attack;
-                }
-                else if (_state != State.Idle) _state = State.Idle;
+                float distance = Vector3.Distance(transform.position, _target.position);
+                _state = distance > DetectionRange ? State.Idle : distance > AttackRange ? State.Move : State.Attack;
                 yield return null;
             }
         }
@@ -83,7 +79,7 @@ namespace Tank
 
         private IEnumerator FireCoroutine()
         {
-            if (_isFire == true || Game.GameManager.Instance.IsStop == true)
+            if (_isFire == true)
             {
                 yield break;
             }

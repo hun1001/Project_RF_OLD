@@ -7,7 +7,7 @@ namespace UI
     {
         protected override void SetOnEnableAction()
         {
-            ChangeCanvas(CanvasChangeType.PlayGame);
+            ChangeCanvas(CanvasChangeType.PlayGame, CanvasNameKeyword.PlayInformationCanvas);
         }
 
         protected override void SetOnDisableAction()
@@ -16,12 +16,12 @@ namespace UI
         }
 
         // TODO: this method will delete
-        public void ChangeCanvas(int index)
+        public void ChangeCanvas(int index, string before)
         {
-            ChangeCanvas((CanvasChangeType)index);
+            ChangeCanvas((CanvasChangeType)index, before);
         }
 
-        public void ChangeCanvas(CanvasChangeType type)
+        public void ChangeCanvas(CanvasChangeType type, string beforeName)
         {
             switch (type)
             {
@@ -30,7 +30,9 @@ namespace UI
                     {
                         if (canvas.Key == CanvasNameKeyword.ItemCanvas)
                             canvas.Value.OnEnableAction?.Invoke();
-                        else
+                        else if((beforeName == CanvasNameKeyword.PlayInformationCanvas || beforeName == CanvasNameKeyword.ControllerCanvas) && (canvas.Key == CanvasNameKeyword.PlayInformationCanvas || canvas.Key == CanvasNameKeyword.ControllerCanvas))
+                            canvas.Value.OnDisableAction?.Invoke();
+                        else if(canvas.Key == beforeName)
                             canvas.Value.OnDisableAction?.Invoke();
                     }
                     break;
@@ -39,7 +41,9 @@ namespace UI
                     {
                         if (canvas.Key == CanvasNameKeyword.ResultCanvas)
                             canvas.Value.OnEnableAction?.Invoke();
-                        else
+                        else if ((beforeName == CanvasNameKeyword.PlayInformationCanvas || beforeName == CanvasNameKeyword.ControllerCanvas) && (canvas.Key == CanvasNameKeyword.PlayInformationCanvas || canvas.Key == CanvasNameKeyword.ControllerCanvas))
+                            canvas.Value.OnDisableAction?.Invoke();
+                        else if (canvas.Key == beforeName)
                             canvas.Value.OnDisableAction?.Invoke();
                     }
                     break;
@@ -48,7 +52,7 @@ namespace UI
                     {
                         if (canvas.Key == CanvasNameKeyword.PlayInformationCanvas || canvas.Key == CanvasNameKeyword.ControllerCanvas)
                             canvas.Value.OnEnableAction?.Invoke();
-                        else
+                        else if (canvas.Key == beforeName)
                             canvas.Value.OnDisableAction?.Invoke();
                     }
                     break;
@@ -57,7 +61,9 @@ namespace UI
                     {
                         if (canvas.Key == CanvasNameKeyword.SettingCanvas)
                             canvas.Value.OnEnableAction?.Invoke();
-                        else
+                        else if ((beforeName == CanvasNameKeyword.PlayInformationCanvas || beforeName == CanvasNameKeyword.ControllerCanvas) && (canvas.Key == CanvasNameKeyword.PlayInformationCanvas || canvas.Key == CanvasNameKeyword.ControllerCanvas))
+                            canvas.Value.OnDisableAction?.Invoke();
+                        else if (canvas.Key == beforeName)
                             canvas.Value.OnDisableAction?.Invoke();
                     }
                     break;

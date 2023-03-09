@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using Scene;
+using Keyword;
 
 namespace UI
 {
@@ -49,17 +50,16 @@ namespace UI
         private void CloseButtonClicked()
         {
             Time.timeScale = 1f;
+            GetComponentInParent<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.PlayGame, CanvasNameKeyword.SettingCanvas);
         }
 
         private void OpenSettingCanvas()
         {
             if (_isOpen == false)
             {
-                if (true) // 결과창, 아이템창이 안떴을때
+                if (Time.timeScale == 1f) // 결과창, 아이템창이 안떴을때
                 {
-                    // var temp = CanvasManager.Instance.GetSceneCanvases(1);
-                    // var temp2 = temp as GameSceneCanvases;
-                    // temp2?.ChangeCanvas(3);
+                    GetComponentInParent<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Setting, CanvasNameKeyword.PlayInformationCanvas);
                 }
             }
             else

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UI;
 using UnityEngine;
 using Util;
+using Keyword;
 
 namespace Opponent
 {
@@ -38,13 +39,8 @@ namespace Opponent
         {
             while (_currentWave < Instance.OpponentSO.Waves.Length)
             {
-                if(Game.GameManager.Instance.IsStop == false)
-                {
-                    Spawn();
-                    yield return new WaitForSeconds(Instance.OpponentSO.Delay[_currentWave]);
-                }
-                
-                yield return null;
+                Spawn();
+                yield return new WaitForSeconds(Instance.OpponentSO.Delay[_currentWave]);
             }
         }
 
@@ -52,17 +48,14 @@ namespace Opponent
         {
             while (true)
             {
-                if (Game.GameManager.Instance.IsStop == false)
+                _gameTime += Time.deltaTime;
+                if (_gameTime >= _delay)
                 {
-                    _gameTime += Time.deltaTime;
-                    if (_gameTime >= _delay)
-                    {
-                        _gameTime = 0;
-                        _currentWave++;
-                        FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item);
-                    }
-                    _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
+                    _gameTime = 0;
+                    _currentWave++;
+                    FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item, CanvasNameKeyword.PlayInformationCanvas);
                 }
+                _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
                 
                 yield return null;
             }

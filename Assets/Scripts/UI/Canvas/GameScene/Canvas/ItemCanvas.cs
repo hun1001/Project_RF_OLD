@@ -22,7 +22,6 @@ namespace UI
         protected override void SetOnEnableAction()
         {
             Time.timeScale = 0f;
-            Game.GameManager.Instance.IsStop = true;
             UpdateGoldText();
             gameObject.SendMessage("ItemShow");
         }
@@ -30,7 +29,6 @@ namespace UI
         protected override void SetOnDisableAction()
         {
             Time.timeScale = 1f;
-            Game.GameManager.Instance.IsStop = false;
         }
 
         public void UpdateGoldText()
@@ -42,7 +40,7 @@ namespace UI
         {
             Time.timeScale = 1f;
             EventManager.TriggerEvent(EventKeyword.OnUpdateGold, PlayerPrefs.GetInt("Gold"));
-            FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.PlayGame);
+            FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.PlayGame, CanvasNameKeyword.ItemCanvas);
         }
     }
 }

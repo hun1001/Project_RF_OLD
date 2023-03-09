@@ -1,6 +1,7 @@
 using UnityEngine;
 using Scene;
 using UnityEngine.UI;
+using System;
 
 namespace UI
 {
@@ -19,6 +20,7 @@ namespace UI
 
         [SerializeField]
         private TextController _destroyText;
+
 
         protected override void Awake()
         {
