@@ -7,6 +7,8 @@ namespace SO
     [CreateAssetMenu(menuName = "SO/Data/Tank")]
     public class TankSO : ScriptableObject
     {
+        public Sprite tankSprite;
+
         [Header("Hp")]
         public float hp;
 
@@ -21,7 +23,7 @@ namespace SO
 
         [Header("Acceleration")]
         public float acceleration;
-        
+
         [Header("Armour")]
         public float armour;
 

@@ -8,6 +8,8 @@ namespace Tank
         [SerializeField]
         private SO.TankSO _tankSO = null;
 
+        public Sprite TankSprite => _tankSO.tankSprite;
+
         public float Hp => _tankSO.hp;
         public float Armour => _tankSO.armour;
         public float MaxSpeed => _tankSO.maxSpeed;

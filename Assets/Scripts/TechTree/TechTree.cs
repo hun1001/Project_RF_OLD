@@ -32,6 +32,9 @@ namespace TechTree
                 {
                     techTreeNode.SetNode(_techTreeSO[index].techTreeNodes[i].name);
 
+                    if (_techTreeSO[index].techTreeNodes[i].GetComponent<Tank.Tank>() is not null)
+                        techTreeNode.SetNodeImage(_techTreeSO[index].techTreeNodes[i].GetComponent<Tank.Tank>().TankSprite);
+
                     SetNode(i, techTreeNode, index);
                 }
                 else

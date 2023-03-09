@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UI;
 
 namespace TechTree
@@ -10,8 +11,11 @@ namespace TechTree
 
         public void SetNode(string text)
         {
-            //(transform as RectTransform).localScale = Vector3.one;
-            _textController.SetText(text);
+            //_textController.SetText(text);
+            transform.localScale = Vector3.one;
         }
+
+        public void SetNodeImage(Sprite sprite) => transform.GetChild(0).GetComponent<Image>().sprite = sprite;
+
     }
 }
