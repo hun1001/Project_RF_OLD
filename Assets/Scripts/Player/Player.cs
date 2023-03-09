@@ -54,7 +54,7 @@ namespace Player
             {
                 float damage = (float)dmg[0];
                 _playInformationCanvas.HpBar.Value -= damage;
-                if(damage >= 0f)
+                if (damage >= 0f)
                 {
                     _cameraManager.GetComponent<Camera_Move>().HitCameraShake();
                 }

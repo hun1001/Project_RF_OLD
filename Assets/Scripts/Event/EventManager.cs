@@ -7,27 +7,25 @@ public static class EventManager
 
     public static void StartListening(string eventName, Action<object[]> listener)
     {
-        if (_eventDictionary.TryGetValue(eventName, out var thisEvent))
+        if (_eventDictionary.ContainsKey(eventName))
         {
-            thisEvent += listener;
+            _eventDictionary[eventName] += listener;
         }
         else
         {
-            thisEvent += listener;
-            _eventDictionary.Add(eventName, thisEvent);
+            _eventDictionary.Add(eventName, listener);
         }
     }
 
     public static void StartListening(string eventName, Action listener)
     {
-        if (_eventDictionary.TryGetValue(eventName, out var thisEvent))
+        if (_eventDictionary.ContainsKey(eventName))
         {
-            thisEvent += args => listener();
+            _eventDictionary[eventName] += args => listener();
         }
         else
         {
-            thisEvent += args => listener();
-            _eventDictionary.Add(eventName, thisEvent);
+            _eventDictionary.Add(eventName, args => listener());
         }
     }
 

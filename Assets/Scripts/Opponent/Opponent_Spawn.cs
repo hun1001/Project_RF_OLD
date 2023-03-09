@@ -26,7 +26,8 @@ namespace Opponent
         {
             StartCoroutine(nameof(SpawnCoroutine));
             StartCoroutine(nameof(UpdateLogic));
-            EventManager.StartListening(Keyword.EventKeyword.OnTankDestroyed + 1, () =>
+
+            EventManager.StartListening("OnTankDestroyed1", () =>
             {
                 StopCoroutine(nameof(SpawnCoroutine));
                 StopCoroutine(nameof(UpdateLogic));
