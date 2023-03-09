@@ -28,7 +28,7 @@ namespace Shell
 
         private void SetSpeed(float speed)
         {
-            GetComponent<TrailRenderer>().Clear();
+            GetComponent<TrailRenderer>()?.Clear();
             _speed = speed;
         }
 
