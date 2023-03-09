@@ -18,6 +18,8 @@ namespace Tank
         private const float DetectionRange = 60f;
         private const float AttackRange = 20f;
 
+        private bool _isStop = false;
+
         private enum State
         {
             Idle,
@@ -40,14 +42,27 @@ namespace Tank
             {
                 PoolManager.Instance.Pool(this.gameObject);
             });
+
+            EventManager.StartListening(Keyword.EventKeyword.OnItemCanvasOpen, () =>
+            {
+                _isStop = true;
+                _state = State.Idle;
+            });
+            EventManager.StartListening(Keyword.EventKeyword.OnItemCanvasClose, () =>
+            {
+                _isStop = false;
+            });
         }
 
         private IEnumerator UpdateLogic()
         {
             while (true)
             {
-                float distance = Vector3.Distance(transform.position, _target.position);
-                _state = distance > DetectionRange ? State.Idle : distance > AttackRange ? State.Move : State.Attack;
+                if (_isStop == false)
+                {
+                    float distance = Vector3.Distance(transform.position, _target.position);
+                    _state = distance > DetectionRange ? State.Idle : distance > AttackRange ? State.Move : State.Attack;
+                }
                 yield return null;
             }
         }
@@ -79,7 +94,7 @@ namespace Tank
 
         private IEnumerator FireCoroutine()
         {
-            if (_isFire == true)
+            if (_isFire == true || _isStop == true)
             {
                 yield break;
             }
