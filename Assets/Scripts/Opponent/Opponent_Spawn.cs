@@ -22,7 +22,18 @@ namespace Opponent
             _waveTimer = Instance.WaveTimer;
         }
 
-        private IEnumerator Start()
+        private void Start()
+        {
+            StartCoroutine(nameof(SpawnCoroutine));
+            StartCoroutine(nameof(UpdateLogic));
+            EventManager.StartListening(Keyword.EventKeyword.OnTankDestroyed + 1, () =>
+            {
+                StopCoroutine(nameof(SpawnCoroutine));
+                StopCoroutine(nameof(UpdateLogic));
+            });
+        }
+
+        private IEnumerator SpawnCoroutine()
         {
             while (_currentWave < Instance.OpponentSO.Waves.Length)
             {
@@ -31,16 +42,20 @@ namespace Opponent
             }
         }
 
-        private void Update()
+        private IEnumerator UpdateLogic()
         {
-            _gameTime += Time.deltaTime;
-            if (_gameTime >= _delay)
+            while (true)
             {
-                _gameTime = 0;
-                _currentWave++;
-                FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item);
+                _gameTime += Time.deltaTime;
+                if (_gameTime >= _delay)
+                {
+                    _gameTime = 0;
+                    _currentWave++;
+                    FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item);
+                }
+                _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
+                yield return null;
             }
-            _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
         }
 
         uint _count = 2;
