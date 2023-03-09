@@ -357,7 +357,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -414,7 +414,7 @@ PrefabInstance:
     - target: {fileID: 1467847358041662925, guid: 178cf82d58dd4744b92c4e56cacc421a,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1467847358041662925, guid: 178cf82d58dd4744b92c4e56cacc421a,
         type: 3}
@@ -429,7 +429,7 @@ PrefabInstance:
     - target: {fileID: 1467847358041662925, guid: 178cf82d58dd4744b92c4e56cacc421a,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1467847358041662925, guid: 178cf82d58dd4744b92c4e56cacc421a,
         type: 3}
@@ -439,17 +439,17 @@ PrefabInstance:
     - target: {fileID: 1467847358041662925, guid: 178cf82d58dd4744b92c4e56cacc421a,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1467847358041662925, guid: 178cf82d58dd4744b92c4e56cacc421a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1467847358041662925, guid: 178cf82d58dd4744b92c4e56cacc421a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1467847358041662925, guid: 178cf82d58dd4744b92c4e56cacc421a,
         type: 3}
@@ -489,12 +489,12 @@ PrefabInstance:
     - target: {fileID: 1467847358041662925, guid: 178cf82d58dd4744b92c4e56cacc421a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -210
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1467847358041662925, guid: 178cf82d58dd4744b92c4e56cacc421a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -140
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1467847358041662925, guid: 178cf82d58dd4744b92c4e56cacc421a,
         type: 3}
@@ -516,6 +516,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: TankHPBar
       objectReference: {fileID: 0}
+    - target: {fileID: 8451762321454325156, guid: 178cf82d58dd4744b92c4e56cacc421a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 850b9acf301434c4b93c95231a4031ba,
+        type: 3}
+    - target: {fileID: 8941347637478540541, guid: 178cf82d58dd4744b92c4e56cacc421a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 850b9acf301434c4b93c95231a4031ba,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 178cf82d58dd4744b92c4e56cacc421a, type: 3}
 --- !u!114 &36019788169380660 stripped
