@@ -18,9 +18,10 @@ namespace Effect
 
         IEnumerator CheckIfAlive()
         {
+            WaitForSeconds waitSecond = new WaitForSeconds(0.5f);
             while (true)
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return waitSecond;
                 if (!GetComponent<ParticleSystem>().IsAlive(true))
                 {
                     PoolManager.Instance.Pool("Assets/Prefabs/Effect/WFX_ExplosiveSmoke.prefab", this.gameObject);

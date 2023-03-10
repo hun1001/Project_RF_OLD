@@ -49,7 +49,6 @@ namespace UI
 
         private void CloseButtonClicked()
         {
-            Time.timeScale = 1f;
             GetComponentInParent<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.PlayGame, CanvasNameKeyword.SettingCanvas);
         }
 
