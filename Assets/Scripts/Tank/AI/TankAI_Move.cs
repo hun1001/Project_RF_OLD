@@ -32,7 +32,7 @@ namespace Tank
             _agent = GetComponent<NavMeshAgent>();
             _target = GameObject.FindGameObjectWithTag("PlayerTank").transform;
 
-            StartCoroutine(nameof(UpdateLogic));
+            //StartCoroutine(nameof(UpdateLogic));
             StartCoroutine(nameof(LateUpdateLogic));
             StartCoroutine(nameof(Checker));
 
@@ -42,14 +42,20 @@ namespace Tank
             });
         }
 
-        private IEnumerator UpdateLogic()
+        //private IEnumerator UpdateLogic()
+        //{
+        //    while (true)
+        //    {
+        //        float distance = Vector3.Distance(transform.position, _target.position);
+        //        _state = distance > DetectionRange ? State.Idle : distance > AttackRange ? State.Move : State.Attack;
+        //        yield return null;
+        //    }
+        //}
+
+        private void Update()
         {
-            while (true)
-            {
-                float distance = Vector3.Distance(transform.position, _target.position);
-                _state = distance > DetectionRange ? State.Idle : distance > AttackRange ? State.Move : State.Attack;
-                yield return null;
-            }
+            float distance = Vector3.Distance(transform.position, _target.position);
+            _state = distance > DetectionRange ? State.Idle : distance > AttackRange ? State.Move : State.Attack;
         }
 
         private IEnumerator LateUpdateLogic()

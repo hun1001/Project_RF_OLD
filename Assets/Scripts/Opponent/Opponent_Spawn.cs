@@ -26,12 +26,12 @@ namespace Opponent
         private void Start()
         {
             StartCoroutine(nameof(SpawnCoroutine));
-            StartCoroutine(nameof(UpdateLogic));
+            //StartCoroutine(nameof(UpdateLogic));
 
             EventManager.StartListening("OnTankDestroyed1", () =>
             {
                 StopCoroutine(nameof(SpawnCoroutine));
-                StopCoroutine(nameof(UpdateLogic));
+                //StopCoroutine(nameof(UpdateLogic));
             });
         }
 
@@ -44,21 +44,33 @@ namespace Opponent
             }
         }
 
-        private IEnumerator UpdateLogic()
+        //private IEnumerator UpdateLogic()
+        //{
+        //    while (true)
+        //    {
+        //        _gameTime += Time.deltaTime;
+        //        if (_gameTime >= _delay)
+        //        {
+        //            _gameTime = 0;
+        //            _currentWave++;
+        //            FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item, CanvasNameKeyword.PlayInformationCanvas);
+        //        }
+        //        _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
+
+        //        yield return null;
+        //    }
+        //}
+
+        private void Update()
         {
-            while (true)
+            _gameTime += Time.deltaTime;
+            if (_gameTime >= _delay)
             {
-                _gameTime += Time.deltaTime;
-                if (_gameTime >= _delay)
-                {
-                    _gameTime = 0;
-                    _currentWave++;
-                    FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item, CanvasNameKeyword.PlayInformationCanvas);
-                }
-                _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
-                
-                yield return null;
+                _gameTime = 0;
+                _currentWave++;
+                FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item, CanvasNameKeyword.PlayInformationCanvas);
             }
+            _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
         }
 
         uint _count = 2;

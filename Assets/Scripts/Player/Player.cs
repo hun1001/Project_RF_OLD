@@ -70,23 +70,35 @@ namespace Player
                 FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Result, CanvasNameKeyword.PlayInformationCanvas);
             });
 
-            StartCoroutine(nameof(UpdateLogic));
+            //StartCoroutine(nameof(UpdateLogic));
         }
 
-        private IEnumerator UpdateLogic()
+        //private IEnumerator UpdateLogic()
+        //{
+        //    while (true)
+        //    {
+        //        Tank_Move move = _playerTank.GetComponent<Tank_Move>();
+        //        move.Move(_controllerCanvas.MoveJoyStick);
+
+        //        Turret_Attack attack = _playerTank.GetComponent<Turret_Attack>();
+        //        _controllerCanvas.AttackJoyStick.AttackButtonImage.fillAmount = 1f - attack.NextFire / attack.FireRate;
+
+        //        Turret_Rotation rotation = _playerTank.GetComponent<Turret_Rotation>();
+        //        rotation.Rotate(_controllerCanvas.AttackJoyStick);
+        //        yield return null;
+        //    }
+        //}
+
+        private void Update()
         {
-            while (true)
-            {
-                Tank_Move move = _playerTank.GetComponent<Tank_Move>();
-                move.Move(_controllerCanvas.MoveJoyStick);
+            Tank_Move move = _playerTank.GetComponent<Tank_Move>();
+            move.Move(_controllerCanvas.MoveJoyStick);
 
-                Turret_Attack attack = _playerTank.GetComponent<Turret_Attack>();
-                _controllerCanvas.AttackJoyStick.AttackButtonImage.fillAmount = 1f - attack.NextFire / attack.FireRate;
+            Turret_Attack attack = _playerTank.GetComponent<Turret_Attack>();
+            _controllerCanvas.AttackJoyStick.AttackButtonImage.fillAmount = 1f - attack.NextFire / attack.FireRate;
 
-                Turret_Rotation rotation = _playerTank.GetComponent<Turret_Rotation>();
-                rotation.Rotate(_controllerCanvas.AttackJoyStick);
-                yield return null;
-            }
+            Turret_Rotation rotation = _playerTank.GetComponent<Turret_Rotation>();
+            rotation.Rotate(_controllerCanvas.AttackJoyStick);
         }
 
         private void LateUpdate()
