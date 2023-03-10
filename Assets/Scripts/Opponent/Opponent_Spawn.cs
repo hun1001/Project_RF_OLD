@@ -26,12 +26,10 @@ namespace Opponent
         private void Start()
         {
             StartCoroutine(nameof(SpawnCoroutine));
-            //StartCoroutine(nameof(UpdateLogic));
 
             EventManager.StartListening("OnTankDestroyed1", () =>
             {
                 StopCoroutine(nameof(SpawnCoroutine));
-                //StopCoroutine(nameof(UpdateLogic));
             });
         }
 
@@ -43,23 +41,6 @@ namespace Opponent
                 yield return new WaitForSeconds(Instance.OpponentSO.Delay[_currentWave]);
             }
         }
-
-        //private IEnumerator UpdateLogic()
-        //{
-        //    while (true)
-        //    {
-        //        _gameTime += Time.deltaTime;
-        //        if (_gameTime >= _delay)
-        //        {
-        //            _gameTime = 0;
-        //            _currentWave++;
-        //            FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item, CanvasNameKeyword.PlayInformationCanvas);
-        //        }
-        //        _waveTimer.SetText(string.Format("Next Wave\n{0:0.0}", _delay - _gameTime));
-
-        //        yield return null;
-        //    }
-        //}
 
         private void Update()
         {

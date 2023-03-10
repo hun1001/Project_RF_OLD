@@ -60,7 +60,6 @@ namespace Tank
 
         private IEnumerator LateUpdateLogic()
         {
-            WaitForEndOfFrame waitForEndOfFrame = new WaitForEndOfFrame();
             while (true)
             {
                 switch (_state)
@@ -77,7 +76,7 @@ namespace Tank
                         StartCoroutine(FireCoroutine());
                         break;
                 }
-                yield return waitForEndOfFrame;
+                yield return new WaitForEndOfFrame();
             }
         }
 

@@ -38,7 +38,6 @@ namespace UI
 
         public void BackCanvas()
         {
-            Time.timeScale = 1f;
             EventManager.TriggerEvent(EventKeyword.OnUpdateGold, PlayerPrefs.GetInt("Gold"));
             FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.PlayGame, CanvasNameKeyword.ItemCanvas);
         }
