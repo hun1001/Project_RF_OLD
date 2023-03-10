@@ -98,6 +98,7 @@ namespace TechTree
             entry.callback.AddListener((data) =>
             {
                 EventManager.TriggerEvent("ChangeModel", _techTreeSO[index].techTreeNodes[i].transform.GetChild(0).gameObject);
+                PlayerPrefs.SetString(PlayerPrefabsKey.PlayerTankKey, _techTreeSO[index].techTreeNodes[i].name);
             });
 
             trigger.triggers.Add(entry);
