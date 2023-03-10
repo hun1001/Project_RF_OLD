@@ -23,6 +23,7 @@ namespace Player
 
         [SerializeField]
         private CameraManager _cameraManager = null;
+        private Camera_Move _cameraMove = null;
 
         private Tank.Tank _playerTank = null;
         public Tank.Tank PlayerTank => _playerTank;
@@ -30,11 +31,15 @@ namespace Player
         private Turret.Turret _playerTurret = null;
         public Turret.Turret PlayerTurret => _playerTurret;
 
+        private Tank_Move _move = null;
+        private Turret_Attack _attack = null;
+        private Turret_Rotation _rotation = null;
+
         private void Awake()
         {
             GameObject tank = PoolManager.Instance.Get(PlayerPrefs.GetString(PlayerPrefabsKey.PlayerTankKey), this.transform);
-            _playerTank = tank.GetComponent<Tank.Tank>();
-            _playerTurret = tank.GetComponent<Turret.Turret>();
+            tank.TryGetComponent(out _playerTank);
+            tank.TryGetComponent(out _playerTurret);
             tank.tag = "PlayerTank";
 
             _playerTank.TankID = 1;
@@ -42,11 +47,15 @@ namespace Player
             _playInformationCanvas.HpBar.MaxValue = _playerTank.Hp;
 
             _cameraManager.SetPlayer(_playerTank.transform);
+            _cameraManager.TryGetComponent(out _cameraMove);
 
-            Turret_Attack attack = _playerTank.GetComponent<Turret_Attack>();
-            EventManager.StartListening(EventKeyword.OnMainBatteryFire, attack.Fire);
+            _playerTank.TryGetComponent(out _move);
+            _playerTank.TryGetComponent(out _attack);
+            _playerTank.TryGetComponent(out _rotation);
 
-            Turret_AimLine aimLine = _playerTank.GetComponent<Turret_AimLine>();
+            EventManager.StartListening(EventKeyword.OnMainBatteryFire, _attack.Fire);
+
+            _playerTank.TryGetComponent<Turret_AimLine>(out var aimLine);
             EventManager.StartListening(EventKeyword.OnPointerDownAttackJoyStick, aimLine.OnAimStart);
             EventManager.StartListening(EventKeyword.OnPointerUpAttackJoyStick, aimLine.OnAimEnd);
 
@@ -91,21 +100,17 @@ namespace Player
 
         private void Update()
         {
-            Tank_Move move = _playerTank.GetComponent<Tank_Move>();
-            move.Move(_controllerCanvas.MoveJoyStick);
+            _move.Move(_controllerCanvas.MoveJoyStick);
 
-            Turret_Attack attack = _playerTank.GetComponent<Turret_Attack>();
-            _controllerCanvas.AttackJoyStick.AttackButtonImage.fillAmount = 1f - attack.NextFire / attack.FireRate;
+            _controllerCanvas.AttackJoyStick.AttackButtonImage.fillAmount = 1f - _attack.NextFire / _attack.FireRate;
 
-            Turret_Rotation rotation = _playerTank.GetComponent<Turret_Rotation>();
-            rotation.Rotate(_controllerCanvas.AttackJoyStick);
+            _rotation.Rotate(_controllerCanvas.AttackJoyStick);
         }
 
         private void LateUpdate()
         {
-            var c = _cameraManager.GetComponent<Camera_Move>();
-            c.SnipingCamera(_controllerCanvas.AttackJoyStick);
-            c.FireCameraRebound(_controllerCanvas.AttackJoyStick);
+            _cameraMove.SnipingCamera(_controllerCanvas.AttackJoyStick);
+            _cameraMove.FireCameraRebound(_controllerCanvas.AttackJoyStick);
         }
     }
 }
