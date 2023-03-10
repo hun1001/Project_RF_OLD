@@ -77,6 +77,7 @@ namespace Player
             EventManager.StartListening(EventKeyword.OnTankDestroyed + _playerTank.TankID, () =>
             {
                 FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Result, CanvasNameKeyword.PlayInformationCanvas);
+                PoolManager.Instance.Pool(PlayerPrefs.GetString(PlayerPrefabsKey.PlayerTankKey), _playerTank.gameObject);
             });
 
             //StartCoroutine(nameof(UpdateLogic));

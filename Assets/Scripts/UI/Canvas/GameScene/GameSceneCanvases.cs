@@ -5,15 +5,15 @@ namespace UI
 {
     public class GameSceneCanvases : SceneCanvases
     {
-        protected override void SetOnEnableAction()
-        {
-            ChangeCanvas(CanvasChangeType.PlayGame, CanvasNameKeyword.PlayInformationCanvas);
-        }
+        // protected override void SetOnEnableAction()
+        // {
+        //     ChangeCanvas(CanvasChangeType.PlayGame, CanvasNameKeyword.PlayInformationCanvas);
+        // }
 
-        protected override void SetOnDisableAction()
-        {
+        // protected override void SetOnDisableAction()
+        // {
 
-        }
+        // }
 
         // TODO: this method will delete
         public void ChangeCanvas(int index, string before)
@@ -30,9 +30,9 @@ namespace UI
                     {
                         if (canvas.Key == CanvasNameKeyword.ItemCanvas)
                             canvas.Value.OnEnableAction?.Invoke();
-                        else if((beforeName == CanvasNameKeyword.PlayInformationCanvas || beforeName == CanvasNameKeyword.ControllerCanvas) && (canvas.Key == CanvasNameKeyword.PlayInformationCanvas || canvas.Key == CanvasNameKeyword.ControllerCanvas))
+                        else if ((beforeName == CanvasNameKeyword.PlayInformationCanvas || beforeName == CanvasNameKeyword.ControllerCanvas) && (canvas.Key == CanvasNameKeyword.PlayInformationCanvas || canvas.Key == CanvasNameKeyword.ControllerCanvas))
                             canvas.Value.OnDisableAction?.Invoke();
-                        else if(canvas.Key == beforeName)
+                        else if (canvas.Key == beforeName)
                             canvas.Value.OnDisableAction?.Invoke();
                     }
                     break;

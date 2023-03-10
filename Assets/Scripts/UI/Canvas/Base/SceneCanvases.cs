@@ -10,18 +10,9 @@ namespace UI
         private Dictionary<string, UI.BaseCanvas> _canvases = null;
         public Dictionary<string, UI.BaseCanvas> Canvases => _canvases;
 
-        public Action OnEnableAction { get; protected set; }
-        public Action OnDisableAction { get; protected set; }
-
         private void Awake()
         {
             _canvases = new();
-
-            OnEnableAction += () => gameObject.SetActive(true);
-            OnDisableAction += () => gameObject.SetActive(false);
-
-            OnEnableAction += SetOnEnableAction;
-            OnDisableAction += SetOnDisableAction;
 
             foreach (Transform c in transform)
             {
@@ -43,8 +34,5 @@ namespace UI
                     c.Value.OnDisableAction?.Invoke();
             }
         }
-
-        protected abstract void SetOnEnableAction();
-        protected abstract void SetOnDisableAction();
     }
 }

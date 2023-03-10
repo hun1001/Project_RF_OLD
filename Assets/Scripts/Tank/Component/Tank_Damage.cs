@@ -49,9 +49,11 @@ namespace Tank
                     PlayerPrefs.SetInt("Destroy", PlayerPrefs.GetInt("Destroy") + 1);
                     EventManager.TriggerEvent(EventKeyword.OnUpdateGold, PlayerPrefs.GetInt("Gold"));
                 }
-
+                else
+                {
+                    PoolManager.Instance.Pool(this.gameObject);
+                }
                 EventManager.TriggerEvent(EventKeyword.OnTankDestroyed + Instance.TankID);
-                PoolManager.Instance.Pool(this.gameObject);
             }
         }
 
