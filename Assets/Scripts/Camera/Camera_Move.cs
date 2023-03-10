@@ -19,7 +19,7 @@ namespace CameraSpace
             {
                 if(_turretAttack == null)
                 {
-                    _turretAttack = GameObject.FindGameObjectWithTag("PlayerTank")?.GetComponent<Turret_Attack>();
+                    GameObject.FindGameObjectWithTag("PlayerTank")?.TryGetComponent(out _turretAttack);
                 }
                 return _turretAttack;
             }
@@ -59,7 +59,7 @@ namespace CameraSpace
             _cmvcam = Instance.CMvcam;
             _transposer = _cmvcam.GetCinemachineComponent<CinemachineTransposer>();
 
-            _turretAttack = GameObject.FindGameObjectWithTag("PlayerTank")?.GetComponent<Turret_Attack>();
+            GameObject.FindGameObjectWithTag("PlayerTank")?.TryGetComponent(out _turretAttack);
 
             _offsetDefalutPosition = _transposer.m_FollowOffset;
         }
@@ -68,20 +68,6 @@ namespace CameraSpace
         {
             _attackRange = _TurretAttack.Range;
         }
-
-        // private void CameraRotation()
-        // {
-        //     if (EventSystem.current.IsPointerOverGameObject() == false)
-        //     {
-        //         if (_joyStick.IsDragging == false && _attackJoyStick.IsDragging == false)
-        //         {
-        //             if (Input.GetMouseButton(0))
-        //             {
-        //                 //_cmvcam.m_Lens.Dutch = 0f;
-        //             }
-        //         }
-        //     }
-        // }
 
         public void SnipingCamera(JoyStick joyStick)
         {

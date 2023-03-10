@@ -12,7 +12,7 @@ namespace Turret
 
         protected void Awake()
         {
-            _lineRenderer = GetComponent<LineRenderer>();
+            TryGetComponent(out _lineRenderer);
 
             //_range = Instance.TurretSO.attackRange;
 

@@ -9,7 +9,7 @@ namespace UI
 
         private void Awake()
         {
-            _text = GetComponent<TMP_Text>();
+            TryGetComponent(out _text);
         }
 
         public void SetText(string text)

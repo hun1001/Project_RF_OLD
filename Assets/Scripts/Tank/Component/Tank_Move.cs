@@ -26,7 +26,7 @@ namespace Tank
 
         private void Awake()
         {
-            _rigidbody = Instance.GetComponent<Rigidbody>();
+            Instance.TryGetComponent<Rigidbody>(out _rigidbody);
             _moveSound = SoundManager.Instance.LoopPlaySound(Instance._moveSound, SoundType.SFX, 0.6f);
             _trackSound = SoundManager.Instance.LoopPlaySound(Instance._trackSound, SoundType.SFX, 0.3f, 0f);
 

@@ -12,7 +12,7 @@ namespace CameraSpace
 
         private void Awake()
         {
-            _camera = GetComponent<CinemachineFreeLook>();
+            TryGetComponent(out _camera);
         }
 
         private void Update()

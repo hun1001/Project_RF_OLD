@@ -62,7 +62,7 @@ namespace Opponent
             {
                 var enemy = PoolManager.Instance.Get(Instance.OpponentSO.Waves[_currentWave].enemyPrefabs[i], Instance.GetRandomSpawnPoint.position, Quaternion.identity);
                 enemy.tag = "OpponentTank";
-                var eT = enemy.GetComponent<Tank.Tank>();
+                enemy.TryGetComponent<Tank.Tank>(out var eT);
                 eT.TankID = _count++;
                 var enemyHPBar = PoolManager.Instance.Get<Bar>("Assets/Prefabs/UI/Bar/HPCanvas.prefab", enemy.transform);
                 enemyHPBar.transform.localPosition = new Vector3(0, 10f, 0);

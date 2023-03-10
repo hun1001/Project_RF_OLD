@@ -12,6 +12,8 @@ namespace Opponent
         private int _stage = 0;
         private bool _isStageClear = false;
 
+        private Vector3 _hpBarOffset = new Vector3(0f, 10f, 0f);
+
         private TextController _remainingEnemyText = null;
 
         private void Awake()
@@ -37,10 +39,10 @@ namespace Opponent
             {
                 var enemy = PoolManager.Instance.Get(Instance.OpponentSO.Waves[_stage].enemyPrefabs[i], Instance.GetRandomSpawnPoint.position, Quaternion.identity);
                 enemy.tag = "OpponentTank";
-                var eT = enemy.GetComponent<Tank.Tank>();
+                enemy.TryGetComponent<Tank.Tank>(out var eT);
                 eT.TankID = _count++;
                 var enemyHPBar = PoolManager.Instance.Get<Bar>("Assets/Prefabs/UI/Bar/HPCanvas.prefab", enemy.transform);
-                enemyHPBar.transform.localPosition = new Vector3(0, 10f, 0);
+                enemyHPBar.transform.localPosition = _hpBarOffset;
                 enemyHPBar.MaxValue = eT.Hp;
                 EventManager.StartListening(Keyword.EventKeyword.OnTankDamaged + eT.TankID, (dmg) =>
                 {
@@ -63,9 +65,9 @@ namespace Opponent
 
         private void StageClear()
         {
-            FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item, CanvasNameKeyword.PlayInformationCanvas);
+            _remainingEnemyText.SetText("Stage Clear!");
             _isStageClear = true;
-            Debug.Log("Stage Clear!");
+            FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item, CanvasNameKeyword.PlayInformationCanvas);
         }
 
         private void NextStage()
@@ -73,7 +75,6 @@ namespace Opponent
             _isStageClear = false;
             _stage++;
             PlayerPrefs.SetInt("RemainingEnemy", Instance.OpponentSO.Waves[_stage].enemyPrefabs.Length);
-            Debug.Log("Next Stage!!");
             Spawn();
         }
     }
