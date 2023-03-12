@@ -12,8 +12,14 @@ namespace UI
         [SerializeField]
         private RectTransform _rectTransformChild = null;
 
+        private Vector2 _pos = Vector2.zero;
         private Vector2 _direction = Vector2.zero;
         private Vector2 _joyStickOriginPosition = Vector2.zero;
+
+        private Transform _camera = null;
+        private Vector3 _heading = Vector3.zero;
+        private Vector2 _headingDir = Vector2.zero;
+        private Vector3 _vector3Dir = Vector3.zero;
 
         private float _radius = 0.0f;
         private float _dragTime = 0.0f;
@@ -25,6 +31,7 @@ namespace UI
         {
             _radius = _rectTransform.rect.width * 0.5f;
             _joyStickOriginPosition = _rectTransform.anchoredPosition;
+            _camera = Camera.main.transform;
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -45,11 +52,17 @@ namespace UI
 
         public void OnDrag(PointerEventData eventData)
         {
-            Vector2 pos = (eventData.position - (Vector2)_rectTransform.position) / (_radius / 10f);
-            pos = Vector2.ClampMagnitude(pos, _radius);
-            _rectTransformChild.localPosition = pos;
+            _pos = (eventData.position - (Vector2)_rectTransform.position) / (_radius / 10f);
+            _rectTransformChild.localPosition = Vector2.ClampMagnitude(_pos, _radius);
 
-            _direction = pos;
+            _heading = _camera.localRotation * Vector3.forward;
+            _vector3Dir = _heading * -_pos.x;
+            _vector3Dir += Quaternion.Euler(0, -90, 0) * _heading * _pos.y;
+
+            _headingDir.x = _vector3Dir.z;
+            _headingDir.y = _vector3Dir.x;
+
+            _direction = _headingDir;
         }
 
         public void OnEndDrag(PointerEventData eventData)
