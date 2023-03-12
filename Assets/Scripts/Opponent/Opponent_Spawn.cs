@@ -68,7 +68,7 @@ namespace Opponent
                 enemyHPBar.transform.localPosition = new Vector3(0, 10f, 0);
                 enemyHPBar.MaxValue = eT.Hp;
 
-                EventManager.StartListening(Keyword.EventKeyword.OnTankDamaged + eT.TankID, (dmg) =>
+                EventManager.StartListening(EventKeyword.OnTankDamaged + eT.TankID, (dmg) =>
                 {
                     float damage = (float)dmg[0];
                     enemyHPBar.Value -= damage;

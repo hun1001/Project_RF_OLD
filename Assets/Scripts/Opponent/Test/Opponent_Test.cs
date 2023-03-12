@@ -68,6 +68,7 @@ namespace Opponent
             _remainingEnemyText.SetText("Stage Clear!");
             _isStageClear = true;
             FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item, CanvasNameKeyword.PlayInformationCanvas);
+            EventManager.TriggerEvent(EventKeyword.OnStageClear);
         }
 
         private void NextStage()
