@@ -39,6 +39,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7737356093161606301}
     m_Modifications:
+    - target: {fileID: 2597880923939895891, guid: fed1c973433d99a49b48b2a6613885bb,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597880923939895891, guid: fed1c973433d99a49b48b2a6613885bb,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3766885274432078140, guid: fed1c973433d99a49b48b2a6613885bb,
         type: 3}
       propertyPath: m_RootOrder
