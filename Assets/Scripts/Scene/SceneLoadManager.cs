@@ -8,13 +8,23 @@ namespace Scene
 {
     public class SceneLoadManager : MonoSingleton<SceneLoadManager>
     {
-        public void LoadScene(int index) => LoadScene((SceneType)index);
+        public void LoadScene(int index)
+        {
+            PoolManager.Instance.Clear();
+            EventManager.ClearEvent();
+            StartCoroutine(LoadMyAsyncScene(index));
+        }
 
         public void LoadScene(SceneType type)
         {
             PoolManager.Instance.Clear();
             EventManager.ClearEvent();
             StartCoroutine(LoadMyAsyncScene((int)type));
+        }
+
+        public void RestartScene()
+        {
+            LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         private IEnumerator LoadMyAsyncScene(int index)

@@ -50,7 +50,7 @@ namespace UI
         private void RestartButtonClicked()
         {
             Time.timeScale = 1f;
-            SceneLoadManager.Instance.LoadScene(SceneType.GameScene);
+            SceneLoadManager.Instance.RestartScene();
         }
     }
 }
