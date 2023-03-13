@@ -920,9 +920,9 @@ MonoBehaviour:
   _skidMark:
   - {fileID: 1523428035}
   - {fileID: 296315702}
-  _moveSound: {fileID: 8300000, guid: 20c6b4abcb364584fa613776dd29b44f, type: 3}
-  _trackSound: {fileID: 8300000, guid: b266510a089fae147a67831f6e26a775, type: 3}
-  _loadSound: {fileID: 8300000, guid: 8caab9dd23c451d4fbbe793d917a41e1, type: 3}
+  MoveSound: {fileID: 8300000, guid: 20c6b4abcb364584fa613776dd29b44f, type: 3}
+  TrackSound: {fileID: 8300000, guid: b266510a089fae147a67831f6e26a775, type: 3}
+  LoadSound: {fileID: 8300000, guid: 8caab9dd23c451d4fbbe793d917a41e1, type: 3}
 --- !u!114 &8227962702631750305
 MonoBehaviour:
   m_ObjectHideFlags: 0

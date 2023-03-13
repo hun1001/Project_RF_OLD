@@ -61,6 +61,7 @@ namespace UI
 
             _headingDir.x = _vector3Dir.z;
             _headingDir.y = _vector3Dir.x;
+            _headingDir = Vector2.ClampMagnitude(_headingDir, _radius);
 
             _direction = _headingDir;
         }

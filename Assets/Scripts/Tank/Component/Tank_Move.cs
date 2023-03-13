@@ -27,8 +27,8 @@ namespace Tank
         private void Awake()
         {
             Instance.TryGetComponent<Rigidbody>(out _rigidbody);
-            _moveSound = SoundManager.Instance.LoopPlaySound(Instance._moveSound, SoundType.SFX, 0.6f);
-            _trackSound = SoundManager.Instance.LoopPlaySound(Instance._trackSound, SoundType.SFX, 0.3f, 0f);
+            _moveSound = SoundManager.Instance.LoopPlaySound(Instance.MoveSound, SoundType.SFX, 0.6f);
+            _trackSound = SoundManager.Instance.LoopPlaySound(Instance.TrackSound, SoundType.SFX, 0.3f, 0f);
 
             _maxSpeed = Instance.MaxSpeed;
             _acceleration = Instance.Acceleration;
@@ -51,7 +51,7 @@ namespace Tank
                 if (_isMove == false)
                 {
                     _isMove = true;
-                    SoundManager.Instance.PlaySound(Instance._loadSound, SoundType.SFX, 0.4f);
+                    SoundManager.Instance.PlaySound(Instance.LoadSound, SoundType.SFX, 0.4f);
                 }
 
                 if (_currentSpeed != _maxSpeed)

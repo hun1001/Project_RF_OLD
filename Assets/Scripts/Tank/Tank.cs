@@ -10,11 +10,16 @@ namespace Tank
 
         public Sprite TankSprite => _tankSO.tankSprite;
 
-        public float Hp => _tankSO.hp;
-        public float Armour => _tankSO.armour;
-        public float MaxSpeed => _tankSO.maxSpeed;
-        public float Acceleration => _tankSO.acceleration;
-        public float RotationSpeed => _tankSO.rotationSpeed;
+        private float _hp;
+        public float Hp => _hp;
+        private float _armour;
+        public float Armour => _armour;
+        private float _maxSpeed;
+        public float MaxSpeed => _maxSpeed;
+        private float _acceleration;
+        public float Acceleration => _acceleration;
+        private float _rotationSpeed;
+        public float RotationSpeed => _rotationSpeed;
 
         [Header("Transform")]
         [SerializeField]
@@ -31,9 +36,9 @@ namespace Tank
         public Transform[] SkidMark => _skidMark;
 
         [Header("Sound")]
-        public AudioClip _moveSound = null;
-        public AudioClip _trackSound = null;
-        public AudioClip _loadSound = null;
+        public AudioClip MoveSound = null;
+        public AudioClip TrackSound = null;
+        public AudioClip LoadSound = null;
 
         private uint _tankID = 0;
 
@@ -43,14 +48,22 @@ namespace Tank
             set => _tankID = _tankID == 0 ? value : _tankID;
         }
 
+        private void Awake()
+        {
+            _hp = _tankSO.hp;
+            _armour = _tankSO.armour;
+            _maxSpeed = _tankSO.maxSpeed;
+            _acceleration = _tankSO.acceleration;
+            _rotationSpeed = _tankSO.rotationSpeed;
+        }
+
         public void UpgradeStat(float percent)
         {
-            percent /= 100;
-            _tankSO.hp += _tankSO.hp * percent;
-            _tankSO.maxSpeed += _tankSO.maxSpeed * percent;
-            _tankSO.acceleration += _tankSO.acceleration * percent;
-            _tankSO.rotationSpeed += _tankSO.rotationSpeed * percent;
-            Debug.Log("Upgrade Stat");
+            percent = percent * 0.01f;
+            _hp = _tankSO.hp * percent;
+            _maxSpeed = _tankSO.maxSpeed * percent;
+            _acceleration = _tankSO.acceleration * percent;
+            _rotationSpeed = _tankSO.rotationSpeed * percent;
         }
     }
 }
