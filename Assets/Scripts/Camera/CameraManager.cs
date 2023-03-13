@@ -14,7 +14,6 @@ namespace CameraSpace
         public void SetPlayer(Transform player)
         {
             CMvcam.Follow = player;
-            CMvcam.LookAt = player;
         }
     }
 }
