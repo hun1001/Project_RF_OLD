@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 6014367455950490339}
   - component: {fileID: 6014367455950490338}
   m_Layer: 0
-  m_Name: Terrain
+  m_Name: grass_map_tutorial_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
