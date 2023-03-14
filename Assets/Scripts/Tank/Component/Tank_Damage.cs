@@ -43,12 +43,6 @@ namespace Tank
 
             if (_currentHealth <= 0)
             {
-                if (CompareTag("PlayerTank") == false)
-                {
-                    PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") + 2);
-                    PlayerPrefs.SetInt("Destroy", PlayerPrefs.GetInt("Destroy") + 1);
-                    EventManager.TriggerEvent(EventKeyword.OnUpdateGold, PlayerPrefs.GetInt("Gold"));
-                }
                 EventManager.TriggerEvent(EventKeyword.OnTankDestroyed + Instance.TankID);
                 PoolManager.Instance.Pool(this.gameObject);
             }

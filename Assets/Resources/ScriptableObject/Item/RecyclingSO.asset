@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1d84d2bde7ff0343a062c23dd1c8d4f, type: 3}
-  m_Name: SideMachineGunSO
+  m_Name: RecyclingSO
   m_EditorClassIdentifier: 
-  itemID: side_machingun
-  itemName: "\uC591\uC606 \uAE30\uAD00\uCD1D"
-  rarity: 2
-  description: "\uC790\uB3D9\uC73C\uB85C \uC591\uC606 \uAC01\uB3C4\uB85C \uBC1C\uC0AC\uD558\uB294
-    7mm \uB300 \uAE30\uAD00\uCD1D \uC7A5\uCC29"
-  itemSprite: {fileID: 21300000, guid: 58761b54b7c274d49b64f3ec752cf238, type: 3}
-  NecessaryGold: 4
+  itemID: recycling
+  itemName: "\uC7AC\uD65C\uC6A9"
+  rarity: 3
+  description: "\uC801\uD0F1\uD06C\uB97C \uACA9\uD30C\uD560\uB54C\uB9C8\uB2E4 \uCCB4\uB825
+    2% \uD68C\uBCF5"
+  itemSprite: {fileID: 21300000, guid: 7535f2c158c13164584cf0d7f198d141, type: 3}
+  NecessaryGold: 11

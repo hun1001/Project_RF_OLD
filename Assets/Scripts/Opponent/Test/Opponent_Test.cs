@@ -29,6 +29,13 @@ namespace Opponent
                     NextStage();
                 }
             });
+
+            EventManager.StartListening(Keyword.EventKeyword.OnOpponentDestroyed, () =>
+            {
+                PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") + 2);
+                PlayerPrefs.SetInt("Destroy", PlayerPrefs.GetInt("Destroy") + 1);
+                EventManager.TriggerEvent(EventKeyword.OnUpdateGold, PlayerPrefs.GetInt("Gold"));
+            });
         }
 
         uint _count = 2;
@@ -53,6 +60,7 @@ namespace Opponent
                 {
                     PlayerPrefs.SetInt("RemainingEnemy", PlayerPrefs.GetInt("RemainingEnemy") - 1);
                     _remainingEnemyText.SetText(string.Format("Remaining Enemy\n{0:0}", PlayerPrefs.GetInt("RemainingEnemy")));
+                    EventManager.TriggerEvent(Keyword.EventKeyword.OnOpponentDestroyed);
 
                     if(PlayerPrefs.GetInt("RemainingEnemy") <= 0)
                     {
@@ -67,6 +75,7 @@ namespace Opponent
         {
             _remainingEnemyText.SetText("Stage Clear!");
             _isStageClear = true;
+            PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") + 10);
             FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Item, CanvasNameKeyword.PlayInformationCanvas);
             EventManager.TriggerEvent(EventKeyword.OnStageClear);
         }
