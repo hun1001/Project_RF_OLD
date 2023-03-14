@@ -15,12 +15,20 @@ namespace Turret
 
         Vector3 _dir = Vector3.zero;
 
+        private Transform _target = null;
+
         protected void Awake()
         {
             _turret = Instance.Body;
             _rotationSpeed = Instance.TurretSO.rotationSpeed;
+            if (CompareTag("PlayerTank") == false)
+            {
+                _target = GameObject.FindGameObjectWithTag("PlayerTank").transform;
+                StartCoroutine(LookTarget());
+            }
         }
 
+        #region Player Function
         public virtual void Rotate(JoyStick attackJoyStick)
         {
             if (attackJoyStick.Direction != Vector2.zero)
@@ -28,7 +36,7 @@ namespace Turret
                 _dir.x = attackJoyStick.Horizontal;
                 _dir.z = attackJoyStick.Vertical;
             }
-            
+
             _isAim = true;
             StopCoroutine(nameof(Release));
 
@@ -62,5 +70,27 @@ namespace Turret
                 yield return null;
             }
         }
+        #endregion
+
+        #region AI Function
+        private IEnumerator LookTarget()
+        {
+            while (true)
+            {
+                if (_target is null)
+                {
+                    continue;
+                }
+
+                Vector3 direction = _target.position - _turret.position;
+                // float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
+                // Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up);
+                // _turret.rotation = Quaternion.Slerp(_turret.rotation, rotation, 1);
+                _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(direction.normalized), 180 * Time.deltaTime * _rotationSpeed);
+
+                yield return null;
+            }
+        }
+        #endregion
     }
 }
