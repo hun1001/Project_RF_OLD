@@ -29,6 +29,18 @@ namespace UI
                 OpenSettingCanvas();
             }
         }
+
+        private void OnApplicationPause(bool pause)
+        {
+            if (pause)
+            {
+                if (Time.timeScale == 1f) // 결과창, 아이템창이 안떴을때
+                {
+                    GetComponentInParent<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Setting, CanvasNameKeyword.PlayInformationCanvas);
+                }
+            }
+        }
+
         protected override void SetOnEnableAction()
         {
             Time.timeScale = 0f;

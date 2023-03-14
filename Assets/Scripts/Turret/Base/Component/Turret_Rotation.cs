@@ -85,7 +85,7 @@ namespace Turret
                 // float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
                 // Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up);
                 // _turret.rotation = Quaternion.Slerp(_turret.rotation, rotation, 1);
-                _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(direction.normalized), 180 * Time.deltaTime * _rotationSpeed);
+                _turret.rotation = Quaternion.RotateTowards(_turret.rotation, Quaternion.LookRotation(direction.normalized), 180 * Time.deltaTime);
 
                 yield return null;
             }

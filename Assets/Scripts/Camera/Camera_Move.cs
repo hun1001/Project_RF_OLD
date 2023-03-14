@@ -69,6 +69,11 @@ namespace CameraSpace
             _attackRange = _TurretAttack.Range;
         }
 
+        private void OnApplicationQuit()
+        {
+            _transposer.m_FollowOffset = _offsetDefalutPosition;
+        }
+
         public void SnipingCamera(JoyStick joyStick)
         {
             if (joyStick.IsDragging == true)
