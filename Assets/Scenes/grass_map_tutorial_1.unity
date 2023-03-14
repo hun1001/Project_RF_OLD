@@ -1315,6 +1315,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass_map_tutorial_1
       objectReference: {fileID: 0}
+    - target: {fileID: 6014367454447881586, guid: 7abf0412e21dcb9479c9d3c8d300902b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6014367454447881587, guid: 7abf0412e21dcb9479c9d3c8d300902b,
         type: 3}
       propertyPath: m_RootOrder
