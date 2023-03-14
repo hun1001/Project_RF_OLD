@@ -6,8 +6,12 @@ namespace Item
 {
     public class Item_AutoHeal : Item
     {
+        protected Transform _parent;
+
         public override void AddItem()
         {
+            _parent = transform.parent;
+
             StartCoroutine(RepairCoroutine());
         }
 
@@ -17,7 +21,7 @@ namespace Item
             while (true)
             {
                 yield return waitSeconds;
-                transform.parent.SendMessage("Repair", 0.1f, SendMessageOptions.DontRequireReceiver);
+                _parent.SendMessage("Repair", 0.1f, SendMessageOptions.DontRequireReceiver);
             }
         }
     }

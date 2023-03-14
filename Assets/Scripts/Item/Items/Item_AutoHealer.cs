@@ -12,7 +12,7 @@ namespace Item
             while (true)
             {
                 yield return waitSeconds;
-                transform.parent.SendMessage("Repair", 0.2f, SendMessageOptions.DontRequireReceiver);
+                _parent.SendMessage("Repair", 0.2f, SendMessageOptions.DontRequireReceiver);
             }
         }
     }

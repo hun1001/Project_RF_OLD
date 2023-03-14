@@ -5,11 +5,15 @@ namespace Item
 {
     public class Item_Recycling : Item
     {
+        private Transform _parent = null;
+
         public override void AddItem()
         {
+            _parent = transform.parent;
+
             EventManager.StartListening(EventKeyword.OnOpponentDestroyed, () =>
             {
-                transform.parent.SendMessage("Repair", 2f, SendMessageOptions.DontRequireReceiver);
+                _parent.SendMessage("Repair", 2f, SendMessageOptions.DontRequireReceiver);
             });
         }
     }
