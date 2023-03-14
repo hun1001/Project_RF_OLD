@@ -1,4 +1,5 @@
 using Sound;
+using System.Collections;
 using UnityEngine;
 using Util;
 
@@ -8,21 +9,27 @@ namespace Turret
     {
         private Transform _firePoint = null;
 
-        //private AttackCancel _attackCancel = null;
-
         private float _shellSpeed = 1f;
 
         private float _range = 10f;
+        public float Range => _range;
 
         private float _fireRate = 1f;
+        public float FireRate => _fireRate;
 
         private float _nextFire = 0f;
+        public float NextFire => _nextFire;
 
         private bool _isReload = false;
 
+        #region AI Variable
+        private bool _isFire = false;
+
+        private Tank.Tank_Move _tankMove = null;
+        #endregion
+
         protected void Awake()
         {
-
             _firePoint = Instance.FirePoint;
 
             _shellSpeed = Instance.TurretSO.shellSpeed;
@@ -30,29 +37,38 @@ namespace Turret
             _range = Instance.TurretSO.attackRange;
 
             _fireRate = Instance.TurretSO.reloadSpeed;
+
+            if (CompareTag("PlayerTank"))
+            {
+                StartCoroutine(PlayerUpdateLogic());
+            }
+            else
+            {
+                _tankMove = GetComponent<Tank.Tank_Move>();
+                StartCoroutine(LateUpdateLogic());
+            }
         }
 
-        protected virtual void Update()
+        #region Player Function
+        private IEnumerator PlayerUpdateLogic()
         {
-            if (_nextFire > 0)
+            while (true)
             {
-                _nextFire -= Time.deltaTime;
+                if (_nextFire > 0)
+                {
+                    _nextFire -= Time.deltaTime;
+                }
+                if (_isReload == true && _nextFire < Instance._reloadSound.length - 0.5f)
+                {
+                    _isReload = false;
+                    SoundManager.Instance.PlaySound(Instance._reloadSound, SoundType.SFX, 0.5f);
+                }
+                yield return null;
             }
-            if (_isReload == true && _nextFire < Instance._reloadSound.length - 0.5f)
-            {
-                _isReload = false;
-                SoundManager.Instance.PlaySound(Instance._reloadSound, SoundType.SFX, 0.5f);
-            }
-        }
+        } 
 
         public virtual void Fire()
         {
-            // if (_attackCancel.IsCancelAttack == true)
-            // {
-            //     _attackCancel.CancelAttackReset();
-            //     return;
-            // }
-
             if (_nextFire > 0)
             {
                 return;
@@ -72,9 +88,47 @@ namespace Turret
         {
             SoundManager.Instance.PlaySound(Instance._shellDropSound, SoundType.SFX, 0.5f);
         }
+        #endregion
 
-        public float Range => _range;
-        public float NextFire => _nextFire;
-        public float FireRate => _fireRate;
+        #region AI Function
+        private IEnumerator LateUpdateLogic()
+        {
+            while (true)
+            {
+                if(_tankMove.State == Tank.TankStateType.Attack)
+                {
+                    StartCoroutine(AiFireCoroutine());
+                }
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        private IEnumerator AiFireCoroutine()
+        {
+            if (_isFire == true)
+            {
+                yield break;
+            }
+
+            _isFire = true;
+
+            float fireTime = 0f;
+
+            while (_tankMove.State == Tank.TankStateType.Attack)
+            {
+                fireTime += Time.deltaTime;
+                if (fireTime > 1f)
+                {
+                    fireTime = 0f;
+                    var shell = PoolManager.Instance.Get("Shell", _firePoint.position, _firePoint.rotation);
+                    shell.SendMessage("SetSpeed", 20f);
+                    shell.SendMessage("SetRange", 20f);
+                }
+                yield return null;
+            }
+
+            _isFire = false;
+        }
+        #endregion
     }
 }

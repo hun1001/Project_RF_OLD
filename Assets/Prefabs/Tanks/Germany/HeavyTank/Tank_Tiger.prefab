@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 296315702}
   m_Layer: 7
-  m_Name: Pos (1)
+  m_Name: RightPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -299,7 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1523428035}
   m_Layer: 7
-  m_Name: Pos
+  m_Name: LeftPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

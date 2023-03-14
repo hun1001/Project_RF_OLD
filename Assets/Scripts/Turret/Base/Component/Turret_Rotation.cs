@@ -8,14 +8,13 @@ namespace Turret
     public class Turret_Rotation : Base.CustomComponent<Turret>
     {
         private Transform _turret = null;
+        private Transform _target = null;
 
         private float _rotationSpeed = 1f;
 
         private bool _isAim = false;
 
         Vector3 _dir = Vector3.zero;
-
-        private Transform _target = null;
 
         protected void Awake()
         {

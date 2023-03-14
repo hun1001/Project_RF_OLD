@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Turret
@@ -18,25 +19,34 @@ namespace Turret
 
             _lineRenderer.enabled = false;
             _lineRenderer.positionCount = 2;
+            if (CompareTag("PlayerTank"))
+            {
+                StartCoroutine(UpdateLogic());
+            }
         }
 
-        private void Update()
+        private IEnumerator UpdateLogic()
         {
-            _lineRenderer.SetPosition(0, Instance.FirePoint.position);
-
-            if (Physics.Raycast(Instance.FirePoint.position, Instance.FirePoint.forward, out RaycastHit hit, _range) && hit.transform.CompareTag("OpponentTank"))
+            while (true)
             {
-                _lineRenderer.SetPosition(1, hit.point);
-                _lineRenderer.startColor = Color.green;
-                _lineRenderer.endColor = Color.green;
+                _lineRenderer.SetPosition(0, Instance.FirePoint.position);
 
-                hit.transform.SendMessage("Aiming", SendMessageOptions.DontRequireReceiver);
-            }
-            else
-            {
-                _lineRenderer.startColor = Color.red;
-                _lineRenderer.endColor = Color.red;
-                _lineRenderer.SetPosition(1, Instance.FirePoint.position + Instance.FirePoint.forward * _range);
+                if (Physics.Raycast(Instance.FirePoint.position, Instance.FirePoint.forward, out RaycastHit hit, _range) && hit.transform.CompareTag("OpponentTank"))
+                {
+                    _lineRenderer.SetPosition(1, hit.point);
+                    _lineRenderer.startColor = Color.green;
+                    _lineRenderer.endColor = Color.green;
+
+                    hit.transform.SendMessage("Aiming", SendMessageOptions.DontRequireReceiver);
+                }
+                else
+                {
+                    _lineRenderer.startColor = Color.red;
+                    _lineRenderer.endColor = Color.red;
+                    _lineRenderer.SetPosition(1, Instance.FirePoint.position + Instance.FirePoint.forward * _range);
+                }
+
+                yield return null;
             }
         }
 

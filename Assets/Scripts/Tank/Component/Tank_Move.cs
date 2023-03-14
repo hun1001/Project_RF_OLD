@@ -29,8 +29,6 @@ namespace Tank
         #endregion
 
         #region AI Variable
-        [SerializeField]
-        private Transform _firePoint = null;
 
         private NavMeshAgent _agent = null;
         private Transform _target = null;
@@ -39,17 +37,10 @@ namespace Tank
         private const float AttackRange = 20f;
         private float _aimTime = 0f;
 
-        private bool _isFire = false;
         private bool _isAiming = false;
 
-        private enum State
-        {
-            Idle,
-            Move,
-            Attack,
-        }
-
-        private State _state = State.Idle;
+        private TankStateType _state = TankStateType.Idle;
+        public TankStateType State => _state;
         #endregion
 
         private void Awake()
@@ -173,7 +164,7 @@ namespace Tank
             while (true)
             {
                 float distance = Vector3.Distance(transform.position, _target.position);
-                _state = distance > DetectionRange ? State.Idle : distance > AttackRange ? State.Move : State.Attack;
+                _state = distance > DetectionRange ? TankStateType.Idle : distance > AttackRange ? TankStateType.Move : TankStateType.Attack;
                 yield return null;
             }
         }
@@ -184,62 +175,34 @@ namespace Tank
             {
                 switch (_state)
                 {
-                    case State.Idle:
+                    case TankStateType.Idle:
                         _agent.isStopped = true;
                         break;
-                    case State.Move:
+                    case TankStateType.Move:
                         _agent.isStopped = false;
                         _agent.SetDestination(_target.position);
                         break;
-                    case State.Attack:
+                    case TankStateType.Attack:
                         _agent.isStopped = true;
-                        StartCoroutine(FireCoroutine());
                         break;
                 }
                 yield return new WaitForEndOfFrame();
             }
         }
 
-        private IEnumerator FireCoroutine()
-        {
-            if (_isFire == true)
-            {
-                yield break;
-            }
+        //private void FindMovePoint()
+        //{
+        //    Vector3 movePoint = _target.position - transform.position;
+        //    movePoint = movePoint.normalized * Random.Range(10f, AttackRange);
 
-            _isFire = true;
+        //    NavMeshPath path = new NavMeshPath();
 
-            float fireTime = 0f;
+        //    {
+        //        movePoint = movePoint.normalized * Random.Range(5f, AttackRange);
+        //    }
 
-            while (_state == State.Attack)
-            {
-                fireTime += Time.deltaTime;
-                if (fireTime > 1f)
-                {
-                    fireTime = 0f;
-                    var shell = PoolManager.Instance.Get("Shell", _firePoint.position, _firePoint.rotation);
-                    shell.SendMessage("SetSpeed", 20f);
-                    shell.SendMessage("SetRange", 20f);
-                }
-                yield return null;
-            }
-
-            _isFire = false;
-        }
-
-        private void FindMovePoint()
-        {
-            Vector3 movePoint = _target.position - transform.position;
-            movePoint = movePoint.normalized * Random.Range(10f, AttackRange);
-
-            NavMeshPath path = new NavMeshPath();
-
-            {
-                movePoint = movePoint.normalized * Random.Range(5f, AttackRange);
-            }
-
-            _agent.SetDestination(movePoint);
-        }
+        //    _agent.SetDestination(movePoint);
+        //}
 
         private void Aiming()
         {
