@@ -18,4 +18,4 @@ MonoBehaviour:
   description: "\uC790\uB3D9\uC73C\uB85C \uC591\uC606 \uAC01\uB3C4\uB85C \uBC1C\uC0AC\uD558\uB294
     7mm \uB300 \uAE30\uAD00\uCD1D \uC7A5\uCC29"
   itemSprite: {fileID: 21300000, guid: 58761b54b7c274d49b64f3ec752cf238, type: 3}
-  NecessaryGold: 4
+  NecessaryGold: 6
