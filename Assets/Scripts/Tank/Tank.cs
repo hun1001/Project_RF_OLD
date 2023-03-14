@@ -93,7 +93,7 @@ namespace Tank
 
         public void UpgradeAllStat(float percent)
         {
-            percent = percent * 0.01f;
+            percent *= 0.01f;
 
             _impermanentHp = _tankSO.hp * percent;
             _impermanentMaxSpeed = _tankSO.maxSpeed * percent;
@@ -105,7 +105,7 @@ namespace Tank
 
         public void TankUpgradePermanentStat(TankStatType statType, float percent)
         {
-            percent = percent * 0.01f;
+            percent *= 0.01f;
 
             switch (statType)
             {

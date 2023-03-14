@@ -825,9 +825,9 @@ MonoBehaviour:
   _turretSO: {fileID: 11400000, guid: 41c62885e8920314da56ed18edbf12c8, type: 2}
   _body: {fileID: 2184629908500434926}
   _firePoint: {fileID: 108826063648446100}
-  _fireSound: {fileID: 8300000, guid: 68d23c5288aa7e94bb0e7e7bfe981274, type: 3}
-  _reloadSound: {fileID: 8300000, guid: 5862ded20a98315438c16f23ebc768b2, type: 3}
-  _shellDropSound: {fileID: 8300000, guid: 292cb62458e262d49b6d41270a222838, type: 3}
+  FireSound: {fileID: 8300000, guid: 68d23c5288aa7e94bb0e7e7bfe981274, type: 3}
+  ReloadSound: {fileID: 8300000, guid: 5862ded20a98315438c16f23ebc768b2, type: 3}
+  ShellDropSound: {fileID: 8300000, guid: 292cb62458e262d49b6d41270a222838, type: 3}
 --- !u!114 &7723650156400866274
 MonoBehaviour:
   m_ObjectHideFlags: 0

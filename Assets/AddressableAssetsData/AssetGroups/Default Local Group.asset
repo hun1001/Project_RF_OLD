@@ -125,6 +125,10 @@ MonoBehaviour:
     m_Address: High_Energy
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: cf0cdb0f246c4774c9c42f0f35ecdd30
+    m_Address: High_Energypack
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 83677132a06df9140834c0d848060f27, type: 2}
   m_SchemaSet:

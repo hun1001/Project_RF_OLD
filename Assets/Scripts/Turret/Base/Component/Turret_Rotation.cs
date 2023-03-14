@@ -19,7 +19,7 @@ namespace Turret
         protected void Start()
         {
             _turret = Instance.Body;
-            _rotationSpeed = Instance.TurretSO.rotationSpeed;
+            _rotationSpeed = Instance.RotationSpeed;
             if (CompareTag("PlayerTank") == false)
             {
                 _target = GameObject.FindGameObjectWithTag("PlayerTank").transform;

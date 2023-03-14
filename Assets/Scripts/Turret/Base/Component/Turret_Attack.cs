@@ -32,11 +32,11 @@ namespace Turret
         {
             _firePoint = Instance.FirePoint;
 
-            _shellSpeed = Instance.TurretSO.shellSpeed;
+            _shellSpeed = Instance.ShellSpeed;
 
-            _range = Instance.TurretSO.attackRange;
+            _range = Instance.AttackRange;
 
-            _fireRate = Instance.TurretSO.reloadSpeed;
+            _fireRate = Instance.ReloadSpeed;
 
             if (CompareTag("PlayerTank"))
             {
@@ -58,10 +58,10 @@ namespace Turret
                 {
                     _nextFire -= Time.deltaTime;
                 }
-                if (_isReload == true && _nextFire < Instance._reloadSound.length - 0.5f)
+                if (_isReload == true && _nextFire < Instance.ReloadSound.length - 0.5f)
                 {
                     _isReload = false;
-                    SoundManager.Instance.PlaySound(Instance._reloadSound, SoundType.SFX, 0.5f);
+                    SoundManager.Instance.PlaySound(Instance.ReloadSound, SoundType.SFX, 0.5f);
                 }
                 yield return null;
             }
@@ -77,7 +77,7 @@ namespace Turret
             _nextFire = _fireRate;
             _isReload = true;
 
-            SoundManager.Instance.PlaySound(Instance._fireSound, SoundType.SFX, 0.7f);
+            SoundManager.Instance.PlaySound(Instance.FireSound, SoundType.SFX, 0.7f);
             var shell = PoolManager.Instance.Get("Shell", _firePoint.position, _firePoint.rotation);
             shell.SendMessage("SetSpeed", _shellSpeed);
             shell.SendMessage("SetRange", _range);
@@ -86,7 +86,7 @@ namespace Turret
 
         private void ShellDropSoundPlay()
         {
-            SoundManager.Instance.PlaySound(Instance._shellDropSound, SoundType.SFX, 0.5f);
+            SoundManager.Instance.PlaySound(Instance.ShellDropSound, SoundType.SFX, 0.5f);
         }
         #endregion
 
