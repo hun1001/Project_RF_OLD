@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1d84d2bde7ff0343a062c23dd1c8d4f, type: 3}
-  m_Name: SideMachineGunSO
+  m_Name: Healkit
   m_EditorClassIdentifier: 
-  itemID: side_machingun
-  itemName: "\uC591\uC606 \uAE30\uAD00\uCD1D"
+  itemID: healkit
+  itemName: "\uC218\uB9AC\uD0A4\uD2B8"
   rarity: 2
-  description: "\uC790\uB3D9\uC73C\uB85C \uC591\uC606 \uAC01\uB3C4\uB85C \uBC1C\uC0AC\uD558\uB294
-    7mm \uB300 \uAE30\uAD00\uCD1D \uC7A5\uCC29"
-  itemSprite: {fileID: 21300000, guid: 58761b54b7c274d49b64f3ec752cf238, type: 3}
-  NecessaryGold: 6
+  description: "\uB9E4 \uC6E8\uC774\uBE0C \uC885\uB8CC\uC2DC \uCCB4\uB825\uC744 5%
+    \uD68C\uBCF5\uD569\uB2C8\uB2E4"
+  itemSprite: {fileID: 21300000, guid: 708222a234b41b440b05130b0b8e603a, type: 3}
+  NecessaryGold: 5
