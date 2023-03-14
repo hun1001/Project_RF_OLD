@@ -10,16 +10,45 @@ namespace Tank
 
         public Sprite TankSprite => _tankSO.tankSprite;
 
+        #region Tank Stat
+
+        // Permanent - 영구적인 / Impermanent - 비영구적인
+
+        #region HP
         private float _hp;
         public float Hp => _hp;
+        private float _impermanentHp = 0f;
+        private float _permanentHp = 0f;
+        #endregion
+
+        #region Armour
         private float _armour;
         public float Armour => _armour;
+        private float _impermanentArmour = 0f;
+        private float _permanentArmour = 0f;
+        #endregion
+
+        #region MaxSpeed
         private float _maxSpeed;
         public float MaxSpeed => _maxSpeed;
+        private float _impermanentMaxSpeed = 0f;
+        private float _permanentMaxSpeed = 0f;
+        #endregion
+
+        #region Acceleration
         private float _acceleration;
         public float Acceleration => _acceleration;
+        private float _impermanentAcceleration = 0f;
+        private float _permanentAcceleration = 0f;
+        #endregion
+
+        #region RotationSpeed
         private float _rotationSpeed;
         public float RotationSpeed => _rotationSpeed;
+        private float _impermanentRotationSpeed = 0f;
+        private float _permanentRotationSpeed = 0f;
+        #endregion
+        #endregion
 
         [Header("Transform")]
         [SerializeField]
@@ -50,40 +79,66 @@ namespace Tank
 
         private void Awake()
         {
-            _hp = _tankSO.hp;
-            _armour = _tankSO.armour;
-            _maxSpeed = _tankSO.maxSpeed;
-            _acceleration = _tankSO.acceleration;
-            _rotationSpeed = _tankSO.rotationSpeed;
+            SettingStat();
+        }
+
+        private void SettingStat()
+        {
+            _hp = _tankSO.hp + _impermanentHp + _permanentHp;
+            _armour = _tankSO.armour + _impermanentArmour + _permanentArmour;
+            _maxSpeed = _tankSO.maxSpeed + _impermanentMaxSpeed + _permanentMaxSpeed;
+            _acceleration = _tankSO.acceleration + _impermanentAcceleration + _permanentAcceleration;
+            _rotationSpeed = _tankSO.rotationSpeed + _impermanentRotationSpeed + _permanentRotationSpeed;
         }
 
         public void UpgradeAllStat(float percent)
         {
-            
+            percent = percent * 0.01f;
+
+            _impermanentHp = _tankSO.hp * percent;
+            _impermanentMaxSpeed = _tankSO.maxSpeed * percent;
+            _impermanentAcceleration = _tankSO.acceleration * percent;
+            _impermanentRotationSpeed = _tankSO.rotationSpeed * percent;
+
+            SettingStat();
         }
 
-        public void UpgradeHpStat(float percent)
+        public void TankUpgradePermanentStat(TankStatType statType, float percent)
         {
             percent = percent * 0.01f;
-            _hp = _tankSO.hp + _tankSO.hp * percent;
-        }
 
-        public void UpgradeSpeedStat(float percent)
-        {
-            percent = percent * 0.01f;
-            _maxSpeed = _tankSO.maxSpeed + _tankSO.maxSpeed * percent;
-        }
+            switch (statType)
+            {
+                case TankStatType.Hp:
+                    {
+                        _permanentHp += _tankSO.hp * percent;
+                    }
+                    break;
+                case TankStatType.Armour:
+                    {
+                        _permanentArmour += _tankSO.armour * percent;
+                    }
+                    break;
+                case TankStatType.MaxSpeed:
+                    {
+                        _permanentMaxSpeed += _tankSO.maxSpeed * percent;
+                    }
+                    break;
+                case TankStatType.Acceleration:
+                    {
+                        _permanentAcceleration += _tankSO.acceleration * percent;
+                    }
+                    break;
+                case TankStatType.RotationSpeed:
+                    {
+                        _permanentRotationSpeed += _tankSO.rotationSpeed * percent;
+                    }
+                    break;
+                default:
+                    break;
+            }
 
-        public void UpgradeAccelerationStat(float percent)
-        {
-            percent = percent * 0.01f;
-            _acceleration = _tankSO.acceleration + _tankSO.acceleration * percent;
-        }
-
-        public void UpgradeRotationSpeedStat(float percent)
-        {
-            percent = percent * 0.01f;
-            _rotationSpeed = _tankSO.rotationSpeed + _tankSO.rotationSpeed * percent;
+            SettingStat();
         }
     }
 }

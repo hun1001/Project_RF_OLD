@@ -15,15 +15,15 @@ namespace Tank
 
         public void Repair(float percent)
         {
-            if (_currentHealth + Instance.Hp * (percent / 100) > Instance.Hp)
+            if (_currentHealth + Instance.Hp * (percent * 0.01f) > Instance.Hp)
             {
                 _currentHealth = Instance.Hp;
             }
             else
             {
-                _currentHealth += Instance.Hp * (percent / 100);
+                _currentHealth += Instance.Hp * (percent * 0.01f);
             }
-            EventManager.TriggerEvent(EventKeyword.OnTankDamaged + Instance.TankID, -Instance.Hp * (percent / 100));
+            EventManager.TriggerEvent(EventKeyword.OnTankDamaged + Instance.TankID, -Instance.Hp * (percent * 0.01f));
         }
 
         private void Awake()
