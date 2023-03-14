@@ -10,12 +10,10 @@ namespace Item
     {
         private Tank_Damage _tankDamage = null;
         private Coroutine _coroutine = null;
-        private Transform _parent;
 
         public override void AddItem()
         {
-            _parent = transform.parent;
-            _parent.TryGetComponent(out _tankDamage);
+            transform.parent.TryGetComponent(out _tankDamage);
 
             EventManager.StartListening(EventKeyword.OnTankDamaged + transform.parent.GetComponent<Tank.Tank>().TankID, () =>
             {
@@ -37,7 +35,7 @@ namespace Item
             WaitForSeconds waitSeconds = new WaitForSeconds(1f);
             while (_tankDamage.CurrentHealthPercent <= 10f)
             {
-                _parent.SendMessage("Repair", 0.5f, SendMessageOptions.DontRequireReceiver);
+                _tankDamage.Repair(0.5f);
                 yield return waitSeconds;
             }
         }

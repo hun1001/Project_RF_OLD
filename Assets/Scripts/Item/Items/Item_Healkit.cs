@@ -4,15 +4,15 @@ namespace Item
 {
     public class Item_Healkit : Item
     {
-        private Transform _parent = null;
+        private Tank.Tank_Damage _tankDamage = null;
 
         public override void AddItem()
         {
-            _parent = transform.parent;
+            transform.parent.TryGetComponent(out _tankDamage);
 
             EventManager.StartListening(Keyword.EventKeyword.OnStageClear, () =>
             {
-                _parent.SendMessage("Repair", 5f, SendMessageOptions.DontRequireReceiver);
+                _tankDamage.Repair(5f);
             });
         }
     }

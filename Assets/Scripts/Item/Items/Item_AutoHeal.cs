@@ -6,11 +6,11 @@ namespace Item
 {
     public class Item_AutoHeal : Item
     {
-        protected Transform _parent;
+        protected Tank.Tank_Damage _tankDamage;
 
         public override void AddItem()
         {
-            _parent = transform.parent;
+            transform.parent.TryGetComponent(out _tankDamage);
 
             StartCoroutine(RepairCoroutine());
         }
@@ -21,7 +21,7 @@ namespace Item
             while (true)
             {
                 yield return waitSeconds;
-                _parent.SendMessage("Repair", 0.1f, SendMessageOptions.DontRequireReceiver);
+                _tankDamage.Repair(0.1f);
             }
         }
     }
