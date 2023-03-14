@@ -37,7 +37,7 @@ namespace Player
 
         private void Awake()
         {
-            GameObject tank = PoolManager.Instance.Get(PlayerPrefs.GetString(PlayerPrefabsKey.PlayerTankKey), this.transform);
+            GameObject tank = PoolManager.Instance.Get(PlayerPrefs.GetString(PlayerPrefabsKey.PlayerTankKey, "Tank_Tiger"), this.transform);
             tank.tag = "PlayerTank";
             tank.transform.position = this.transform.position;
             tank.TryGetComponent(out _playerTank);
