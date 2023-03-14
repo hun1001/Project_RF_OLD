@@ -113,6 +113,14 @@ MonoBehaviour:
     m_Address: A-20
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 1f86f929d5c725341bc56931c00a7330
+    m_Address: Recycling
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e5a5367ad26248b4da5995c81c1fd651
+    m_Address: Healkit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 83677132a06df9140834c0d848060f27, type: 2}
   m_SchemaSet:

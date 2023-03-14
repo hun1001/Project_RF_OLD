@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: ItemBundleSO
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 6462602533542320049, guid: a4958a1b71cd1c5439020c600970c4fe, type: 3}
   - {fileID: 6493818316544319835, guid: 92c2691193744e846989b273301f2f7f, type: 3}
   - {fileID: -1208435436698294050, guid: 99ac776ca6db134419f342384b54e280, type: 3}
   - {fileID: 2821801151563141730, guid: 1e380748abcd4524b8a05a718c88858a, type: 3}
   - {fileID: 8194340978411053108, guid: 0439d1508f6c44841afcb84fb248a7cf, type: 3}
   - {fileID: 6745820858819950399, guid: c105ca9c40b3f3a4285a7509d9a4e2a8, type: 3}
   - {fileID: -7557984790587519636, guid: b2429d0a32da7c14fbff3a0bfc02cefc, type: 3}
+  - {fileID: 3008626147301399154, guid: 1f86f929d5c725341bc56931c00a7330, type: 3}
+  - {fileID: 1172471668129016025, guid: e5a5367ad26248b4da5995c81c1fd651, type: 3}
