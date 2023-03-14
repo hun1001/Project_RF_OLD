@@ -847,7 +847,7 @@ GameObject:
   - component: {fileID: -998006813773618838}
   m_Layer: 7
   m_Name: Tank_Tiger
-  m_TagString: PlayerTank
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

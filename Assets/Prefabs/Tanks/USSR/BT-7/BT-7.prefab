@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 358609461268988303}
   m_Layer: 7
   m_Name: BT-7
-  m_TagString: PlayerTank
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

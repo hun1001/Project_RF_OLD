@@ -43,22 +43,26 @@ namespace Tank
         public TankStateType State => _state;
         #endregion
 
-        private void Awake()
+        private void Start()
         {
+            TryGetComponent(out _rigidbody);
+            TryGetComponent(out _agent);
+
             if (CompareTag("PlayerTank"))
             {
-                PlayerAwake();
+                PlayerStart();
             }
             else
             {
-                AiAwake();
+                AiStart();
             }
         }
 
         #region Player Function
-        private void PlayerAwake()
+        private void PlayerStart()
         {
-            TryGetComponent(out _rigidbody);
+            _agent.enabled = false;
+
             _moveSound = SoundManager.Instance.LoopPlaySound(Instance.MoveSound, SoundType.SFX, 0.6f);
             _trackSound = SoundManager.Instance.LoopPlaySound(Instance.TrackSound, SoundType.SFX, 0.3f, 0f);
 
@@ -144,9 +148,12 @@ namespace Tank
         #endregion
 
         #region AI Function
-        private void AiAwake()
+        private void AiStart()
         {
-            _agent = GetComponent<NavMeshAgent>();
+            _rigidbody.mass = 1f;
+            _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            _rigidbody.useGravity = true;
+
             _target = GameObject.FindGameObjectWithTag("PlayerTank").transform;
 
             StartCoroutine(nameof(UpdateLogic));

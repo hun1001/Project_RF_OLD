@@ -11,7 +11,7 @@ namespace Turret
 
         private float _range = 50f;
 
-        protected void Awake()
+        protected void Start()
         {
             TryGetComponent(out _lineRenderer);
 

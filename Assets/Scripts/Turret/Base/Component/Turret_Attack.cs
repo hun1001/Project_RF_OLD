@@ -28,7 +28,7 @@ namespace Turret
         private Tank.Tank_Move _tankMove = null;
         #endregion
 
-        protected void Awake()
+        protected void Start()
         {
             _firePoint = Instance.FirePoint;
 

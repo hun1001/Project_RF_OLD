@@ -16,7 +16,7 @@ namespace Turret
 
         Vector3 _dir = Vector3.zero;
 
-        protected void Awake()
+        protected void Start()
         {
             _turret = Instance.Body;
             _rotationSpeed = Instance.TurretSO.rotationSpeed;
