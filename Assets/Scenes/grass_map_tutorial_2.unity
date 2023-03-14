@@ -1310,6 +1310,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6022794699592280826, guid: 94cdecaaf48284345b70406750c94cad,
+        type: 3}
+      propertyPath: m_DetailObjectDistance
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022794699592280826, guid: 94cdecaaf48284345b70406750c94cad,
+        type: 3}
+      propertyPath: m_TreeBillboardDistance
+      value: 89
+      objectReference: {fileID: 0}
     - target: {fileID: 6022794700626054916, guid: 94cdecaaf48284345b70406750c94cad,
         type: 3}
       propertyPath: m_Name
