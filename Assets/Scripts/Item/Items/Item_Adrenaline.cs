@@ -10,14 +10,14 @@ namespace Item
         public override void AddItem()
         {
             _tankDamage = transform.parent.GetComponent<Tank.Tank_Damage>();
-            _firstHpPercent = (int)_tankDamage.CurrentHealthPercent;
+            _firstHpPercent = 100;
 
             EventManager.StartListening(EventKeyword.OnTankDamaged + transform.parent.GetComponent<Tank.Tank>().TankID, () =>
             {
                 int percentDiff = (int)(_firstHpPercent - _tankDamage.CurrentHealthPercent);
                 if (percentDiff > 0)
                 {
-                    _tankDamage.GetComponent<Tank.Tank>().UpgradeStat(percentDiff * 0.1f);
+                    _tankDamage.GetComponent<Tank.Tank>().UpgradeAllStat(percentDiff * 0.1f);
                 }
             });
         }

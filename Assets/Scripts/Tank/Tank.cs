@@ -57,13 +57,33 @@ namespace Tank
             _rotationSpeed = _tankSO.rotationSpeed;
         }
 
-        public void UpgradeStat(float percent)
+        public void UpgradeAllStat(float percent)
+        {
+            
+        }
+
+        public void UpgradeHpStat(float percent)
         {
             percent = percent * 0.01f;
-            _hp = _tankSO.hp * percent;
-            _maxSpeed = _tankSO.maxSpeed * percent;
-            _acceleration = _tankSO.acceleration * percent;
-            _rotationSpeed = _tankSO.rotationSpeed * percent;
+            _hp = _tankSO.hp + _tankSO.hp * percent;
+        }
+
+        public void UpgradeSpeedStat(float percent)
+        {
+            percent = percent * 0.01f;
+            _maxSpeed = _tankSO.maxSpeed + _tankSO.maxSpeed * percent;
+        }
+
+        public void UpgradeAccelerationStat(float percent)
+        {
+            percent = percent * 0.01f;
+            _acceleration = _tankSO.acceleration + _tankSO.acceleration * percent;
+        }
+
+        public void UpgradeRotationSpeedStat(float percent)
+        {
+            percent = percent * 0.01f;
+            _rotationSpeed = _tankSO.rotationSpeed + _tankSO.rotationSpeed * percent;
         }
     }
 }
