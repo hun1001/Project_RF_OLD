@@ -15,4 +15,16 @@ MonoBehaviour:
   Waves:
   - {fileID: 11400000, guid: b2bc38718b879334f92c7ad57df7a546, type: 2}
   - {fileID: 11400000, guid: 69849101481af324b8834148338a0e62, type: 2}
-  Delay: []
+  - {fileID: 11400000, guid: a72c587ed50e4874a8faba0327963837, type: 2}
+  - {fileID: 11400000, guid: afdb0c94982cfc64aa21311dcfd18004, type: 2}
+  - {fileID: 11400000, guid: ed8d278644ee9c4418591319713dfe59, type: 2}
+  - {fileID: 11400000, guid: 95411112bad90b44fa891d10a36d9f7b, type: 2}
+  - {fileID: 11400000, guid: eddd8528826340e4f9508eb0bae29981, type: 2}
+  - {fileID: 11400000, guid: 0a9a287c88737ee43a65a1374f3b7f54, type: 2}
+  - {fileID: 11400000, guid: 0abdc17262b5a9943a1bb598df1cec3b, type: 2}
+  - {fileID: 11400000, guid: 9f49ca4b4da85374a8dad52518c16ed4, type: 2}
+  - {fileID: 11400000, guid: 2b284afa4f0445d49a759c07c92be38a, type: 2}
+  - {fileID: 11400000, guid: 6df0e584b2922d04bb3a4b7272001a32, type: 2}
+  - {fileID: 11400000, guid: ff3c0b34c32ba8142ac4a7b4dd528f25, type: 2}
+  - {fileID: 11400000, guid: 8a7f9b16b2723ec4392183e42efd4f47, type: 2}
+  - {fileID: 11400000, guid: 86b9da80ec22a2f4cbffc2f28d845ca4, type: 2}

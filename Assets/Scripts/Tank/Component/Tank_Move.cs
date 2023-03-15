@@ -61,8 +61,6 @@ namespace Tank
         #region Player Function
         private void PlayerStart()
         {
-            _agent.enabled = false;
-
             _moveSound = SoundManager.Instance.LoopPlaySound(Instance.MoveSound, SoundType.SFX, 0.6f);
             _trackSound = SoundManager.Instance.LoopPlaySound(Instance.TrackSound, SoundType.SFX, 0.3f, 0f);
 
@@ -150,6 +148,8 @@ namespace Tank
         #region AI Function
         private void AiStart()
         {
+            _agent.enabled = true;
+
             _rigidbody.mass = 1f;
             _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             _rigidbody.useGravity = true;

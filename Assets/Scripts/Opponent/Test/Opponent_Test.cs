@@ -42,9 +42,10 @@ namespace Opponent
 
         private void Spawn()
         {
+            Transform[] list = Instance.GetsSpawnPoint(Instance.SpawnPointParent[_stage % 3]);
             for (int i = 0; i < Instance.OpponentSO.Waves[_stage].enemyPrefabs.Length; i++)
             {
-                var enemy = PoolManager.Instance.Get(Instance.OpponentSO.Waves[_stage].enemyPrefabs[i], Instance.GetRandomSpawnPoint1.position, Quaternion.identity);
+                var enemy = PoolManager.Instance.Get(Instance.OpponentSO.Waves[_stage].enemyPrefabs[i], Instance.GetRandomSpawnPoint(list).position, Quaternion.identity);
                 enemy.tag = "OpponentTank";
                 enemy.TryGetComponent<Tank.Tank>(out var eT);
                 eT.TankID = _count++;
@@ -56,7 +57,7 @@ namespace Opponent
                     float damage = (float)dmg[0];
                     enemyHPBar.Value -= damage;
                 });
-                EventManager.StartListening(Keyword.EventKeyword.OnTankDestroyed + eT.TankID, () =>
+                EventManager.StartListening(EventKeyword.OnTankDestroyed + eT.TankID, () =>
                 {
                     PlayerPrefs.SetInt("RemainingEnemy", PlayerPrefs.GetInt("RemainingEnemy") - 1);
                     _remainingEnemyText.SetText(string.Format("Remaining Enemy\n{0:0}", PlayerPrefs.GetInt("RemainingEnemy")));
@@ -69,6 +70,7 @@ namespace Opponent
                 });
             }
             _remainingEnemyText.SetText(string.Format("Remaining Enemy\n{0:0}", PlayerPrefs.GetInt("RemainingEnemy")));
+            GameObject.Find("Player").GetComponentInChildren<Transform>().position = Instance.PlayerSpawnPoint[_stage % 3].position;
         }
 
         private void StageClear()
@@ -85,6 +87,11 @@ namespace Opponent
             _isStageClear = false;
             _stage++;
             PlayerPrefs.SetInt("RemainingEnemy", Instance.OpponentSO.Waves[_stage].enemyPrefabs.Length);
+            if(Instance.OpponentSO.Waves.Length <= _stage)
+            {
+                FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Result, CanvasNameKeyword.PlayInformationCanvas);
+                return;
+            }
             Spawn();
         }
     }

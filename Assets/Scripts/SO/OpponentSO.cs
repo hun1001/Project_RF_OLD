@@ -8,6 +8,5 @@ namespace SO
     public class OpponentSO : ScriptableObject
     {
         public WaveDataSO[] Waves;
-        public float[] Delay;
     }
 }
