@@ -50,7 +50,7 @@ namespace Turret
         {
             _rotationSpeed = _turretSO.rotationSpeed + _permanentRotationSpeed;
             _reloadSpeed = _turretSO.reloadSpeed + _permanentReloadSpeed;
-            _shellSpeed = _turretSO.shellSpeed/ + _permanentShellSpeed;
+            _shellSpeed = _turretSO.shellSpeed + _permanentShellSpeed;
             _attackRange = _turretSO.attackRange + _permanentAttackRange;
         }
 
