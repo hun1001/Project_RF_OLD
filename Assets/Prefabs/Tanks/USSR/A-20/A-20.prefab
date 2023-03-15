@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7de88a4cce53345b2dc79ad5669f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tankSO: {fileID: 11400000, guid: d858a3349afaee94ab658979fb943812, type: 2}
+  _tankSO: {fileID: 11400000, guid: a22cfbe322e80b340abd00e90b48c027, type: 2}
   _body: {fileID: 2184629908500434926}
   _lineRenderer:
   - {fileID: 821245020850418900}
