@@ -21,6 +21,7 @@ namespace UI
         protected override void SetOnEnableAction()
         {
             EventManager.TriggerEvent(EventKeyword.OnSetTechTree, _techTreeTransform, 0);
+            _techTreeToggleTransform.GetChild(0).GetComponent<Toggle>().isOn = true;
             MoveTechTreePanel(30f);
         }
 

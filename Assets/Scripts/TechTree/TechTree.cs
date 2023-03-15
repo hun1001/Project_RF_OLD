@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Util;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace TechTree
 {
@@ -84,6 +85,13 @@ namespace TechTree
                 if (isOn)
                 {
                     SetTechTree(t, index);
+                }
+                else
+                {
+                    if (techTreeToggle.GetComponentInParent<ToggleGroup>().AnyTogglesOn() is false)
+                    {
+                        techTreeToggle.GetComponent<Toggle>().isOn = true;
+                    }
                 }
             });
         }
