@@ -22,7 +22,7 @@ namespace Opponent
             PlayerPrefs.SetInt("RemainingEnemy", Instance.OpponentSO.Waves[_stage].enemyPrefabs.Length);
 
             Spawn();
-            EventManager.StartListening(Keyword.EventKeyword.OnStageClear, () =>
+            EventManager.StartListening(EventKeyword.OnStageClear, () =>
             {
                 if(_isStageClear == true)
                 {
@@ -30,7 +30,7 @@ namespace Opponent
                 }
             });
 
-            EventManager.StartListening(Keyword.EventKeyword.OnOpponentDestroyed, () =>
+            EventManager.StartListening(EventKeyword.OnOpponentDestroyed, () =>
             {
                 PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") + 2);
                 PlayerPrefs.SetInt("Destroy", PlayerPrefs.GetInt("Destroy") + 1);
@@ -44,7 +44,7 @@ namespace Opponent
         {
             for (int i = 0; i < Instance.OpponentSO.Waves[_stage].enemyPrefabs.Length; i++)
             {
-                var enemy = PoolManager.Instance.Get(Instance.OpponentSO.Waves[_stage].enemyPrefabs[i], Instance.GetRandomSpawnPoint.position, Quaternion.identity);
+                var enemy = PoolManager.Instance.Get(Instance.OpponentSO.Waves[_stage].enemyPrefabs[i], Instance.GetRandomSpawnPoint1.position, Quaternion.identity);
                 enemy.tag = "OpponentTank";
                 enemy.TryGetComponent<Tank.Tank>(out var eT);
                 eT.TankID = _count++;
