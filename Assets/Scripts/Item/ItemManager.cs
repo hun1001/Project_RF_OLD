@@ -60,7 +60,7 @@ namespace Item
             {
                 if (PlayerPrefs.GetInt("Gold") < item.itemSO.NecessaryGold)
                 {
-                    //TODO: 재화 부족 창 띄우기
+                    //TODO: ?�화 부�?�??�우�?
                     return;
                 }
                 PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") - item.itemSO.NecessaryGold);

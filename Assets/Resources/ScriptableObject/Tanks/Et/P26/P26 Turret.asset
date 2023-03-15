@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: P26 Turret
   m_EditorClassIdentifier: 
   rotationSpeed: 36
-  reloadSpeed: 6.34
+  reloadSpeed: 6.43
   shellSpeed: 830
   attackRange: 0

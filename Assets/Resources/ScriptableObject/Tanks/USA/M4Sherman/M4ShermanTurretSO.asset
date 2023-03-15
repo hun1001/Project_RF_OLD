@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 5
   reloadSpeed: 2
+  shellSpeed: 0
   attackRange: 20

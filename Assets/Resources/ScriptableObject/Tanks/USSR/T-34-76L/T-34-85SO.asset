@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42159e6d5730a14cbd0081800ad7117, type: 3}
   m_Name: T-34-85SO
   m_EditorClassIdentifier: 
+  tankSprite: {fileID: 0}
   hp: 770
   maxSpeed: 62
   rotationSpeed: 36
-  mass: 0
-  acceleration: 0
-  armour: 0
+  mass: 32
+  acceleration: 15.53
+  armour: 67.5
   load: 0
