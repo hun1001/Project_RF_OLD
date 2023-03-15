@@ -551,6 +551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Hay_Bale_02
       objectReference: {fileID: 0}
+    - target: {fileID: 159274, guid: 89cf9b39f30b1c549ae9ff01b4891f2d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 461166, guid: 89cf9b39f30b1c549ae9ff01b4891f2d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -740,6 +744,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Fence_Gate_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 121996, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 409972, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -802,6 +810,10 @@ PrefabInstance:
     - target: {fileID: 103556, guid: af279e04ce302c14a98aced1b9be8fb6, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Hay_Pile_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 103556, guid: af279e04ce302c14a98aced1b9be8fb6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 455830, guid: af279e04ce302c14a98aced1b9be8fb6, type: 3}
       propertyPath: m_RootOrder
@@ -866,6 +878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Hay_Bale_03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 187928, guid: b6d194ae369213448a12c07848bb0ca2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 420498, guid: b6d194ae369213448a12c07848bb0ca2, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -928,6 +944,10 @@ PrefabInstance:
     - target: {fileID: 187928, guid: b6d194ae369213448a12c07848bb0ca2, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Hay_Bale_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 187928, guid: b6d194ae369213448a12c07848bb0ca2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 420498, guid: b6d194ae369213448a12c07848bb0ca2, type: 3}
       propertyPath: m_RootOrder
@@ -992,6 +1012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Fence_02
       objectReference: {fileID: 0}
+    - target: {fileID: 112122, guid: 06090bc54f6ece248bb45e77c6a5a9c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 447050, guid: 06090bc54f6ece248bb45e77c6a5a9c6, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1054,6 +1078,10 @@ PrefabInstance:
     - target: {fileID: 121996, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Fence_Gate_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 121996, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 409972, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
       propertyPath: m_RootOrder
@@ -1185,6 +1213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Fence_Gate_01
       objectReference: {fileID: 0}
+    - target: {fileID: 121996, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 409972, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1247,6 +1279,10 @@ PrefabInstance:
     - target: {fileID: 159274, guid: 89cf9b39f30b1c549ae9ff01b4891f2d, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Hay_Bale_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 159274, guid: 89cf9b39f30b1c549ae9ff01b4891f2d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 461166, guid: 89cf9b39f30b1c549ae9ff01b4891f2d, type: 3}
       propertyPath: m_RootOrder
@@ -1500,6 +1536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Fence_Gate_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 121996, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 409972, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -1650,6 +1690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Hay_Bale_03
       objectReference: {fileID: 0}
+    - target: {fileID: 187928, guid: b6d194ae369213448a12c07848bb0ca2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 420498, guid: b6d194ae369213448a12c07848bb0ca2, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -1712,6 +1756,10 @@ PrefabInstance:
     - target: {fileID: 105880, guid: b876ebb6a7ac3a0468c9c9335c301c41, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Fence_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 105880, guid: b876ebb6a7ac3a0468c9c9335c301c41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 489316, guid: b876ebb6a7ac3a0468c9c9335c301c41, type: 3}
       propertyPath: m_RootOrder
@@ -1776,6 +1824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Fence_Gate_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 121996, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 409972, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -1838,6 +1890,10 @@ PrefabInstance:
     - target: {fileID: 106416, guid: 2bbf6324fa0ef14409826389c92d8a4f, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Fence_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 106416, guid: 2bbf6324fa0ef14409826389c92d8a4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 448856, guid: 2bbf6324fa0ef14409826389c92d8a4f, type: 3}
       propertyPath: m_RootOrder
@@ -1902,6 +1958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Hay_Bale_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 159274, guid: 89cf9b39f30b1c549ae9ff01b4891f2d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 461166, guid: 89cf9b39f30b1c549ae9ff01b4891f2d, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -1965,6 +2025,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Fence_Gate_01
       objectReference: {fileID: 0}
+    - target: {fileID: 121996, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 409972, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -2027,6 +2091,10 @@ PrefabInstance:
     - target: {fileID: 121996, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Fence_Gate_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 121996, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 409972, guid: e7e51c9de6effd843ace6404b5f282a8, type: 3}
       propertyPath: m_RootOrder
