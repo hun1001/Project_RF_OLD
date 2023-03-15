@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEditor;
 using SO;
 
 public class DataReadManager : MonoBehaviour
@@ -76,12 +77,10 @@ public class DataReadManager : MonoBehaviour
                 if (turretData.ContainsKey(turretcol[j]))
                 {
                     turretData[turretcol[j]].Add(turretset[j]);
-                    Debug.Log(turretData["¿Ã∏ß"].Count);
                 }
                 else
                 {
                     turretData[turretcol[j]] = new List<string>() { turretset[j] };
-                    Debug.Log(turretData["¿Ã∏ß"].Count);
                 }
             }
         }
@@ -94,32 +93,41 @@ public class DataReadManager : MonoBehaviour
 
         for (int i = 0; i < tankSO.Count; i++)
         {
-            for (int j = 0; j < setData["¿Ã∏ß"].Count; j++)
+            for (int j = 0; j < setData["Ïù¥Î¶Ñ"].Count; j++)
             {
-                if (tankSO[i].name == setData["¿Ã∏ß"][j] + "SO" || tankSO[i].name == setData["¿Ã∏ß"][j] || tankSO[i].name == setData["¿Ã∏ß"][j] + " SO")
+                if (tankSO[i].name == setData["Ïù¥Î¶Ñ"][j] + "SO" || tankSO[i].name == setData["Ïù¥Î¶Ñ"][j] || tankSO[i].name == setData["Ïù¥Î¶Ñ"][j] + " SO")
                 {
-                    tankSO[i].acceleration = float.Parse(setData["∞°º”"][j]);
-                    tankSO[i].maxSpeed = float.Parse(setData["√÷∞Ì º”µµ"][j].Replace("km/h", ""));
-                    tankSO[i].mass = float.Parse(setData["¡˙∑Æ"][j].Replace("t", ""));
+                    tankSO[i].acceleration = float.Parse(setData["Í∞ÄÏÜç"][j]);
+                    Debug.Log(tankSO[i].acceleration);
+                    tankSO[i].maxSpeed = float.Parse(setData["ÏµúÍ≥† ÏÜçÎèÑ"][j].Replace("km/h", ""));
+                    Debug.Log(tankSO[i].maxSpeed);
+                    tankSO[i].mass = float.Parse(setData["ÏßàÎüâ"][j].Replace("t", ""));
+                    Debug.Log(tankSO[i].mass);
                     tankSO[i].hp = float.Parse(setData[set][j]);
-                    tankSO[i].rotationSpeed = float.Parse(setData["º±»∏º”µµ(»∏¿¸ º”µµ)"][j].Replace("deg/s", ""));
-                    tankSO[i].armour = float.Parse(setData["¿Â∞©"][j]);
+                    Debug.Log(tankSO[i].hp);
+                    tankSO[i].rotationSpeed = float.Parse(setData["ÏÑ†ÌöåÏÜçÎèÑ(ÌöåÏ†Ñ ÏÜçÎèÑ)"][j].Replace("deg/s", ""));
+                    Debug.Log(tankSO[i].rotationSpeed);
+                    tankSO[i].armour = float.Parse(setData["Ïû•Í∞ë"][j]);
+                    Debug.Log(tankSO[i].armour);
                 }
             }
         }
 
         for (int i = 0; i < turretSO.Count; i++)
         {
-            for (int j = 0; j < turretData["¿Ã∏ß"].Count; j++)
+            for (int j = 0; j < turretData["Ïù¥Î¶Ñ"].Count; j++)
             {
-                if (turretSO[i].name == turretData["¿Ã∏ß"][j] + "TurretSO" || turretSO[i].name == turretData["¿Ã∏ß"][j] + " Turret" || turretSO[i].name == turretData["¿Ã∏ß"][j] + "Turret")
+                if (turretSO[i].name == turretData["Ïù¥Î¶Ñ"][j] + "TurretSO" || turretSO[i].name == turretData["Ïù¥Î¶Ñ"][j] + " Turret" || turretSO[i].name == turretData["Ïù¥Î¶Ñ"][j] + "Turret")
                 {
-                    turretSO[i].reloadSpeed = float.Parse(turretData["¿Â¿¸Ω√∞£"][j]);
-                    turretSO[i].rotationSpeed = float.Parse(turretData["∆˜≈æ»∏¿¸ º”µµ"][j].Replace("deg/s", ""));
-                    turretSO[i].shellSpeed = float.Parse(turretData["∆˜±∏ º”µµ"][j].Replace("m/s", ""));
+                    turretSO[i].reloadSpeed = float.Parse(turretData["Ïû•Ï†ÑÏãúÍ∞Ñ"][j]);
+                    Debug.Log(turretSO[i].reloadSpeed);
+                    turretSO[i].rotationSpeed = float.Parse(turretData["Ìè¨ÌÉëÌöåÏ†Ñ ÏÜçÎèÑ"][j].Replace("deg/s", ""));
+                    Debug.Log(turretSO[i].rotationSpeed);
+                    turretSO[i].shellSpeed = float.Parse(turretData["Ìè¨Íµ¨ ÏÜçÎèÑ"][j].Replace("m/s", ""));
+                    Debug.Log(turretSO[i].shellSpeed);
                 }
             }
         }
-
+        
     }
 }

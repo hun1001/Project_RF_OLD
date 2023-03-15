@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42159e6d5730a14cbd0081800ad7117, type: 3}
   m_Name: ChiTo
   m_EditorClassIdentifier: 
+  tankSprite: {fileID: 0}
   hp: 870
-  maxSpeed: 55
+  maxSpeed: 50
   rotationSpeed: 27
   mass: 30.5
   acceleration: 13.11

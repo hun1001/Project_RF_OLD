@@ -8,21 +8,25 @@ namespace Turret
     {
         // TODO: 라인 렌더러 별개의 오브젝트로 분리해서 차라리 라인 렌더러 매니저 만들어서 하느거 고민해보기
         private LineRenderer _lineRenderer = null;
+        private Turret_Attack _turretAttack = null;
 
         private float _range = 50f;
 
         protected void Start()
         {
             TryGetComponent(out _lineRenderer);
-
+            if (CompareTag("PlayerTank") == false)
+            {
+                this.enabled = false;
+                _lineRenderer.enabled = false;
+                return;
+            }
             //_range = Instance.TurretSO.attackRange;
 
+            TryGetComponent(out _turretAttack);
             _lineRenderer.enabled = false;
             _lineRenderer.positionCount = 2;
-            if (CompareTag("PlayerTank"))
-            {
-                StartCoroutine(UpdateLogic());
-            }
+            StartCoroutine(UpdateLogic());
         }
 
         private IEnumerator UpdateLogic()
@@ -31,7 +35,13 @@ namespace Turret
             {
                 _lineRenderer.SetPosition(0, Instance.FirePoint.position);
 
-                if (Physics.Raycast(Instance.FirePoint.position, Instance.FirePoint.forward, out RaycastHit hit, _range) && hit.transform.CompareTag("OpponentTank"))
+                if(_turretAttack.NextFire > 0f)
+                {
+                    _lineRenderer.startColor = Color.red;
+                    _lineRenderer.endColor = Color.red;
+                    _lineRenderer.SetPosition(1, Instance.FirePoint.position + Instance.FirePoint.forward * _range);
+                }
+                else if (Physics.Raycast(Instance.FirePoint.position, Instance.FirePoint.forward, out RaycastHit hit, _range) && (hit.transform.CompareTag("OpponentTank")))
                 {
                     _lineRenderer.SetPosition(1, hit.point);
                     _lineRenderer.startColor = Color.green;
@@ -41,8 +51,8 @@ namespace Turret
                 }
                 else
                 {
-                    _lineRenderer.startColor = Color.red;
-                    _lineRenderer.endColor = Color.red;
+                    _lineRenderer.startColor = Color.yellow;
+                    _lineRenderer.endColor = Color.yellow;
                     _lineRenderer.SetPosition(1, Instance.FirePoint.position + Instance.FirePoint.forward * _range);
                 }
 

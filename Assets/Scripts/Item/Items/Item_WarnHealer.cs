@@ -22,7 +22,7 @@ namespace Item
                     _coroutine = StartCoroutine(RepairCoroutine());
                 }
 
-                else
+                else if(_tankDamage.CurrentHealthPercent > 10f && _coroutine != null)
                 {
                     StopCoroutine(_coroutine);
                     _coroutine = null;

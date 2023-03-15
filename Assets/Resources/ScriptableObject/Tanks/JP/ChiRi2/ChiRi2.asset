@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42159e6d5730a14cbd0081800ad7117, type: 3}
   m_Name: ChiRi2
   m_EditorClassIdentifier: 
+  tankSprite: {fileID: 0}
   hp: 1150
   maxSpeed: 51
   rotationSpeed: 30
-  mass: 41.1
+  mass: 41
   acceleration: 13.41
   armour: 75
   load: 0

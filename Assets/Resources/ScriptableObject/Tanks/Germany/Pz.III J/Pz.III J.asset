@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42159e6d5730a14cbd0081800ad7117, type: 3}
   m_Name: Pz.III J
   m_EditorClassIdentifier: 
+  tankSprite: {fileID: 0}
   hp: 510
   maxSpeed: 60
   rotationSpeed: 40
