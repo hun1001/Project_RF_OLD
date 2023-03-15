@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankSprite: {fileID: 0}
   hp: 500
-  maxSpeed: 30
-  rotationSpeed: 44
+  maxSpeed: 25
+  rotationSpeed: 6
   mass: 26.5
-  acceleration: 6.5
+  acceleration: 8.3
   armour: 45
   load: 0

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: BT-7SO
   m_EditorClassIdentifier: 
   tankSprite: {fileID: 21300000, guid: 335d7ebe85af7a345aeeaf05102d3ef3, type: 3}
-  hp: 625
-  maxSpeed: 60
-  rotationSpeed: 40
-  mass: 0
-  acceleration: 0
-  armour: 0
+  hp: 510
+  maxSpeed: 25
+  rotationSpeed: 5
+  mass: 13.7
+  acceleration: 12.1
+  armour: 17.5
   load: 0

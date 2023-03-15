@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42159e6d5730a14cbd0081800ad7117, type: 3}
   m_Name: KV-1(1939)SO
   m_EditorClassIdentifier: 
+  tankSprite: {fileID: 0}
   hp: 0
   maxSpeed: 0
   rotationSpeed: 0
   mass: 0
   acceleration: 0
+  armour: 0
   load: 0

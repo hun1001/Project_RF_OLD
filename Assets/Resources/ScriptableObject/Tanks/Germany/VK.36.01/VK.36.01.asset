@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42159e6d5730a14cbd0081800ad7117, type: 3}
   m_Name: VK.36.01
   m_EditorClassIdentifier: 
+  tankSprite: {fileID: 0}
   hp: 1000
   maxSpeed: 50
   rotationSpeed: 22
   mass: 40
   acceleration: 11.25
-  armour: 9
+  armour: 90
   load: 0
