@@ -17,7 +17,7 @@ namespace Item
 
             EventManager.StartListening(EventKeyword.OnTankDamaged + transform.parent.GetComponent<Tank.Tank>().TankID, () =>
             {
-                if(_tankDamage.CurrentHealthPercent <= 10f && _coroutine == null)
+                if(_tankDamage.CurrentHealthPercent <= 10f && _coroutine == null && _tankDamage.CurrentHealthPercent > 0f)
                 {
                     _coroutine = StartCoroutine(RepairCoroutine());
                 }
