@@ -49,13 +49,18 @@ namespace Opponent
                 enemy.tag = "OpponentTank";
                 enemy.TryGetComponent<Tank.Tank>(out var eT);
                 eT.TankID = _count++;
-                var enemyHPBar = PoolManager.Instance.Get<Bar>("Assets/Prefabs/UI/Bar/HPCanvas.prefab", enemy.transform);
-                enemyHPBar.transform.localPosition = _hpBarOffset;
-                enemyHPBar.MaxValue = eT.Hp;
+                var enemyHpBar = PoolManager.Instance.Get<Bar>("Assets/Prefabs/UI/Bar/HPCanvas.prefab", enemy.transform);
+                enemyHpBar.transform.localPosition = _hpBarOffset;
+                enemyHpBar.MaxValue = eT.Hp;
                 EventManager.StartListening(Keyword.EventKeyword.OnTankDamaged + eT.TankID, (dmg) =>
                 {
                     float damage = (float)dmg[0];
-                    enemyHPBar.Value -= damage;
+                    enemyHpBar.Value -= damage;
+
+                    if (enemyHpBar.Value <= 0f)
+                    {
+                        EventManager.TriggerEvent(EventKeyword.OnTankDestroyed + eT.TankID);
+                    }
                 });
                 EventManager.StartListening(EventKeyword.OnTankDestroyed + eT.TankID, () =>
                 {
@@ -67,6 +72,7 @@ namespace Opponent
                     {
                         StageClear();
                     }
+                    PoolManager.Instance.Pool(enemy);
                 });
             }
             _remainingEnemyText.SetText(string.Format("Remaining Enemy\n{0:0}", PlayerPrefs.GetInt("RemainingEnemy")));

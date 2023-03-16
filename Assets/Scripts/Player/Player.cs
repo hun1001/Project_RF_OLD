@@ -68,6 +68,11 @@ namespace Player
                 {
                     _cameraManager.GetComponent<Camera_Move>().HitCameraShake();
                 }
+                if (_playInformationCanvas.HpBar.Value <= 0f)
+                {
+                    EventManager.TriggerEvent(EventKeyword.OnTankDestroyed + _playerTank.TankID);
+                    PoolManager.Instance.Pool(this.gameObject);
+                }
             });
 
             foreach (Button button in _controllerCanvas.SkillButtons)
@@ -80,25 +85,7 @@ namespace Player
                 FindObjectOfType<GameSceneCanvases>().ChangeCanvas(CanvasChangeType.Result, CanvasNameKeyword.PlayInformationCanvas);
                 PoolManager.Instance.Pool(PlayerPrefs.GetString(PlayerPrefabsKey.PlayerTankKey), _playerTank.gameObject);
             });
-
-            //StartCoroutine(nameof(UpdateLogic));
         }
-
-        //private IEnumerator UpdateLogic()
-        //{
-        //    while (true)
-        //    {
-        //        Tank_Move move = _playerTank.GetComponent<Tank_Move>();
-        //        move.Move(_controllerCanvas.MoveJoyStick);
-
-        //        Turret_Attack attack = _playerTank.GetComponent<Turret_Attack>();
-        //        _controllerCanvas.AttackJoyStick.AttackButtonImage.fillAmount = 1f - attack.NextFire / attack.FireRate;
-
-        //        Turret_Rotation rotation = _playerTank.GetComponent<Turret_Rotation>();
-        //        rotation.Rotate(_controllerCanvas.AttackJoyStick);
-        //        yield return null;
-        //    }
-        //}
 
         private void Update()
         {

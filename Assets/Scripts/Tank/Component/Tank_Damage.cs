@@ -15,13 +15,14 @@ namespace Tank
 
         public void Repair(float percent)
         {
-            if (_currentHealth + Instance.Hp * (percent * 0.01f) > Instance.Hp)
+            percent *= 0.01f;
+            if (_currentHealth + Instance.Hp * percent > Instance.Hp)
             {
                 _currentHealth = Instance.Hp;
             }
             else
             {
-                _currentHealth += Instance.Hp * (percent * 0.01f);
+                _currentHealth += Instance.Hp * percent;
             }
             EventManager.TriggerEvent(EventKeyword.OnTankDamaged + Instance.TankID, -Instance.Hp * (percent * 0.01f));
         }
@@ -35,17 +36,11 @@ namespace Tank
         private void OnHit(float damage)
         {
             #region 2번 스킬 테스트
-            damage = damage - (damage / 100f * _armour);
+            damage = damage - (damage * 0.01f * _armour);
             #endregion
 
             EventManager.TriggerEvent(EventKeyword.OnTankDamaged + Instance.TankID, damage);
             _currentHealth -= damage;
-
-            if (_currentHealth <= 0)
-            {
-                EventManager.TriggerEvent(EventKeyword.OnTankDestroyed + Instance.TankID);
-                PoolManager.Instance.Pool(this.gameObject);
-            }
         }
 
         public void SetArmour(float value)

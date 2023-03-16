@@ -28,6 +28,11 @@ namespace Item
                     _coroutine = null;
                 }
             });
+
+            if(_tankDamage.CurrentHealthPercent <= 10f)
+            {
+                _coroutine = StartCoroutine(RepairCoroutine());
+            }
         }
 
         private IEnumerator RepairCoroutine()

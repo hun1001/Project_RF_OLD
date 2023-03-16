@@ -1,6 +1,7 @@
 using Util;
 using UnityEngine;
 
+
 namespace Game
 {
     public class GameManager : MonoSingleton<GameManager>
@@ -8,7 +9,7 @@ namespace Game
         private void Awake()
         {
             Application.targetFrameRate = 120;
-            PlayerPrefs.SetInt("Gold", 100);
+            PlayerPrefs.SetInt("Gold", 0);
             PlayerPrefs.SetInt("Destroy", 0);
         }
     }
