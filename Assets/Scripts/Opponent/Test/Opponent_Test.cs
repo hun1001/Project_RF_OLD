@@ -76,7 +76,7 @@ namespace Opponent
                 });
             }
             _remainingEnemyText.SetText(string.Format("Remaining Enemy\n{0:0}", PlayerPrefs.GetInt("RemainingEnemy")));
-            GameObject.Find("Player").GetComponentInChildren<Transform>().position = Instance.PlayerSpawnPoint[_stage % 3].position;
+            GameObject.Find("Player").GetComponent<Transform>().GetChild(0).position = Instance.PlayerSpawnPoint[_stage % 3].position;
         }
 
         private void StageClear()
