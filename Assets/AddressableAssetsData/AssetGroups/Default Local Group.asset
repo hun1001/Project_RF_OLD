@@ -106,7 +106,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 62286234ff1bb0d409418d858933fd1b
-    m_Address: T-34-57_zis-4
+    m_Address: T-34-57
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: df4af2676c7f21542a5ebd00c20b499b
@@ -127,6 +127,26 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: cf0cdb0f246c4774c9c42f0f35ecdd30
     m_Address: High_Energypack
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e996c43fcf53dea4dba0a9d5a28fcf3c
+    m_Address: T-44
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 39d39c1a0ccb3e5469d4a7712cad8697
+    m_Address: T-54
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4117e7ba84fc5c04da7da37ddf71d319
+    m_Address: T-55A
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3a9d22399e885ed448d426c0f5e349ad
+    m_Address: T-34-76
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3117d0266917a594b8cb67c5cbff7038
+    m_Address: T-34-85
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

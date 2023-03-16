@@ -98,7 +98,7 @@ namespace Tank
             }
             else
             {
-                _currentSpeed -= _acceleration * Time.deltaTime * 2f;
+                _currentSpeed -= _acceleration * Time.deltaTime * 3f;
                 _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
                 if (_isMove == true)
                 {
