@@ -473,7 +473,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7282516141860473210}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 3.5
   m_Speed: 3.5
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _turretSO: {fileID: 11400000, guid: adb8a4060f013514b935ab60ae3b64ec, type: 2}
   _body: {fileID: 8205702647456635894}
-  _firePoint: {fileID: 0}
+  _firePoint: {fileID: 6736686970260215582}
   FireSound: {fileID: 8300000, guid: 68d23c5288aa7e94bb0e7e7bfe981274, type: 3}
   ReloadSound: {fileID: 8300000, guid: 5862ded20a98315438c16f23ebc768b2, type: 3}
   ShellDropSound: {fileID: 8300000, guid: 292cb62458e262d49b6d41270a222838, type: 3}
